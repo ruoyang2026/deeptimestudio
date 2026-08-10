@@ -1,6 +1,6 @@
 import Link from "next/link";
 import TrilobiteGrid, { type CardData } from "./components/TrilobiteGrid";
-import CommercialEntry from "./components/CommercialEntry";
+import SiteShell from "./components/SiteShell";
 import {
   getOrders,
   getAges,
@@ -93,33 +93,8 @@ export default function HomePage({ searchParams }: PageProps) {
   });
 
   return (
-    <div className="page-container">
-      <aside className="sidebar-left">
-        <div className="sidebar-left__top">
-          <nav className="menu-nav" aria-label="Site navigation">
-            <Link href="/" className="menu-item is-active">
-              Discovery
-            </Link>
-          </nav>
-          <button type="button" className="red-btn">
-            Search
-          </button>
-        </div>
-        <div className="sidebar-bottom">
-          <CommercialEntry />
-          <div className="site-desc">
-            <p className="site-desc__badge">Deep Time Studio · Paleo Visual Archive</p>
-            <h2 className="site-desc__title">Trilobites of the World</h2>
-            <p className="site-desc__sub">
-              Explore 500+ extinct species through rare fossil photography, geological ages,
-              and scientific classification — from Cambrian research to paleo art and fashion
-              design inspiration.
-            </p>
-          </div>
-        </div>
-      </aside>
-
-      <main className="main-content">
+    <SiteShell>
+      <div className="tri-home-main">
         <form method="get" action="/" className="search-bar">
           <input
             type="text"
@@ -187,7 +162,7 @@ export default function HomePage({ searchParams }: PageProps) {
             respective institutions and collectors.
           </p>
         </footer>
-      </main>
-    </div>
+      </div>
+    </SiteShell>
   );
 }
