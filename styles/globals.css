@@ -2657,13 +2657,13 @@ button.trilobite-card {
   color: var(--text);
 }
 
-.fashion-search {
-  max-width: 560px;
-}
-
 .fashion-filter {
   font-family: inherit;
   cursor: pointer;
+}
+
+.fashion-filters {
+  margin-top: 20px;
 }
 
 /* cards mirror the trilobite species cards (214 x 377) */
@@ -2734,18 +2734,22 @@ button.trilobite-card {
   text-overflow: ellipsis;
 }
 
-.fashion-card__meta {
+.fashion-card__series {
   margin-top: auto;
-  font-size: 12px;
-  color: #777777;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ff2442;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* detail: 55/45 split */
-.fashion-detail {
-  padding-top: 4px;
+/* detail: 55/45 split (standalone page, mirrors species detail) */
+.fashion-detail-page {
+  max-width: 960px;
 }
 
 .fashion-detail__layout {

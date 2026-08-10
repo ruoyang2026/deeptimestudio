@@ -12,6 +12,7 @@ export type FashionProduct = {
   slug: string;
   name: string;
   species: string;
+  series: string;
   meta: string;
   origin: string;
   filters: string[];
@@ -32,9 +33,10 @@ export type FashionProduct = {
 
 export const fashionProducts: FashionProduct[] = [
   {
-    slug: "eoredlichia-cambrian-crest",
+    slug: "the-first-crest",
     name: "The First Crest",
     species: "Eoredlichia intermedia",
+    series: "Cambrian Dawn",
     meta: "Early Cambrian · 520 Ma",
     origin: "Yunnan, China",
     filters: ["Cambrian", "Sacred Geometry", "Extinct Icons"],
@@ -51,9 +53,9 @@ export const fashionProducts: FashionProduct[] = [
       { src: "/fashion/detail-eoredlichia.webp", label: "Print Detail" },
     ],
     specimen:
-      "Eoredlichia intermedia, a 520-million-year-old Cambrian trilobite from Yunnan, China. Its near-perfect semicircular cephalon and fifteen articulated thoracic segments represent evolution's earliest experiment in radial symmetry — a blueprint for sacred geometry predating human design by half a billion years.",
+      "Eoredlichia intermedia — a 520-million-year-old Cambrian trilobite from Yunnan, China. Its near-perfect semicircular cephalon and fifteen articulated thoracic segments represent evolution's earliest experiment in radial symmetry. A blueprint for sacred geometry and ancient design predating human creativity by half a billion years.",
     philosophy:
-      "Part of the Cambrian Dawn series. The palette samples mineral colors from the fossil matrix itself: oxidized manganese purple, pyrite gold, and deep-sea black. The specimen is positioned as a heraldic crest from an empire that ruled the ocean floor before vertebrates existed. Evolution is the greatest designer.",
+      "Part of the Cambrian Dawn collection. The palette samples mineral colors from the fossil matrix: oxidized manganese purple, pyrite gold, and deep-sea black. Positioned as a heraldic crest from an empire that ruled the ocean floor before vertebrates existed. Evolution is the greatest designer. Nature was the first atelier.",
     collection: {
       headline: "Drop 01 · Cambrian Dawn",
       specs: [

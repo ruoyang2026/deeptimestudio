@@ -6,34 +6,46 @@ import { FASHION_FILTERS, type FashionProduct } from "../../lib/fashion";
 
 export default function FashionGrid({ products }: { products: FashionProduct[] }) {
   const [filter, setFilter] = useState("All");
-  const [q, setQ] = useState("");
+  const [draft, setDraft] = useState("");
+  const [query, setQuery] = useState("");
 
   const visible = useMemo(() => {
-    const query = q.trim().toLowerCase();
+    const q = query.trim().toLowerCase();
     return products.filter((p) => {
       if (filter !== "All" && !p.filters.includes(filter)) return false;
-      if (query) {
-        const haystack = [p.name, p.species, p.meta, p.origin, ...p.filters]
+      if (q) {
+        const haystack = [p.name, p.species, p.series, p.meta, p.origin, ...p.filters]
           .join(" ")
           .toLowerCase();
-        if (!haystack.includes(query)) return false;
+        if (!haystack.includes(q)) return false;
       }
       return true;
     });
-  }, [products, filter, q]);
+  }, [products, filter, query]);
 
   return (
     <div className="fashion-grid-wrap">
-      <div className="search-bar fashion-search">
+      <form
+        method="get"
+        action="/fossil-fashion-design-inspiration"
+        className="search-bar"
+        onSubmit={(e) => {
+          e.preventDefault();
+          setQuery(draft.trim());
+        }}
+      >
         <input
           type="text"
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
+          value={draft}
+          onChange={(e) => setDraft(e.target.value)}
           placeholder="Search fossil fashion..."
           className="search-bar__input"
           aria-label="Search fashion collection"
         />
-      </div>
+        <button type="submit" className="search-bar__btn">
+          Search
+        </button>
+      </form>
 
       <nav className="tag-scroll-row fashion-filters" aria-label="Filter fashion collection">
         {FASHION_FILTERS.map((f) => (
@@ -58,7 +70,7 @@ export default function FashionGrid({ products }: { products: FashionProduct[] }
             <div className="fashion-card__body">
               <div className="fashion-card__name">{p.name}</div>
               <div className="fashion-card__species">{p.species}</div>
-              <div className="fashion-card__meta">{p.meta}</div>
+              <div className="fashion-card__series">{p.series}</div>
             </div>
           </Link>
         ))}
