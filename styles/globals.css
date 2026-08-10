@@ -1856,9 +1856,19 @@ a {
   opacity: 0.85;
 }
 
+/* Bottom group: commercial entry + site description, pinned to the sidebar bottom */
+.sidebar-bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 /* Commercial entry (shop + free sample) above the site description */
 .commercial-entry {
-  padding-top: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .commercial-entry__trigger {
@@ -1875,15 +1885,17 @@ a {
 
 .commercial-entry__trigger img {
   display: block;
-  width: 100%;
+  width: 120px;
+  margin: 0 auto;
   border-radius: 8px;
 }
 
 .commercial-entry__link {
   display: block;
-  margin-top: 6px;
+  margin-top: 8px;
   font-size: 12px;
-  line-height: 1.4;
+  line-height: 1.5;
+  text-align: center;
   color: var(--muted);
   transition: color 0.15s;
 }
@@ -1892,10 +1904,9 @@ a {
   color: var(--accent);
 }
 
-/* Site description pinned to the sidebar bottom */
+/* Site description at the bottom of the sidebar */
 .site-desc {
-  margin-top: auto;
-  padding-top: 16px;
+  padding-top: 12px;
   border-top: 1px solid var(--border);
   display: flex;
   flex-direction: column;
@@ -2440,8 +2451,14 @@ button.trilobite-card {
     flex-direction: row;
   }
 
-  .site-desc {
+  .sidebar-bottom {
     margin-top: 0;
+    flex-basis: 100%;
+    align-items: center;
+  }
+
+  .commercial-entry {
+    align-items: center;
   }
 }
 

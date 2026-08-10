@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { SHOP_URL, FREE_SAMPLE_URL, BASIN_ENDPOINT } from "../../lib/site";
 
 export default function CommercialEntry() {
@@ -46,7 +47,7 @@ export default function CommercialEntry() {
         </button>
       </div>
 
-      {open ? (
+      {open ? createPortal(
         <div className="commercial-modal-overlay" onClick={() => setOpen(false)}>
           <div
             className="commercial-modal"
@@ -104,7 +105,8 @@ export default function CommercialEntry() {
 
             <p className="commercial-modal__note">We only use your email to send paleo art samples. Unsubscribe anytime.</p>
           </div>
-        </div>
+        </div>,
+        document.body
       ) : null}
     </>
   );

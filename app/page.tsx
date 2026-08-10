@@ -105,15 +105,17 @@ export default function HomePage({ searchParams }: PageProps) {
             Search
           </button>
         </div>
-        <CommercialEntry />
-        <div className="site-desc">
-          <p className="site-desc__badge">Deep Time Studio · Paleo Visual Archive</p>
-          <h2 className="site-desc__title">Trilobites of the World</h2>
-          <p className="site-desc__sub">
-            Explore 500+ extinct species through rare fossil photography, geological ages,
-            and scientific classification — from Cambrian research to paleo art and fashion
-            design inspiration.
-          </p>
+        <div className="sidebar-bottom">
+          <CommercialEntry />
+          <div className="site-desc">
+            <p className="site-desc__badge">Deep Time Studio · Paleo Visual Archive</p>
+            <h2 className="site-desc__title">Trilobites of the World</h2>
+            <p className="site-desc__sub">
+              Explore 500+ extinct species through rare fossil photography, geological ages,
+              and scientific classification — from Cambrian research to paleo art and fashion
+              design inspiration.
+            </p>
+          </div>
         </div>
       </aside>
 
