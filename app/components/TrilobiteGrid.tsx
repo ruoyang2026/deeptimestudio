@@ -11,6 +11,7 @@ export type CardData = {
   age: string;
   distribution: string;
   cover: string;
+  alt: string;
   drillable: boolean;
 };
 
@@ -73,7 +74,7 @@ function CardBody({ t, locked }: { t: CardData; locked?: boolean }) {
       <div className="card-img">
         {t.cover ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={t.cover} alt={t.scientificName} loading="lazy" />
+          <img src={t.cover} alt={t.alt} loading="lazy" />
         ) : null}
         {locked ? <span className="lock-badge">Locked</span> : null}
       </div>

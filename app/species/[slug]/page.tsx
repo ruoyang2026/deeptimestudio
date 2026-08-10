@@ -1,6 +1,17 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getBySlug, getPrevNext, isDrillable, imgSrc, trilobites } from "../../../lib/trilobites";
+import {
+  getBySlug,
+  getPrevNext,
+  getCover,
+  isDrillable,
+  topPeriod,
+  speciesImageAlt,
+  imgSrc,
+  SITE_URL,
+  trilobites,
+} from "../../../lib/trilobites";
 
 export const dynamicParams = false;
 
@@ -8,10 +19,61 @@ export function generateStaticParams() {
   return trilobites.filter((t) => isDrillable(t.slug)).map((t) => ({ slug: t.slug }));
 }
 
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const t = getBySlug(params.slug);
+  if (!t) return {};
+  const period = topPeriod(t.age);
+  const description = period
+    ? `A ${period} trilobite species documented with fossil photographs and geological data.`
+    : "A trilobite species documented with fossil photographs and geological data.";
+  return {
+    title: `${t.scientific_name} | Trilobites of the World`,
+    description,
+    alternates: { canonical: `/species/${t.slug}` },
+  };
+}
+
 export default function SpeciesPage({ params }: { params: { slug: string } }) {
   const t = getBySlug(params.slug);
   if (!t || !isDrillable(t.slug)) notFound();
   const { prev, next } = getPrevNext(t.slug);
+  const period = topPeriod(t.age);
+  const description = period
+    ? `A ${period} trilobite species documented with fossil photographs and geological data.`
+    : "A trilobite species documented with fossil photographs and geological data.";
+
+  const pageUrl = `${SITE_URL}/species/${t.slug}`;
+  const cover = getCover(t);
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ItemPage",
+    "@id": pageUrl,
+    url: pageUrl,
+    name: `${t.scientific_name} — Trilobite Fossil`,
+    description,
+    image: [
+      ...(cover
+        ? [{ "@type": "ImageObject", contentUrl: `${SITE_URL}/${cover}`, name: t.scientific_name }]
+        : []),
+      ...t.images.map((img, i) => ({
+        "@type": "ImageObject",
+        contentUrl: `${SITE_URL}${imgSrc(img.file)}`,
+        name: speciesImageAlt(t.scientific_name, t.age, t.distribution),
+        caption: `Photo ${i + 1}`,
+      })),
+    ],
+    about: {
+      "@type": "Taxon",
+      name: t.scientific_name,
+      parentTaxon: t.order,
+    },
+    temporalCoverage: period,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Deep Time Studio",
+      url: SITE_URL,
+    },
+  };
 
   const rows: { label: string; value: string; full?: boolean }[] = [];
   if (t.classification) rows.push({ label: "Classification", value: t.classification, full: true });
@@ -29,7 +91,12 @@ export default function SpeciesPage({ params }: { params: { slug: string } }) {
   if (t.remarks) rows.push({ label: "Remarks", value: t.remarks, full: true });
 
   return (
-    <main className="page-shell tri-detail">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <main className="page-shell tri-detail">
       <nav className="tri-breadcrumb">
         <Link href="/">All trilobites</Link>
         <span className="tri-breadcrumb__sep">/</span>
@@ -60,7 +127,7 @@ export default function SpeciesPage({ params }: { params: { slug: string } }) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={imgSrc(img.file)}
-              alt={`${t.scientific_name} — photo ${i + 1}`}
+              alt={speciesImageAlt(t.scientific_name, t.age, t.distribution)}
               loading={i === 0 ? "eager" : "lazy"}
             />
             <figcaption>
@@ -96,6 +163,7 @@ export default function SpeciesPage({ params }: { params: { slug: string } }) {
           <span />
         )}
       </nav>
-    </main>
+      </main>
+    </>
   );
 }

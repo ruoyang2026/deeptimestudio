@@ -1,5 +1,7 @@
 import speciesDb from "../data/trilobites/species.json";
 import drillableDb from "../data/trilobites/drillable.json";
+import coversDb from "../data/trilobites/covers.json";
+import { SITE_URL } from "./site";
 
 export type TrilobiteImage = {
   file: string;
@@ -62,6 +64,27 @@ export function periodsForAge(age: string): string[] {
   const lower = age.toLowerCase();
   return GEOLOGIC_PERIODS.filter((p) => lower.includes(p.toLowerCase()));
 }
+
+export function topPeriod(age: string): string {
+  return periodsForAge(age)[0] || "";
+}
+
+export function firstRegion(distribution: string): string {
+  if (!distribution) return "";
+  const parts = distribution.split(/[;,]/).map((p) => p.trim()).filter(Boolean);
+  return parts[0] || "";
+}
+
+export function speciesImageAlt(name: string, age: string, distribution: string): string {
+  const period = topPeriod(age);
+  const region = firstRegion(distribution);
+  let alt = `${name}, a trilobite fossil`;
+  if (period) alt = `${name}, a ${period} trilobite fossil`;
+  if (region) alt += ` from ${region}`;
+  return `${alt}.`;
+}
+
+export { SITE_URL, SITE_NAME } from "./site";
 
 export function getAges(): { age: string; count: number }[] {
   return GEOLOGIC_PERIODS.map((age) => ({
@@ -135,4 +158,12 @@ export function getPrevNext(slug: string): {
 
 export function imgSrc(path: string | null | undefined): string {
   return path ? `/${path}` : "";
+}
+
+type Coverable = { slug: string; cover: string | null };
+
+export function getCover(t: Coverable): string | null {
+  const override = (coversDb as { covers: Record<string, string> }).covers[t.slug];
+  if (override) return `trilobites/${t.slug}/${override}`;
+  return t.cover;
 }

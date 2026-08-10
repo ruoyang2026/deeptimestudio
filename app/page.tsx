@@ -6,6 +6,8 @@ import {
   periodsForAge,
   searchTrilobites,
   isDrillable,
+  getCover,
+  speciesImageAlt,
   imgSrc,
 } from "../lib/trilobites";
 
@@ -74,16 +76,20 @@ export default function HomePage({ searchParams }: PageProps) {
   const sorted = [...filtered].sort(
     (a, b) => Number(isDrillable(b.slug)) - Number(isDrillable(a.slug))
   );
-  const cards: CardData[] = sorted.map((t) => ({
-    id: t.id,
-    slug: t.slug,
-    order: t.order,
-    scientificName: t.scientific_name,
-    age: displayAge(t.age),
-    distribution: t.distribution,
-    cover: t.cover ? imgSrc(t.cover) : "",
-    drillable: isDrillable(t.slug),
-  }));
+  const cards: CardData[] = sorted.map((t) => {
+    const cover = getCover(t);
+    return {
+      id: t.id,
+      slug: t.slug,
+      order: t.order,
+      scientificName: t.scientific_name,
+      age: displayAge(t.age),
+      distribution: t.distribution,
+      cover: cover ? imgSrc(cover) : "",
+      alt: speciesImageAlt(t.scientific_name, t.age, t.distribution),
+      drillable: isDrillable(t.slug),
+    };
+  });
 
   return (
     <div className="page-container">

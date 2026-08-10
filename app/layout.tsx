@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "../styles/globals.css";
+import { SITE_URL, SITE_NAME } from "../lib/site";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Trilobites of the World | 500+ Fossil Species Database & Paleo Visual Archive",
   description:
     "Explore 500+ trilobite species from the Cambrian to Permian periods. High-resolution fossil photographs, classification, and geological data for research, paleo art, and design inspiration.",
@@ -10,20 +12,29 @@ export const metadata: Metadata = {
 
 const orgSchema = {
   "@context": "https://schema.org",
-  "@type": "Collection",
-  name: "Illustration Guide to Trilobites — Visual Database",
-  url: "https://www.socialalphas.com",
-  description:
-    "A visual database cataloguing 500+ trilobite species with classification, etymology, geological age, distribution and photographs.",
-  knowsAbout: [
-    "trilobites",
-    "paleontology",
-    "Cambrian",
-    "Ordovician",
-    "Silurian",
-    "Devonian",
-    "Arthropods",
-    "fossils",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      description:
+        "A visual archive of 500+ trilobite species with fossil photographs, geological ages and scientific classification.",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${SITE_URL}/?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
   ],
 };
 

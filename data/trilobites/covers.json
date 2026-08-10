@@ -1,0 +1,4 @@
+{
+  "note": "Optional per-species homepage cover overrides. Each value is an image filename (e.g. '03.webp') inside public/trilobites/<slug>/. Entries here are used everywhere (homepage card, schema image, og:image). Leave empty to fall back to the default first image.",
+  "covers": {}
+}
