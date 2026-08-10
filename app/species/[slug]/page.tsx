@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getBySlug, getPrevNext, imgSrc, trilobites } from "../../../lib/trilobites";
+import { getBySlug, getPrevNext, isDrillable, imgSrc, trilobites } from "../../../lib/trilobites";
 
 export function generateStaticParams() {
-  return trilobites.map((t) => ({ slug: t.slug }));
+  return trilobites.filter((t) => isDrillable(t.slug)).map((t) => ({ slug: t.slug }));
 }
 
 export default function SpeciesPage({ params }: { params: { slug: string } }) {
   const t = getBySlug(params.slug);
-  if (!t) notFound();
+  if (!t || !isDrillable(t.slug)) notFound();
   const { prev, next } = getPrevNext(t.slug);
 
   const rows: { label: string; value: string; full?: boolean }[] = [];

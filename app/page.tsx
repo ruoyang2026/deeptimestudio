@@ -1,5 +1,13 @@
 import Link from "next/link";
-import { getOrders, getAges, periodsForAge, searchTrilobites, imgSrc } from "../lib/trilobites";
+import TrilobiteGrid, { type CardData } from "./components/TrilobiteGrid";
+import {
+  getOrders,
+  getAges,
+  periodsForAge,
+  searchTrilobites,
+  isDrillable,
+  imgSrc,
+} from "../lib/trilobites";
 
 type PageProps = {
   searchParams?: {
@@ -63,6 +71,19 @@ export default function HomePage({ searchParams }: PageProps) {
   const all = searchTrilobites(q);
   const byOrder = order ? all.filter((t) => t.order === order) : all;
   const filtered = age ? byOrder.filter((t) => periodsForAge(t.age).includes(age)) : byOrder;
+  const sorted = [...filtered].sort(
+    (a, b) => Number(isDrillable(b.slug)) - Number(isDrillable(a.slug))
+  );
+  const cards: CardData[] = sorted.map((t) => ({
+    id: t.id,
+    slug: t.slug,
+    order: t.order,
+    scientificName: t.scientific_name,
+    age: displayAge(t.age),
+    distribution: t.distribution,
+    cover: t.cover ? imgSrc(t.cover) : "",
+    drillable: isDrillable(t.slug),
+  }));
 
   return (
     <div className="page-container">
@@ -140,26 +161,7 @@ export default function HomePage({ searchParams }: PageProps) {
           </nav>
         </div>
 
-        <div className="trilobite-card-grid">
-          {filtered.map((t) => (
-            <Link key={t.id} href={`/species/${t.slug}`} className="trilobite-card">
-              <div className="card-img">
-                {t.cover ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={imgSrc(t.cover)} alt={t.scientific_name} loading="lazy" />
-                ) : null}
-              </div>
-              <div className="card-text">
-                <div className="order-name">{t.order}</div>
-                <h4 className="species-name">{t.scientific_name}</h4>
-                <p className="loc-age">
-                  {t.age ? <span className="loc-age__age">{displayAge(t.age)}</span> : null}
-                  {t.distribution ? <span className="loc-age__place">{t.distribution}</span> : null}
-                </p>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <TrilobiteGrid species={cards} />
 
         {filtered.length === 0 ? (
           <div className="tri-empty">

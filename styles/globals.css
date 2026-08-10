@@ -2086,6 +2086,121 @@ a {
   text-overflow: ellipsis;
 }
 
+/* locked (non-drillable) cards: lighter gray to distinguish */
+button.trilobite-card {
+  font-family: inherit;
+  border: none;
+  padding: 0;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.trilobite-card.is-locked {
+  background: #f0f1f3;
+}
+
+.trilobite-card.is-locked:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.trilobite-card.is-locked .order-name {
+  color: #c9c9c9;
+}
+
+.trilobite-card.is-locked .species-name {
+  color: #9a9a9a;
+}
+
+.trilobite-card.is-locked .loc-age {
+  color: #b5b5b5;
+}
+
+.card-img {
+  position: relative;
+}
+
+.lock-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(33, 33, 33, 0.62);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* lock modal dialog */
+.lock-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 20px;
+}
+
+.lock-modal {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 28px 32px;
+  max-width: 340px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.lock-modal__icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.lock-modal__title {
+  margin: 12px 0 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #212121;
+}
+
+.lock-modal__text {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #727272;
+}
+
+.lock-modal__species {
+  margin: 0 0 18px;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: #9a9a9a;
+}
+
+.lock-modal__btn {
+  padding: 10px 28px;
+  border: none;
+  border-radius: 8px;
+  background: #ff2442;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.lock-modal__btn:hover {
+  opacity: 0.88;
+}
+
 .tri-empty {
   text-align: center;
   padding: 60px 20px;

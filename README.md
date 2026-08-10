@@ -6,12 +6,38 @@ generation and Vercel — no backend required.
 
 ## Site
 
-- **Homepage** (`/`): waterfall card matrix of all species, filterable by order
-  (10 orders) and searchable by species, genus, age or region.
+- **Homepage** (`/`): card matrix of all species, filterable by order (10 orders)
+  and geological age (6 periods), and searchable by species, genus, age or region.
 - **Species detail** (`/species/[slug]`): full formatted record — classification,
   genus/species etymology, age, distribution, synonyms, diagnosis, remarks and
   all specimen photographs.
 - Static export: every species page is prerendered at build time (SSG).
+
+## Unlocked (drillable) species
+
+All **513** species are visible on the homepage (photographs included), but only
+**120** are unlocked for drill-down. Locked cards are tinted light gray and
+show a "Locked" badge; clicking one opens a dialog pointing to the shop.
+
+The unlocked list lives in `data/trilobites/drillable.json` (array of `slug`s).
+It is selected **proportionally by geological period** so every period keeps a
+browseable share (small periods get a guaranteed minimum):
+
+| Period | Total | Unlocked |
+|---|---|---|
+| Cambrian | 317 | 74 |
+| Ordovician | 126 | 29 |
+| Silurian | 32 | 7 |
+| Devonian | 38 | 8 |
+| Carboniferous | 2 | 1 |
+| Permian | 1 | 1 |
+| **Total** | **513** | **120** |
+
+Within a period, unlocked species sort ahead of locked ones on the homepage so
+filtering by an age shows the browsable material first.
+
+To change the unlock policy, edit `data/trilobites/drillable.json` (keep
+`total` in sync) — no other code changes are needed.
 
 ## Run locally
 

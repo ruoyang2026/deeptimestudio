@@ -1,4 +1,5 @@
 import speciesDb from "../data/trilobites/species.json";
+import drillableDb from "../data/trilobites/drillable.json";
 
 export type TrilobiteImage = {
   file: string;
@@ -37,6 +38,15 @@ type DbShape = {
 
 const db = speciesDb as unknown as DbShape;
 export const trilobites: Trilobite[] = db.species;
+
+type DrillableDb = { total: number; slugs: string[] };
+const drillableSet = new Set((drillableDb as DrillableDb).slugs);
+
+export function isDrillable(slug: string): boolean {
+  return drillableSet.has(slug);
+}
+
+export const DRILLABLE_TOTAL = (drillableDb as DrillableDb).total;
 
 export const GEOLOGIC_PERIODS = [
   "Cambrian",
@@ -106,10 +116,21 @@ export function getPrevNext(slug: string): {
 } {
   const idx = trilobites.findIndex((t) => t.slug === slug);
   if (idx < 0) return {};
-  return {
-    prev: idx > 0 ? trilobites[idx - 1] : undefined,
-    next: idx < trilobites.length - 1 ? trilobites[idx + 1] : undefined,
-  };
+  let prev: Trilobite | undefined;
+  for (let i = idx - 1; i >= 0; i--) {
+    if (isDrillable(trilobites[i].slug)) {
+      prev = trilobites[i];
+      break;
+    }
+  }
+  let next: Trilobite | undefined;
+  for (let i = idx + 1; i < trilobites.length; i++) {
+    if (isDrillable(trilobites[i].slug)) {
+      next = trilobites[i];
+      break;
+    }
+  }
+  return { prev, next };
 }
 
 export function imgSrc(path: string | null | undefined): string {
