@@ -3,9 +3,9 @@ import Script from "next/script";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Illustration Guide to Trilobites — Visual Database",
+  title: "Trilobites of the World | 500+ Fossil Species Database & Paleo Visual Archive",
   description:
-    "A searchable visual database of 500+ trilobite species with classification, etymology, geological age, distribution and specimen photographs.",
+    "Explore 500+ trilobite species from the Cambrian to Permian periods. High-resolution fossil photographs, classification, and geological data for research, paleo art, and design inspiration.",
 };
 
 const orgSchema = {

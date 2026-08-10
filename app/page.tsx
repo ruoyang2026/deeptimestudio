@@ -18,9 +18,9 @@ type PageProps = {
 };
 
 export const metadata = {
-  title: "Illustration Guide to Trilobites — Visual Database",
+  title: "Trilobites of the World | 500+ Fossil Species Database & Paleo Visual Archive",
   description:
-    "A searchable visual database of 500+ trilobite species with classification, etymology, age, distribution and photographs.",
+    "Explore 500+ trilobite species from the Cambrian to Permian periods. High-resolution fossil photographs, classification, and geological data for research, paleo art, and design inspiration.",
 };
 
 const GEOLOGIC_PERIODS = [
@@ -99,11 +99,12 @@ export default function HomePage({ searchParams }: PageProps) {
           </button>
         </div>
         <div className="site-desc">
-          <p className="site-desc__badge">Illustration Guide to Trilobites · Visual Database</p>
+          <p className="site-desc__badge">Deep Time Studio · Paleo Visual Archive</p>
           <h2 className="site-desc__title">Trilobites of the World</h2>
           <p className="site-desc__sub">
-            {all.length} species catalogued with classification, etymology, geological age,
-            distribution and specimen photographs.
+            Explore 500+ extinct species through rare fossil photography, geological ages,
+            and scientific classification — from Cambrian research to paleo art and fashion
+            design inspiration.
           </p>
         </div>
       </aside>
