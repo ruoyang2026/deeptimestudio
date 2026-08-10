@@ -2,6 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getBySlug, getPrevNext, isDrillable, imgSrc, trilobites } from "../../../lib/trilobites";
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return trilobites.filter((t) => isDrillable(t.slug)).map((t) => ({ slug: t.slug }));
 }
