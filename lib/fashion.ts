@@ -23,10 +23,12 @@ export type FashionProduct = {
     detail: string;
   };
   gallery: { src: string; label: string }[];
-  specimen: string;
-  philosophy: string;
+  story: string[];
+  philosophy: string[];
   collection: {
     headline: string;
+    blurb: string;
+    blurb2: string;
     specs: { label: string; value: string }[];
   };
 };
@@ -37,7 +39,7 @@ export const fashionProducts: FashionProduct[] = [
     name: "The First Crest",
     species: "Eoredlichia intermedia",
     series: "Cambrian Dawn",
-    meta: "Early Cambrian · 520 Ma",
+    meta: "520 Million Years Old · Early Cambrian · Yunnan, China",
     origin: "Yunnan, China",
     filters: ["Cambrian", "Sacred Geometry", "Extinct Icons"],
     images: {
@@ -52,16 +54,28 @@ export const fashionProducts: FashionProduct[] = [
       { src: "/fashion/fossil-eoredlichia.webp", label: "Fossil Specimen" },
       { src: "/fashion/detail-eoredlichia.webp", label: "Print Detail" },
     ],
-    specimen:
-      "Eoredlichia intermedia — a 520-million-year-old Cambrian trilobite from Yunnan, China. Its near-perfect semicircular cephalon and fifteen articulated thoracic segments represent evolution's earliest experiment in radial symmetry. A blueprint for sacred geometry and ancient design predating human creativity by half a billion years.",
-    philosophy:
-      "Part of the Cambrian Dawn collection. The palette samples mineral colors from the fossil matrix: oxidized manganese purple, pyrite gold, and deep-sea black. Positioned as a heraldic crest from an empire that ruled the ocean floor before vertebrates existed. Evolution is the greatest designer. Nature was the first atelier.",
+    story: [
+      "Before dinosaurs. Before flowers. Before almost everything we recognize today, this creature was already here.",
+      "Eoredlichia intermedia lived more than 520 million years ago in what is now Yunnan, China.",
+      "We didn't invent the creature.",
+      "Nature already designed it.",
+      "We simply brought the original back.",
+    ],
+    philosophy: [
+      "Five hundred million years ago, nature was already making incredible designs.",
+      "The colors come from the fossil itself — mineral purple, pyrite gold and deep black.",
+      "We kept the original shape almost untouched.",
+      "No fantasy creature. No invented pattern. Just evolution's original design.",
+      "Nature was the first designer.",
+    ],
     collection: {
       headline: "Drop 01 · Cambrian Dawn",
+      blurb: "A fossil-inspired graphic tee built around a real prehistoric specimen.",
+      blurb2: "Designed for people who like ancient things, unusual graphics and clothes with a story.",
       specs: [
         { label: "Material", value: "Premium heavyweight cotton" },
         { label: "Fit", value: "Oversized, dropped shoulder" },
-        { label: "Origin", value: "Designed by Deep Time Studio" },
+        { label: "Design", value: "Deep Time Studio" },
       ],
     },
   },

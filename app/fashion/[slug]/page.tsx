@@ -14,8 +14,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const p = getFashionBySlug(params.slug);
   if (!p) return {};
   return {
-    title: `${p.species} Fossil T-Shirt | Deep Time Studio`,
-    description: `${p.specimen}`,
+    title: `${p.name} — 520 Million Year Old Trilobite Fossil T-Shirt | Deep Time Studio`,
+    description:
+      "A 520-million-year-old trilobite fossil becomes a statement graphic tee. Discover prehistoric fashion inspired by nature's original designs.",
     alternates: { canonical: `/fashion/${p.slug}` },
   };
 }
@@ -28,9 +29,9 @@ export default function FashionDetailPage({ params }: { params: { slug: string }
   return (
     <main className="page-shell fashion-detail-page">
       <nav className="tri-breadcrumb">
-        <Link href="/fossil-fashion-design-inspiration">All fashion</Link>
+        <Link href="/fossil-fashion-design-inspiration">Fossil Fashion</Link>
         <span className="tri-breadcrumb__sep">/</span>
-        <span>Cambrian collection</span>
+        <span>Cambrian Collection</span>
         <span className="tri-breadcrumb__sep">/</span>
         <span>{p.name}</span>
       </nav>
@@ -43,23 +44,31 @@ export default function FashionDetailPage({ params }: { params: { slug: string }
         <div className="fashion-detail__info">
           <h1 className="fashion-detail__name">{p.name}</h1>
           <div className="fashion-detail__species">{p.species}</div>
-          <div className="fashion-detail__meta">
-            {p.meta} · {p.origin}
-          </div>
+          <div className="fashion-detail__meta">{p.meta}</div>
 
           <section className="fashion-detail__section">
-            <h2 className="fashion-detail__kicker">The Specimen</h2>
-            <p className="fashion-detail__text">{p.specimen}</p>
+            <h2 className="fashion-detail__kicker">The Story</h2>
+            {p.story.map((para, i) => (
+              <p key={i} className="fashion-detail__text">
+                {para}
+              </p>
+            ))}
           </section>
 
           <section className="fashion-detail__section">
             <h2 className="fashion-detail__kicker">Design Philosophy</h2>
-            <p className="fashion-detail__text">{p.philosophy}</p>
+            {p.philosophy.map((para, i) => (
+              <p key={i} className="fashion-detail__text">
+                {para}
+              </p>
+            ))}
           </section>
 
           <section className="fashion-detail__section">
-            <h2 className="fashion-detail__kicker">Collection</h2>
+            <h2 className="fashion-detail__kicker">The Collection</h2>
             <div className="fashion-detail__drop">{p.collection.headline}</div>
+            <p className="fashion-detail__text">{p.collection.blurb}</p>
+            <p className="fashion-detail__text">{p.collection.blurb2}</p>
             <dl className="fashion-detail__specs">
               {p.collection.specs.map((s) => (
                 <div key={s.label} className="fashion-detail__spec">
