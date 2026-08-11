@@ -49,7 +49,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Script
           defer
           src="https://cloud.umami.is/script.js"
-          data-website-id="4d21ea84-21cd-43f9-9eb7-645184ee2d01"
+          data-website-id="7848ff99-fcd0-4682-ac62-2495b27f4dc5"
         />
       </head>
       <body>{children}</body>
