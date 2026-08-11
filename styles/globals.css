@@ -2868,6 +2868,25 @@ button.trilobite-card {
   color: #4a4a4a;
 }
 
+.fashion-specimen__row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.fashion-specimen__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.fashion-specimen__img {
+  flex-shrink: 0;
+  width: 118px;
+  border-radius: 8px;
+  background: #f5f6f7;
+  object-fit: contain;
+}
+
 .fashion-detail__drop {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.05rem;

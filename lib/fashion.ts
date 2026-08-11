@@ -23,13 +23,14 @@ export type FashionProduct = {
     detail: string;
   };
   gallery: { src: string; label: string }[];
+  specimen: {
+    image: string;
+    paragraphs: string[];
+  };
   story: string[];
   philosophy: string[];
   collection: {
     headline: string;
-    blurb: string;
-    blurb2: string;
-    specs: { label: string; value: string }[];
   };
 };
 
@@ -39,8 +40,8 @@ export const fashionProducts: FashionProduct[] = [
     name: "The First Crest",
     species: "Eoredlichia intermedia",
     series: "Cambrian Dawn",
-    meta: "520 Million Years Old · Early Cambrian · Yunnan, China",
-    origin: "Yunnan, China",
+    meta: "520 Million Years Old · Early Cambrian · Kunming, Yunnan",
+    origin: "Kunming, Yunnan",
     filters: ["Cambrian", "Sacred Geometry", "Extinct Icons"],
     images: {
       tee: "/fashion/tee-eoredlichia.webp",
@@ -54,29 +55,24 @@ export const fashionProducts: FashionProduct[] = [
       { src: "/fashion/fossil-eoredlichia.webp", label: "Fossil Specimen" },
       { src: "/fashion/detail-eoredlichia.webp", label: "Print Detail" },
     ],
+    specimen: {
+      image: "/fashion/fossil-eoredlichia.webp",
+      paragraphs: [
+        "This specimen of Eoredlichia intermedia was recovered from the Early Cambrian strata near Kunming, Yunnan — a region that preserves one of the most complete records of the Cambrian Explosion. The fossil retains the species' characteristic semicircular cephalon and fifteen thoracic segments, mineralized in dark shale for over half a billion years.",
+      ],
+    },
     story: [
-      "Before dinosaurs. Before flowers. Before almost everything we recognize today, this creature was already here.",
-      "Eoredlichia intermedia lived more than 520 million years ago in what is now Yunnan, China.",
-      "We didn't invent the creature.",
-      "Nature already designed it.",
-      "We simply brought the original back.",
+      "Before dinosaurs. Before flowers. Before almost everything we recognize as \"life today.\"",
+      "520 million years ago, in the warm shallow seas of what is now Kunming, this creature was already armored, segmented, and symmetrical. It did not know it would become a fossil. It did not know it would outlast the mountains that buried it.",
+      "We found it in the rock. We photographed it. We did not improve it.",
     ],
     philosophy: [
-      "Five hundred million years ago, nature was already making incredible designs.",
-      "The colors come from the fossil itself — mineral purple, pyrite gold and deep black.",
-      "We kept the original shape almost untouched.",
-      "No fantasy creature. No invented pattern. Just evolution's original design.",
-      "Nature was the first designer.",
+      "The palette is sampled directly from the fossil matrix: oxidized manganese purple, pyrite replacement gold, and the deep black of Cambrian shale.",
+      "The form is not reinterpreted — it is repositioned. The Eoredlichia is treated as a heraldic crest from an empire that ruled the ocean floor before vertebrates existed.",
+      "Real fossil. Reimagined.",
     ],
     collection: {
       headline: "Drop 01 · Cambrian Dawn",
-      blurb: "A fossil-inspired graphic tee built around a real prehistoric specimen.",
-      blurb2: "Designed for people who like ancient things, unusual graphics and clothes with a story.",
-      specs: [
-        { label: "Material", value: "Premium heavyweight cotton" },
-        { label: "Fit", value: "Oversized, dropped shoulder" },
-        { label: "Design", value: "Deep Time Studio" },
-      ],
     },
   },
 ];

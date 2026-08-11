@@ -47,6 +47,26 @@ export default function FashionDetailPage({ params }: { params: { slug: string }
           <div className="fashion-detail__meta">{p.meta}</div>
 
           <section className="fashion-detail__section">
+            <h2 className="fashion-detail__kicker">The Specimen</h2>
+            <div className="fashion-specimen__row">
+              <div className="fashion-specimen__text">
+                {p.specimen.paragraphs.map((para, i) => (
+                  <p key={i} className="fashion-detail__text">
+                    {para}
+                  </p>
+                ))}
+              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className="fashion-specimen__img"
+                src={p.specimen.image}
+                alt="Eoredlichia intermedia fossil specimen from Kunming, Yunnan, Early Cambrian"
+                loading="lazy"
+              />
+            </div>
+          </section>
+
+          <section className="fashion-detail__section">
             <h2 className="fashion-detail__kicker">The Story</h2>
             {p.story.map((para, i) => (
               <p key={i} className="fashion-detail__text">
@@ -67,16 +87,6 @@ export default function FashionDetailPage({ params }: { params: { slug: string }
           <section className="fashion-detail__section">
             <h2 className="fashion-detail__kicker">The Collection</h2>
             <div className="fashion-detail__drop">{p.collection.headline}</div>
-            <p className="fashion-detail__text">{p.collection.blurb}</p>
-            <p className="fashion-detail__text">{p.collection.blurb2}</p>
-            <dl className="fashion-detail__specs">
-              {p.collection.specs.map((s) => (
-                <div key={s.label} className="fashion-detail__spec">
-                  <dt>{s.label}</dt>
-                  <dd>{s.value}</dd>
-                </div>
-              ))}
-            </dl>
           </section>
 
           <nav className="fashion-detail__nav">
