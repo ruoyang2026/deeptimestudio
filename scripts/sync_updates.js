@@ -8,7 +8,6 @@
  * Detected changes:
  *   species_added  - new species record (new /species/<slug> page)
  *   images_added   - new photograph(s) added to an existing species
- *   unlocked       - species newly added to data/trilobites/drillable.json
  *   fashion_added  - new fashion product in data/fashion.json
  *
  * Usage (run from project root):
@@ -45,12 +44,7 @@ function fingerprint(entry) {
 }
 
 const species = readJson(SPECIES_FILE).species;
-const drillable = readJson(DRILLABLE_FILE).slugs;
 const fashion = readJson(FASHION_FILE).products;
-
-const speciesBySlug = new Map(species.map((s) => [s.slug, s]));
-const drillableSet = new Set(drillable);
-const fashionBySlug = new Map(fashion.map((p) => [p.slug, p]));
 
 let updates = { last_generated: "", entries: [] };
 if (fs.existsSync(UPDATES_FILE)) {
@@ -68,7 +62,6 @@ if (!snapshot) {
     species: Object.fromEntries(
       species.map((s) => [s.slug, s.images.map((i) => i.file)])
     ),
-    drillable: [...drillableSet].sort(),
     fashion: Object.fromEntries(
       fashion.map((p) => [p.slug, p.gallery.map((g) => g.src)])
     ),
@@ -80,7 +73,7 @@ if (!snapshot) {
 }
 
 const date = today();
-const added = { species_added: [], images_added: [], unlocked: [], fashion_added: [] };
+const added = { species_added: [], images_added: [], fashion_added: [] };
 const addedFiles = {};
 
 for (const s of species) {
@@ -95,11 +88,6 @@ for (const s of species) {
       addedFiles[s.slug] = newFiles;
     }
   }
-}
-
-for (const slug of [...drillableSet].sort()) {
-  const prev = snapshot.drillable || [];
-  if (!prev.includes(slug)) added.unlocked.push(slug);
 }
 
 for (const p of fashion) {
@@ -144,7 +132,6 @@ writeJson(UPDATES_FILE, updates);
 writeJson(SNAPSHOT_FILE, {
   generated_at: new Date().toISOString(),
   species: Object.fromEntries(species.map((s) => [s.slug, s.images.map((i) => i.file)])),
-  drillable: [...drillableSet].sort(),
   fashion: Object.fromEntries(fashion.map((p) => [p.slug, p.gallery.map((g) => g.src)])),
 });
 
@@ -154,7 +141,6 @@ function describe(kind, slugs, files) {
     const total = Object.values(files).flat().length;
     return `${total} new photograph${total === 1 ? "" : "s"} added to ${slugs.length} species`;
   }
-  if (kind === "unlocked") return `${slugs.length} species unlocked for browsing`;
   if (kind === "fashion_added") return `${slugs.length} new fashion piece${slugs.length === 1 ? "" : "s"}`;
   return "";
 }

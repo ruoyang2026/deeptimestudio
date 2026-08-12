@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { SHOP_URL } from "../../lib/site";
 
 export type CardData = {
   id: string;
@@ -55,7 +56,16 @@ export default function TrilobiteGrid({ species }: { species: CardData[] }) {
             <div className="lock-modal__icon">🔒</div>
             <h3 className="lock-modal__title">Locked</h3>
             <p className="lock-modal__text">
-              Browse our shop website to unlock this species.
+              Browse our{" "}
+              <a
+                className="lock-modal__link"
+                href={SHOP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                shop website
+              </a>{" "}
+              to unlock this species.
             </p>
             <p className="lock-modal__species">{locked.scientificName}</p>
             <button type="button" className="lock-modal__btn" onClick={() => setLockedSlug(null)}>

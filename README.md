@@ -69,8 +69,8 @@ To push a sitemap change live:
 `public/robots.txt` points crawlers to `/sitemap.xml`.
 
 `lastmod` on each entry comes from `data/updates.json` (see "What's New"
-below): whenever a species gains images, is added, or is unlocked, its detail
-page URL carries the real modification date so crawlers re-pick changed pages.
+below): whenever a species gains images or is added, its detail page URL
+carries the real modification date so crawlers re-pick changed pages.
 
 ## What's New (update log)
 
@@ -81,7 +81,6 @@ driven by `data/updates.json`:
 |---|---|
 | `species_added` | a new species record (new `/species/<slug>` page) |
 | `images_added` | new photograph(s) added to an existing species |
-| `unlocked` | a species newly added to `drillable.json` (page became browsable) |
 | `fashion_added` | a new fashion product in `data/fashion.json` |
 
 ### How updates are recorded

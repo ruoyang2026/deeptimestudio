@@ -15,7 +15,6 @@ export const metadata: Metadata = {
 const KIND_LABEL: Record<UpdateEntry["kind"], string> = {
   species_added: "New species",
   images_added: "New photos",
-  unlocked: "Unlocked",
   fashion_added: "New fashion",
 };
 

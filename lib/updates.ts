@@ -3,7 +3,6 @@ import updatesDb from "../data/updates.json";
 export type UpdateKind =
   | "species_added"
   | "images_added"
-  | "unlocked"
   | "fashion_added";
 
 export type UpdateEntry = {

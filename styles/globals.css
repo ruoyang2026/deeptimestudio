@@ -2224,6 +2224,17 @@ button.trilobite-card {
   color: #727272;
 }
 
+.lock-modal__link {
+  color: #ff2442;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: opacity 0.15s;
+}
+
+.lock-modal__link:hover {
+  opacity: 0.8;
+}
+
 .lock-modal__species {
   margin: 0 0 18px;
   font-size: 0.82rem;
@@ -3094,11 +3105,6 @@ button.trilobite-card {
 .upd-badge--images_added {
   background: #e3f2fd;
   color: #1565c0;
-}
-
-.upd-badge--unlocked {
-  background: #fff3e0;
-  color: #e65100;
 }
 
 .upd-badge--fashion_added {
