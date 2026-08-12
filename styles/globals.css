@@ -2981,3 +2981,182 @@ button.trilobite-card {
     gap: 2px;
   }
 }
+
+/* What's New — updates page */
+.updates-page {
+  max-width: 760px;
+}
+
+.updates-page__head {
+  margin-bottom: 24px;
+}
+
+.updates-page__title {
+  margin: 0 0 8px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.updates-page__sub {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.upd-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.upd-entry {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.upd-entry__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 96px;
+}
+
+.upd-entry__date {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.upd-entry__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.upd-entry__detail {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.upd-entry__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.upd-entry__list li {
+  font-size: 0.78rem;
+  background: #f5f6f7;
+  border-radius: 999px;
+  padding: 3px 10px;
+  color: var(--muted);
+}
+
+.upd-entry__list a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.upd-entry__list a:hover {
+  text-decoration: underline;
+}
+
+.upd-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.upd-badge--species_added {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.upd-badge--images_added {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.upd-badge--unlocked {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.upd-badge--fashion_added {
+  background: #fce4ec;
+  color: #ad1457;
+}
+
+/* Sidebar "Latest additions" module */
+.latest-mod {
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.latest-mod__title {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.latest-mod__title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.latest-mod__title a:hover {
+  color: var(--accent);
+}
+
+.latest-mod__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.latest-mod__list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+}
+
+.latest-mod__date {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.latest-mod__count {
+  margin-left: auto;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.latest-mod__empty {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+}

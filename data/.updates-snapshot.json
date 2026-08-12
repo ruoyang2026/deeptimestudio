@@ -1,0 +1,3792 @@
+{
+  "generated_at": "2026-08-12T03:57:08.562Z",
+  "species": {
+    "agnostus-inexpectans": [
+      "trilobites/agnostus-inexpectans/01.webp",
+      "trilobites/agnostus-inexpectans/02.webp",
+      "trilobites/agnostus-inexpectans/03.webp",
+      "trilobites/agnostus-inexpectans/04.webp",
+      "trilobites/agnostus-inexpectans/05.webp",
+      "trilobites/agnostus-inexpectans/06.webp",
+      "trilobites/agnostus-inexpectans/07.webp"
+    ],
+    "agnostus-pisiformis": [
+      "trilobites/agnostus-pisiformis/01.webp",
+      "trilobites/agnostus-pisiformis/02.webp",
+      "trilobites/agnostus-pisiformis/03.webp",
+      "trilobites/agnostus-pisiformis/04.webp",
+      "trilobites/agnostus-pisiformis/05.webp"
+    ],
+    "distagnostus-celatus": [
+      "trilobites/distagnostus-celatus/01.webp",
+      "trilobites/distagnostus-celatus/02.webp",
+      "trilobites/distagnostus-celatus/03.webp",
+      "trilobites/distagnostus-celatus/04.webp",
+      "trilobites/distagnostus-celatus/05.webp",
+      "trilobites/distagnostus-celatus/06.webp",
+      "trilobites/distagnostus-celatus/07.webp"
+    ],
+    "homagnostus-obesus": [
+      "trilobites/homagnostus-obesus/01.webp",
+      "trilobites/homagnostus-obesus/02.webp",
+      "trilobites/homagnostus-obesus/03.webp",
+      "trilobites/homagnostus-obesus/04.webp",
+      "trilobites/homagnostus-obesus/05.webp",
+      "trilobites/homagnostus-obesus/06.webp"
+    ],
+    "lotagnostus-americanus": [
+      "trilobites/lotagnostus-americanus/01.webp",
+      "trilobites/lotagnostus-americanus/02.webp",
+      "trilobites/lotagnostus-americanus/03.webp",
+      "trilobites/lotagnostus-americanus/04.webp",
+      "trilobites/lotagnostus-americanus/05.webp",
+      "trilobites/lotagnostus-americanus/06.webp",
+      "trilobites/lotagnostus-americanus/07.webp",
+      "trilobites/lotagnostus-americanus/08.webp",
+      "trilobites/lotagnostus-americanus/09.webp",
+      "trilobites/lotagnostus-americanus/10.webp",
+      "trilobites/lotagnostus-americanus/11.webp"
+    ],
+    "lotagnostus-hedini": [
+      "trilobites/lotagnostus-hedini/01.webp",
+      "trilobites/lotagnostus-hedini/02.webp",
+      "trilobites/lotagnostus-hedini/03.webp",
+      "trilobites/lotagnostus-hedini/04.webp",
+      "trilobites/lotagnostus-hedini/05.webp",
+      "trilobites/lotagnostus-hedini/06.webp",
+      "trilobites/lotagnostus-hedini/07.webp"
+    ],
+    "lotagnostus-orientalis": [
+      "trilobites/lotagnostus-orientalis/01.webp",
+      "trilobites/lotagnostus-orientalis/02.webp",
+      "trilobites/lotagnostus-orientalis/03.webp",
+      "trilobites/lotagnostus-orientalis/04.webp",
+      "trilobites/lotagnostus-orientalis/05.webp",
+      "trilobites/lotagnostus-orientalis/06.webp",
+      "trilobites/lotagnostus-orientalis/07.webp"
+    ],
+    "micragnostus-orientalis": [
+      "trilobites/micragnostus-orientalis/01.webp",
+      "trilobites/micragnostus-orientalis/02.webp",
+      "trilobites/micragnostus-orientalis/03.webp",
+      "trilobites/micragnostus-orientalis/04.webp",
+      "trilobites/micragnostus-orientalis/05.webp",
+      "trilobites/micragnostus-orientalis/06.webp",
+      "trilobites/micragnostus-orientalis/07.webp"
+    ],
+    "micragnostus-chiushuensis": [
+      "trilobites/micragnostus-chiushuensis/01.webp",
+      "trilobites/micragnostus-chiushuensis/02.webp",
+      "trilobites/micragnostus-chiushuensis/03.webp",
+      "trilobites/micragnostus-chiushuensis/04.webp",
+      "trilobites/micragnostus-chiushuensis/05.webp",
+      "trilobites/micragnostus-chiushuensis/06.webp",
+      "trilobites/micragnostus-chiushuensis/07.webp"
+    ],
+    "ammagnostus-laiwuensis": [
+      "trilobites/ammagnostus-laiwuensis/01.webp",
+      "trilobites/ammagnostus-laiwuensis/02.webp",
+      "trilobites/ammagnostus-laiwuensis/03.webp",
+      "trilobites/ammagnostus-laiwuensis/04.webp",
+      "trilobites/ammagnostus-laiwuensis/05.webp",
+      "trilobites/ammagnostus-laiwuensis/06.webp",
+      "trilobites/ammagnostus-laiwuensis/07.webp",
+      "trilobites/ammagnostus-laiwuensis/08.webp",
+      "trilobites/ammagnostus-laiwuensis/09.webp",
+      "trilobites/ammagnostus-laiwuensis/10.webp",
+      "trilobites/ammagnostus-laiwuensis/11.webp",
+      "trilobites/ammagnostus-laiwuensis/12.webp",
+      "trilobites/ammagnostus-laiwuensis/13.webp",
+      "trilobites/ammagnostus-laiwuensis/14.webp"
+    ],
+    "ammagnostus-wangcunensis": [
+      "trilobites/ammagnostus-wangcunensis/01.webp",
+      "trilobites/ammagnostus-wangcunensis/02.webp",
+      "trilobites/ammagnostus-wangcunensis/03.webp",
+      "trilobites/ammagnostus-wangcunensis/04.webp"
+    ],
+    "hadragnostus-modestus": [
+      "trilobites/hadragnostus-modestus/01.webp",
+      "trilobites/hadragnostus-modestus/02.webp",
+      "trilobites/hadragnostus-modestus/03.webp",
+      "trilobites/hadragnostus-modestus/04.webp",
+      "trilobites/hadragnostus-modestus/05.webp"
+    ],
+    "proagnostus-bulbus-bulbus": [
+      "trilobites/proagnostus-bulbus-bulbus/01.webp",
+      "trilobites/proagnostus-bulbus-bulbus/02.webp",
+      "trilobites/proagnostus-bulbus-bulbus/03.webp",
+      "trilobites/proagnostus-bulbus-bulbus/04.webp",
+      "trilobites/proagnostus-bulbus-bulbus/05.webp",
+      "trilobites/proagnostus-bulbus-bulbus/06.webp",
+      "trilobites/proagnostus-bulbus-bulbus/07.webp"
+    ],
+    "proagnostus-bulbus-sinensis": [
+      "trilobites/proagnostus-bulbus-sinensis/01.webp",
+      "trilobites/proagnostus-bulbus-sinensis/02.webp",
+      "trilobites/proagnostus-bulbus-sinensis/03.webp",
+      "trilobites/proagnostus-bulbus-sinensis/04.webp",
+      "trilobites/proagnostus-bulbus-sinensis/05.webp",
+      "trilobites/proagnostus-bulbus-sinensis/06.webp",
+      "trilobites/proagnostus-bulbus-sinensis/07.webp"
+    ],
+    "aspidagnostus-laevis": [
+      "trilobites/aspidagnostus-laevis/01.webp",
+      "trilobites/aspidagnostus-laevis/02.webp",
+      "trilobites/aspidagnostus-laevis/03.webp",
+      "trilobites/aspidagnostus-laevis/04.webp",
+      "trilobites/aspidagnostus-laevis/05.webp"
+    ],
+    "aspidagnostus-lunulosus": [
+      "trilobites/aspidagnostus-lunulosus/01.webp",
+      "trilobites/aspidagnostus-lunulosus/02.webp",
+      "trilobites/aspidagnostus-lunulosus/03.webp",
+      "trilobites/aspidagnostus-lunulosus/04.webp",
+      "trilobites/aspidagnostus-lunulosus/05.webp",
+      "trilobites/aspidagnostus-lunulosus/06.webp"
+    ],
+    "clavagnostus-calensis": [
+      "trilobites/clavagnostus-calensis/01.webp",
+      "trilobites/clavagnostus-calensis/02.webp",
+      "trilobites/clavagnostus-calensis/03.webp",
+      "trilobites/clavagnostus-calensis/04.webp"
+    ],
+    "triadaspis-bigeneris": [
+      "trilobites/triadaspis-bigeneris/01.webp",
+      "trilobites/triadaspis-bigeneris/02.webp",
+      "trilobites/triadaspis-bigeneris/03.webp",
+      "trilobites/triadaspis-bigeneris/04.webp",
+      "trilobites/triadaspis-bigeneris/05.webp"
+    ],
+    "utagnostus-songae": [
+      "trilobites/utagnostus-songae/01.webp",
+      "trilobites/utagnostus-songae/02.webp",
+      "trilobites/utagnostus-songae/03.webp",
+      "trilobites/utagnostus-songae/04.webp"
+    ],
+    "agnostotes-orientalis": [
+      "trilobites/agnostotes-orientalis/01.webp",
+      "trilobites/agnostotes-orientalis/02.webp",
+      "trilobites/agnostotes-orientalis/03.webp",
+      "trilobites/agnostotes-orientalis/04.webp",
+      "trilobites/agnostotes-orientalis/05.webp",
+      "trilobites/agnostotes-orientalis/06.webp",
+      "trilobites/agnostotes-orientalis/07.webp",
+      "trilobites/agnostotes-orientalis/08.webp"
+    ],
+    "agnostotes-tianshanicus": [
+      "trilobites/agnostotes-tianshanicus/01.webp",
+      "trilobites/agnostotes-tianshanicus/02.webp",
+      "trilobites/agnostotes-tianshanicus/03.webp",
+      "trilobites/agnostotes-tianshanicus/04.webp",
+      "trilobites/agnostotes-tianshanicus/05.webp"
+    ],
+    "diplagnostus-planicauda": [
+      "trilobites/diplagnostus-planicauda/01.webp",
+      "trilobites/diplagnostus-planicauda/02.webp",
+      "trilobites/diplagnostus-planicauda/03.webp",
+      "trilobites/diplagnostus-planicauda/04.webp",
+      "trilobites/diplagnostus-planicauda/05.webp"
+    ],
+    "han-solo": [
+      "trilobites/han-solo/01.webp",
+      "trilobites/han-solo/02.webp",
+      "trilobites/han-solo/03.webp"
+    ],
+    "neoagnostus-fengzuensis": [
+      "trilobites/neoagnostus-fengzuensis/01.webp",
+      "trilobites/neoagnostus-fengzuensis/02.webp",
+      "trilobites/neoagnostus-fengzuensis/03.webp",
+      "trilobites/neoagnostus-fengzuensis/04.webp"
+    ],
+    "neoagnostus-quadratiformisus": [
+      "trilobites/neoagnostus-quadratiformisus/01.webp",
+      "trilobites/neoagnostus-quadratiformisus/02.webp",
+      "trilobites/neoagnostus-quadratiformisus/03.webp"
+    ],
+    "oidalagnostus-changi": [
+      "trilobites/oidalagnostus-changi/01.webp",
+      "trilobites/oidalagnostus-changi/02.webp",
+      "trilobites/oidalagnostus-changi/03.webp",
+      "trilobites/oidalagnostus-changi/04.webp"
+    ],
+    "oidalagnostus-trispinifer": [
+      "trilobites/oidalagnostus-trispinifer/01.webp",
+      "trilobites/oidalagnostus-trispinifer/02.webp",
+      "trilobites/oidalagnostus-trispinifer/03.webp",
+      "trilobites/oidalagnostus-trispinifer/04.webp"
+    ],
+    "pseudagnostus-idalis": [
+      "trilobites/pseudagnostus-idalis/01.webp",
+      "trilobites/pseudagnostus-idalis/02.webp",
+      "trilobites/pseudagnostus-idalis/03.webp",
+      "trilobites/pseudagnostus-idalis/04.webp",
+      "trilobites/pseudagnostus-idalis/05.webp",
+      "trilobites/pseudagnostus-idalis/06.webp"
+    ],
+    "pseudagnostus-josepha": [
+      "trilobites/pseudagnostus-josepha/01.webp",
+      "trilobites/pseudagnostus-josepha/02.webp",
+      "trilobites/pseudagnostus-josepha/03.webp",
+      "trilobites/pseudagnostus-josepha/04.webp",
+      "trilobites/pseudagnostus-josepha/05.webp"
+    ],
+    "pseudagnostus-koerferi": [
+      "trilobites/pseudagnostus-koerferi/01.webp",
+      "trilobites/pseudagnostus-koerferi/02.webp",
+      "trilobites/pseudagnostus-koerferi/03.webp",
+      "trilobites/pseudagnostus-koerferi/04.webp",
+      "trilobites/pseudagnostus-koerferi/05.webp"
+    ],
+    "pseudagnostus-prolongus": [
+      "trilobites/pseudagnostus-prolongus/01.webp",
+      "trilobites/pseudagnostus-prolongus/02.webp",
+      "trilobites/pseudagnostus-prolongus/03.webp",
+      "trilobites/pseudagnostus-prolongus/04.webp"
+    ],
+    "pseudagnostus-rugosus": [
+      "trilobites/pseudagnostus-rugosus/01.webp",
+      "trilobites/pseudagnostus-rugosus/02.webp",
+      "trilobites/pseudagnostus-rugosus/03.webp",
+      "trilobites/pseudagnostus-rugosus/04.webp",
+      "trilobites/pseudagnostus-rugosus/05.webp",
+      "trilobites/pseudagnostus-rugosus/06.webp"
+    ],
+    "pseudagnostus-securiger": [
+      "trilobites/pseudagnostus-securiger/01.webp",
+      "trilobites/pseudagnostus-securiger/02.webp",
+      "trilobites/pseudagnostus-securiger/03.webp",
+      "trilobites/pseudagnostus-securiger/04.webp",
+      "trilobites/pseudagnostus-securiger/05.webp",
+      "trilobites/pseudagnostus-securiger/06.webp",
+      "trilobites/pseudagnostus-securiger/07.webp",
+      "trilobites/pseudagnostus-securiger/08.webp"
+    ],
+    "pseudagnostus-vastulus": [
+      "trilobites/pseudagnostus-vastulus/01.webp",
+      "trilobites/pseudagnostus-vastulus/02.webp",
+      "trilobites/pseudagnostus-vastulus/03.webp",
+      "trilobites/pseudagnostus-vastulus/04.webp",
+      "trilobites/pseudagnostus-vastulus/05.webp",
+      "trilobites/pseudagnostus-vastulus/06.webp",
+      "trilobites/pseudagnostus-vastulus/07.webp"
+    ],
+    "rhaptagnostus-changshanensis": [
+      "trilobites/rhaptagnostus-changshanensis/01.webp",
+      "trilobites/rhaptagnostus-changshanensis/02.webp",
+      "trilobites/rhaptagnostus-changshanensis/03.webp",
+      "trilobites/rhaptagnostus-changshanensis/04.webp",
+      "trilobites/rhaptagnostus-changshanensis/05.webp",
+      "trilobites/rhaptagnostus-changshanensis/06.webp",
+      "trilobites/rhaptagnostus-changshanensis/07.webp",
+      "trilobites/rhaptagnostus-changshanensis/08.webp"
+    ],
+    "glyptagnostus-stolidotus": [
+      "trilobites/glyptagnostus-stolidotus/01.webp",
+      "trilobites/glyptagnostus-stolidotus/02.webp",
+      "trilobites/glyptagnostus-stolidotus/03.webp",
+      "trilobites/glyptagnostus-stolidotus/04.webp",
+      "trilobites/glyptagnostus-stolidotus/05.webp",
+      "trilobites/glyptagnostus-stolidotus/06.webp",
+      "trilobites/glyptagnostus-stolidotus/07.webp",
+      "trilobites/glyptagnostus-stolidotus/08.webp",
+      "trilobites/glyptagnostus-stolidotus/09.webp"
+    ],
+    "glyptagnostus-reticulatus": [
+      "trilobites/glyptagnostus-reticulatus/01.webp",
+      "trilobites/glyptagnostus-reticulatus/02.webp",
+      "trilobites/glyptagnostus-reticulatus/03.webp",
+      "trilobites/glyptagnostus-reticulatus/04.webp",
+      "trilobites/glyptagnostus-reticulatus/05.webp",
+      "trilobites/glyptagnostus-reticulatus/06.webp",
+      "trilobites/glyptagnostus-reticulatus/07.webp",
+      "trilobites/glyptagnostus-reticulatus/08.webp",
+      "trilobites/glyptagnostus-reticulatus/09.webp",
+      "trilobites/glyptagnostus-reticulatus/10.webp",
+      "trilobites/glyptagnostus-reticulatus/11.webp",
+      "trilobites/glyptagnostus-reticulatus/12.webp"
+    ],
+    "geragnostus-fengzuensis": [
+      "trilobites/geragnostus-fengzuensis/01.webp",
+      "trilobites/geragnostus-fengzuensis/02.webp",
+      "trilobites/geragnostus-fengzuensis/03.webp"
+    ],
+    "geragnostus-sidenbladhi": [
+      "trilobites/geragnostus-sidenbladhi/01.webp",
+      "trilobites/geragnostus-sidenbladhi/02.webp",
+      "trilobites/geragnostus-sidenbladhi/03.webp",
+      "trilobites/geragnostus-sidenbladhi/04.webp"
+    ],
+    "corrugatagnostus-jiangshanensis": [
+      "trilobites/corrugatagnostus-jiangshanensis/01.webp",
+      "trilobites/corrugatagnostus-jiangshanensis/02.webp",
+      "trilobites/corrugatagnostus-jiangshanensis/03.webp",
+      "trilobites/corrugatagnostus-jiangshanensis/04.webp",
+      "trilobites/corrugatagnostus-jiangshanensis/05.webp",
+      "trilobites/corrugatagnostus-jiangshanensis/06.webp",
+      "trilobites/corrugatagnostus-jiangshanensis/07.webp"
+    ],
+    "corrugatagnostus-magnodosus": [
+      "trilobites/corrugatagnostus-magnodosus/01.webp",
+      "trilobites/corrugatagnostus-magnodosus/02.webp",
+      "trilobites/corrugatagnostus-magnodosus/03.webp"
+    ],
+    "corrugatagnostus-morea": [
+      "trilobites/corrugatagnostus-morea/01.webp",
+      "trilobites/corrugatagnostus-morea/02.webp",
+      "trilobites/corrugatagnostus-morea/03.webp",
+      "trilobites/corrugatagnostus-morea/04.webp",
+      "trilobites/corrugatagnostus-morea/05.webp",
+      "trilobites/corrugatagnostus-morea/06.webp"
+    ],
+    "trinodus-tardus": [
+      "trilobites/trinodus-tardus/01.webp",
+      "trilobites/trinodus-tardus/02.webp",
+      "trilobites/trinodus-tardus/03.webp",
+      "trilobites/trinodus-tardus/04.webp",
+      "trilobites/trinodus-tardus/05.webp",
+      "trilobites/trinodus-tardus/06.webp"
+    ],
+    "hypagnostus-brevifrons": [
+      "trilobites/hypagnostus-brevifrons/01.webp",
+      "trilobites/hypagnostus-brevifrons/02.webp",
+      "trilobites/hypagnostus-brevifrons/03.webp",
+      "trilobites/hypagnostus-brevifrons/04.webp"
+    ],
+    "hypagnostus-parvifrons": [
+      "trilobites/hypagnostus-parvifrons/01.webp",
+      "trilobites/hypagnostus-parvifrons/02.webp",
+      "trilobites/hypagnostus-parvifrons/03.webp",
+      "trilobites/hypagnostus-parvifrons/04.webp",
+      "trilobites/hypagnostus-parvifrons/05.webp",
+      "trilobites/hypagnostus-parvifrons/06.webp"
+    ],
+    "itagnostus-interstrictus": [
+      "trilobites/itagnostus-interstrictus/01.webp",
+      "trilobites/itagnostus-interstrictus/02.webp",
+      "trilobites/itagnostus-interstrictus/03.webp",
+      "trilobites/itagnostus-interstrictus/04.webp",
+      "trilobites/itagnostus-interstrictus/05.webp",
+      "trilobites/itagnostus-interstrictus/06.webp",
+      "trilobites/itagnostus-interstrictus/07.webp"
+    ],
+    "lisogoragnostus-hybus": [
+      "trilobites/lisogoragnostus-hybus/01.webp",
+      "trilobites/lisogoragnostus-hybus/02.webp",
+      "trilobites/lisogoragnostus-hybus/03.webp"
+    ],
+    "lisogoragnostus-minor": [
+      "trilobites/lisogoragnostus-minor/01.webp",
+      "trilobites/lisogoragnostus-minor/02.webp",
+      "trilobites/lisogoragnostus-minor/03.webp"
+    ],
+    "peronopsis-majiangensis": [
+      "trilobites/peronopsis-majiangensis/01.webp",
+      "trilobites/peronopsis-majiangensis/02.webp"
+    ],
+    "peronopsis-rotundatus": [
+      "trilobites/peronopsis-rotundatus/01.webp",
+      "trilobites/peronopsis-rotundatus/02.webp",
+      "trilobites/peronopsis-rotundatus/03.webp",
+      "trilobites/peronopsis-rotundatus/04.webp",
+      "trilobites/peronopsis-rotundatus/05.webp",
+      "trilobites/peronopsis-rotundatus/06.webp",
+      "trilobites/peronopsis-rotundatus/07.webp",
+      "trilobites/peronopsis-rotundatus/08.webp",
+      "trilobites/peronopsis-rotundatus/09.webp"
+    ],
+    "peronopsis-taijiangensis": [
+      "trilobites/peronopsis-taijiangensis/01.webp",
+      "trilobites/peronopsis-taijiangensis/02.webp",
+      "trilobites/peronopsis-taijiangensis/03.webp"
+    ],
+    "goniagnostus-fumicola": [
+      "trilobites/goniagnostus-fumicola/01.webp",
+      "trilobites/goniagnostus-fumicola/02.webp",
+      "trilobites/goniagnostus-fumicola/03.webp",
+      "trilobites/goniagnostus-fumicola/04.webp",
+      "trilobites/goniagnostus-fumicola/05.webp"
+    ],
+    "goniagnostus-nathorsti": [
+      "trilobites/goniagnostus-nathorsti/01.webp",
+      "trilobites/goniagnostus-nathorsti/02.webp",
+      "trilobites/goniagnostus-nathorsti/03.webp",
+      "trilobites/goniagnostus-nathorsti/04.webp",
+      "trilobites/goniagnostus-nathorsti/05.webp",
+      "trilobites/goniagnostus-nathorsti/06.webp",
+      "trilobites/goniagnostus-nathorsti/07.webp",
+      "trilobites/goniagnostus-nathorsti/08.webp"
+    ],
+    "goniagnostus-spiniger": [
+      "trilobites/goniagnostus-spiniger/01.webp",
+      "trilobites/goniagnostus-spiniger/02.webp",
+      "trilobites/goniagnostus-spiniger/03.webp",
+      "trilobites/goniagnostus-spiniger/04.webp",
+      "trilobites/goniagnostus-spiniger/05.webp",
+      "trilobites/goniagnostus-spiniger/06.webp",
+      "trilobites/goniagnostus-spiniger/07.webp"
+    ],
+    "lejopyge-armata": [
+      "trilobites/lejopyge-armata/01.webp",
+      "trilobites/lejopyge-armata/02.webp",
+      "trilobites/lejopyge-armata/03.webp",
+      "trilobites/lejopyge-armata/04.webp",
+      "trilobites/lejopyge-armata/05.webp",
+      "trilobites/lejopyge-armata/06.webp"
+    ],
+    "lejopyge-laevigata": [
+      "trilobites/lejopyge-laevigata/01.webp",
+      "trilobites/lejopyge-laevigata/02.webp",
+      "trilobites/lejopyge-laevigata/03.webp",
+      "trilobites/lejopyge-laevigata/04.webp",
+      "trilobites/lejopyge-laevigata/05.webp",
+      "trilobites/lejopyge-laevigata/06.webp"
+    ],
+    "lejopyge-sinensis": [
+      "trilobites/lejopyge-sinensis/01.webp",
+      "trilobites/lejopyge-sinensis/02.webp",
+      "trilobites/lejopyge-sinensis/03.webp",
+      "trilobites/lejopyge-sinensis/04.webp"
+    ],
+    "ptychagnostus-aculeatus": [
+      "trilobites/ptychagnostus-aculeatus/01.webp",
+      "trilobites/ptychagnostus-aculeatus/02.webp",
+      "trilobites/ptychagnostus-aculeatus/03.webp",
+      "trilobites/ptychagnostus-aculeatus/04.webp",
+      "trilobites/ptychagnostus-aculeatus/05.webp",
+      "trilobites/ptychagnostus-aculeatus/06.webp",
+      "trilobites/ptychagnostus-aculeatus/07.webp"
+    ],
+    "ptychagnostus-atavus": [
+      "trilobites/ptychagnostus-atavus/01.webp",
+      "trilobites/ptychagnostus-atavus/02.webp",
+      "trilobites/ptychagnostus-atavus/03.webp",
+      "trilobites/ptychagnostus-atavus/04.webp",
+      "trilobites/ptychagnostus-atavus/05.webp",
+      "trilobites/ptychagnostus-atavus/06.webp",
+      "trilobites/ptychagnostus-atavus/07.webp",
+      "trilobites/ptychagnostus-atavus/08.webp",
+      "trilobites/ptychagnostus-atavus/09.webp",
+      "trilobites/ptychagnostus-atavus/10.webp"
+    ],
+    "ptychagnostus-cuyanus": [
+      "trilobites/ptychagnostus-cuyanus/01.webp",
+      "trilobites/ptychagnostus-cuyanus/02.webp",
+      "trilobites/ptychagnostus-cuyanus/03.webp",
+      "trilobites/ptychagnostus-cuyanus/04.webp",
+      "trilobites/ptychagnostus-cuyanus/05.webp",
+      "trilobites/ptychagnostus-cuyanus/06.webp",
+      "trilobites/ptychagnostus-cuyanus/07.webp"
+    ],
+    "ptychagnostus-gibbus": [
+      "trilobites/ptychagnostus-gibbus/01.webp",
+      "trilobites/ptychagnostus-gibbus/02.webp",
+      "trilobites/ptychagnostus-gibbus/03.webp",
+      "trilobites/ptychagnostus-gibbus/04.webp",
+      "trilobites/ptychagnostus-gibbus/05.webp",
+      "trilobites/ptychagnostus-gibbus/06.webp"
+    ],
+    "ptychagnostus-leptus": [
+      "trilobites/ptychagnostus-leptus/01.webp",
+      "trilobites/ptychagnostus-leptus/02.webp",
+      "trilobites/ptychagnostus-leptus/03.webp",
+      "trilobites/ptychagnostus-leptus/04.webp"
+    ],
+    "ptychagnostus-praecurrens": [
+      "trilobites/ptychagnostus-praecurrens/01.webp",
+      "trilobites/ptychagnostus-praecurrens/02.webp",
+      "trilobites/ptychagnostus-praecurrens/03.webp",
+      "trilobites/ptychagnostus-praecurrens/04.webp",
+      "trilobites/ptychagnostus-praecurrens/05.webp",
+      "trilobites/ptychagnostus-praecurrens/06.webp"
+    ],
+    "ptychagnostus-punctuosus": [
+      "trilobites/ptychagnostus-punctuosus/01.webp",
+      "trilobites/ptychagnostus-punctuosus/02.webp",
+      "trilobites/ptychagnostus-punctuosus/03.webp",
+      "trilobites/ptychagnostus-punctuosus/04.webp",
+      "trilobites/ptychagnostus-punctuosus/05.webp",
+      "trilobites/ptychagnostus-punctuosus/06.webp",
+      "trilobites/ptychagnostus-punctuosus/07.webp"
+    ],
+    "ptychagnostus-sinicus": [
+      "trilobites/ptychagnostus-sinicus/01.webp",
+      "trilobites/ptychagnostus-sinicus/02.webp",
+      "trilobites/ptychagnostus-sinicus/03.webp",
+      "trilobites/ptychagnostus-sinicus/04.webp",
+      "trilobites/ptychagnostus-sinicus/05.webp",
+      "trilobites/ptychagnostus-sinicus/06.webp"
+    ],
+    "tomagnostella-exsculpta": [
+      "trilobites/tomagnostella-exsculpta/01.webp",
+      "trilobites/tomagnostella-exsculpta/02.webp",
+      "trilobites/tomagnostella-exsculpta/03.webp",
+      "trilobites/tomagnostella-exsculpta/04.webp",
+      "trilobites/tomagnostella-exsculpta/05.webp"
+    ],
+    "tomagnostella-sulcifera": [
+      "trilobites/tomagnostella-sulcifera/01.webp",
+      "trilobites/tomagnostella-sulcifera/02.webp",
+      "trilobites/tomagnostella-sulcifera/03.webp",
+      "trilobites/tomagnostella-sulcifera/04.webp",
+      "trilobites/tomagnostella-sulcifera/05.webp"
+    ],
+    "tomagnostella-orientalis": [
+      "trilobites/tomagnostella-orientalis/01.webp",
+      "trilobites/tomagnostella-orientalis/02.webp",
+      "trilobites/tomagnostella-orientalis/03.webp",
+      "trilobites/tomagnostella-orientalis/04.webp",
+      "trilobites/tomagnostella-orientalis/05.webp",
+      "trilobites/tomagnostella-orientalis/06.webp"
+    ],
+    "tomagnostus-ezhuangensis": [
+      "trilobites/tomagnostus-ezhuangensis/01.webp",
+      "trilobites/tomagnostus-ezhuangensis/02.webp",
+      "trilobites/tomagnostus-ezhuangensis/03.webp",
+      "trilobites/tomagnostus-ezhuangensis/04.webp",
+      "trilobites/tomagnostus-ezhuangensis/05.webp"
+    ],
+    "tomagnostus-fissus": [
+      "trilobites/tomagnostus-fissus/01.webp",
+      "trilobites/tomagnostus-fissus/02.webp",
+      "trilobites/tomagnostus-fissus/03.webp"
+    ],
+    "tomagnostus-perrugatus": [
+      "trilobites/tomagnostus-perrugatus/01.webp",
+      "trilobites/tomagnostus-perrugatus/02.webp",
+      "trilobites/tomagnostus-perrugatus/03.webp"
+    ],
+    "tomagnostus-sibiricus": [
+      "trilobites/tomagnostus-sibiricus/01.webp",
+      "trilobites/tomagnostus-sibiricus/02.webp",
+      "trilobites/tomagnostus-sibiricus/03.webp"
+    ],
+    "yakutiana-dubium": [
+      "trilobites/yakutiana-dubium/01.webp",
+      "trilobites/yakutiana-dubium/02.webp",
+      "trilobites/yakutiana-dubium/03.webp",
+      "trilobites/yakutiana-dubium/04.webp"
+    ],
+    "yakutiana-ovale": [
+      "trilobites/yakutiana-ovale/01.webp",
+      "trilobites/yakutiana-ovale/02.webp",
+      "trilobites/yakutiana-ovale/03.webp",
+      "trilobites/yakutiana-ovale/04.webp",
+      "trilobites/yakutiana-ovale/05.webp",
+      "trilobites/yakutiana-ovale/06.webp",
+      "trilobites/yakutiana-ovale/07.webp"
+    ],
+    "peratagnostus-obsoletus": [
+      "trilobites/peratagnostus-obsoletus/01.webp",
+      "trilobites/peratagnostus-obsoletus/02.webp",
+      "trilobites/peratagnostus-obsoletus/03.webp",
+      "trilobites/peratagnostus-obsoletus/04.webp",
+      "trilobites/peratagnostus-obsoletus/05.webp",
+      "trilobites/peratagnostus-obsoletus/06.webp",
+      "trilobites/peratagnostus-obsoletus/07.webp",
+      "trilobites/peratagnostus-obsoletus/08.webp"
+    ],
+    "leiagnostus-ellipticus": [
+      "trilobites/leiagnostus-ellipticus/01.webp",
+      "trilobites/leiagnostus-ellipticus/02.webp",
+      "trilobites/leiagnostus-ellipticus/03.webp",
+      "trilobites/leiagnostus-ellipticus/04.webp",
+      "trilobites/leiagnostus-ellipticus/05.webp",
+      "trilobites/leiagnostus-ellipticus/06.webp"
+    ],
+    "leiagnostus-sanduensis": [
+      "trilobites/leiagnostus-sanduensis/01.webp",
+      "trilobites/leiagnostus-sanduensis/02.webp",
+      "trilobites/leiagnostus-sanduensis/03.webp",
+      "trilobites/leiagnostus-sanduensis/04.webp",
+      "trilobites/leiagnostus-sanduensis/05.webp"
+    ],
+    "phalagnostus-nudus": [
+      "trilobites/phalagnostus-nudus/01.webp",
+      "trilobites/phalagnostus-nudus/02.webp",
+      "trilobites/phalagnostus-nudus/03.webp",
+      "trilobites/phalagnostus-nudus/04.webp",
+      "trilobites/phalagnostus-nudus/05.webp",
+      "trilobites/phalagnostus-nudus/06.webp"
+    ],
+    "valenagnostus-imitans": [
+      "trilobites/valenagnostus-imitans/01.webp",
+      "trilobites/valenagnostus-imitans/02.webp",
+      "trilobites/valenagnostus-imitans/03.webp",
+      "trilobites/valenagnostus-imitans/04.webp",
+      "trilobites/valenagnostus-imitans/05.webp"
+    ],
+    "condylopyge-rex": [
+      "trilobites/condylopyge-rex/01.webp",
+      "trilobites/condylopyge-rex/02.webp",
+      "trilobites/condylopyge-rex/03.webp",
+      "trilobites/condylopyge-rex/04.webp"
+    ],
+    "pleuroctenium-granulatum": [
+      "trilobites/pleuroctenium-granulatum/01.webp",
+      "trilobites/pleuroctenium-granulatum/02.webp",
+      "trilobites/pleuroctenium-granulatum/03.webp",
+      "trilobites/pleuroctenium-granulatum/04.webp",
+      "trilobites/pleuroctenium-granulatum/05.webp",
+      "trilobites/pleuroctenium-granulatum/06.webp"
+    ],
+    "sinodiscus-changyangensis": [
+      "trilobites/sinodiscus-changyangensis/01.webp",
+      "trilobites/sinodiscus-changyangensis/02.webp",
+      "trilobites/sinodiscus-changyangensis/03.webp",
+      "trilobites/sinodiscus-changyangensis/04.webp"
+    ],
+    "pagetia-vinusta": [
+      "trilobites/pagetia-vinusta/01.webp",
+      "trilobites/pagetia-vinusta/02.webp",
+      "trilobites/pagetia-vinusta/03.webp",
+      "trilobites/pagetia-vinusta/04.webp"
+    ],
+    "tsunyidiscus-acutus": [
+      "trilobites/tsunyidiscus-acutus/01.webp",
+      "trilobites/tsunyidiscus-acutus/02.webp",
+      "trilobites/tsunyidiscus-acutus/03.webp",
+      "trilobites/tsunyidiscus-acutus/04.webp",
+      "trilobites/tsunyidiscus-acutus/05.webp"
+    ],
+    "tsunyidiscus-niutitangensis": [
+      "trilobites/tsunyidiscus-niutitangensis/01.webp",
+      "trilobites/tsunyidiscus-niutitangensis/02.webp",
+      "trilobites/tsunyidiscus-niutitangensis/03.webp",
+      "trilobites/tsunyidiscus-niutitangensis/04.webp",
+      "trilobites/tsunyidiscus-niutitangensis/05.webp",
+      "trilobites/tsunyidiscus-niutitangensis/06.webp",
+      "trilobites/tsunyidiscus-niutitangensis/07.webp",
+      "trilobites/tsunyidiscus-niutitangensis/08.webp"
+    ],
+    "tsunyidiscus-yanjiazhaiensis": [
+      "trilobites/tsunyidiscus-yanjiazhaiensis/01.webp",
+      "trilobites/tsunyidiscus-yanjiazhaiensis/02.webp",
+      "trilobites/tsunyidiscus-yanjiazhaiensis/03.webp",
+      "trilobites/tsunyidiscus-yanjiazhaiensis/04.webp",
+      "trilobites/tsunyidiscus-yanjiazhaiensis/05.webp"
+    ],
+    "serrodiscus-bellimarginatus": [
+      "trilobites/serrodiscus-bellimarginatus/01.webp",
+      "trilobites/serrodiscus-bellimarginatus/02.webp",
+      "trilobites/serrodiscus-bellimarginatus/03.webp",
+      "trilobites/serrodiscus-bellimarginatus/04.webp",
+      "trilobites/serrodiscus-bellimarginatus/05.webp"
+    ],
+    "serrodiscus-speciosus": [
+      "trilobites/serrodiscus-speciosus/01.webp",
+      "trilobites/serrodiscus-speciosus/02.webp",
+      "trilobites/serrodiscus-speciosus/03.webp",
+      "trilobites/serrodiscus-speciosus/04.webp"
+    ],
+    "toledodiscus-valverdi": [
+      "trilobites/toledodiscus-valverdi/01.webp",
+      "trilobites/toledodiscus-valverdi/02.webp",
+      "trilobites/toledodiscus-valverdi/03.webp"
+    ],
+    "mesonacis-eagerensis": [
+      "trilobites/mesonacis-eagerensis/01.webp",
+      "trilobites/mesonacis-eagerensis/02.webp",
+      "trilobites/mesonacis-eagerensis/03.webp",
+      "trilobites/mesonacis-eagerensis/04.webp"
+    ],
+    "nephrolenellus-geniculatus": [
+      "trilobites/nephrolenellus-geniculatus/01.webp",
+      "trilobites/nephrolenellus-geniculatus/02.webp",
+      "trilobites/nephrolenellus-geniculatus/03.webp",
+      "trilobites/nephrolenellus-geniculatus/04.webp",
+      "trilobites/nephrolenellus-geniculatus/05.webp"
+    ],
+    "olenelloides-armatus": [
+      "trilobites/olenelloides-armatus/01.webp",
+      "trilobites/olenelloides-armatus/02.webp",
+      "trilobites/olenelloides-armatus/03.webp",
+      "trilobites/olenelloides-armatus/04.webp"
+    ],
+    "olenellus-chiefensis": [
+      "trilobites/olenellus-chiefensis/01.webp",
+      "trilobites/olenellus-chiefensis/02.webp",
+      "trilobites/olenellus-chiefensis/03.webp",
+      "trilobites/olenellus-chiefensis/04.webp"
+    ],
+    "olenellus-getzi": [
+      "trilobites/olenellus-getzi/01.webp",
+      "trilobites/olenellus-getzi/02.webp",
+      "trilobites/olenellus-getzi/03.webp",
+      "trilobites/olenellus-getzi/04.webp"
+    ],
+    "olenellus-gilberti": [
+      "trilobites/olenellus-gilberti/01.webp",
+      "trilobites/olenellus-gilberti/02.webp",
+      "trilobites/olenellus-gilberti/03.webp",
+      "trilobites/olenellus-gilberti/04.webp",
+      "trilobites/olenellus-gilberti/05.webp",
+      "trilobites/olenellus-gilberti/06.webp",
+      "trilobites/olenellus-gilberti/07.webp"
+    ],
+    "olenellus-santuccii": [
+      "trilobites/olenellus-santuccii/01.webp",
+      "trilobites/olenellus-santuccii/02.webp",
+      "trilobites/olenellus-santuccii/03.webp",
+      "trilobites/olenellus-santuccii/04.webp",
+      "trilobites/olenellus-santuccii/05.webp",
+      "trilobites/olenellus-santuccii/06.webp"
+    ],
+    "olenellus-terminatus": [
+      "trilobites/olenellus-terminatus/01.webp",
+      "trilobites/olenellus-terminatus/02.webp",
+      "trilobites/olenellus-terminatus/03.webp",
+      "trilobites/olenellus-terminatus/04.webp"
+    ],
+    "olenellus-thompsoni": [
+      "trilobites/olenellus-thompsoni/01.webp",
+      "trilobites/olenellus-thompsoni/02.webp",
+      "trilobites/olenellus-thompsoni/03.webp"
+    ],
+    "peachella-brevispina": [
+      "trilobites/peachella-brevispina/01.webp",
+      "trilobites/peachella-brevispina/02.webp",
+      "trilobites/peachella-brevispina/03.webp"
+    ],
+    "peachella-iddingsi": [
+      "trilobites/peachella-iddingsi/01.webp",
+      "trilobites/peachella-iddingsi/02.webp",
+      "trilobites/peachella-iddingsi/03.webp",
+      "trilobites/peachella-iddingsi/04.webp"
+    ],
+    "wanneria-cranbrookense": [
+      "trilobites/wanneria-cranbrookense/01.webp",
+      "trilobites/wanneria-cranbrookense/02.webp",
+      "trilobites/wanneria-cranbrookense/03.webp"
+    ],
+    "schmidtiellus-reetae": [
+      "trilobites/schmidtiellus-reetae/01.webp",
+      "trilobites/schmidtiellus-reetae/02.webp",
+      "trilobites/schmidtiellus-reetae/03.webp",
+      "trilobites/schmidtiellus-reetae/04.webp",
+      "trilobites/schmidtiellus-reetae/05.webp",
+      "trilobites/schmidtiellus-reetae/06.webp"
+    ],
+    "cambropallas-telesto": [
+      "trilobites/cambropallas-telesto/01.webp",
+      "trilobites/cambropallas-telesto/02.webp",
+      "trilobites/cambropallas-telesto/03.webp"
+    ],
+    "estaingia-bilobata": [
+      "trilobites/estaingia-bilobata/01.webp",
+      "trilobites/estaingia-bilobata/02.webp",
+      "trilobites/estaingia-bilobata/03.webp",
+      "trilobites/estaingia-bilobata/04.webp",
+      "trilobites/estaingia-bilobata/05.webp",
+      "trilobites/estaingia-bilobata/06.webp"
+    ],
+    "estaingia-fangxianensis": [
+      "trilobites/estaingia-fangxianensis/01.webp",
+      "trilobites/estaingia-fangxianensis/02.webp"
+    ],
+    "estaingia-sinensis": [
+      "trilobites/estaingia-sinensis/01.webp",
+      "trilobites/estaingia-sinensis/02.webp",
+      "trilobites/estaingia-sinensis/03.webp",
+      "trilobites/estaingia-sinensis/04.webp"
+    ],
+    "gigoutella-mauretanica": [
+      "trilobites/gigoutella-mauretanica/01.webp",
+      "trilobites/gigoutella-mauretanica/02.webp",
+      "trilobites/gigoutella-mauretanica/03.webp",
+      "trilobites/gigoutella-mauretanica/04.webp",
+      "trilobites/gigoutella-mauretanica/05.webp"
+    ],
+    "palaeolenus-lantenoisi": [
+      "trilobites/palaeolenus-lantenoisi/01.webp",
+      "trilobites/palaeolenus-lantenoisi/02.webp",
+      "trilobites/palaeolenus-lantenoisi/03.webp",
+      "trilobites/palaeolenus-lantenoisi/04.webp",
+      "trilobites/palaeolenus-lantenoisi/05.webp",
+      "trilobites/palaeolenus-lantenoisi/06.webp"
+    ],
+    "palaeolenus-douvillei": [
+      "trilobites/palaeolenus-douvillei/01.webp",
+      "trilobites/palaeolenus-douvillei/02.webp",
+      "trilobites/palaeolenus-douvillei/03.webp",
+      "trilobites/palaeolenus-douvillei/04.webp",
+      "trilobites/palaeolenus-douvillei/05.webp",
+      "trilobites/palaeolenus-douvillei/06.webp"
+    ],
+    "yunnanocephalus-yunnanensis": [
+      "trilobites/yunnanocephalus-yunnanensis/01.webp",
+      "trilobites/yunnanocephalus-yunnanensis/02.webp",
+      "trilobites/yunnanocephalus-yunnanensis/03.webp",
+      "trilobites/yunnanocephalus-yunnanensis/04.webp",
+      "trilobites/yunnanocephalus-yunnanensis/05.webp",
+      "trilobites/yunnanocephalus-yunnanensis/06.webp",
+      "trilobites/yunnanocephalus-yunnanensis/07.webp"
+    ],
+    "balcoracania-dailyi": [
+      "trilobites/balcoracania-dailyi/01.webp",
+      "trilobites/balcoracania-dailyi/02.webp",
+      "trilobites/balcoracania-dailyi/03.webp",
+      "trilobites/balcoracania-dailyi/04.webp",
+      "trilobites/balcoracania-dailyi/05.webp",
+      "trilobites/balcoracania-dailyi/06.webp"
+    ],
+    "emuella-dalgarnoi": [
+      "trilobites/emuella-dalgarnoi/01.webp",
+      "trilobites/emuella-dalgarnoi/02.webp",
+      "trilobites/emuella-dalgarnoi/03.webp",
+      "trilobites/emuella-dalgarnoi/04.webp"
+    ],
+    "emuella-polymera": [
+      "trilobites/emuella-polymera/01.webp",
+      "trilobites/emuella-polymera/02.webp",
+      "trilobites/emuella-polymera/03.webp",
+      "trilobites/emuella-polymera/04.webp",
+      "trilobites/emuella-polymera/05.webp",
+      "trilobites/emuella-polymera/06.webp"
+    ],
+    "centropleura-phoenix": [
+      "trilobites/centropleura-phoenix/01.webp",
+      "trilobites/centropleura-phoenix/02.webp",
+      "trilobites/centropleura-phoenix/03.webp",
+      "trilobites/centropleura-phoenix/04.webp"
+    ],
+    "abadiella-huoi": [
+      "trilobites/abadiella-huoi/01.webp",
+      "trilobites/abadiella-huoi/02.webp",
+      "trilobites/abadiella-huoi/03.webp",
+      "trilobites/abadiella-huoi/04.webp"
+    ],
+    "bathynotus-holopygus": [
+      "trilobites/bathynotus-holopygus/01.webp",
+      "trilobites/bathynotus-holopygus/02.webp",
+      "trilobites/bathynotus-holopygus/03.webp",
+      "trilobites/bathynotus-holopygus/04.webp",
+      "trilobites/bathynotus-holopygus/05.webp",
+      "trilobites/bathynotus-holopygus/06.webp",
+      "trilobites/bathynotus-holopygus/07.webp"
+    ],
+    "bathynotus-kueichouensis": [
+      "trilobites/bathynotus-kueichouensis/01.webp",
+      "trilobites/bathynotus-kueichouensis/02.webp",
+      "trilobites/bathynotus-kueichouensis/03.webp",
+      "trilobites/bathynotus-kueichouensis/04.webp",
+      "trilobites/bathynotus-kueichouensis/05.webp",
+      "trilobites/bathynotus-kueichouensis/06.webp",
+      "trilobites/bathynotus-kueichouensis/07.webp",
+      "trilobites/bathynotus-kueichouensis/08.webp"
+    ],
+    "dolerolenus-laevigata": [
+      "trilobites/dolerolenus-laevigata/01.webp",
+      "trilobites/dolerolenus-laevigata/02.webp",
+      "trilobites/dolerolenus-laevigata/03.webp",
+      "trilobites/dolerolenus-laevigata/04.webp",
+      "trilobites/dolerolenus-laevigata/05.webp",
+      "trilobites/dolerolenus-laevigata/06.webp",
+      "trilobites/dolerolenus-laevigata/07.webp",
+      "trilobites/dolerolenus-laevigata/08.webp",
+      "trilobites/dolerolenus-laevigata/09.webp",
+      "trilobites/dolerolenus-laevigata/10.webp",
+      "trilobites/dolerolenus-laevigata/11.webp",
+      "trilobites/dolerolenus-laevigata/12.webp"
+    ],
+    "yiliangella-forficula": [
+      "trilobites/yiliangella-forficula/01.webp",
+      "trilobites/yiliangella-forficula/02.webp",
+      "trilobites/yiliangella-forficula/03.webp",
+      "trilobites/yiliangella-forficula/04.webp",
+      "trilobites/yiliangella-forficula/05.webp"
+    ],
+    "zhangshania-typica": [
+      "trilobites/zhangshania-typica/01.webp",
+      "trilobites/zhangshania-typica/02.webp",
+      "trilobites/zhangshania-typica/03.webp",
+      "trilobites/zhangshania-typica/04.webp",
+      "trilobites/zhangshania-typica/05.webp",
+      "trilobites/zhangshania-typica/06.webp",
+      "trilobites/zhangshania-typica/07.webp",
+      "trilobites/zhangshania-typica/08.webp"
+    ],
+    "kueichowia-liui": [
+      "trilobites/kueichowia-liui/01.webp",
+      "trilobites/kueichowia-liui/02.webp",
+      "trilobites/kueichowia-liui/03.webp",
+      "trilobites/kueichowia-liui/04.webp",
+      "trilobites/kueichowia-liui/05.webp",
+      "trilobites/kueichowia-liui/06.webp"
+    ],
+    "hongshiyanaspis-yiliangensis": [
+      "trilobites/hongshiyanaspis-yiliangensis/01.webp",
+      "trilobites/hongshiyanaspis-yiliangensis/02.webp",
+      "trilobites/hongshiyanaspis-yiliangensis/03.webp",
+      "trilobites/hongshiyanaspis-yiliangensis/04.webp",
+      "trilobites/hongshiyanaspis-yiliangensis/05.webp",
+      "trilobites/hongshiyanaspis-yiliangensis/06.webp",
+      "trilobites/hongshiyanaspis-yiliangensis/07.webp"
+    ],
+    "breviredlichia-gaoqiaoensis": [
+      "trilobites/breviredlichia-gaoqiaoensis/01.webp",
+      "trilobites/breviredlichia-gaoqiaoensis/02.webp",
+      "trilobites/breviredlichia-gaoqiaoensis/03.webp"
+    ],
+    "breviredlichia-granulosa": [
+      "trilobites/breviredlichia-granulosa/01.webp",
+      "trilobites/breviredlichia-granulosa/02.webp",
+      "trilobites/breviredlichia-granulosa/03.webp",
+      "trilobites/breviredlichia-granulosa/04.webp"
+    ],
+    "chengjiangaspis-chengjiangensis": [
+      "trilobites/chengjiangaspis-chengjiangensis/01.webp",
+      "trilobites/chengjiangaspis-chengjiangensis/02.webp",
+      "trilobites/chengjiangaspis-chengjiangensis/03.webp",
+      "trilobites/chengjiangaspis-chengjiangensis/04.webp",
+      "trilobites/chengjiangaspis-chengjiangensis/05.webp",
+      "trilobites/chengjiangaspis-chengjiangensis/06.webp",
+      "trilobites/chengjiangaspis-chengjiangensis/07.webp"
+    ],
+    "eoredlichia-intermedia": [
+      "trilobites/eoredlichia-intermedia/01.webp",
+      "trilobites/eoredlichia-intermedia/02.webp",
+      "trilobites/eoredlichia-intermedia/03.webp",
+      "trilobites/eoredlichia-intermedia/04.webp",
+      "trilobites/eoredlichia-intermedia/05.webp",
+      "trilobites/eoredlichia-intermedia/06.webp",
+      "trilobites/eoredlichia-intermedia/07.webp",
+      "trilobites/eoredlichia-intermedia/08.webp"
+    ],
+    "kepingaspis-kepingensis": [
+      "trilobites/kepingaspis-kepingensis/01.webp",
+      "trilobites/kepingaspis-kepingensis/02.webp",
+      "trilobites/kepingaspis-kepingensis/03.webp",
+      "trilobites/kepingaspis-kepingensis/04.webp",
+      "trilobites/kepingaspis-kepingensis/05.webp",
+      "trilobites/kepingaspis-kepingensis/06.webp"
+    ],
+    "kuanyangia-pustulosa": [
+      "trilobites/kuanyangia-pustulosa/01.webp",
+      "trilobites/kuanyangia-pustulosa/02.webp",
+      "trilobites/kuanyangia-pustulosa/03.webp",
+      "trilobites/kuanyangia-pustulosa/04.webp",
+      "trilobites/kuanyangia-pustulosa/05.webp",
+      "trilobites/kuanyangia-pustulosa/06.webp",
+      "trilobites/kuanyangia-pustulosa/07.webp",
+      "trilobites/kuanyangia-pustulosa/08.webp"
+    ],
+    "malongocephalus-yunnanensis": [
+      "trilobites/malongocephalus-yunnanensis/01.webp",
+      "trilobites/malongocephalus-yunnanensis/02.webp",
+      "trilobites/malongocephalus-yunnanensis/03.webp",
+      "trilobites/malongocephalus-yunnanensis/04.webp",
+      "trilobites/malongocephalus-yunnanensis/05.webp"
+    ],
+    "redlichia-pteroredlichia-chinensis": [
+      "trilobites/redlichia-pteroredlichia-chinensis/01.webp",
+      "trilobites/redlichia-pteroredlichia-chinensis/02.webp",
+      "trilobites/redlichia-pteroredlichia-chinensis/03.webp",
+      "trilobites/redlichia-pteroredlichia-chinensis/04.webp",
+      "trilobites/redlichia-pteroredlichia-chinensis/05.webp"
+    ],
+    "redlichia-pteroredlichia-chinensis-lui": [
+      "trilobites/redlichia-pteroredlichia-chinensis-lui/01.webp",
+      "trilobites/redlichia-pteroredlichia-chinensis-lui/02.webp",
+      "trilobites/redlichia-pteroredlichia-chinensis-lui/03.webp"
+    ],
+    "redlichia-pteroredlichia-murakamii": [
+      "trilobites/redlichia-pteroredlichia-murakamii/01.webp",
+      "trilobites/redlichia-pteroredlichia-murakamii/02.webp",
+      "trilobites/redlichia-pteroredlichia-murakamii/03.webp",
+      "trilobites/redlichia-pteroredlichia-murakamii/04.webp",
+      "trilobites/redlichia-pteroredlichia-murakamii/05.webp",
+      "trilobites/redlichia-pteroredlichia-murakamii/06.webp",
+      "trilobites/redlichia-pteroredlichia-murakamii/07.webp",
+      "trilobites/redlichia-pteroredlichia-murakamii/08.webp",
+      "trilobites/redlichia-pteroredlichia-murakamii/09.webp",
+      "trilobites/redlichia-pteroredlichia-murakamii/10.webp"
+    ],
+    "redlichia-redlichia-mai": [
+      "trilobites/redlichia-redlichia-mai/01.webp",
+      "trilobites/redlichia-redlichia-mai/02.webp",
+      "trilobites/redlichia-redlichia-mai/03.webp",
+      "trilobites/redlichia-redlichia-mai/04.webp",
+      "trilobites/redlichia-redlichia-mai/05.webp",
+      "trilobites/redlichia-redlichia-mai/06.webp",
+      "trilobites/redlichia-redlichia-mai/07.webp",
+      "trilobites/redlichia-redlichia-mai/08.webp",
+      "trilobites/redlichia-redlichia-mai/09.webp"
+    ],
+    "redlichia-redlichia-mansuyi": [
+      "trilobites/redlichia-redlichia-mansuyi/01.webp",
+      "trilobites/redlichia-redlichia-mansuyi/02.webp",
+      "trilobites/redlichia-redlichia-mansuyi/03.webp",
+      "trilobites/redlichia-redlichia-mansuyi/04.webp",
+      "trilobites/redlichia-redlichia-mansuyi/05.webp",
+      "trilobites/redlichia-redlichia-mansuyi/06.webp",
+      "trilobites/redlichia-redlichia-mansuyi/07.webp",
+      "trilobites/redlichia-redlichia-mansuyi/08.webp"
+    ],
+    "redlichia-redlichia-nobilis": [
+      "trilobites/redlichia-redlichia-nobilis/01.webp",
+      "trilobites/redlichia-redlichia-nobilis/02.webp",
+      "trilobites/redlichia-redlichia-nobilis/03.webp",
+      "trilobites/redlichia-redlichia-nobilis/04.webp",
+      "trilobites/redlichia-redlichia-nobilis/05.webp",
+      "trilobites/redlichia-redlichia-nobilis/06.webp",
+      "trilobites/redlichia-redlichia-nobilis/07.webp"
+    ],
+    "redlichia-redlichia-noetlingi": [
+      "trilobites/redlichia-redlichia-noetlingi/01.webp",
+      "trilobites/redlichia-redlichia-noetlingi/02.webp",
+      "trilobites/redlichia-redlichia-noetlingi/03.webp",
+      "trilobites/redlichia-redlichia-noetlingi/04.webp",
+      "trilobites/redlichia-redlichia-noetlingi/05.webp",
+      "trilobites/redlichia-redlichia-noetlingi/06.webp",
+      "trilobites/redlichia-redlichia-noetlingi/07.webp",
+      "trilobites/redlichia-redlichia-noetlingi/08.webp"
+    ],
+    "redlichia-redlichia-rex": [
+      "trilobites/redlichia-redlichia-rex/01.webp",
+      "trilobites/redlichia-redlichia-rex/02.webp",
+      "trilobites/redlichia-redlichia-rex/03.webp",
+      "trilobites/redlichia-redlichia-rex/04.webp",
+      "trilobites/redlichia-redlichia-rex/05.webp"
+    ],
+    "redlichia-redlichia-takooensis": [
+      "trilobites/redlichia-redlichia-takooensis/01.webp",
+      "trilobites/redlichia-redlichia-takooensis/02.webp",
+      "trilobites/redlichia-redlichia-takooensis/03.webp",
+      "trilobites/redlichia-redlichia-takooensis/04.webp",
+      "trilobites/redlichia-redlichia-takooensis/05.webp",
+      "trilobites/redlichia-redlichia-takooensis/06.webp"
+    ],
+    "redlichia-redlichia-yunnanensis": [
+      "trilobites/redlichia-redlichia-yunnanensis/01.webp",
+      "trilobites/redlichia-redlichia-yunnanensis/02.webp",
+      "trilobites/redlichia-redlichia-yunnanensis/03.webp",
+      "trilobites/redlichia-redlichia-yunnanensis/04.webp",
+      "trilobites/redlichia-redlichia-yunnanensis/05.webp"
+    ],
+    "redlichia-redlichia-sp": [
+      "trilobites/redlichia-redlichia-sp/01.webp"
+    ],
+    "ushbaspis-constrictus": [
+      "trilobites/ushbaspis-constrictus/01.webp",
+      "trilobites/ushbaspis-constrictus/02.webp",
+      "trilobites/ushbaspis-constrictus/03.webp",
+      "trilobites/ushbaspis-constrictus/04.webp",
+      "trilobites/ushbaspis-constrictus/05.webp"
+    ],
+    "ushbaspis-hubeiensis": [
+      "trilobites/ushbaspis-hubeiensis/01.webp",
+      "trilobites/ushbaspis-hubeiensis/02.webp",
+      "trilobites/ushbaspis-hubeiensis/03.webp"
+    ],
+    "wutingaspis-malungensis": [
+      "trilobites/wutingaspis-malungensis/01.webp",
+      "trilobites/wutingaspis-malungensis/02.webp",
+      "trilobites/wutingaspis-malungensis/03.webp",
+      "trilobites/wutingaspis-malungensis/04.webp",
+      "trilobites/wutingaspis-malungensis/05.webp"
+    ],
+    "wutingaspis-tingi": [
+      "trilobites/wutingaspis-tingi/01.webp",
+      "trilobites/wutingaspis-tingi/02.webp",
+      "trilobites/wutingaspis-tingi/03.webp",
+      "trilobites/wutingaspis-tingi/04.webp",
+      "trilobites/wutingaspis-tingi/05.webp",
+      "trilobites/wutingaspis-tingi/06.webp"
+    ],
+    "yinites-malongensis": [
+      "trilobites/yinites-malongensis/01.webp",
+      "trilobites/yinites-malongensis/02.webp",
+      "trilobites/yinites-malongensis/03.webp",
+      "trilobites/yinites-malongensis/04.webp"
+    ],
+    "yinites-typicalis": [
+      "trilobites/yinites-typicalis/01.webp",
+      "trilobites/yinites-typicalis/02.webp",
+      "trilobites/yinites-typicalis/03.webp",
+      "trilobites/yinites-typicalis/04.webp"
+    ],
+    "drepanopyge-mirabilis": [
+      "trilobites/drepanopyge-mirabilis/01.webp",
+      "trilobites/drepanopyge-mirabilis/02.webp",
+      "trilobites/drepanopyge-mirabilis/03.webp",
+      "trilobites/drepanopyge-mirabilis/04.webp",
+      "trilobites/drepanopyge-mirabilis/05.webp"
+    ],
+    "amphoton-bicknelli": [
+      "trilobites/amphoton-bicknelli/01.webp",
+      "trilobites/amphoton-bicknelli/02.webp",
+      "trilobites/amphoton-bicknelli/03.webp",
+      "trilobites/amphoton-bicknelli/04.webp"
+    ],
+    "amphoton-deois": [
+      "trilobites/amphoton-deois/01.webp",
+      "trilobites/amphoton-deois/02.webp",
+      "trilobites/amphoton-deois/03.webp",
+      "trilobites/amphoton-deois/04.webp",
+      "trilobites/amphoton-deois/05.webp",
+      "trilobites/amphoton-deois/06.webp",
+      "trilobites/amphoton-deois/07.webp",
+      "trilobites/amphoton-deois/08.webp",
+      "trilobites/amphoton-deois/09.webp",
+      "trilobites/amphoton-deois/10.webp",
+      "trilobites/amphoton-deois/11.webp"
+    ],
+    "amphoton-sp": [
+      "trilobites/amphoton-sp/01.webp",
+      "trilobites/amphoton-sp/02.webp",
+      "trilobites/amphoton-sp/03.webp",
+      "trilobites/amphoton-sp/04.webp",
+      "trilobites/amphoton-sp/05.webp",
+      "trilobites/amphoton-sp/06.webp"
+    ],
+    "deiradonyx-barklyensis": [
+      "trilobites/deiradonyx-barklyensis/01.webp",
+      "trilobites/deiradonyx-barklyensis/02.webp",
+      "trilobites/deiradonyx-barklyensis/03.webp"
+    ],
+    "deiradonyx-sp": [
+      "trilobites/deiradonyx-sp/01.webp",
+      "trilobites/deiradonyx-sp/02.webp",
+      "trilobites/deiradonyx-sp/03.webp",
+      "trilobites/deiradonyx-sp/04.webp"
+    ],
+    "fuchouia-bulba": [
+      "trilobites/fuchouia-bulba/01.webp",
+      "trilobites/fuchouia-bulba/02.webp",
+      "trilobites/fuchouia-bulba/03.webp"
+    ],
+    "fuchouia-chai": [
+      "trilobites/fuchouia-chai/01.webp",
+      "trilobites/fuchouia-chai/02.webp",
+      "trilobites/fuchouia-chai/03.webp"
+    ],
+    "fuchouia-manchuriensis": [
+      "trilobites/fuchouia-manchuriensis/01.webp",
+      "trilobites/fuchouia-manchuriensis/02.webp",
+      "trilobites/fuchouia-manchuriensis/03.webp",
+      "trilobites/fuchouia-manchuriensis/04.webp",
+      "trilobites/fuchouia-manchuriensis/05.webp"
+    ],
+    "fuchouia-oratolimba": [
+      "trilobites/fuchouia-oratolimba/01.webp",
+      "trilobites/fuchouia-oratolimba/02.webp",
+      "trilobites/fuchouia-oratolimba/03.webp",
+      "trilobites/fuchouia-oratolimba/04.webp",
+      "trilobites/fuchouia-oratolimba/05.webp",
+      "trilobites/fuchouia-oratolimba/06.webp"
+    ],
+    "itydeois-shandongensis": [
+      "trilobites/itydeois-shandongensis/01.webp",
+      "trilobites/itydeois-shandongensis/02.webp",
+      "trilobites/itydeois-shandongensis/03.webp",
+      "trilobites/itydeois-shandongensis/04.webp",
+      "trilobites/itydeois-shandongensis/05.webp",
+      "trilobites/itydeois-shandongensis/06.webp"
+    ],
+    "corynexochus-plumula": [
+      "trilobites/corynexochus-plumula/01.webp",
+      "trilobites/corynexochus-plumula/02.webp",
+      "trilobites/corynexochus-plumula/03.webp",
+      "trilobites/corynexochus-plumula/04.webp",
+      "trilobites/corynexochus-plumula/05.webp",
+      "trilobites/corynexochus-plumula/06.webp"
+    ],
+    "dinesus-bura": [
+      "trilobites/dinesus-bura/01.webp",
+      "trilobites/dinesus-bura/02.webp",
+      "trilobites/dinesus-bura/03.webp",
+      "trilobites/dinesus-bura/04.webp",
+      "trilobites/dinesus-bura/05.webp",
+      "trilobites/dinesus-bura/06.webp"
+    ],
+    "dorypyge-manchuriensis": [
+      "trilobites/dorypyge-manchuriensis/01.webp",
+      "trilobites/dorypyge-manchuriensis/02.webp",
+      "trilobites/dorypyge-manchuriensis/03.webp",
+      "trilobites/dorypyge-manchuriensis/04.webp",
+      "trilobites/dorypyge-manchuriensis/05.webp",
+      "trilobites/dorypyge-manchuriensis/06.webp",
+      "trilobites/dorypyge-manchuriensis/07.webp"
+    ],
+    "dorypyge-richthofeni": [
+      "trilobites/dorypyge-richthofeni/01.webp",
+      "trilobites/dorypyge-richthofeni/02.webp",
+      "trilobites/dorypyge-richthofeni/03.webp",
+      "trilobites/dorypyge-richthofeni/04.webp",
+      "trilobites/dorypyge-richthofeni/05.webp"
+    ],
+    "dorypyge-sp": [
+      "trilobites/dorypyge-sp/01.webp"
+    ],
+    "kootenia-yui": [
+      "trilobites/kootenia-yui/01.webp",
+      "trilobites/kootenia-yui/02.webp",
+      "trilobites/kootenia-yui/03.webp"
+    ],
+    "olenoides-hubeiensis": [
+      "trilobites/olenoides-hubeiensis/01.webp",
+      "trilobites/olenoides-hubeiensis/02.webp",
+      "trilobites/olenoides-hubeiensis/03.webp",
+      "trilobites/olenoides-hubeiensis/04.webp",
+      "trilobites/olenoides-hubeiensis/05.webp"
+    ],
+    "olenoides-paraptus": [
+      "trilobites/olenoides-paraptus/01.webp",
+      "trilobites/olenoides-paraptus/02.webp",
+      "trilobites/olenoides-paraptus/03.webp",
+      "trilobites/olenoides-paraptus/04.webp",
+      "trilobites/olenoides-paraptus/05.webp"
+    ],
+    "cheiruroides-primigenius": [
+      "trilobites/cheiruroides-primigenius/01.webp",
+      "trilobites/cheiruroides-primigenius/02.webp",
+      "trilobites/cheiruroides-primigenius/03.webp",
+      "trilobites/cheiruroides-primigenius/04.webp",
+      "trilobites/cheiruroides-primigenius/05.webp",
+      "trilobites/cheiruroides-primigenius/06.webp",
+      "trilobites/cheiruroides-primigenius/07.webp",
+      "trilobites/cheiruroides-primigenius/08.webp",
+      "trilobites/cheiruroides-primigenius/09.webp",
+      "trilobites/cheiruroides-primigenius/10.webp"
+    ],
+    "cheiruroides-shiqianensis": [
+      "trilobites/cheiruroides-shiqianensis/01.webp",
+      "trilobites/cheiruroides-shiqianensis/02.webp"
+    ],
+    "hunanocephalus-duodingensis": [
+      "trilobites/hunanocephalus-duodingensis/01.webp",
+      "trilobites/hunanocephalus-duodingensis/02.webp",
+      "trilobites/hunanocephalus-duodingensis/03.webp"
+    ],
+    "hunanocephalus-ovalis": [
+      "trilobites/hunanocephalus-ovalis/01.webp",
+      "trilobites/hunanocephalus-ovalis/02.webp",
+      "trilobites/hunanocephalus-ovalis/03.webp",
+      "trilobites/hunanocephalus-ovalis/04.webp",
+      "trilobites/hunanocephalus-ovalis/05.webp"
+    ],
+    "taijiangocephalus-gedongensis": [
+      "trilobites/taijiangocephalus-gedongensis/01.webp",
+      "trilobites/taijiangocephalus-gedongensis/02.webp"
+    ],
+    "teljanzella-fengzuensis": [
+      "trilobites/teljanzella-fengzuensis/01.webp",
+      "trilobites/teljanzella-fengzuensis/02.webp"
+    ],
+    "arthricocephalus-chauveaui": [
+      "trilobites/arthricocephalus-chauveaui/01.webp",
+      "trilobites/arthricocephalus-chauveaui/02.webp",
+      "trilobites/arthricocephalus-chauveaui/03.webp",
+      "trilobites/arthricocephalus-chauveaui/04.webp",
+      "trilobites/arthricocephalus-chauveaui/05.webp",
+      "trilobites/arthricocephalus-chauveaui/06.webp"
+    ],
+    "arthricocephalus-xinzhaiheensis": [
+      "trilobites/arthricocephalus-xinzhaiheensis/01.webp",
+      "trilobites/arthricocephalus-xinzhaiheensis/02.webp",
+      "trilobites/arthricocephalus-xinzhaiheensis/03.webp",
+      "trilobites/arthricocephalus-xinzhaiheensis/04.webp"
+    ],
+    "balangia-balangensis": [
+      "trilobites/balangia-balangensis/01.webp",
+      "trilobites/balangia-balangensis/02.webp",
+      "trilobites/balangia-balangensis/03.webp",
+      "trilobites/balangia-balangensis/04.webp",
+      "trilobites/balangia-balangensis/05.webp",
+      "trilobites/balangia-balangensis/06.webp"
+    ],
+    "duyunaspis-duyunensi": [
+      "trilobites/duyunaspis-duyunensi/01.webp",
+      "trilobites/duyunaspis-duyunensi/02.webp",
+      "trilobites/duyunaspis-duyunensi/03.webp",
+      "trilobites/duyunaspis-duyunensi/04.webp",
+      "trilobites/duyunaspis-duyunensi/05.webp",
+      "trilobites/duyunaspis-duyunensi/06.webp"
+    ],
+    "duyunaspis-jianheensis": [
+      "trilobites/duyunaspis-jianheensis/01.webp",
+      "trilobites/duyunaspis-jianheensis/02.webp",
+      "trilobites/duyunaspis-jianheensis/03.webp",
+      "trilobites/duyunaspis-jianheensis/04.webp"
+    ],
+    "duyunaspis-paiwuensis": [
+      "trilobites/duyunaspis-paiwuensis/01.webp",
+      "trilobites/duyunaspis-paiwuensis/02.webp",
+      "trilobites/duyunaspis-paiwuensis/03.webp",
+      "trilobites/duyunaspis-paiwuensis/04.webp",
+      "trilobites/duyunaspis-paiwuensis/05.webp",
+      "trilobites/duyunaspis-paiwuensis/06.webp",
+      "trilobites/duyunaspis-paiwuensis/07.webp",
+      "trilobites/duyunaspis-paiwuensis/08.webp"
+    ],
+    "eodontopleura-primitiva": [
+      "trilobites/eodontopleura-primitiva/01.webp",
+      "trilobites/eodontopleura-primitiva/02.webp",
+      "trilobites/eodontopleura-primitiva/03.webp",
+      "trilobites/eodontopleura-primitiva/04.webp",
+      "trilobites/eodontopleura-primitiva/05.webp"
+    ],
+    "feilongshania-brevica": [
+      "trilobites/feilongshania-brevica/01.webp",
+      "trilobites/feilongshania-brevica/02.webp",
+      "trilobites/feilongshania-brevica/03.webp",
+      "trilobites/feilongshania-brevica/04.webp"
+    ],
+    "longaspis-paiwuensis": [
+      "trilobites/longaspis-paiwuensis/01.webp",
+      "trilobites/longaspis-paiwuensis/02.webp",
+      "trilobites/longaspis-paiwuensis/03.webp",
+      "trilobites/longaspis-paiwuensis/04.webp",
+      "trilobites/longaspis-paiwuensis/05.webp"
+    ],
+    "oryctocarella-balangensis": [
+      "trilobites/oryctocarella-balangensis/01.webp",
+      "trilobites/oryctocarella-balangensis/02.webp",
+      "trilobites/oryctocarella-balangensis/03.webp"
+    ],
+    "oryctocarella-duyunensis": [
+      "trilobites/oryctocarella-duyunensis/01.webp",
+      "trilobites/oryctocarella-duyunensis/02.webp",
+      "trilobites/oryctocarella-duyunensis/03.webp",
+      "trilobites/oryctocarella-duyunensis/04.webp",
+      "trilobites/oryctocarella-duyunensis/05.webp",
+      "trilobites/oryctocarella-duyunensis/06.webp",
+      "trilobites/oryctocarella-duyunensis/07.webp",
+      "trilobites/oryctocarella-duyunensis/08.webp",
+      "trilobites/oryctocarella-duyunensis/09.webp",
+      "trilobites/oryctocarella-duyunensis/10.webp"
+    ],
+    "ovatoryctocara-sinensis": [
+      "trilobites/ovatoryctocara-sinensis/01.webp",
+      "trilobites/ovatoryctocara-sinensis/02.webp",
+      "trilobites/ovatoryctocara-sinensis/03.webp",
+      "trilobites/ovatoryctocara-sinensis/04.webp"
+    ],
+    "shergoldiella-vincenti": [
+      "trilobites/shergoldiella-vincenti/01.webp",
+      "trilobites/shergoldiella-vincenti/02.webp",
+      "trilobites/shergoldiella-vincenti/03.webp"
+    ],
+    "thoracocare-minuta": [
+      "trilobites/thoracocare-minuta/01.webp",
+      "trilobites/thoracocare-minuta/02.webp",
+      "trilobites/thoracocare-minuta/03.webp"
+    ],
+    "changaspis-elongata": [
+      "trilobites/changaspis-elongata/01.webp",
+      "trilobites/changaspis-elongata/02.webp",
+      "trilobites/changaspis-elongata/03.webp",
+      "trilobites/changaspis-elongata/04.webp",
+      "trilobites/changaspis-elongata/05.webp",
+      "trilobites/changaspis-elongata/06.webp",
+      "trilobites/changaspis-elongata/07.webp",
+      "trilobites/changaspis-elongata/08.webp",
+      "trilobites/changaspis-elongata/09.webp",
+      "trilobites/changaspis-elongata/10.webp"
+    ],
+    "curvoryctocephalus-taijiangensis": [
+      "trilobites/curvoryctocephalus-taijiangensis/01.webp",
+      "trilobites/curvoryctocephalus-taijiangensis/02.webp",
+      "trilobites/curvoryctocephalus-taijiangensis/03.webp",
+      "trilobites/curvoryctocephalus-taijiangensis/04.webp",
+      "trilobites/curvoryctocephalus-taijiangensis/05.webp",
+      "trilobites/curvoryctocephalus-taijiangensis/06.webp"
+    ],
+    "jianheaspis-jiaobangensis": [
+      "trilobites/jianheaspis-jiaobangensis/01.webp",
+      "trilobites/jianheaspis-jiaobangensis/02.webp",
+      "trilobites/jianheaspis-jiaobangensis/03.webp",
+      "trilobites/jianheaspis-jiaobangensis/04.webp"
+    ],
+    "metabalangia-yupingensis": [
+      "trilobites/metabalangia-yupingensis/01.webp",
+      "trilobites/metabalangia-yupingensis/02.webp",
+      "trilobites/metabalangia-yupingensis/03.webp",
+      "trilobites/metabalangia-yupingensis/04.webp",
+      "trilobites/metabalangia-yupingensis/05.webp"
+    ],
+    "metarthricocephalus-spinosus": [
+      "trilobites/metarthricocephalus-spinosus/01.webp",
+      "trilobites/metarthricocephalus-spinosus/02.webp",
+      "trilobites/metarthricocephalus-spinosus/03.webp",
+      "trilobites/metarthricocephalus-spinosus/04.webp",
+      "trilobites/metarthricocephalus-spinosus/05.webp",
+      "trilobites/metarthricocephalus-spinosus/06.webp"
+    ],
+    "oryctocephalites-convexus": [
+      "trilobites/oryctocephalites-convexus/01.webp",
+      "trilobites/oryctocephalites-convexus/02.webp",
+      "trilobites/oryctocephalites-convexus/03.webp"
+    ],
+    "oryctocephalites-robustus": [
+      "trilobites/oryctocephalites-robustus/01.webp",
+      "trilobites/oryctocephalites-robustus/02.webp"
+    ],
+    "oryctocephalops-guizhouensis": [
+      "trilobites/oryctocephalops-guizhouensis/01.webp",
+      "trilobites/oryctocephalops-guizhouensis/02.webp",
+      "trilobites/oryctocephalops-guizhouensis/03.webp"
+    ],
+    "oryctocephalus-indicus": [
+      "trilobites/oryctocephalus-indicus/01.webp",
+      "trilobites/oryctocephalus-indicus/02.webp",
+      "trilobites/oryctocephalus-indicus/03.webp",
+      "trilobites/oryctocephalus-indicus/04.webp",
+      "trilobites/oryctocephalus-indicus/05.webp",
+      "trilobites/oryctocephalus-indicus/06.webp"
+    ],
+    "pengjinia-pengjinae": [
+      "trilobites/pengjinia-pengjinae/01.webp",
+      "trilobites/pengjinia-pengjinae/02.webp",
+      "trilobites/pengjinia-pengjinae/03.webp",
+      "trilobites/pengjinia-pengjinae/04.webp",
+      "trilobites/pengjinia-pengjinae/05.webp",
+      "trilobites/pengjinia-pengjinae/06.webp"
+    ],
+    "protoryctocephalus-balangensis": [
+      "trilobites/protoryctocephalus-balangensis/01.webp",
+      "trilobites/protoryctocephalus-balangensis/02.webp",
+      "trilobites/protoryctocephalus-balangensis/03.webp"
+    ],
+    "protoryctocephalus-wuxunensis": [
+      "trilobites/protoryctocephalus-wuxunensis/01.webp",
+      "trilobites/protoryctocephalus-wuxunensis/02.webp"
+    ],
+    "euarthricocephalus-taijiangensis": [
+      "trilobites/euarthricocephalus-taijiangensis/01.webp",
+      "trilobites/euarthricocephalus-taijiangensis/02.webp",
+      "trilobites/euarthricocephalus-taijiangensis/03.webp"
+    ],
+    "illaenus-sinensis": [
+      "trilobites/illaenus-sinensis/01.webp",
+      "trilobites/illaenus-sinensis/02.webp",
+      "trilobites/illaenus-sinensis/03.webp",
+      "trilobites/illaenus-sinensis/04.webp",
+      "trilobites/illaenus-sinensis/05.webp",
+      "trilobites/illaenus-sinensis/06.webp",
+      "trilobites/illaenus-sinensis/07.webp"
+    ],
+    "meitanillaenus-binodosus": [
+      "trilobites/meitanillaenus-binodosus/01.webp",
+      "trilobites/meitanillaenus-binodosus/02.webp",
+      "trilobites/meitanillaenus-binodosus/03.webp"
+    ],
+    "ciliscutellum-ciliensis": [
+      "trilobites/ciliscutellum-ciliensis/01.webp",
+      "trilobites/ciliscutellum-ciliensis/02.webp",
+      "trilobites/ciliscutellum-ciliensis/03.webp",
+      "trilobites/ciliscutellum-ciliensis/04.webp",
+      "trilobites/ciliscutellum-ciliensis/05.webp"
+    ],
+    "heliopeltis-johnsoni": [
+      "trilobites/heliopeltis-johnsoni/01.webp",
+      "trilobites/heliopeltis-johnsoni/02.webp",
+      "trilobites/heliopeltis-johnsoni/03.webp",
+      "trilobites/heliopeltis-johnsoni/04.webp"
+    ],
+    "rhaxeros-pollinctrix": [
+      "trilobites/rhaxeros-pollinctrix/01.webp",
+      "trilobites/rhaxeros-pollinctrix/02.webp",
+      "trilobites/rhaxeros-pollinctrix/03.webp",
+      "trilobites/rhaxeros-pollinctrix/04.webp"
+    ],
+    "dictyella-longispina": [
+      "trilobites/dictyella-longispina/01.webp",
+      "trilobites/dictyella-longispina/02.webp",
+      "trilobites/dictyella-longispina/03.webp",
+      "trilobites/dictyella-longispina/04.webp",
+      "trilobites/dictyella-longispina/05.webp",
+      "trilobites/dictyella-longispina/06.webp",
+      "trilobites/dictyella-longispina/07.webp",
+      "trilobites/dictyella-longispina/08.webp"
+    ],
+    "shergoldia-laevigata": [
+      "trilobites/shergoldia-laevigata/01.webp",
+      "trilobites/shergoldia-laevigata/02.webp",
+      "trilobites/shergoldia-laevigata/03.webp",
+      "trilobites/shergoldia-laevigata/04.webp",
+      "trilobites/shergoldia-laevigata/05.webp",
+      "trilobites/shergoldia-laevigata/06.webp",
+      "trilobites/shergoldia-laevigata/07.webp",
+      "trilobites/shergoldia-laevigata/08.webp",
+      "trilobites/shergoldia-laevigata/09.webp",
+      "trilobites/shergoldia-laevigata/10.webp"
+    ],
+    "bergeronites-leishuae": [
+      "trilobites/bergeronites-leishuae/01.webp",
+      "trilobites/bergeronites-leishuae/02.webp",
+      "trilobites/bergeronites-leishuae/03.webp",
+      "trilobites/bergeronites-leishuae/04.webp",
+      "trilobites/bergeronites-leishuae/05.webp"
+    ],
+    "bergeronites-ketteleri": [
+      "trilobites/bergeronites-ketteleri/01.webp",
+      "trilobites/bergeronites-ketteleri/02.webp",
+      "trilobites/bergeronites-ketteleri/03.webp",
+      "trilobites/bergeronites-ketteleri/04.webp"
+    ],
+    "palaeadotes-hunanensis": [
+      "trilobites/palaeadotes-hunanensis/01.webp",
+      "trilobites/palaeadotes-hunanensis/02.webp",
+      "trilobites/palaeadotes-hunanensis/03.webp",
+      "trilobites/palaeadotes-hunanensis/04.webp",
+      "trilobites/palaeadotes-hunanensis/05.webp",
+      "trilobites/palaeadotes-hunanensis/06.webp"
+    ],
+    "paradamesella-typica": [
+      "trilobites/paradamesella-typica/01.webp",
+      "trilobites/paradamesella-typica/02.webp",
+      "trilobites/paradamesella-typica/03.webp",
+      "trilobites/paradamesella-typica/04.webp"
+    ],
+    "blackwelderia-mui": [
+      "trilobites/blackwelderia-mui/01.webp",
+      "trilobites/blackwelderia-mui/02.webp",
+      "trilobites/blackwelderia-mui/03.webp",
+      "trilobites/blackwelderia-mui/04.webp",
+      "trilobites/blackwelderia-mui/05.webp",
+      "trilobites/blackwelderia-mui/06.webp",
+      "trilobites/blackwelderia-mui/07.webp"
+    ],
+    "blackwelderia-octaspina": [
+      "trilobites/blackwelderia-octaspina/01.webp",
+      "trilobites/blackwelderia-octaspina/02.webp",
+      "trilobites/blackwelderia-octaspina/03.webp",
+      "trilobites/blackwelderia-octaspina/04.webp",
+      "trilobites/blackwelderia-octaspina/05.webp"
+    ],
+    "blackwelderia-paronai": [
+      "trilobites/blackwelderia-paronai/01.webp",
+      "trilobites/blackwelderia-paronai/02.webp",
+      "trilobites/blackwelderia-paronai/03.webp",
+      "trilobites/blackwelderia-paronai/04.webp",
+      "trilobites/blackwelderia-paronai/05.webp",
+      "trilobites/blackwelderia-paronai/06.webp",
+      "trilobites/blackwelderia-paronai/07.webp"
+    ],
+    "blackwelderia-sinensis": [
+      "trilobites/blackwelderia-sinensis/01.webp",
+      "trilobites/blackwelderia-sinensis/02.webp",
+      "trilobites/blackwelderia-sinensis/03.webp"
+    ],
+    "blackwelderia-sp-1": [
+      "trilobites/blackwelderia-sp-1/01.webp",
+      "trilobites/blackwelderia-sp-1/02.webp",
+      "trilobites/blackwelderia-sp-1/03.webp",
+      "trilobites/blackwelderia-sp-1/04.webp",
+      "trilobites/blackwelderia-sp-1/05.webp",
+      "trilobites/blackwelderia-sp-1/06.webp",
+      "trilobites/blackwelderia-sp-1/07.webp",
+      "trilobites/blackwelderia-sp-1/08.webp",
+      "trilobites/blackwelderia-sp-1/09.webp",
+      "trilobites/blackwelderia-sp-1/10.webp"
+    ],
+    "blackwelderia-sp-2": [
+      "trilobites/blackwelderia-sp-2/01.webp",
+      "trilobites/blackwelderia-sp-2/02.webp",
+      "trilobites/blackwelderia-sp-2/03.webp",
+      "trilobites/blackwelderia-sp-2/04.webp",
+      "trilobites/blackwelderia-sp-2/05.webp",
+      "trilobites/blackwelderia-sp-2/06.webp",
+      "trilobites/blackwelderia-sp-2/07.webp",
+      "trilobites/blackwelderia-sp-2/08.webp",
+      "trilobites/blackwelderia-sp-2/09.webp",
+      "trilobites/blackwelderia-sp-2/10.webp",
+      "trilobites/blackwelderia-sp-2/11.webp"
+    ],
+    "blackwelderia-sp-3": [
+      "trilobites/blackwelderia-sp-3/01.webp",
+      "trilobites/blackwelderia-sp-3/02.webp",
+      "trilobites/blackwelderia-sp-3/03.webp",
+      "trilobites/blackwelderia-sp-3/04.webp"
+    ],
+    "blackwelderia-sp-4": [
+      "trilobites/blackwelderia-sp-4/01.webp"
+    ],
+    "damesella-paronai": [
+      "trilobites/damesella-paronai/01.webp",
+      "trilobites/damesella-paronai/02.webp",
+      "trilobites/damesella-paronai/03.webp",
+      "trilobites/damesella-paronai/04.webp",
+      "trilobites/damesella-paronai/05.webp",
+      "trilobites/damesella-paronai/06.webp",
+      "trilobites/damesella-paronai/07.webp",
+      "trilobites/damesella-paronai/08.webp",
+      "trilobites/damesella-paronai/09.webp",
+      "trilobites/damesella-paronai/10.webp"
+    ],
+    "damesella-shergoldi": [
+      "trilobites/damesella-shergoldi/01.webp",
+      "trilobites/damesella-shergoldi/02.webp"
+    ],
+    "parablackwelderia-luensis": [
+      "trilobites/parablackwelderia-luensis/01.webp",
+      "trilobites/parablackwelderia-luensis/02.webp",
+      "trilobites/parablackwelderia-luensis/03.webp",
+      "trilobites/parablackwelderia-luensis/04.webp",
+      "trilobites/parablackwelderia-luensis/05.webp",
+      "trilobites/parablackwelderia-luensis/06.webp"
+    ],
+    "parablackwelderia-spectabilis": [
+      "trilobites/parablackwelderia-spectabilis/01.webp",
+      "trilobites/parablackwelderia-spectabilis/02.webp",
+      "trilobites/parablackwelderia-spectabilis/03.webp",
+      "trilobites/parablackwelderia-spectabilis/04.webp",
+      "trilobites/parablackwelderia-spectabilis/05.webp",
+      "trilobites/parablackwelderia-spectabilis/06.webp",
+      "trilobites/parablackwelderia-spectabilis/07.webp"
+    ],
+    "pseudoblackwelderia-lubrica": [
+      "trilobites/pseudoblackwelderia-lubrica/01.webp",
+      "trilobites/pseudoblackwelderia-lubrica/02.webp",
+      "trilobites/pseudoblackwelderia-lubrica/03.webp"
+    ],
+    "stephanocare-richthofeni": [
+      "trilobites/stephanocare-richthofeni/01.webp",
+      "trilobites/stephanocare-richthofeni/02.webp",
+      "trilobites/stephanocare-richthofeni/03.webp",
+      "trilobites/stephanocare-richthofeni/04.webp",
+      "trilobites/stephanocare-richthofeni/05.webp",
+      "trilobites/stephanocare-richthofeni/06.webp",
+      "trilobites/stephanocare-richthofeni/07.webp",
+      "trilobites/stephanocare-richthofeni/08.webp",
+      "trilobites/stephanocare-richthofeni/09.webp"
+    ],
+    "taitzehoia-wangi": [
+      "trilobites/taitzehoia-wangi/01.webp",
+      "trilobites/taitzehoia-wangi/02.webp",
+      "trilobites/taitzehoia-wangi/03.webp",
+      "trilobites/taitzehoia-wangi/04.webp",
+      "trilobites/taitzehoia-wangi/05.webp",
+      "trilobites/taitzehoia-wangi/06.webp",
+      "trilobites/taitzehoia-wangi/07.webp"
+    ],
+    "neodrepanura-premesnili": [
+      "trilobites/neodrepanura-premesnili/01.webp",
+      "trilobites/neodrepanura-premesnili/02.webp",
+      "trilobites/neodrepanura-premesnili/03.webp",
+      "trilobites/neodrepanura-premesnili/04.webp",
+      "trilobites/neodrepanura-premesnili/05.webp",
+      "trilobites/neodrepanura-premesnili/06.webp",
+      "trilobites/neodrepanura-premesnili/07.webp",
+      "trilobites/neodrepanura-premesnili/08.webp",
+      "trilobites/neodrepanura-premesnili/09.webp",
+      "trilobites/neodrepanura-premesnili/10.webp"
+    ],
+    "karslanus-leishuae": [
+      "trilobites/karslanus-leishuae/01.webp",
+      "trilobites/karslanus-leishuae/02.webp",
+      "trilobites/karslanus-leishuae/03.webp",
+      "trilobites/karslanus-leishuae/04.webp"
+    ],
+    "gangchengia-subcylindrica": [
+      "trilobites/gangchengia-subcylindrica/01.webp",
+      "trilobites/gangchengia-subcylindrica/02.webp"
+    ],
+    "leishuia-leishuae": [
+      "trilobites/leishuia-leishuae/01.webp",
+      "trilobites/leishuia-leishuae/02.webp",
+      "trilobites/leishuia-leishuae/03.webp",
+      "trilobites/leishuia-leishuae/04.webp",
+      "trilobites/leishuia-leishuae/05.webp",
+      "trilobites/leishuia-leishuae/06.webp",
+      "trilobites/leishuia-leishuae/07.webp"
+    ],
+    "shantungia-liui": [
+      "trilobites/shantungia-liui/01.webp",
+      "trilobites/shantungia-liui/02.webp",
+      "trilobites/shantungia-liui/03.webp",
+      "trilobites/shantungia-liui/04.webp",
+      "trilobites/shantungia-liui/05.webp"
+    ],
+    "shantungia-sinensis": [
+      "trilobites/shantungia-sinensis/01.webp",
+      "trilobites/shantungia-sinensis/02.webp",
+      "trilobites/shantungia-sinensis/03.webp",
+      "trilobites/shantungia-sinensis/04.webp",
+      "trilobites/shantungia-sinensis/05.webp"
+    ],
+    "teinistion-lansi": [
+      "trilobites/teinistion-lansi/01.webp",
+      "trilobites/teinistion-lansi/02.webp",
+      "trilobites/teinistion-lansi/03.webp",
+      "trilobites/teinistion-lansi/04.webp",
+      "trilobites/teinistion-lansi/05.webp"
+    ],
+    "teinistion-typicalis": [
+      "trilobites/teinistion-typicalis/01.webp",
+      "trilobites/teinistion-typicalis/02.webp",
+      "trilobites/teinistion-typicalis/03.webp",
+      "trilobites/teinistion-typicalis/04.webp",
+      "trilobites/teinistion-typicalis/05.webp",
+      "trilobites/teinistion-typicalis/06.webp",
+      "trilobites/teinistion-typicalis/07.webp",
+      "trilobites/teinistion-typicalis/08.webp",
+      "trilobites/teinistion-typicalis/09.webp",
+      "trilobites/teinistion-typicalis/10.webp"
+    ],
+    "teinistion-sp": [
+      "trilobites/teinistion-sp/01.webp",
+      "trilobites/teinistion-sp/02.webp",
+      "trilobites/teinistion-sp/03.webp",
+      "trilobites/teinistion-sp/04.webp",
+      "trilobites/teinistion-sp/05.webp",
+      "trilobites/teinistion-sp/06.webp",
+      "trilobites/teinistion-sp/07.webp",
+      "trilobites/teinistion-sp/08.webp",
+      "trilobites/teinistion-sp/09.webp",
+      "trilobites/teinistion-sp/10.webp"
+    ],
+    "guangxiaspis-guangxiensis": [
+      "trilobites/guangxiaspis-guangxiensis/01.webp",
+      "trilobites/guangxiaspis-guangxiensis/02.webp",
+      "trilobites/guangxiaspis-guangxiensis/03.webp",
+      "trilobites/guangxiaspis-guangxiensis/04.webp",
+      "trilobites/guangxiaspis-guangxiensis/05.webp",
+      "trilobites/guangxiaspis-guangxiensis/06.webp",
+      "trilobites/guangxiaspis-guangxiensis/07.webp",
+      "trilobites/guangxiaspis-guangxiensis/08.webp",
+      "trilobites/guangxiaspis-guangxiensis/09.webp"
+    ],
+    "kaolishania-pustulosa": [
+      "trilobites/kaolishania-pustulosa/01.webp",
+      "trilobites/kaolishania-pustulosa/02.webp",
+      "trilobites/kaolishania-pustulosa/03.webp"
+    ],
+    "postikaolishania-megaspina": [
+      "trilobites/postikaolishania-megaspina/01.webp",
+      "trilobites/postikaolishania-megaspina/02.webp",
+      "trilobites/postikaolishania-megaspina/03.webp",
+      "trilobites/postikaolishania-megaspina/04.webp",
+      "trilobites/postikaolishania-megaspina/05.webp",
+      "trilobites/postikaolishania-megaspina/06.webp",
+      "trilobites/postikaolishania-megaspina/07.webp",
+      "trilobites/postikaolishania-megaspina/08.webp"
+    ],
+    "annamitella-liexiensis": [
+      "trilobites/annamitella-liexiensis/01.webp",
+      "trilobites/annamitella-liexiensis/02.webp",
+      "trilobites/annamitella-liexiensis/03.webp",
+      "trilobites/annamitella-liexiensis/04.webp",
+      "trilobites/annamitella-liexiensis/05.webp",
+      "trilobites/annamitella-liexiensis/06.webp"
+    ],
+    "chiawangella-hunanensis": [
+      "trilobites/chiawangella-hunanensis/01.webp",
+      "trilobites/chiawangella-hunanensis/02.webp",
+      "trilobites/chiawangella-hunanensis/03.webp",
+      "trilobites/chiawangella-hunanensis/04.webp"
+    ],
+    "chiawangella-pacifica": [
+      "trilobites/chiawangella-pacifica/01.webp",
+      "trilobites/chiawangella-pacifica/02.webp"
+    ],
+    "chiawangella-pustulosa": [
+      "trilobites/chiawangella-pustulosa/01.webp",
+      "trilobites/chiawangella-pustulosa/02.webp",
+      "trilobites/chiawangella-pustulosa/03.webp",
+      "trilobites/chiawangella-pustulosa/04.webp",
+      "trilobites/chiawangella-pustulosa/05.webp"
+    ],
+    "prochuangia-licinispinata": [
+      "trilobites/prochuangia-licinispinata/01.webp",
+      "trilobites/prochuangia-licinispinata/02.webp",
+      "trilobites/prochuangia-licinispinata/03.webp",
+      "trilobites/prochuangia-licinispinata/04.webp"
+    ],
+    "wanshania-wanshanensis": [
+      "trilobites/wanshania-wanshanensis/01.webp",
+      "trilobites/wanshania-wanshanensis/02.webp",
+      "trilobites/wanshania-wanshanensis/03.webp",
+      "trilobites/wanshania-wanshanensis/04.webp",
+      "trilobites/wanshania-wanshanensis/05.webp"
+    ],
+    "liostracina-fuluensis": [
+      "trilobites/liostracina-fuluensis/01.webp",
+      "trilobites/liostracina-fuluensis/02.webp",
+      "trilobites/liostracina-fuluensis/03.webp",
+      "trilobites/liostracina-fuluensis/04.webp"
+    ],
+    "liostracina-tangwangzhaiensis": [
+      "trilobites/liostracina-tangwangzhaiensis/01.webp",
+      "trilobites/liostracina-tangwangzhaiensis/02.webp",
+      "trilobites/liostracina-tangwangzhaiensis/03.webp",
+      "trilobites/liostracina-tangwangzhaiensis/04.webp",
+      "trilobites/liostracina-tangwangzhaiensis/05.webp"
+    ],
+    "elrathia-kingii": [
+      "trilobites/elrathia-kingii/01.webp",
+      "trilobites/elrathia-kingii/02.webp",
+      "trilobites/elrathia-kingii/03.webp",
+      "trilobites/elrathia-kingii/04.webp",
+      "trilobites/elrathia-kingii/05.webp",
+      "trilobites/elrathia-kingii/06.webp",
+      "trilobites/elrathia-kingii/07.webp",
+      "trilobites/elrathia-kingii/08.webp"
+    ],
+    "kailiella-angusta": [
+      "trilobites/kailiella-angusta/01.webp",
+      "trilobites/kailiella-angusta/02.webp",
+      "trilobites/kailiella-angusta/03.webp"
+    ],
+    "szeaspis-conicus": [
+      "trilobites/szeaspis-conicus/01.webp",
+      "trilobites/szeaspis-conicus/02.webp",
+      "trilobites/szeaspis-conicus/03.webp",
+      "trilobites/szeaspis-conicus/04.webp",
+      "trilobites/szeaspis-conicus/05.webp",
+      "trilobites/szeaspis-conicus/06.webp",
+      "trilobites/szeaspis-conicus/07.webp",
+      "trilobites/szeaspis-conicus/08.webp",
+      "trilobites/szeaspis-conicus/09.webp"
+    ],
+    "luia-typica": [
+      "trilobites/luia-typica/01.webp",
+      "trilobites/luia-typica/02.webp"
+    ],
+    "asaphiscus-wheeleri": [
+      "trilobites/asaphiscus-wheeleri/01.webp",
+      "trilobites/asaphiscus-wheeleri/02.webp",
+      "trilobites/asaphiscus-wheeleri/03.webp",
+      "trilobites/asaphiscus-wheeleri/04.webp",
+      "trilobites/asaphiscus-wheeleri/05.webp",
+      "trilobites/asaphiscus-wheeleri/06.webp"
+    ],
+    "lioparia-blautoeides": [
+      "trilobites/lioparia-blautoeides/01.webp",
+      "trilobites/lioparia-blautoeides/02.webp",
+      "trilobites/lioparia-blautoeides/03.webp",
+      "trilobites/lioparia-blautoeides/04.webp",
+      "trilobites/lioparia-blautoeides/05.webp",
+      "trilobites/lioparia-blautoeides/06.webp",
+      "trilobites/lioparia-blautoeides/07.webp",
+      "trilobites/lioparia-blautoeides/08.webp",
+      "trilobites/lioparia-blautoeides/09.webp",
+      "trilobites/lioparia-blautoeides/10.webp",
+      "trilobites/lioparia-blautoeides/11.webp"
+    ],
+    "lioparia-sp": [
+      "trilobites/lioparia-sp/01.webp"
+    ],
+    "changshania-conica": [
+      "trilobites/changshania-conica/01.webp",
+      "trilobites/changshania-conica/02.webp",
+      "trilobites/changshania-conica/03.webp",
+      "trilobites/changshania-conica/04.webp",
+      "trilobites/changshania-conica/05.webp",
+      "trilobites/changshania-conica/06.webp"
+    ],
+    "bailiella-lantenoisi": [
+      "trilobites/bailiella-lantenoisi/01.webp",
+      "trilobites/bailiella-lantenoisi/02.webp",
+      "trilobites/bailiella-lantenoisi/03.webp",
+      "trilobites/bailiella-lantenoisi/04.webp",
+      "trilobites/bailiella-lantenoisi/05.webp",
+      "trilobites/bailiella-lantenoisi/06.webp"
+    ],
+    "diceratocephalus-cornutus": [
+      "trilobites/diceratocephalus-cornutus/01.webp",
+      "trilobites/diceratocephalus-cornutus/02.webp",
+      "trilobites/diceratocephalus-cornutus/03.webp",
+      "trilobites/diceratocephalus-cornutus/04.webp",
+      "trilobites/diceratocephalus-cornutus/05.webp",
+      "trilobites/diceratocephalus-cornutus/06.webp"
+    ],
+    "wongia-acalle": [
+      "trilobites/wongia-acalle/01.webp",
+      "trilobites/wongia-acalle/02.webp",
+      "trilobites/wongia-acalle/03.webp",
+      "trilobites/wongia-acalle/04.webp",
+      "trilobites/wongia-acalle/05.webp",
+      "trilobites/wongia-acalle/06.webp",
+      "trilobites/wongia-acalle/07.webp",
+      "trilobites/wongia-acalle/08.webp"
+    ],
+    "acrocephalina-sp": [
+      "trilobites/acrocephalina-sp/01.webp",
+      "trilobites/acrocephalina-sp/02.webp",
+      "trilobites/acrocephalina-sp/03.webp"
+    ],
+    "euloma-changshanensis": [
+      "trilobites/euloma-changshanensis/01.webp",
+      "trilobites/euloma-changshanensis/02.webp",
+      "trilobites/euloma-changshanensis/03.webp",
+      "trilobites/euloma-changshanensis/04.webp"
+    ],
+    "euloma-orientalis": [
+      "trilobites/euloma-orientalis/01.webp",
+      "trilobites/euloma-orientalis/02.webp",
+      "trilobites/euloma-orientalis/03.webp",
+      "trilobites/euloma-orientalis/04.webp",
+      "trilobites/euloma-orientalis/05.webp",
+      "trilobites/euloma-orientalis/06.webp",
+      "trilobites/euloma-orientalis/07.webp",
+      "trilobites/euloma-orientalis/08.webp",
+      "trilobites/euloma-orientalis/09.webp"
+    ],
+    "hewenia-anacantha": [
+      "trilobites/hewenia-anacantha/01.webp",
+      "trilobites/hewenia-anacantha/02.webp",
+      "trilobites/hewenia-anacantha/03.webp",
+      "trilobites/hewenia-anacantha/04.webp",
+      "trilobites/hewenia-anacantha/05.webp",
+      "trilobites/hewenia-anacantha/06.webp",
+      "trilobites/hewenia-anacantha/07.webp",
+      "trilobites/hewenia-anacantha/08.webp"
+    ],
+    "hewenia-typica": [
+      "trilobites/hewenia-typica/01.webp",
+      "trilobites/hewenia-typica/02.webp",
+      "trilobites/hewenia-typica/03.webp",
+      "trilobites/hewenia-typica/04.webp",
+      "trilobites/hewenia-typica/05.webp",
+      "trilobites/hewenia-typica/06.webp",
+      "trilobites/hewenia-typica/07.webp",
+      "trilobites/hewenia-typica/08.webp",
+      "trilobites/hewenia-typica/09.webp",
+      "trilobites/hewenia-typica/10.webp",
+      "trilobites/hewenia-typica/11.webp"
+    ],
+    "shuizuia-laevigata": [
+      "trilobites/shuizuia-laevigata/01.webp",
+      "trilobites/shuizuia-laevigata/02.webp",
+      "trilobites/shuizuia-laevigata/03.webp"
+    ],
+    "prodamesella-convexa": [
+      "trilobites/prodamesella-convexa/01.webp",
+      "trilobites/prodamesella-convexa/02.webp",
+      "trilobites/prodamesella-convexa/03.webp",
+      "trilobites/prodamesella-convexa/04.webp",
+      "trilobites/prodamesella-convexa/05.webp",
+      "trilobites/prodamesella-convexa/06.webp",
+      "trilobites/prodamesella-convexa/07.webp",
+      "trilobites/prodamesella-convexa/08.webp"
+    ],
+    "luaspides-lingyuanensis": [
+      "trilobites/luaspides-lingyuanensis/01.webp",
+      "trilobites/luaspides-lingyuanensis/02.webp",
+      "trilobites/luaspides-lingyuanensis/03.webp",
+      "trilobites/luaspides-lingyuanensis/04.webp",
+      "trilobites/luaspides-lingyuanensis/05.webp",
+      "trilobites/luaspides-lingyuanensis/06.webp"
+    ],
+    "luyanhaoaspis-decorosa": [
+      "trilobites/luyanhaoaspis-decorosa/01.webp",
+      "trilobites/luyanhaoaspis-decorosa/02.webp"
+    ],
+    "amzasskiella-sanduensis": [
+      "trilobites/amzasskiella-sanduensis/01.webp",
+      "trilobites/amzasskiella-sanduensis/02.webp",
+      "trilobites/amzasskiella-sanduensis/03.webp",
+      "trilobites/amzasskiella-sanduensis/04.webp"
+    ],
+    "maotunia-iddingsi": [
+      "trilobites/maotunia-iddingsi/01.webp",
+      "trilobites/maotunia-iddingsi/02.webp",
+      "trilobites/maotunia-iddingsi/03.webp",
+      "trilobites/maotunia-iddingsi/04.webp",
+      "trilobites/maotunia-iddingsi/05.webp",
+      "trilobites/maotunia-iddingsi/06.webp",
+      "trilobites/maotunia-iddingsi/07.webp",
+      "trilobites/maotunia-iddingsi/08.webp"
+    ],
+    "maotunia-semiplectra": [
+      "trilobites/maotunia-semiplectra/01.webp",
+      "trilobites/maotunia-semiplectra/02.webp",
+      "trilobites/maotunia-semiplectra/03.webp"
+    ],
+    "proasaphiscus-honanensis": [
+      "trilobites/proasaphiscus-honanensis/01.webp",
+      "trilobites/proasaphiscus-honanensis/02.webp",
+      "trilobites/proasaphiscus-honanensis/03.webp",
+      "trilobites/proasaphiscus-honanensis/04.webp",
+      "trilobites/proasaphiscus-honanensis/05.webp",
+      "trilobites/proasaphiscus-honanensis/06.webp"
+    ],
+    "proasaphiscus-lui": [
+      "trilobites/proasaphiscus-lui/01.webp",
+      "trilobites/proasaphiscus-lui/02.webp",
+      "trilobites/proasaphiscus-lui/03.webp",
+      "trilobites/proasaphiscus-lui/04.webp",
+      "trilobites/proasaphiscus-lui/05.webp",
+      "trilobites/proasaphiscus-lui/06.webp",
+      "trilobites/proasaphiscus-lui/07.webp",
+      "trilobites/proasaphiscus-lui/08.webp",
+      "trilobites/proasaphiscus-lui/09.webp"
+    ],
+    "proasaphiscus-yabei": [
+      "trilobites/proasaphiscus-yabei/01.webp",
+      "trilobites/proasaphiscus-yabei/02.webp",
+      "trilobites/proasaphiscus-yabei/03.webp",
+      "trilobites/proasaphiscus-yabei/04.webp",
+      "trilobites/proasaphiscus-yabei/05.webp",
+      "trilobites/proasaphiscus-yabei/06.webp",
+      "trilobites/proasaphiscus-yabei/07.webp",
+      "trilobites/proasaphiscus-yabei/08.webp"
+    ],
+    "eosoptychoparia-guizhouensis": [
+      "trilobites/eosoptychoparia-guizhouensis/01.webp",
+      "trilobites/eosoptychoparia-guizhouensis/02.webp",
+      "trilobites/eosoptychoparia-guizhouensis/03.webp",
+      "trilobites/eosoptychoparia-guizhouensis/04.webp"
+    ],
+    "nangaops-danzhaiensis": [
+      "trilobites/nangaops-danzhaiensis/01.webp",
+      "trilobites/nangaops-danzhaiensis/02.webp",
+      "trilobites/nangaops-danzhaiensis/03.webp",
+      "trilobites/nangaops-danzhaiensis/04.webp"
+    ],
+    "akoldinioidia-dydimacantha": [
+      "trilobites/akoldinioidia-dydimacantha/01.webp",
+      "trilobites/akoldinioidia-dydimacantha/02.webp"
+    ],
+    "akoldinioidia-hewenensis": [
+      "trilobites/akoldinioidia-hewenensis/01.webp",
+      "trilobites/akoldinioidia-hewenensis/02.webp",
+      "trilobites/akoldinioidia-hewenensis/03.webp",
+      "trilobites/akoldinioidia-hewenensis/04.webp",
+      "trilobites/akoldinioidia-hewenensis/05.webp"
+    ],
+    "akoldinioidia-shanjiangensis": [
+      "trilobites/akoldinioidia-shanjiangensis/01.webp",
+      "trilobites/akoldinioidia-shanjiangensis/02.webp"
+    ],
+    "conophrys-changshanensis": [
+      "trilobites/conophrys-changshanensis/01.webp",
+      "trilobites/conophrys-changshanensis/02.webp",
+      "trilobites/conophrys-changshanensis/03.webp",
+      "trilobites/conophrys-changshanensis/04.webp",
+      "trilobites/conophrys-changshanensis/05.webp",
+      "trilobites/conophrys-changshanensis/06.webp",
+      "trilobites/conophrys-changshanensis/07.webp",
+      "trilobites/conophrys-changshanensis/08.webp"
+    ],
+    "changqingia-puteata": [
+      "trilobites/changqingia-puteata/01.webp",
+      "trilobites/changqingia-puteata/02.webp",
+      "trilobites/changqingia-puteata/03.webp",
+      "trilobites/changqingia-puteata/04.webp",
+      "trilobites/changqingia-puteata/05.webp",
+      "trilobites/changqingia-puteata/06.webp",
+      "trilobites/changqingia-puteata/07.webp",
+      "trilobites/changqingia-puteata/08.webp",
+      "trilobites/changqingia-puteata/09.webp",
+      "trilobites/changqingia-puteata/10.webp"
+    ],
+    "solenoparia-intermedia": [
+      "trilobites/solenoparia-intermedia/01.webp",
+      "trilobites/solenoparia-intermedia/02.webp",
+      "trilobites/solenoparia-intermedia/03.webp",
+      "trilobites/solenoparia-intermedia/04.webp"
+    ],
+    "ruichengaspis-mirabilis": [
+      "trilobites/ruichengaspis-mirabilis/01.webp",
+      "trilobites/ruichengaspis-mirabilis/02.webp",
+      "trilobites/ruichengaspis-mirabilis/03.webp",
+      "trilobites/ruichengaspis-mirabilis/04.webp",
+      "trilobites/ruichengaspis-mirabilis/05.webp",
+      "trilobites/ruichengaspis-mirabilis/06.webp"
+    ],
+    "phantaspis-auritus": [
+      "trilobites/phantaspis-auritus/01.webp",
+      "trilobites/phantaspis-auritus/02.webp",
+      "trilobites/phantaspis-auritus/03.webp",
+      "trilobites/phantaspis-auritus/04.webp",
+      "trilobites/phantaspis-auritus/05.webp",
+      "trilobites/phantaspis-auritus/06.webp",
+      "trilobites/phantaspis-auritus/07.webp",
+      "trilobites/phantaspis-auritus/08.webp",
+      "trilobites/phantaspis-auritus/09.webp",
+      "trilobites/phantaspis-auritus/10.webp"
+    ],
+    "hypermecaspis-armata": [
+      "trilobites/hypermecaspis-armata/01.webp",
+      "trilobites/hypermecaspis-armata/02.webp",
+      "trilobites/hypermecaspis-armata/03.webp"
+    ],
+    "hypermecaspis-asiatica": [
+      "trilobites/hypermecaspis-asiatica/01.webp",
+      "trilobites/hypermecaspis-asiatica/02.webp",
+      "trilobites/hypermecaspis-asiatica/03.webp"
+    ],
+    "hypermecaspis-inermis": [
+      "trilobites/hypermecaspis-inermis/01.webp",
+      "trilobites/hypermecaspis-inermis/02.webp",
+      "trilobites/hypermecaspis-inermis/03.webp",
+      "trilobites/hypermecaspis-inermis/04.webp"
+    ],
+    "aciculolenus-askewi": [
+      "trilobites/aciculolenus-askewi/01.webp",
+      "trilobites/aciculolenus-askewi/02.webp",
+      "trilobites/aciculolenus-askewi/03.webp",
+      "trilobites/aciculolenus-askewi/04.webp",
+      "trilobites/aciculolenus-askewi/05.webp"
+    ],
+    "chekiangaspis-chekiangensis": [
+      "trilobites/chekiangaspis-chekiangensis/01.webp",
+      "trilobites/chekiangaspis-chekiangensis/02.webp",
+      "trilobites/chekiangaspis-chekiangensis/03.webp",
+      "trilobites/chekiangaspis-chekiangensis/04.webp",
+      "trilobites/chekiangaspis-chekiangensis/05.webp"
+    ],
+    "ctenopyge-ctenopyge-ahlbergi": [
+      "trilobites/ctenopyge-ctenopyge-ahlbergi/01.webp",
+      "trilobites/ctenopyge-ctenopyge-ahlbergi/02.webp",
+      "trilobites/ctenopyge-ctenopyge-ahlbergi/03.webp"
+    ],
+    "ctenopyge-ctenopyge-gracilis": [
+      "trilobites/ctenopyge-ctenopyge-gracilis/01.webp",
+      "trilobites/ctenopyge-ctenopyge-gracilis/02.webp",
+      "trilobites/ctenopyge-ctenopyge-gracilis/03.webp"
+    ],
+    "ctenopyge-ctenopyge-rushtoni": [
+      "trilobites/ctenopyge-ctenopyge-rushtoni/01.webp",
+      "trilobites/ctenopyge-ctenopyge-rushtoni/02.webp"
+    ],
+    "ctenopyge-mesoctenopyge-tumida": [
+      "trilobites/ctenopyge-mesoctenopyge-tumida/01.webp",
+      "trilobites/ctenopyge-mesoctenopyge-tumida/02.webp"
+    ],
+    "inkouia-jiangshanensis": [
+      "trilobites/inkouia-jiangshanensis/01.webp",
+      "trilobites/inkouia-jiangshanensis/02.webp"
+    ],
+    "leptoplastides-salteri": [
+      "trilobites/leptoplastides-salteri/01.webp",
+      "trilobites/leptoplastides-salteri/02.webp",
+      "trilobites/leptoplastides-salteri/03.webp",
+      "trilobites/leptoplastides-salteri/04.webp",
+      "trilobites/leptoplastides-salteri/05.webp",
+      "trilobites/leptoplastides-salteri/06.webp",
+      "trilobites/leptoplastides-salteri/07.webp"
+    ],
+    "olenus-austriacus": [
+      "trilobites/olenus-austriacus/01.webp",
+      "trilobites/olenus-austriacus/02.webp",
+      "trilobites/olenus-austriacus/03.webp",
+      "trilobites/olenus-austriacus/04.webp"
+    ],
+    "olenus-henningsmoeni": [
+      "trilobites/olenus-henningsmoeni/01.webp",
+      "trilobites/olenus-henningsmoeni/02.webp",
+      "trilobites/olenus-henningsmoeni/03.webp",
+      "trilobites/olenus-henningsmoeni/04.webp"
+    ],
+    "olenus-gibbosus": [
+      "trilobites/olenus-gibbosus/01.webp",
+      "trilobites/olenus-gibbosus/02.webp",
+      "trilobites/olenus-gibbosus/03.webp",
+      "trilobites/olenus-gibbosus/04.webp",
+      "trilobites/olenus-gibbosus/05.webp"
+    ],
+    "olenus-punctatus": [
+      "trilobites/olenus-punctatus/01.webp",
+      "trilobites/olenus-punctatus/02.webp",
+      "trilobites/olenus-punctatus/03.webp"
+    ],
+    "olenus-sinensis": [
+      "trilobites/olenus-sinensis/01.webp",
+      "trilobites/olenus-sinensis/02.webp"
+    ],
+    "olenus-sp": [
+      "trilobites/olenus-sp/01.webp",
+      "trilobites/olenus-sp/02.webp",
+      "trilobites/olenus-sp/03.webp",
+      "trilobites/olenus-sp/04.webp",
+      "trilobites/olenus-sp/05.webp"
+    ],
+    "triarthrus-eatoni": [
+      "trilobites/triarthrus-eatoni/01.webp",
+      "trilobites/triarthrus-eatoni/02.webp",
+      "trilobites/triarthrus-eatoni/03.webp",
+      "trilobites/triarthrus-eatoni/04.webp",
+      "trilobites/triarthrus-eatoni/05.webp",
+      "trilobites/triarthrus-eatoni/06.webp",
+      "trilobites/triarthrus-eatoni/07.webp",
+      "trilobites/triarthrus-eatoni/08.webp",
+      "trilobites/triarthrus-eatoni/09.webp"
+    ],
+    "triarthrus-novoaustralis": [
+      "trilobites/triarthrus-novoaustralis/01.webp",
+      "trilobites/triarthrus-novoaustralis/02.webp",
+      "trilobites/triarthrus-novoaustralis/03.webp"
+    ],
+    "westergaardites-pelturaeformis": [
+      "trilobites/westergaardites-pelturaeformis/01.webp",
+      "trilobites/westergaardites-pelturaeformis/02.webp",
+      "trilobites/westergaardites-pelturaeformis/03.webp"
+    ],
+    "wujiajiania-expansa": [
+      "trilobites/wujiajiania-expansa/01.webp",
+      "trilobites/wujiajiania-expansa/02.webp",
+      "trilobites/wujiajiania-expansa/03.webp",
+      "trilobites/wujiajiania-expansa/04.webp",
+      "trilobites/wujiajiania-expansa/05.webp"
+    ],
+    "pemphigaspis-bullata": [
+      "trilobites/pemphigaspis-bullata/01.webp",
+      "trilobites/pemphigaspis-bullata/02.webp",
+      "trilobites/pemphigaspis-bullata/03.webp"
+    ],
+    "paracoosia-asiatica": [
+      "trilobites/paracoosia-asiatica/01.webp",
+      "trilobites/paracoosia-asiatica/02.webp",
+      "trilobites/paracoosia-asiatica/03.webp",
+      "trilobites/paracoosia-asiatica/04.webp",
+      "trilobites/paracoosia-asiatica/05.webp"
+    ],
+    "paracoosia-langgongsiensis": [
+      "trilobites/paracoosia-langgongsiensis/01.webp",
+      "trilobites/paracoosia-langgongsiensis/02.webp",
+      "trilobites/paracoosia-langgongsiensis/03.webp",
+      "trilobites/paracoosia-langgongsiensis/04.webp",
+      "trilobites/paracoosia-langgongsiensis/05.webp"
+    ],
+    "erixanium-sentum": [
+      "trilobites/erixanium-sentum/01.webp",
+      "trilobites/erixanium-sentum/02.webp",
+      "trilobites/erixanium-sentum/03.webp",
+      "trilobites/erixanium-sentum/04.webp"
+    ],
+    "erixanium-sp": [
+      "trilobites/erixanium-sp/01.webp"
+    ],
+    "asaphellus-aristous": [
+      "trilobites/asaphellus-aristous/01.webp",
+      "trilobites/asaphellus-aristous/02.webp",
+      "trilobites/asaphellus-aristous/03.webp",
+      "trilobites/asaphellus-aristous/04.webp",
+      "trilobites/asaphellus-aristous/05.webp"
+    ],
+    "birmanites-birmanicus": [
+      "trilobites/birmanites-birmanicus/01.webp",
+      "trilobites/birmanites-birmanicus/02.webp",
+      "trilobites/birmanites-birmanicus/03.webp",
+      "trilobites/birmanites-birmanicus/04.webp",
+      "trilobites/birmanites-birmanicus/05.webp",
+      "trilobites/birmanites-birmanicus/06.webp",
+      "trilobites/birmanites-birmanicus/07.webp"
+    ],
+    "birmanites-yunnanensis": [
+      "trilobites/birmanites-yunnanensis/01.webp",
+      "trilobites/birmanites-yunnanensis/02.webp",
+      "trilobites/birmanites-yunnanensis/03.webp",
+      "trilobites/birmanites-yunnanensis/04.webp"
+    ],
+    "dolerobasilicus-yokusensis": [
+      "trilobites/dolerobasilicus-yokusensis/01.webp",
+      "trilobites/dolerobasilicus-yokusensis/02.webp",
+      "trilobites/dolerobasilicus-yokusensis/03.webp",
+      "trilobites/dolerobasilicus-yokusensis/04.webp",
+      "trilobites/dolerobasilicus-yokusensis/05.webp"
+    ],
+    "eoisotelus-orientalis": [
+      "trilobites/eoisotelus-orientalis/01.webp",
+      "trilobites/eoisotelus-orientalis/02.webp",
+      "trilobites/eoisotelus-orientalis/03.webp",
+      "trilobites/eoisotelus-orientalis/04.webp"
+    ],
+    "isotelus-rex": [
+      "trilobites/isotelus-rex/01.webp",
+      "trilobites/isotelus-rex/02.webp",
+      "trilobites/isotelus-rex/03.webp",
+      "trilobites/isotelus-rex/04.webp"
+    ],
+    "megistaspidella-triangularis": [
+      "trilobites/megistaspidella-triangularis/01.webp",
+      "trilobites/megistaspidella-triangularis/02.webp",
+      "trilobites/megistaspidella-triangularis/03.webp",
+      "trilobites/megistaspidella-triangularis/04.webp",
+      "trilobites/megistaspidella-triangularis/05.webp"
+    ],
+    "mioptychopyge-suni": [
+      "trilobites/mioptychopyge-suni/01.webp",
+      "trilobites/mioptychopyge-suni/02.webp",
+      "trilobites/mioptychopyge-suni/03.webp",
+      "trilobites/mioptychopyge-suni/04.webp",
+      "trilobites/mioptychopyge-suni/05.webp",
+      "trilobites/mioptychopyge-suni/06.webp",
+      "trilobites/mioptychopyge-suni/07.webp"
+    ],
+    "mioptychopyge-thebawi": [
+      "trilobites/mioptychopyge-thebawi/01.webp",
+      "trilobites/mioptychopyge-thebawi/02.webp",
+      "trilobites/mioptychopyge-thebawi/03.webp",
+      "trilobites/mioptychopyge-thebawi/04.webp",
+      "trilobites/mioptychopyge-thebawi/05.webp",
+      "trilobites/mioptychopyge-thebawi/06.webp",
+      "trilobites/mioptychopyge-thebawi/07.webp",
+      "trilobites/mioptychopyge-thebawi/08.webp",
+      "trilobites/mioptychopyge-thebawi/09.webp"
+    ],
+    "mioptychopyge-trinodosa": [
+      "trilobites/mioptychopyge-trinodosa/01.webp",
+      "trilobites/mioptychopyge-trinodosa/02.webp"
+    ],
+    "niobe-huangnigangensis": [
+      "trilobites/niobe-huangnigangensis/01.webp",
+      "trilobites/niobe-huangnigangensis/02.webp"
+    ],
+    "niobe-yangtzeensis": [
+      "trilobites/niobe-yangtzeensis/01.webp",
+      "trilobites/niobe-yangtzeensis/02.webp",
+      "trilobites/niobe-yangtzeensis/03.webp",
+      "trilobites/niobe-yangtzeensis/04.webp",
+      "trilobites/niobe-yangtzeensis/05.webp"
+    ],
+    "niobides-armatus": [
+      "trilobites/niobides-armatus/01.webp",
+      "trilobites/niobides-armatus/02.webp",
+      "trilobites/niobides-armatus/03.webp"
+    ],
+    "niobides-chekiangensis": [
+      "trilobites/niobides-chekiangensis/01.webp",
+      "trilobites/niobides-chekiangensis/02.webp",
+      "trilobites/niobides-chekiangensis/03.webp",
+      "trilobites/niobides-chekiangensis/04.webp"
+    ],
+    "ogygiocarella-debuchii": [
+      "trilobites/ogygiocarella-debuchii/01.webp",
+      "trilobites/ogygiocarella-debuchii/02.webp",
+      "trilobites/ogygiocarella-debuchii/03.webp",
+      "trilobites/ogygiocarella-debuchii/04.webp",
+      "trilobites/ogygiocarella-debuchii/05.webp",
+      "trilobites/ogygiocarella-debuchii/06.webp",
+      "trilobites/ogygiocarella-debuchii/07.webp",
+      "trilobites/ogygiocarella-debuchii/08.webp",
+      "trilobites/ogygiocarella-debuchii/09.webp",
+      "trilobites/ogygiocarella-debuchii/10.webp"
+    ],
+    "pseudogygites-latimarginatus": [
+      "trilobites/pseudogygites-latimarginatus/01.webp",
+      "trilobites/pseudogygites-latimarginatus/02.webp",
+      "trilobites/pseudogygites-latimarginatus/03.webp",
+      "trilobites/pseudogygites-latimarginatus/04.webp",
+      "trilobites/pseudogygites-latimarginatus/05.webp",
+      "trilobites/pseudogygites-latimarginatus/06.webp",
+      "trilobites/pseudogygites-latimarginatus/07.webp"
+    ],
+    "tsaidamaspis-diarmatus": [
+      "trilobites/tsaidamaspis-diarmatus/01.webp",
+      "trilobites/tsaidamaspis-diarmatus/02.webp",
+      "trilobites/tsaidamaspis-diarmatus/03.webp"
+    ],
+    "zhiyia-tsinghaiensis": [
+      "trilobites/zhiyia-tsinghaiensis/01.webp",
+      "trilobites/zhiyia-tsinghaiensis/02.webp",
+      "trilobites/zhiyia-tsinghaiensis/03.webp"
+    ],
+    "zhiyia-sp": [
+      "trilobites/zhiyia-sp/01.webp",
+      "trilobites/zhiyia-sp/02.webp",
+      "trilobites/zhiyia-sp/03.webp",
+      "trilobites/zhiyia-sp/04.webp",
+      "trilobites/zhiyia-sp/05.webp",
+      "trilobites/zhiyia-sp/06.webp",
+      "trilobites/zhiyia-sp/07.webp",
+      "trilobites/zhiyia-sp/08.webp",
+      "trilobites/zhiyia-sp/09.webp"
+    ],
+    "ajacicrepida-ajax": [
+      "trilobites/ajacicrepida-ajax/01.webp",
+      "trilobites/ajacicrepida-ajax/02.webp",
+      "trilobites/ajacicrepida-ajax/03.webp",
+      "trilobites/ajacicrepida-ajax/04.webp"
+    ],
+    "asiocephalus-sulcatus": [
+      "trilobites/asiocephalus-sulcatus/01.webp",
+      "trilobites/asiocephalus-sulcatus/02.webp",
+      "trilobites/asiocephalus-sulcatus/03.webp",
+      "trilobites/asiocephalus-sulcatus/04.webp",
+      "trilobites/asiocephalus-sulcatus/05.webp",
+      "trilobites/asiocephalus-sulcatus/06.webp",
+      "trilobites/asiocephalus-sulcatus/07.webp",
+      "trilobites/asiocephalus-sulcatus/08.webp",
+      "trilobites/asiocephalus-sulcatus/09.webp"
+    ],
+    "charchaqia-norini": [
+      "trilobites/charchaqia-norini/01.webp",
+      "trilobites/charchaqia-norini/02.webp",
+      "trilobites/charchaqia-norini/03.webp",
+      "trilobites/charchaqia-norini/04.webp",
+      "trilobites/charchaqia-norini/05.webp"
+    ],
+    "dichelepyge-lata": [
+      "trilobites/dichelepyge-lata/01.webp",
+      "trilobites/dichelepyge-lata/02.webp",
+      "trilobites/dichelepyge-lata/03.webp",
+      "trilobites/dichelepyge-lata/04.webp",
+      "trilobites/dichelepyge-lata/05.webp",
+      "trilobites/dichelepyge-lata/06.webp",
+      "trilobites/dichelepyge-lata/07.webp",
+      "trilobites/dichelepyge-lata/08.webp",
+      "trilobites/dichelepyge-lata/09.webp",
+      "trilobites/dichelepyge-lata/10.webp"
+    ],
+    "hedinaspis-brevis": [
+      "trilobites/hedinaspis-brevis/01.webp",
+      "trilobites/hedinaspis-brevis/02.webp",
+      "trilobites/hedinaspis-brevis/03.webp",
+      "trilobites/hedinaspis-brevis/04.webp"
+    ],
+    "hedinaspis-kueichouensis": [
+      "trilobites/hedinaspis-kueichouensis/01.webp",
+      "trilobites/hedinaspis-kueichouensis/02.webp",
+      "trilobites/hedinaspis-kueichouensis/03.webp",
+      "trilobites/hedinaspis-kueichouensis/04.webp"
+    ],
+    "hedinaspis-regalis": [
+      "trilobites/hedinaspis-regalis/01.webp"
+    ],
+    "hedinaspis-shengi": [
+      "trilobites/hedinaspis-shengi/01.webp"
+    ],
+    "hedinaspis-sp-1": [
+      "trilobites/hedinaspis-sp-1/01.webp",
+      "trilobites/hedinaspis-sp-1/02.webp",
+      "trilobites/hedinaspis-sp-1/03.webp",
+      "trilobites/hedinaspis-sp-1/04.webp",
+      "trilobites/hedinaspis-sp-1/05.webp",
+      "trilobites/hedinaspis-sp-1/06.webp"
+    ],
+    "hedinaspis-sp-2": [
+      "trilobites/hedinaspis-sp-2/01.webp",
+      "trilobites/hedinaspis-sp-2/02.webp",
+      "trilobites/hedinaspis-sp-2/03.webp"
+    ],
+    "hedinaspis-sp-3": [
+      "trilobites/hedinaspis-sp-3/01.webp",
+      "trilobites/hedinaspis-sp-3/02.webp",
+      "trilobites/hedinaspis-sp-3/03.webp",
+      "trilobites/hedinaspis-sp-3/04.webp"
+    ],
+    "hysterolenus-asiaticus": [
+      "trilobites/hysterolenus-asiaticus/01.webp",
+      "trilobites/hysterolenus-asiaticus/02.webp",
+      "trilobites/hysterolenus-asiaticus/03.webp",
+      "trilobites/hysterolenus-asiaticus/04.webp",
+      "trilobites/hysterolenus-asiaticus/05.webp"
+    ],
+    "proceratopyge-sinoproceratopyge-constrictus": [
+      "trilobites/proceratopyge-sinoproceratopyge-constrictus/01.webp",
+      "trilobites/proceratopyge-sinoproceratopyge-constrictus/02.webp",
+      "trilobites/proceratopyge-sinoproceratopyge-constrictus/03.webp",
+      "trilobites/proceratopyge-sinoproceratopyge-constrictus/04.webp"
+    ],
+    "proceratopyge-sinoproceratopyge-kiangshanensis": [
+      "trilobites/proceratopyge-sinoproceratopyge-kiangshanensis/01.webp",
+      "trilobites/proceratopyge-sinoproceratopyge-kiangshanensis/02.webp",
+      "trilobites/proceratopyge-sinoproceratopyge-kiangshanensis/03.webp",
+      "trilobites/proceratopyge-sinoproceratopyge-kiangshanensis/04.webp"
+    ],
+    "tamdaspis-jingxiensis": [
+      "trilobites/tamdaspis-jingxiensis/01.webp",
+      "trilobites/tamdaspis-jingxiensis/02.webp",
+      "trilobites/tamdaspis-jingxiensis/03.webp",
+      "trilobites/tamdaspis-jingxiensis/04.webp",
+      "trilobites/tamdaspis-jingxiensis/05.webp",
+      "trilobites/tamdaspis-jingxiensis/06.webp",
+      "trilobites/tamdaspis-jingxiensis/07.webp",
+      "trilobites/tamdaspis-jingxiensis/08.webp"
+    ],
+    "cyclopyge-recurva": [
+      "trilobites/cyclopyge-recurva/01.webp",
+      "trilobites/cyclopyge-recurva/02.webp",
+      "trilobites/cyclopyge-recurva/03.webp",
+      "trilobites/cyclopyge-recurva/04.webp",
+      "trilobites/cyclopyge-recurva/05.webp"
+    ],
+    "heterocyclopyge-obsoleta": [
+      "trilobites/heterocyclopyge-obsoleta/01.webp",
+      "trilobites/heterocyclopyge-obsoleta/02.webp"
+    ],
+    "prospectatrix-exquisita": [
+      "trilobites/prospectatrix-exquisita/01.webp",
+      "trilobites/prospectatrix-exquisita/02.webp",
+      "trilobites/prospectatrix-exquisita/03.webp",
+      "trilobites/prospectatrix-exquisita/04.webp"
+    ],
+    "sagavia-chuanxiensis": [
+      "trilobites/sagavia-chuanxiensis/01.webp",
+      "trilobites/sagavia-chuanxiensis/02.webp"
+    ],
+    "xenocyclopyge-jaskovitchi": [
+      "trilobites/xenocyclopyge-jaskovitchi/01.webp",
+      "trilobites/xenocyclopyge-jaskovitchi/02.webp"
+    ],
+    "xenocyclopyge-radiata": [
+      "trilobites/xenocyclopyge-radiata/01.webp",
+      "trilobites/xenocyclopyge-radiata/02.webp",
+      "trilobites/xenocyclopyge-radiata/03.webp",
+      "trilobites/xenocyclopyge-radiata/04.webp",
+      "trilobites/xenocyclopyge-radiata/05.webp",
+      "trilobites/xenocyclopyge-radiata/06.webp",
+      "trilobites/xenocyclopyge-radiata/07.webp"
+    ],
+    "neopsilocephalina-zunyiensis": [
+      "trilobites/neopsilocephalina-zunyiensis/01.webp",
+      "trilobites/neopsilocephalina-zunyiensis/02.webp",
+      "trilobites/neopsilocephalina-zunyiensis/03.webp",
+      "trilobites/neopsilocephalina-zunyiensis/04.webp",
+      "trilobites/neopsilocephalina-zunyiensis/05.webp"
+    ],
+    "neopsilocephalina-sp": [
+      "trilobites/neopsilocephalina-sp/01.webp",
+      "trilobites/neopsilocephalina-sp/02.webp"
+    ],
+    "nileus-armadilloformis": [
+      "trilobites/nileus-armadilloformis/01.webp",
+      "trilobites/nileus-armadilloformis/02.webp",
+      "trilobites/nileus-armadilloformis/03.webp",
+      "trilobites/nileus-armadilloformis/04.webp",
+      "trilobites/nileus-armadilloformis/05.webp",
+      "trilobites/nileus-armadilloformis/06.webp",
+      "trilobites/nileus-armadilloformis/07.webp",
+      "trilobites/nileus-armadilloformis/08.webp"
+    ],
+    "nileus-walcotti": [
+      "trilobites/nileus-walcotti/01.webp",
+      "trilobites/nileus-walcotti/02.webp",
+      "trilobites/nileus-walcotti/03.webp",
+      "trilobites/nileus-walcotti/04.webp",
+      "trilobites/nileus-walcotti/05.webp"
+    ],
+    "symphysurus-ebbestadi": [
+      "trilobites/symphysurus-ebbestadi/01.webp",
+      "trilobites/symphysurus-ebbestadi/02.webp",
+      "trilobites/symphysurus-ebbestadi/03.webp",
+      "trilobites/symphysurus-ebbestadi/04.webp"
+    ],
+    "symphysurus-kientehsiensis": [
+      "trilobites/symphysurus-kientehsiensis/01.webp",
+      "trilobites/symphysurus-kientehsiensis/02.webp",
+      "trilobites/symphysurus-kientehsiensis/03.webp",
+      "trilobites/symphysurus-kientehsiensis/04.webp",
+      "trilobites/symphysurus-kientehsiensis/05.webp",
+      "trilobites/symphysurus-kientehsiensis/06.webp",
+      "trilobites/symphysurus-kientehsiensis/07.webp",
+      "trilobites/symphysurus-kientehsiensis/08.webp",
+      "trilobites/symphysurus-kientehsiensis/09.webp"
+    ],
+    "symphysurus-klimoliensis": [
+      "trilobites/symphysurus-klimoliensis/01.webp",
+      "trilobites/symphysurus-klimoliensis/02.webp",
+      "trilobites/symphysurus-klimoliensis/03.webp",
+      "trilobites/symphysurus-klimoliensis/04.webp",
+      "trilobites/symphysurus-klimoliensis/05.webp",
+      "trilobites/symphysurus-klimoliensis/06.webp"
+    ],
+    "symphysurus-palpebrosus": [
+      "trilobites/symphysurus-palpebrosus/01.webp",
+      "trilobites/symphysurus-palpebrosus/02.webp",
+      "trilobites/symphysurus-palpebrosus/03.webp",
+      "trilobites/symphysurus-palpebrosus/04.webp"
+    ],
+    "omeipsis-huangi": [
+      "trilobites/omeipsis-huangi/01.webp",
+      "trilobites/omeipsis-huangi/02.webp",
+      "trilobites/omeipsis-huangi/03.webp",
+      "trilobites/omeipsis-huangi/04.webp",
+      "trilobites/omeipsis-huangi/05.webp"
+    ],
+    "tungtzuella-szechuanensis": [
+      "trilobites/tungtzuella-szechuanensis/01.webp",
+      "trilobites/tungtzuella-szechuanensis/02.webp"
+    ],
+    "sinosaukia-daliensis": [
+      "trilobites/sinosaukia-daliensis/01.webp",
+      "trilobites/sinosaukia-daliensis/02.webp",
+      "trilobites/sinosaukia-daliensis/03.webp",
+      "trilobites/sinosaukia-daliensis/04.webp",
+      "trilobites/sinosaukia-daliensis/05.webp",
+      "trilobites/sinosaukia-daliensis/06.webp"
+    ],
+    "sinosaukia-distincta": [
+      "trilobites/sinosaukia-distincta/01.webp",
+      "trilobites/sinosaukia-distincta/02.webp",
+      "trilobites/sinosaukia-distincta/03.webp",
+      "trilobites/sinosaukia-distincta/04.webp",
+      "trilobites/sinosaukia-distincta/05.webp"
+    ],
+    "asaphopsoides-yongshunensis": [
+      "trilobites/asaphopsoides-yongshunensis/01.webp",
+      "trilobites/asaphopsoides-yongshunensis/02.webp",
+      "trilobites/asaphopsoides-yongshunensis/03.webp",
+      "trilobites/asaphopsoides-yongshunensis/04.webp",
+      "trilobites/asaphopsoides-yongshunensis/05.webp",
+      "trilobites/asaphopsoides-yongshunensis/06.webp"
+    ],
+    "asaphopsoides-sp": [
+      "trilobites/asaphopsoides-sp/01.webp",
+      "trilobites/asaphopsoides-sp/02.webp",
+      "trilobites/asaphopsoides-sp/03.webp",
+      "trilobites/asaphopsoides-sp/04.webp"
+    ],
+    "apatokephalus-latilimbatus": [
+      "trilobites/apatokephalus-latilimbatus/01.webp",
+      "trilobites/apatokephalus-latilimbatus/02.webp"
+    ],
+    "hexacopyge-yichangensis": [
+      "trilobites/hexacopyge-yichangensis/01.webp",
+      "trilobites/hexacopyge-yichangensis/02.webp",
+      "trilobites/hexacopyge-yichangensis/03.webp",
+      "trilobites/hexacopyge-yichangensis/04.webp",
+      "trilobites/hexacopyge-yichangensis/05.webp",
+      "trilobites/hexacopyge-yichangensis/06.webp",
+      "trilobites/hexacopyge-yichangensis/07.webp",
+      "trilobites/hexacopyge-yichangensis/08.webp",
+      "trilobites/hexacopyge-yichangensis/09.webp",
+      "trilobites/hexacopyge-yichangensis/10.webp"
+    ],
+    "pararemopleurides-shaanxiensis": [
+      "trilobites/pararemopleurides-shaanxiensis/01.webp",
+      "trilobites/pararemopleurides-shaanxiensis/02.webp",
+      "trilobites/pararemopleurides-shaanxiensis/03.webp"
+    ],
+    "remopleurides-xiazhenensis": [
+      "trilobites/remopleurides-xiazhenensis/01.webp",
+      "trilobites/remopleurides-xiazhenensis/02.webp",
+      "trilobites/remopleurides-xiazhenensis/03.webp",
+      "trilobites/remopleurides-xiazhenensis/04.webp"
+    ],
+    "jegorovaia-convexa": [
+      "trilobites/jegorovaia-convexa/01.webp",
+      "trilobites/jegorovaia-convexa/02.webp",
+      "trilobites/jegorovaia-convexa/03.webp",
+      "trilobites/jegorovaia-convexa/04.webp"
+    ],
+    "seleneceme-bashanense": [
+      "trilobites/seleneceme-bashanense/01.webp",
+      "trilobites/seleneceme-bashanense/02.webp",
+      "trilobites/seleneceme-bashanense/03.webp"
+    ],
+    "seleneceme-ziyangensis": [
+      "trilobites/seleneceme-ziyangensis/01.webp",
+      "trilobites/seleneceme-ziyangensis/02.webp",
+      "trilobites/seleneceme-ziyangensis/03.webp"
+    ],
+    "aethedionide-fusiformis": [
+      "trilobites/aethedionide-fusiformis/01.webp",
+      "trilobites/aethedionide-fusiformis/02.webp"
+    ],
+    "dionide-formosa": [
+      "trilobites/dionide-formosa/01.webp",
+      "trilobites/dionide-formosa/02.webp",
+      "trilobites/dionide-formosa/03.webp",
+      "trilobites/dionide-formosa/04.webp"
+    ],
+    "dionide-hybrida": [
+      "trilobites/dionide-hybrida/01.webp",
+      "trilobites/dionide-hybrida/02.webp"
+    ],
+    "dionide-mareki": [
+      "trilobites/dionide-mareki/01.webp",
+      "trilobites/dionide-mareki/02.webp",
+      "trilobites/dionide-mareki/03.webp",
+      "trilobites/dionide-mareki/04.webp"
+    ],
+    "dionide-turnbulli": [
+      "trilobites/dionide-turnbulli/01.webp",
+      "trilobites/dionide-turnbulli/02.webp",
+      "trilobites/dionide-turnbulli/03.webp"
+    ],
+    "dionidella-huangnigangia-subquadrata": [
+      "trilobites/dionidella-huangnigangia-subquadrata/01.webp",
+      "trilobites/dionidella-huangnigangia-subquadrata/02.webp",
+      "trilobites/dionidella-huangnigangia-subquadrata/03.webp"
+    ],
+    "paradionide-anmenensis": [
+      "trilobites/paradionide-anmenensis/01.webp",
+      "trilobites/paradionide-anmenensis/02.webp"
+    ],
+    "abulbaspis-ordosensis": [
+      "trilobites/abulbaspis-ordosensis/01.webp",
+      "trilobites/abulbaspis-ordosensis/02.webp",
+      "trilobites/abulbaspis-ordosensis/03.webp",
+      "trilobites/abulbaspis-ordosensis/04.webp",
+      "trilobites/abulbaspis-ordosensis/05.webp",
+      "trilobites/abulbaspis-ordosensis/06.webp",
+      "trilobites/abulbaspis-ordosensis/07.webp"
+    ],
+    "ampyx-abnormalis": [
+      "trilobites/ampyx-abnormalis/01.webp",
+      "trilobites/ampyx-abnormalis/02.webp",
+      "trilobites/ampyx-abnormalis/03.webp"
+    ],
+    "ampyx-gongwusuensis": [
+      "trilobites/ampyx-gongwusuensis/01.webp",
+      "trilobites/ampyx-gongwusuensis/02.webp",
+      "trilobites/ampyx-gongwusuensis/03.webp",
+      "trilobites/ampyx-gongwusuensis/04.webp",
+      "trilobites/ampyx-gongwusuensis/05.webp",
+      "trilobites/ampyx-gongwusuensis/06.webp",
+      "trilobites/ampyx-gongwusuensis/07.webp",
+      "trilobites/ampyx-gongwusuensis/08.webp"
+    ],
+    "ampyx-priscus": [
+      "trilobites/ampyx-priscus/01.webp",
+      "trilobites/ampyx-priscus/02.webp",
+      "trilobites/ampyx-priscus/03.webp",
+      "trilobites/ampyx-priscus/04.webp"
+    ],
+    "ampyxinella-rotundata": [
+      "trilobites/ampyxinella-rotundata/01.webp",
+      "trilobites/ampyxinella-rotundata/02.webp",
+      "trilobites/ampyxinella-rotundata/03.webp",
+      "trilobites/ampyxinella-rotundata/04.webp",
+      "trilobites/ampyxinella-rotundata/05.webp",
+      "trilobites/ampyxinella-rotundata/06.webp",
+      "trilobites/ampyxinella-rotundata/07.webp"
+    ],
+    "globampyx-sexsegmentatus": [
+      "trilobites/globampyx-sexsegmentatus/01.webp"
+    ],
+    "jiuxiella-laevigata": [
+      "trilobites/jiuxiella-laevigata/01.webp",
+      "trilobites/jiuxiella-laevigata/02.webp",
+      "trilobites/jiuxiella-laevigata/03.webp",
+      "trilobites/jiuxiella-laevigata/04.webp",
+      "trilobites/jiuxiella-laevigata/05.webp",
+      "trilobites/jiuxiella-laevigata/06.webp"
+    ],
+    "jiuxiella-sp": [
+      "trilobites/jiuxiella-sp/01.webp",
+      "trilobites/jiuxiella-sp/02.webp",
+      "trilobites/jiuxiella-sp/03.webp",
+      "trilobites/jiuxiella-sp/04.webp",
+      "trilobites/jiuxiella-sp/05.webp"
+    ],
+    "kongqiaoheia-rotundata": [
+      "trilobites/kongqiaoheia-rotundata/01.webp",
+      "trilobites/kongqiaoheia-rotundata/02.webp"
+    ],
+    "leiolonchodomas-dangmengouensis": [
+      "trilobites/leiolonchodomas-dangmengouensis/01.webp",
+      "trilobites/leiolonchodomas-dangmengouensis/02.webp"
+    ],
+    "lonchodomas-shanensis": [
+      "trilobites/lonchodomas-shanensis/01.webp",
+      "trilobites/lonchodomas-shanensis/02.webp",
+      "trilobites/lonchodomas-shanensis/03.webp",
+      "trilobites/lonchodomas-shanensis/04.webp",
+      "trilobites/lonchodomas-shanensis/05.webp",
+      "trilobites/lonchodomas-shanensis/06.webp"
+    ],
+    "lonchodomas-yohi": [
+      "trilobites/lonchodomas-yohi/01.webp",
+      "trilobites/lonchodomas-yohi/02.webp",
+      "trilobites/lonchodomas-yohi/03.webp",
+      "trilobites/lonchodomas-yohi/04.webp",
+      "trilobites/lonchodomas-yohi/05.webp",
+      "trilobites/lonchodomas-yohi/06.webp"
+    ],
+    "lonchodomas-sp": [
+      "trilobites/lonchodomas-sp/01.webp",
+      "trilobites/lonchodomas-sp/02.webp",
+      "trilobites/lonchodomas-sp/03.webp",
+      "trilobites/lonchodomas-sp/04.webp",
+      "trilobites/lonchodomas-sp/05.webp"
+    ],
+    "malongullia-sinensis": [
+      "trilobites/malongullia-sinensis/01.webp",
+      "trilobites/malongullia-sinensis/02.webp",
+      "trilobites/malongullia-sinensis/03.webp"
+    ],
+    "miaopopsis-whittardi": [
+      "trilobites/miaopopsis-whittardi/01.webp",
+      "trilobites/miaopopsis-whittardi/02.webp",
+      "trilobites/miaopopsis-whittardi/03.webp",
+      "trilobites/miaopopsis-whittardi/04.webp",
+      "trilobites/miaopopsis-whittardi/05.webp",
+      "trilobites/miaopopsis-whittardi/06.webp",
+      "trilobites/miaopopsis-whittardi/07.webp"
+    ],
+    "pseudampyxina-trisegmenta": [
+      "trilobites/pseudampyxina-trisegmenta/01.webp",
+      "trilobites/pseudampyxina-trisegmenta/02.webp",
+      "trilobites/pseudampyxina-trisegmenta/03.webp"
+    ],
+    "pseudampyxina-sp": [
+      "trilobites/pseudampyxina-sp/01.webp",
+      "trilobites/pseudampyxina-sp/02.webp",
+      "trilobites/pseudampyxina-sp/03.webp",
+      "trilobites/pseudampyxina-sp/04.webp",
+      "trilobites/pseudampyxina-sp/05.webp",
+      "trilobites/pseudampyxina-sp/06.webp"
+    ],
+    "raphiophorus-sandfordi": [
+      "trilobites/raphiophorus-sandfordi/01.webp",
+      "trilobites/raphiophorus-sandfordi/02.webp",
+      "trilobites/raphiophorus-sandfordi/03.webp"
+    ],
+    "rhombampyx-yii": [
+      "trilobites/rhombampyx-yii/01.webp",
+      "trilobites/rhombampyx-yii/02.webp",
+      "trilobites/rhombampyx-yii/03.webp"
+    ],
+    "sinoluia-tibetensis": [
+      "trilobites/sinoluia-tibetensis/01.webp",
+      "trilobites/sinoluia-tibetensis/02.webp"
+    ],
+    "taklamakania-tarimensis": [
+      "trilobites/taklamakania-tarimensis/01.webp",
+      "trilobites/taklamakania-tarimensis/02.webp",
+      "trilobites/taklamakania-tarimensis/03.webp",
+      "trilobites/taklamakania-tarimensis/04.webp"
+    ],
+    "monkaspis-asiatica": [
+      "trilobites/monkaspis-asiatica/01.webp",
+      "trilobites/monkaspis-asiatica/02.webp",
+      "trilobites/monkaspis-asiatica/03.webp",
+      "trilobites/monkaspis-asiatica/04.webp",
+      "trilobites/monkaspis-asiatica/05.webp",
+      "trilobites/monkaspis-asiatica/06.webp",
+      "trilobites/monkaspis-asiatica/07.webp",
+      "trilobites/monkaspis-asiatica/08.webp"
+    ],
+    "monkaspis-daulis": [
+      "trilobites/monkaspis-daulis/01.webp",
+      "trilobites/monkaspis-daulis/02.webp",
+      "trilobites/monkaspis-daulis/03.webp",
+      "trilobites/monkaspis-daulis/04.webp",
+      "trilobites/monkaspis-daulis/05.webp",
+      "trilobites/monkaspis-daulis/06.webp"
+    ],
+    "monkaspis-quadrata": [
+      "trilobites/monkaspis-quadrata/01.webp",
+      "trilobites/monkaspis-quadrata/02.webp",
+      "trilobites/monkaspis-quadrata/03.webp"
+    ],
+    "monkaspis-taitzehoensis": [
+      "trilobites/monkaspis-taitzehoensis/01.webp",
+      "trilobites/monkaspis-taitzehoensis/02.webp",
+      "trilobites/monkaspis-taitzehoensis/03.webp",
+      "trilobites/monkaspis-taitzehoensis/04.webp",
+      "trilobites/monkaspis-taitzehoensis/05.webp"
+    ],
+    "monkaspis-sp-1": [
+      "trilobites/monkaspis-sp-1/01.webp",
+      "trilobites/monkaspis-sp-1/02.webp",
+      "trilobites/monkaspis-sp-1/03.webp",
+      "trilobites/monkaspis-sp-1/04.webp",
+      "trilobites/monkaspis-sp-1/05.webp",
+      "trilobites/monkaspis-sp-1/06.webp"
+    ],
+    "monkaspis-sp-2": [
+      "trilobites/monkaspis-sp-2/01.webp",
+      "trilobites/monkaspis-sp-2/02.webp",
+      "trilobites/monkaspis-sp-2/03.webp",
+      "trilobites/monkaspis-sp-2/04.webp"
+    ],
+    "monkaspis-sp-3": [
+      "trilobites/monkaspis-sp-3/01.webp",
+      "trilobites/monkaspis-sp-3/02.webp",
+      "trilobites/monkaspis-sp-3/03.webp",
+      "trilobites/monkaspis-sp-3/04.webp",
+      "trilobites/monkaspis-sp-3/05.webp",
+      "trilobites/monkaspis-sp-3/06.webp"
+    ],
+    "monkaspis-sp-4": [
+      "trilobites/monkaspis-sp-4/01.webp",
+      "trilobites/monkaspis-sp-4/02.webp",
+      "trilobites/monkaspis-sp-4/03.webp",
+      "trilobites/monkaspis-sp-4/04.webp"
+    ],
+    "calymene-blumenbachii": [
+      "trilobites/calymene-blumenbachii/01.webp",
+      "trilobites/calymene-blumenbachii/02.webp",
+      "trilobites/calymene-blumenbachii/03.webp",
+      "trilobites/calymene-blumenbachii/04.webp",
+      "trilobites/calymene-blumenbachii/05.webp",
+      "trilobites/calymene-blumenbachii/06.webp",
+      "trilobites/calymene-blumenbachii/07.webp",
+      "trilobites/calymene-blumenbachii/08.webp",
+      "trilobites/calymene-blumenbachii/09.webp"
+    ],
+    "calymenesun-granulosa": [
+      "trilobites/calymenesun-granulosa/01.webp"
+    ],
+    "calymenesun-tingi": [
+      "trilobites/calymenesun-tingi/01.webp",
+      "trilobites/calymenesun-tingi/02.webp",
+      "trilobites/calymenesun-tingi/03.webp"
+    ],
+    "devononeseuretus-beicht": [
+      "trilobites/devononeseuretus-beicht/01.webp",
+      "trilobites/devononeseuretus-beicht/02.webp",
+      "trilobites/devononeseuretus-beicht/03.webp"
+    ],
+    "flexicalymene-senaria": [
+      "trilobites/flexicalymene-senaria/01.webp",
+      "trilobites/flexicalymene-senaria/02.webp",
+      "trilobites/flexicalymene-senaria/03.webp",
+      "trilobites/flexicalymene-senaria/04.webp",
+      "trilobites/flexicalymene-senaria/05.webp",
+      "trilobites/flexicalymene-senaria/06.webp",
+      "trilobites/flexicalymene-senaria/07.webp"
+    ],
+    "flexicalymene-trentonensis": [
+      "trilobites/flexicalymene-trentonensis/01.webp",
+      "trilobites/flexicalymene-trentonensis/02.webp",
+      "trilobites/flexicalymene-trentonensis/03.webp",
+      "trilobites/flexicalymene-trentonensis/04.webp"
+    ],
+    "gravicalymene-bakeri": [
+      "trilobites/gravicalymene-bakeri/01.webp",
+      "trilobites/gravicalymene-bakeri/02.webp",
+      "trilobites/gravicalymene-bakeri/03.webp"
+    ],
+    "neseuretinus-birmanicus": [
+      "trilobites/neseuretinus-birmanicus/01.webp",
+      "trilobites/neseuretinus-birmanicus/02.webp",
+      "trilobites/neseuretinus-birmanicus/03.webp",
+      "trilobites/neseuretinus-birmanicus/04.webp",
+      "trilobites/neseuretinus-birmanicus/05.webp",
+      "trilobites/neseuretinus-birmanicus/06.webp"
+    ],
+    "neseuretus-paronai": [
+      "trilobites/neseuretus-paronai/01.webp",
+      "trilobites/neseuretus-paronai/02.webp",
+      "trilobites/neseuretus-paronai/03.webp",
+      "trilobites/neseuretus-paronai/04.webp",
+      "trilobites/neseuretus-paronai/05.webp"
+    ],
+    "prophalaron-jonesi": [
+      "trilobites/prophalaron-jonesi/01.webp",
+      "trilobites/prophalaron-jonesi/02.webp"
+    ],
+    "vietnamia-yushanensis": [
+      "trilobites/vietnamia-yushanensis/01.webp",
+      "trilobites/vietnamia-yushanensis/02.webp",
+      "trilobites/vietnamia-yushanensis/03.webp",
+      "trilobites/vietnamia-yushanensis/04.webp"
+    ],
+    "platycoryphe-sinensis": [
+      "trilobites/platycoryphe-sinensis/01.webp",
+      "trilobites/platycoryphe-sinensis/02.webp",
+      "trilobites/platycoryphe-sinensis/03.webp",
+      "trilobites/platycoryphe-sinensis/04.webp",
+      "trilobites/platycoryphe-sinensis/05.webp",
+      "trilobites/platycoryphe-sinensis/06.webp"
+    ],
+    "ceraurinus-zhuzhaiensis": [
+      "trilobites/ceraurinus-zhuzhaiensis/01.webp",
+      "trilobites/ceraurinus-zhuzhaiensis/02.webp",
+      "trilobites/ceraurinus-zhuzhaiensis/03.webp"
+    ],
+    "deiphon-barrandei": [
+      "trilobites/deiphon-barrandei/01.webp",
+      "trilobites/deiphon-barrandei/02.webp",
+      "trilobites/deiphon-barrandei/03.webp",
+      "trilobites/deiphon-barrandei/04.webp"
+    ],
+    "deiphon-forbesi": [
+      "trilobites/deiphon-forbesi/01.webp",
+      "trilobites/deiphon-forbesi/02.webp",
+      "trilobites/deiphon-forbesi/03.webp",
+      "trilobites/deiphon-forbesi/04.webp"
+    ],
+    "deiphon-dikella": [
+      "trilobites/deiphon-dikella/01.webp"
+    ],
+    "hadromeros-xiushanensis": [
+      "trilobites/hadromeros-xiushanensis/01.webp",
+      "trilobites/hadromeros-xiushanensis/02.webp",
+      "trilobites/hadromeros-xiushanensis/03.webp",
+      "trilobites/hadromeros-xiushanensis/04.webp",
+      "trilobites/hadromeros-xiushanensis/05.webp",
+      "trilobites/hadromeros-xiushanensis/06.webp",
+      "trilobites/hadromeros-xiushanensis/07.webp"
+    ],
+    "hinggania-quadrata": [
+      "trilobites/hinggania-quadrata/01.webp",
+      "trilobites/hinggania-quadrata/02.webp",
+      "trilobites/hinggania-quadrata/03.webp",
+      "trilobites/hinggania-quadrata/04.webp"
+    ],
+    "lonchocheirurus-sinicus": [
+      "trilobites/lonchocheirurus-sinicus/01.webp",
+      "trilobites/lonchocheirurus-sinicus/02.webp"
+    ],
+    "coronocephalus-constrictus": [
+      "trilobites/coronocephalus-constrictus/01.webp",
+      "trilobites/coronocephalus-constrictus/02.webp",
+      "trilobites/coronocephalus-constrictus/03.webp",
+      "trilobites/coronocephalus-constrictus/04.webp",
+      "trilobites/coronocephalus-constrictus/05.webp",
+      "trilobites/coronocephalus-constrictus/06.webp"
+    ],
+    "coronocephalus-dentatus": [
+      "trilobites/coronocephalus-dentatus/01.webp",
+      "trilobites/coronocephalus-dentatus/02.webp"
+    ],
+    "coronocephalus-gaoluoensis": [
+      "trilobites/coronocephalus-gaoluoensis/01.webp",
+      "trilobites/coronocephalus-gaoluoensis/02.webp",
+      "trilobites/coronocephalus-gaoluoensis/03.webp",
+      "trilobites/coronocephalus-gaoluoensis/04.webp",
+      "trilobites/coronocephalus-gaoluoensis/05.webp",
+      "trilobites/coronocephalus-gaoluoensis/06.webp",
+      "trilobites/coronocephalus-gaoluoensis/07.webp",
+      "trilobites/coronocephalus-gaoluoensis/08.webp",
+      "trilobites/coronocephalus-gaoluoensis/09.webp",
+      "trilobites/coronocephalus-gaoluoensis/10.webp",
+      "trilobites/coronocephalus-gaoluoensis/11.webp"
+    ],
+    "coronocephalus-nanjingensis": [
+      "trilobites/coronocephalus-nanjingensis/01.webp",
+      "trilobites/coronocephalus-nanjingensis/02.webp",
+      "trilobites/coronocephalus-nanjingensis/03.webp",
+      "trilobites/coronocephalus-nanjingensis/04.webp",
+      "trilobites/coronocephalus-nanjingensis/05.webp"
+    ],
+    "coronocephalus-ovatus": [
+      "trilobites/coronocephalus-ovatus/01.webp"
+    ],
+    "coronocephalus-rex": [
+      "trilobites/coronocephalus-rex/01.webp",
+      "trilobites/coronocephalus-rex/02.webp"
+    ],
+    "coronocephalus-senticucullus-elegans": [
+      "trilobites/coronocephalus-senticucullus-elegans/01.webp",
+      "trilobites/coronocephalus-senticucullus-elegans/02.webp"
+    ],
+    "coronocephalus-senticucullus-sichuanensis": [
+      "trilobites/coronocephalus-senticucullus-sichuanensis/01.webp",
+      "trilobites/coronocephalus-senticucullus-sichuanensis/02.webp",
+      "trilobites/coronocephalus-senticucullus-sichuanensis/03.webp",
+      "trilobites/coronocephalus-senticucullus-sichuanensis/04.webp"
+    ],
+    "kailia-intersulcata": [
+      "trilobites/kailia-intersulcata/01.webp",
+      "trilobites/kailia-intersulcata/02.webp",
+      "trilobites/kailia-intersulcata/03.webp",
+      "trilobites/kailia-intersulcata/04.webp",
+      "trilobites/kailia-intersulcata/05.webp",
+      "trilobites/kailia-intersulcata/06.webp"
+    ],
+    "kailia-lata": [
+      "trilobites/kailia-lata/01.webp",
+      "trilobites/kailia-lata/02.webp",
+      "trilobites/kailia-lata/03.webp",
+      "trilobites/kailia-lata/04.webp",
+      "trilobites/kailia-lata/05.webp",
+      "trilobites/kailia-lata/06.webp"
+    ],
+    "perirehaedulus-caprus": [
+      "trilobites/perirehaedulus-caprus/01.webp",
+      "trilobites/perirehaedulus-caprus/02.webp",
+      "trilobites/perirehaedulus-caprus/03.webp"
+    ],
+    "perirehaedulus-richardsi": [
+      "trilobites/perirehaedulus-richardsi/01.webp",
+      "trilobites/perirehaedulus-richardsi/02.webp"
+    ],
+    "aegrotocatellus-jaggeri": [
+      "trilobites/aegrotocatellus-jaggeri/01.webp",
+      "trilobites/aegrotocatellus-jaggeri/02.webp"
+    ],
+    "aegrotocatellus-nankerphelgeorum": [
+      "trilobites/aegrotocatellus-nankerphelgeorum/01.webp",
+      "trilobites/aegrotocatellus-nankerphelgeorum/02.webp"
+    ],
+    "encrinurella-insangensis": [
+      "trilobites/encrinurella-insangensis/01.webp",
+      "trilobites/encrinurella-insangensis/02.webp",
+      "trilobites/encrinurella-insangensis/03.webp",
+      "trilobites/encrinurella-insangensis/04.webp"
+    ],
+    "comura-bultyncki": [
+      "trilobites/comura-bultyncki/01.webp",
+      "trilobites/comura-bultyncki/02.webp",
+      "trilobites/comura-bultyncki/03.webp",
+      "trilobites/comura-bultyncki/04.webp",
+      "trilobites/comura-bultyncki/05.webp",
+      "trilobites/comura-bultyncki/06.webp"
+    ],
+    "psychopyge-elegans": [
+      "trilobites/psychopyge-elegans/01.webp",
+      "trilobites/psychopyge-elegans/02.webp",
+      "trilobites/psychopyge-elegans/03.webp",
+      "trilobites/psychopyge-elegans/04.webp"
+    ],
+    "psychopyge-hammerorum": [
+      "trilobites/psychopyge-hammerorum/01.webp"
+    ],
+    "psychopyge-praestans": [
+      "trilobites/psychopyge-praestans/01.webp",
+      "trilobites/psychopyge-praestans/02.webp",
+      "trilobites/psychopyge-praestans/03.webp"
+    ],
+    "psychopyge-termierorum": [
+      "trilobites/psychopyge-termierorum/01.webp",
+      "trilobites/psychopyge-termierorum/02.webp",
+      "trilobites/psychopyge-termierorum/03.webp",
+      "trilobites/psychopyge-termierorum/04.webp"
+    ],
+    "quadrops-flexuosa": [
+      "trilobites/quadrops-flexuosa/01.webp",
+      "trilobites/quadrops-flexuosa/02.webp",
+      "trilobites/quadrops-flexuosa/03.webp",
+      "trilobites/quadrops-flexuosa/04.webp"
+    ],
+    "walliserops-hammii": [
+      "trilobites/walliserops-hammii/01.webp",
+      "trilobites/walliserops-hammii/02.webp",
+      "trilobites/walliserops-hammii/03.webp",
+      "trilobites/walliserops-hammii/04.webp"
+    ],
+    "walliserops-lindoei": [
+      "trilobites/walliserops-lindoei/01.webp"
+    ],
+    "walliserops-tridens": [
+      "trilobites/walliserops-tridens/01.webp"
+    ],
+    "walliserops-trifurcatus": [
+      "trilobites/walliserops-trifurcatus/01.webp",
+      "trilobites/walliserops-trifurcatus/02.webp",
+      "trilobites/walliserops-trifurcatus/03.webp",
+      "trilobites/walliserops-trifurcatus/04.webp",
+      "trilobites/walliserops-trifurcatus/05.webp"
+    ],
+    "walliserops-sp": [
+      "trilobites/walliserops-sp/01.webp"
+    ],
+    "fenestraspis-amauta": [
+      "trilobites/fenestraspis-amauta/01.webp",
+      "trilobites/fenestraspis-amauta/02.webp",
+      "trilobites/fenestraspis-amauta/03.webp",
+      "trilobites/fenestraspis-amauta/04.webp"
+    ],
+    "mucronaspis-songxites-mucronata": [
+      "trilobites/mucronaspis-songxites-mucronata/01.webp",
+      "trilobites/mucronaspis-songxites-mucronata/02.webp",
+      "trilobites/mucronaspis-songxites-mucronata/03.webp",
+      "trilobites/mucronaspis-songxites-mucronata/04.webp",
+      "trilobites/mucronaspis-songxites-mucronata/05.webp",
+      "trilobites/mucronaspis-songxites-mucronata/06.webp"
+    ],
+    "needmorella-simoni": [
+      "trilobites/needmorella-simoni/01.webp",
+      "trilobites/needmorella-simoni/02.webp"
+    ],
+    "waukeshaaspis-eatonae": [
+      "trilobites/waukeshaaspis-eatonae/01.webp",
+      "trilobites/waukeshaaspis-eatonae/02.webp",
+      "trilobites/waukeshaaspis-eatonae/03.webp",
+      "trilobites/waukeshaaspis-eatonae/04.webp"
+    ],
+    "prosopiscus-latus": [
+      "trilobites/prosopiscus-latus/01.webp"
+    ],
+    "prosopiscus-sp": [
+      "trilobites/prosopiscus-sp/01.webp"
+    ],
+    "adrisiops-weugi": [
+      "trilobites/adrisiops-weugi/01.webp",
+      "trilobites/adrisiops-weugi/02.webp"
+    ],
+    "drotops-armatus": [
+      "trilobites/drotops-armatus/01.webp",
+      "trilobites/drotops-armatus/02.webp"
+    ],
+    "drotops-megalomanicus": [
+      "trilobites/drotops-megalomanicus/01.webp",
+      "trilobites/drotops-megalomanicus/02.webp"
+    ],
+    "ductina-vietnamica": [
+      "trilobites/ductina-vietnamica/01.webp",
+      "trilobites/ductina-vietnamica/02.webp",
+      "trilobites/ductina-vietnamica/03.webp",
+      "trilobites/ductina-vietnamica/04.webp",
+      "trilobites/ductina-vietnamica/05.webp",
+      "trilobites/ductina-vietnamica/06.webp",
+      "trilobites/ductina-vietnamica/07.webp",
+      "trilobites/ductina-vietnamica/08.webp",
+      "trilobites/ductina-vietnamica/09.webp"
+    ],
+    "echinophacops-mirabilis": [
+      "trilobites/echinophacops-mirabilis/01.webp",
+      "trilobites/echinophacops-mirabilis/02.webp",
+      "trilobites/echinophacops-mirabilis/03.webp",
+      "trilobites/echinophacops-mirabilis/04.webp",
+      "trilobites/echinophacops-mirabilis/05.webp"
+    ],
+    "eldredgeops-rana": [
+      "trilobites/eldredgeops-rana/01.webp",
+      "trilobites/eldredgeops-rana/02.webp",
+      "trilobites/eldredgeops-rana/03.webp",
+      "trilobites/eldredgeops-rana/04.webp",
+      "trilobites/eldredgeops-rana/05.webp",
+      "trilobites/eldredgeops-rana/06.webp",
+      "trilobites/eldredgeops-rana/07.webp",
+      "trilobites/eldredgeops-rana/08.webp"
+    ],
+    "omegops-junggariensis": [
+      "trilobites/omegops-junggariensis/01.webp",
+      "trilobites/omegops-junggariensis/02.webp"
+    ],
+    "omegops-mobilis": [
+      "trilobites/omegops-mobilis/01.webp",
+      "trilobites/omegops-mobilis/02.webp",
+      "trilobites/omegops-mobilis/03.webp",
+      "trilobites/omegops-mobilis/04.webp"
+    ],
+    "plagiolaria-nandanensis": [
+      "trilobites/plagiolaria-nandanensis/01.webp",
+      "trilobites/plagiolaria-nandanensis/02.webp",
+      "trilobites/plagiolaria-nandanensis/03.webp",
+      "trilobites/plagiolaria-nandanensis/04.webp",
+      "trilobites/plagiolaria-nandanensis/05.webp",
+      "trilobites/plagiolaria-nandanensis/06.webp",
+      "trilobites/plagiolaria-nandanensis/07.webp",
+      "trilobites/plagiolaria-nandanensis/08.webp"
+    ],
+    "rhinophacops-schizoloma": [
+      "trilobites/rhinophacops-schizoloma/01.webp",
+      "trilobites/rhinophacops-schizoloma/02.webp",
+      "trilobites/rhinophacops-schizoloma/03.webp",
+      "trilobites/rhinophacops-schizoloma/04.webp",
+      "trilobites/rhinophacops-schizoloma/05.webp",
+      "trilobites/rhinophacops-schizoloma/06.webp"
+    ],
+    "yanhaoia-huayinshanensis": [
+      "trilobites/yanhaoia-huayinshanensis/01.webp",
+      "trilobites/yanhaoia-huayinshanensis/02.webp",
+      "trilobites/yanhaoia-huayinshanensis/03.webp",
+      "trilobites/yanhaoia-huayinshanensis/04.webp",
+      "trilobites/yanhaoia-huayinshanensis/05.webp"
+    ],
+    "yanhaoia-wynnei": [
+      "trilobites/yanhaoia-wynnei/01.webp",
+      "trilobites/yanhaoia-wynnei/02.webp",
+      "trilobites/yanhaoia-wynnei/03.webp",
+      "trilobites/yanhaoia-wynnei/04.webp"
+    ],
+    "palaeoharpes-primigenius": [
+      "trilobites/palaeoharpes-primigenius/01.webp",
+      "trilobites/palaeoharpes-primigenius/02.webp",
+      "trilobites/palaeoharpes-primigenius/03.webp",
+      "trilobites/palaeoharpes-primigenius/04.webp",
+      "trilobites/palaeoharpes-primigenius/05.webp",
+      "trilobites/palaeoharpes-primigenius/06.webp"
+    ],
+    "aulacopleura-koninckii": [
+      "trilobites/aulacopleura-koninckii/01.webp",
+      "trilobites/aulacopleura-koninckii/02.webp",
+      "trilobites/aulacopleura-koninckii/03.webp",
+      "trilobites/aulacopleura-koninckii/04.webp",
+      "trilobites/aulacopleura-koninckii/05.webp"
+    ],
+    "cyphaspides-paradoxus": [
+      "trilobites/cyphaspides-paradoxus/01.webp",
+      "trilobites/cyphaspides-paradoxus/02.webp"
+    ],
+    "cyphaspis-ceratophthalmus": [
+      "trilobites/cyphaspis-ceratophthalmus/01.webp",
+      "trilobites/cyphaspis-ceratophthalmus/02.webp",
+      "trilobites/cyphaspis-ceratophthalmus/03.webp",
+      "trilobites/cyphaspis-ceratophthalmus/04.webp"
+    ],
+    "cyphaspis-walteri": [
+      "trilobites/cyphaspis-walteri/01.webp"
+    ],
+    "opipeuterella-inconniva": [
+      "trilobites/opipeuterella-inconniva/01.webp",
+      "trilobites/opipeuterella-inconniva/02.webp",
+      "trilobites/opipeuterella-inconniva/03.webp"
+    ],
+    "telephina-bicuspis": [
+      "trilobites/telephina-bicuspis/01.webp",
+      "trilobites/telephina-bicuspis/02.webp",
+      "trilobites/telephina-bicuspis/03.webp"
+    ],
+    "telephina-chinensis": [
+      "trilobites/telephina-chinensis/01.webp",
+      "trilobites/telephina-chinensis/02.webp",
+      "trilobites/telephina-chinensis/03.webp",
+      "trilobites/telephina-chinensis/04.webp"
+    ],
+    "telephina-longicephala": [
+      "trilobites/telephina-longicephala/01.webp",
+      "trilobites/telephina-longicephala/02.webp",
+      "trilobites/telephina-longicephala/03.webp"
+    ],
+    "telephina-spinifera": [
+      "trilobites/telephina-spinifera/01.webp",
+      "trilobites/telephina-spinifera/02.webp"
+    ],
+    "latiproetus-latilimbatus": [
+      "trilobites/latiproetus-latilimbatus/01.webp",
+      "trilobites/latiproetus-latilimbatus/02.webp",
+      "trilobites/latiproetus-latilimbatus/03.webp"
+    ],
+    "mahaiella-eleganta": [
+      "trilobites/mahaiella-eleganta/01.webp",
+      "trilobites/mahaiella-eleganta/02.webp",
+      "trilobites/mahaiella-eleganta/03.webp"
+    ],
+    "aayemenaytcheia-paragranulata": [
+      "trilobites/aayemenaytcheia-paragranulata/01.webp",
+      "trilobites/aayemenaytcheia-paragranulata/02.webp"
+    ],
+    "linguaphillipsia-buchuensis": [
+      "trilobites/linguaphillipsia-buchuensis/01.webp",
+      "trilobites/linguaphillipsia-buchuensis/02.webp"
+    ],
+    "pseudophillipsia-sp": [
+      "trilobites/pseudophillipsia-sp/01.webp"
+    ],
+    "archikainella-vomerinus": [
+      "trilobites/archikainella-vomerinus/01.webp",
+      "trilobites/archikainella-vomerinus/02.webp",
+      "trilobites/archikainella-vomerinus/03.webp",
+      "trilobites/archikainella-vomerinus/04.webp",
+      "trilobites/archikainella-vomerinus/05.webp"
+    ],
+    "bohemolichas-incola": [
+      "trilobites/bohemolichas-incola/01.webp",
+      "trilobites/bohemolichas-incola/02.webp",
+      "trilobites/bohemolichas-incola/03.webp"
+    ],
+    "hoplolichoides-conicotuberculatus": [
+      "trilobites/hoplolichoides-conicotuberculatus/01.webp",
+      "trilobites/hoplolichoides-conicotuberculatus/02.webp",
+      "trilobites/hoplolichoides-conicotuberculatus/03.webp",
+      "trilobites/hoplolichoides-conicotuberculatus/04.webp",
+      "trilobites/hoplolichoides-conicotuberculatus/05.webp",
+      "trilobites/hoplolichoides-conicotuberculatus/06.webp",
+      "trilobites/hoplolichoides-conicotuberculatus/07.webp",
+      "trilobites/hoplolichoides-conicotuberculatus/08.webp"
+    ],
+    "metopolichas-platyrhinus": [
+      "trilobites/metopolichas-platyrhinus/01.webp",
+      "trilobites/metopolichas-platyrhinus/02.webp",
+      "trilobites/metopolichas-platyrhinus/03.webp",
+      "trilobites/metopolichas-platyrhinus/04.webp",
+      "trilobites/metopolichas-platyrhinus/05.webp",
+      "trilobites/metopolichas-platyrhinus/06.webp"
+    ],
+    "terataspis-grandis": [
+      "trilobites/terataspis-grandis/01.webp",
+      "trilobites/terataspis-grandis/02.webp",
+      "trilobites/terataspis-grandis/03.webp",
+      "trilobites/terataspis-grandis/04.webp",
+      "trilobites/terataspis-grandis/05.webp",
+      "trilobites/terataspis-grandis/06.webp"
+    ],
+    "apianurus-kuckersianus": [
+      "trilobites/apianurus-kuckersianus/01.webp",
+      "trilobites/apianurus-kuckersianus/02.webp",
+      "trilobites/apianurus-kuckersianus/03.webp",
+      "trilobites/apianurus-kuckersianus/04.webp"
+    ],
+    "boedaspis-ensifer": [
+      "trilobites/boedaspis-ensifer/01.webp",
+      "trilobites/boedaspis-ensifer/02.webp",
+      "trilobites/boedaspis-ensifer/03.webp",
+      "trilobites/boedaspis-ensifer/04.webp",
+      "trilobites/boedaspis-ensifer/05.webp",
+      "trilobites/boedaspis-ensifer/06.webp",
+      "trilobites/boedaspis-ensifer/07.webp",
+      "trilobites/boedaspis-ensifer/08.webp"
+    ],
+    "diacanthaspis-maquoketensis": [
+      "trilobites/diacanthaspis-maquoketensis/01.webp",
+      "trilobites/diacanthaspis-maquoketensis/02.webp"
+    ],
+    "dicranurus-hamatus-elegantus": [
+      "trilobites/dicranurus-hamatus-elegantus/01.webp",
+      "trilobites/dicranurus-hamatus-elegantus/02.webp",
+      "trilobites/dicranurus-hamatus-elegantus/03.webp",
+      "trilobites/dicranurus-hamatus-elegantus/04.webp",
+      "trilobites/dicranurus-hamatus-elegantus/05.webp"
+    ],
+    "dicranurus-monstrosus": [
+      "trilobites/dicranurus-monstrosus/01.webp",
+      "trilobites/dicranurus-monstrosus/02.webp",
+      "trilobites/dicranurus-monstrosus/03.webp",
+      "trilobites/dicranurus-monstrosus/04.webp",
+      "trilobites/dicranurus-monstrosus/05.webp",
+      "trilobites/dicranurus-monstrosus/06.webp"
+    ],
+    "funeralaspis-deathvalleyensis": [
+      "trilobites/funeralaspis-deathvalleyensis/01.webp",
+      "trilobites/funeralaspis-deathvalleyensis/02.webp"
+    ],
+    "gaotania-ovata": [
+      "trilobites/gaotania-ovata/01.webp",
+      "trilobites/gaotania-ovata/02.webp",
+      "trilobites/gaotania-ovata/03.webp"
+    ],
+    "gaotania-pulchella": [
+      "trilobites/gaotania-pulchella/01.webp"
+    ],
+    "gondwanaspis-mrirtensis": [
+      "trilobites/gondwanaspis-mrirtensis/01.webp",
+      "trilobites/gondwanaspis-mrirtensis/02.webp",
+      "trilobites/gondwanaspis-mrirtensis/03.webp"
+    ],
+    "kettneraspis-dickinsoni": [
+      "trilobites/kettneraspis-dickinsoni/01.webp"
+    ],
+    "koneprusia-dongesi": [
+      "trilobites/koneprusia-dongesi/01.webp",
+      "trilobites/koneprusia-dongesi/02.webp",
+      "trilobites/koneprusia-dongesi/03.webp"
+    ],
+    "laethoprusia-salax": [
+      "trilobites/laethoprusia-salax/01.webp",
+      "trilobites/laethoprusia-salax/02.webp",
+      "trilobites/laethoprusia-salax/03.webp"
+    ],
+    "leonaspis-burketti": [
+      "trilobites/leonaspis-burketti/01.webp"
+    ],
+    "leonaspis-chancellori": [
+      "trilobites/leonaspis-chancellori/01.webp"
+    ],
+    "leonaspis-guangxiensis": [
+      "trilobites/leonaspis-guangxiensis/01.webp",
+      "trilobites/leonaspis-guangxiensis/02.webp",
+      "trilobites/leonaspis-guangxiensis/03.webp"
+    ],
+    "odontopleura-odontopleura-arctica": [
+      "trilobites/odontopleura-odontopleura-arctica/01.webp",
+      "trilobites/odontopleura-odontopleura-arctica/02.webp",
+      "trilobites/odontopleura-odontopleura-arctica/03.webp"
+    ],
+    "odontopleura-odontopleura-ovata": [
+      "trilobites/odontopleura-odontopleura-ovata/01.webp",
+      "trilobites/odontopleura-odontopleura-ovata/02.webp",
+      "trilobites/odontopleura-odontopleura-ovata/03.webp",
+      "trilobites/odontopleura-odontopleura-ovata/04.webp",
+      "trilobites/odontopleura-odontopleura-ovata/05.webp",
+      "trilobites/odontopleura-odontopleura-ovata/06.webp",
+      "trilobites/odontopleura-odontopleura-ovata/07.webp"
+    ],
+    "odontopleura-sinespinaspis-markhami": [
+      "trilobites/odontopleura-sinespinaspis-markhami/01.webp",
+      "trilobites/odontopleura-sinespinaspis-markhami/02.webp",
+      "trilobites/odontopleura-sinespinaspis-markhami/03.webp",
+      "trilobites/odontopleura-sinespinaspis-markhami/04.webp"
+    ],
+    "selenopeltis-buchii": [
+      "trilobites/selenopeltis-buchii/01.webp",
+      "trilobites/selenopeltis-buchii/02.webp",
+      "trilobites/selenopeltis-buchii/03.webp",
+      "trilobites/selenopeltis-buchii/04.webp",
+      "trilobites/selenopeltis-buchii/05.webp",
+      "trilobites/selenopeltis-buchii/06.webp",
+      "trilobites/selenopeltis-buchii/07.webp"
+    ],
+    "selenopeltis-sp": [
+      "trilobites/selenopeltis-sp/01.webp",
+      "trilobites/selenopeltis-sp/02.webp"
+    ],
+    "burlingia-angusta": [
+      "trilobites/burlingia-angusta/01.webp"
+    ],
+    "burlingia-balangensis": [
+      "trilobites/burlingia-balangensis/01.webp",
+      "trilobites/burlingia-balangensis/02.webp",
+      "trilobites/burlingia-balangensis/03.webp",
+      "trilobites/burlingia-balangensis/04.webp",
+      "trilobites/burlingia-balangensis/05.webp"
+    ],
+    "burlingia-hectori": [
+      "trilobites/burlingia-hectori/01.webp",
+      "trilobites/burlingia-hectori/02.webp",
+      "trilobites/burlingia-hectori/03.webp",
+      "trilobites/burlingia-hectori/04.webp",
+      "trilobites/burlingia-hectori/05.webp",
+      "trilobites/burlingia-hectori/06.webp"
+    ],
+    "burlingia-ovata": [
+      "trilobites/burlingia-ovata/01.webp",
+      "trilobites/burlingia-ovata/02.webp",
+      "trilobites/burlingia-ovata/03.webp",
+      "trilobites/burlingia-ovata/04.webp",
+      "trilobites/burlingia-ovata/05.webp"
+    ],
+    "burlingia-multisegmenta": [
+      "trilobites/burlingia-multisegmenta/01.webp",
+      "trilobites/burlingia-multisegmenta/02.webp",
+      "trilobites/burlingia-multisegmenta/03.webp"
+    ],
+    "pengia-fusilis": [
+      "trilobites/pengia-fusilis/01.webp",
+      "trilobites/pengia-fusilis/02.webp",
+      "trilobites/pengia-fusilis/03.webp",
+      "trilobites/pengia-fusilis/04.webp"
+    ],
+    "pengia-palsgaardia": [
+      "trilobites/pengia-palsgaardia/01.webp",
+      "trilobites/pengia-palsgaardia/02.webp",
+      "trilobites/pengia-palsgaardia/03.webp",
+      "trilobites/pengia-palsgaardia/04.webp",
+      "trilobites/pengia-palsgaardia/05.webp"
+    ]
+  },
+  "drillable": [
+    "abulbaspis-ordosensis",
+    "acrocephalina-sp",
+    "agnostotes-orientalis",
+    "agnostotes-tianshanicus",
+    "agnostus-inexpectans",
+    "agnostus-pisiformis",
+    "ammagnostus-laiwuensis",
+    "ammagnostus-wangcunensis",
+    "amphoton-deois",
+    "amphoton-sp",
+    "ampyx-gongwusuensis",
+    "ampyxinella-rotundata",
+    "annamitella-liexiensis",
+    "arthricocephalus-chauveaui",
+    "asaphellus-aristous",
+    "asaphiscus-wheeleri",
+    "asaphopsoides-yongshunensis",
+    "asiocephalus-sulcatus",
+    "aspidagnostus-laevis",
+    "aspidagnostus-lunulosus",
+    "aulacopleura-koninckii",
+    "bailiella-lantenoisi",
+    "balangia-balangensis",
+    "balcoracania-dailyi",
+    "bathynotus-holopygus",
+    "bathynotus-kueichouensis",
+    "birmanites-birmanicus",
+    "birmanites-yunnanensis",
+    "blackwelderia-mui",
+    "blackwelderia-paronai",
+    "blackwelderia-sp-1",
+    "blackwelderia-sp-2",
+    "boedaspis-ensifer",
+    "burlingia-hectori",
+    "calymene-blumenbachii",
+    "changaspis-elongata",
+    "changqingia-puteata",
+    "changshania-conica",
+    "cheiruroides-primigenius",
+    "chengjiangaspis-chengjiangensis",
+    "ciliscutellum-ciliensis",
+    "clavagnostus-calensis",
+    "comura-bultyncki",
+    "condylopyge-rex",
+    "conophrys-changshanensis",
+    "coronocephalus-constrictus",
+    "coronocephalus-gaoluoensis",
+    "coronocephalus-nanjingensis",
+    "coronocephalus-senticucullus-sichuanensis",
+    "corrugatagnostus-jiangshanensis",
+    "corrugatagnostus-magnodosus",
+    "corrugatagnostus-morea",
+    "corynexochus-plumula",
+    "curvoryctocephalus-taijiangensis",
+    "cyclopyge-recurva",
+    "damesella-paronai",
+    "deiphon-barrandei",
+    "devononeseuretus-beicht",
+    "diceratocephalus-cornutus",
+    "dichelepyge-lata",
+    "dicranurus-hamatus-elegantus",
+    "dicranurus-monstrosus",
+    "dictyella-longispina",
+    "dinesus-bura",
+    "diplagnostus-planicauda",
+    "distagnostus-celatus",
+    "dolerobasilicus-yokusensis",
+    "dolerolenus-laevigata",
+    "dorypyge-manchuriensis",
+    "ductina-vietnamica",
+    "duyunaspis-duyunensi",
+    "duyunaspis-paiwuensis",
+    "echinophacops-mirabilis",
+    "eldredgeops-rana",
+    "elrathia-kingii",
+    "emuella-polymera",
+    "eoisotelus-orientalis",
+    "eoredlichia-intermedia",
+    "estaingia-bilobata",
+    "euloma-changshanensis",
+    "euloma-orientalis",
+    "flexicalymene-senaria",
+    "fuchouia-oratolimba",
+    "geragnostus-fengzuensis",
+    "geragnostus-sidenbladhi",
+    "glyptagnostus-reticulatus",
+    "glyptagnostus-stolidotus",
+    "goniagnostus-fumicola",
+    "goniagnostus-nathorsti",
+    "goniagnostus-spiniger",
+    "guangxiaspis-guangxiensis",
+    "hadragnostus-modestus",
+    "hadromeros-xiushanensis",
+    "han-solo",
+    "hedinaspis-sp-1",
+    "heliopeltis-johnsoni",
+    "hewenia-anacantha",
+    "hewenia-typica",
+    "hexacopyge-yichangensis",
+    "homagnostus-obesus",
+    "hongshiyanaspis-yiliangensis",
+    "hoplolichoides-conicotuberculatus",
+    "hypagnostus-brevifrons",
+    "hypagnostus-parvifrons",
+    "hypermecaspis-armata",
+    "hypermecaspis-asiatica",
+    "hypermecaspis-inermis",
+    "illaenus-sinensis",
+    "inkouia-jiangshanensis",
+    "isotelus-rex",
+    "itagnostus-interstrictus",
+    "itydeois-shandongensis",
+    "jiuxiella-laevigata",
+    "jiuxiella-sp",
+    "kailia-intersulcata",
+    "kailia-lata",
+    "kepingaspis-kepingensis",
+    "kuanyangia-pustulosa",
+    "kueichowia-liui",
+    "leiagnostus-ellipticus",
+    "leiagnostus-sanduensis",
+    "leishuia-leishuae",
+    "lejopyge-armata",
+    "lejopyge-laevigata",
+    "lejopyge-sinensis",
+    "leptoplastides-salteri",
+    "linguaphillipsia-buchuensis",
+    "lioparia-blautoeides",
+    "lisogoragnostus-hybus",
+    "lisogoragnostus-minor",
+    "lonchodomas-shanensis",
+    "lonchodomas-sp",
+    "lonchodomas-yohi",
+    "lotagnostus-americanus",
+    "lotagnostus-hedini",
+    "lotagnostus-orientalis",
+    "luaspides-lingyuanensis",
+    "mahaiella-eleganta",
+    "maotunia-iddingsi",
+    "megistaspidella-triangularis",
+    "meitanillaenus-binodosus",
+    "metarthricocephalus-spinosus",
+    "metopolichas-platyrhinus",
+    "miaopopsis-whittardi",
+    "micragnostus-chiushuensis",
+    "micragnostus-orientalis",
+    "mioptychopyge-suni",
+    "mioptychopyge-thebawi",
+    "monkaspis-asiatica",
+    "monkaspis-daulis",
+    "monkaspis-sp-1",
+    "monkaspis-sp-3",
+    "mucronaspis-songxites-mucronata",
+    "neoagnostus-fengzuensis",
+    "neoagnostus-quadratiformisus",
+    "neodrepanura-premesnili",
+    "neopsilocephalina-zunyiensis",
+    "neseuretinus-birmanicus",
+    "neseuretus-paronai",
+    "nileus-armadilloformis",
+    "odontopleura-odontopleura-ovata",
+    "ogygiocarella-debuchii",
+    "oidalagnostus-changi",
+    "oidalagnostus-trispinifer",
+    "olenellus-gilberti",
+    "oryctocarella-duyunensis",
+    "pagetia-vinusta",
+    "parablackwelderia-spectabilis",
+    "peratagnostus-obsoletus",
+    "peronopsis-majiangensis",
+    "peronopsis-rotundatus",
+    "peronopsis-taijiangensis",
+    "phalagnostus-nudus",
+    "phantaspis-auritus",
+    "plagiolaria-nandanensis",
+    "platycoryphe-sinensis",
+    "pleuroctenium-granulatum",
+    "postikaolishania-megaspina",
+    "proagnostus-bulbus-bulbus",
+    "proagnostus-bulbus-sinensis",
+    "proasaphiscus-lui",
+    "proasaphiscus-yabei",
+    "prodamesella-convexa",
+    "pseudagnostus-idalis",
+    "pseudagnostus-josepha",
+    "pseudagnostus-koerferi",
+    "pseudagnostus-prolongus",
+    "pseudagnostus-rugosus",
+    "pseudagnostus-securiger",
+    "pseudagnostus-vastulus",
+    "pseudampyxina-sp",
+    "pseudogygites-latimarginatus",
+    "pseudophillipsia-sp",
+    "psychopyge-elegans",
+    "psychopyge-hammerorum",
+    "psychopyge-praestans",
+    "psychopyge-termierorum",
+    "ptychagnostus-aculeatus",
+    "ptychagnostus-atavus",
+    "ptychagnostus-cuyanus",
+    "ptychagnostus-gibbus",
+    "ptychagnostus-leptus",
+    "ptychagnostus-praecurrens",
+    "ptychagnostus-punctuosus",
+    "ptychagnostus-sinicus",
+    "quadrops-flexuosa",
+    "raphiophorus-sandfordi",
+    "redlichia-pteroredlichia-murakamii",
+    "redlichia-redlichia-mai",
+    "redlichia-redlichia-mansuyi",
+    "redlichia-redlichia-nobilis",
+    "redlichia-redlichia-noetlingi",
+    "rhaptagnostus-changshanensis",
+    "rhaxeros-pollinctrix",
+    "rhinophacops-schizoloma",
+    "selenopeltis-buchii",
+    "shergoldia-laevigata",
+    "sinodiscus-changyangensis",
+    "sinoluia-tibetensis",
+    "stephanocare-richthofeni",
+    "symphysurus-kientehsiensis",
+    "symphysurus-klimoliensis",
+    "szeaspis-conicus",
+    "taitzehoia-wangi",
+    "tamdaspis-jingxiensis",
+    "teinistion-sp",
+    "teinistion-typicalis",
+    "terataspis-grandis",
+    "tomagnostella-exsculpta",
+    "tomagnostella-orientalis",
+    "tomagnostella-sulcifera",
+    "tomagnostus-ezhuangensis",
+    "tomagnostus-fissus",
+    "tomagnostus-perrugatus",
+    "tomagnostus-sibiricus",
+    "triadaspis-bigeneris",
+    "triarthrus-eatoni",
+    "triarthrus-novoaustralis",
+    "trinodus-tardus",
+    "tsunyidiscus-niutitangensis",
+    "utagnostus-songae",
+    "valenagnostus-imitans",
+    "walliserops-trifurcatus",
+    "wongia-acalle",
+    "xenocyclopyge-radiata",
+    "yakutiana-dubium",
+    "yakutiana-ovale",
+    "yunnanocephalus-yunnanensis",
+    "zhangshania-typica",
+    "zhiyia-sp"
+  ],
+  "fashion": {
+    "the-first-crest": [
+      "/fashion/tee-eoredlichia.webp",
+      "/fashion/model-eoredlichia.webp",
+      "/fashion/fossil-eoredlichia.webp",
+      "/fashion/detail-eoredlichia.webp"
+    ]
+  }
+}

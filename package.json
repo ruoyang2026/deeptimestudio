@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "prebuild": "node scripts/sync_updates.js",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sync:updates": "node scripts/sync_updates.js"
   },
   "dependencies": {
     "next": "14.2.5",
