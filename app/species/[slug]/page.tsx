@@ -182,7 +182,7 @@ export default function SpeciesPage({ params }: { params: { slug: string } }) {
             />
             <figcaption>
               Photo {i + 1}
-              {t.captions ? ` · ${t.captions}` : ""}
+              {img.caption ? ` · ${img.caption}` : ""}
             </figcaption>
           </figure>
         ))}

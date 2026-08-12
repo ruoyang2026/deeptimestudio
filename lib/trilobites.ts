@@ -7,6 +7,7 @@ export type TrilobiteImage = {
   file: string;
   width: number;
   height: number;
+  caption?: string;
 };
 
 export type Trilobite = {
