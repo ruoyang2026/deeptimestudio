@@ -10,6 +10,9 @@ import {
   getCover,
   speciesImageAlt,
   imgSrc,
+  trilobites,
+  SITE_URL,
+  SITE_NAME,
 } from "../lib/trilobites";
 
 type PageProps = {
@@ -24,6 +27,20 @@ export const metadata = {
   title: "Trilobites of the World | 500+ Fossil Species Database & Paleo Visual Archive",
   description:
     "Explore 500+ trilobite species from the Cambrian to Permian periods. High-resolution fossil photographs, classification, and geological data for research, paleo art, and design inspiration.",
+  openGraph: {
+    type: "website",
+    title: "Trilobites of the World | 500+ Fossil Species Database & Paleo Visual Archive",
+    description:
+      "Explore 500+ trilobite species from the Cambrian to Permian periods. High-resolution fossil photographs, classification, and geological data for research, paleo art, and design inspiration.",
+    images: [{ url: "/trilobite-shop-cover.webp", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Trilobites of the World | Deep Time Studio",
+    description:
+      "Explore 500+ trilobite species with fossil photographs, geological ages and scientific classification.",
+    images: ["/trilobite-shop-cover.webp"],
+  },
 };
 
 const GEOLOGIC_PERIODS = [
@@ -79,6 +96,8 @@ export default function HomePage({ searchParams }: PageProps) {
   );
   const cards: CardData[] = sorted.map((t) => {
     const cover = getCover(t);
+    const coverFile = cover ? trilobites.find((x) => x.slug === t.slug) : null;
+    const coverImg = coverFile ? coverFile.images.find((i) => i.file === cover) : null;
     return {
       id: t.id,
       slug: t.slug,
@@ -88,12 +107,46 @@ export default function HomePage({ searchParams }: PageProps) {
       distribution: t.distribution,
       cover: cover ? imgSrc(cover) : "",
       alt: speciesImageAlt(t.scientific_name, t.age, t.distribution),
+      coverWidth: coverImg?.width,
+      coverHeight: coverImg?.height,
       drillable: isDrillable(t.slug),
     };
   });
 
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${SITE_URL}/#collection`,
+    url: SITE_URL,
+    name: "Trilobites of the World",
+    description:
+      "A visual archive of 500+ trilobite species with fossil photographs, geological ages and scientific classification.",
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: cards.filter((c) => c.drillable).length,
+      itemListElement: cards
+        .filter((c) => c.drillable)
+        .map((c, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: c.scientificName,
+          url: `${SITE_URL}/species/${c.slug}`,
+        })),
+    },
+  };
+
   return (
     <SiteShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
       <div className="tri-home-main">
         <form method="get" action="/" className="search-bar">
           <input

@@ -8,6 +8,23 @@ export const metadata: Metadata = {
   title: "Trilobites of the World | 500+ Fossil Species Database & Paleo Visual Archive",
   description:
     "Explore 500+ trilobite species from the Cambrian to Permian periods. High-resolution fossil photographs, classification, and geological data for research, paleo art, and design inspiration.",
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "en_US",
+    title: "Trilobites of the World | 500+ Fossil Species Database & Paleo Visual Archive",
+    description:
+      "Explore 500+ trilobite species from the Cambrian to Permian periods. High-resolution fossil photographs, classification, and geological data for research, paleo art, and design inspiration.",
+    url: SITE_URL,
+    images: [{ url: `${SITE_URL}/trilobite-shop-cover.webp`, width: 1200, height: 630, alt: SITE_NAME }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Trilobites of the World | Deep Time Studio",
+    description:
+      "Explore 500+ trilobite species with fossil photographs, geological ages and scientific classification.",
+    images: [`${SITE_URL}/trilobite-shop-cover.webp`],
+  },
 };
 
 const orgSchema = {

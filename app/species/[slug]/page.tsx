@@ -10,6 +10,7 @@ import {
   speciesImageAlt,
   imgSrc,
   SITE_URL,
+  SITE_NAME,
   trilobites,
 } from "../../../lib/trilobites";
 
@@ -26,10 +27,29 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const description = period
     ? `A ${period} trilobite species documented with fossil photographs and geological data.`
     : "A trilobite species documented with fossil photographs and geological data.";
+  const cover = getCover(t);
+  const ogImage = cover
+    ? { url: `${SITE_URL}/${cover}`, alt: t.scientific_name }
+    : { url: `${SITE_URL}/trilobite-shop-cover.webp`, alt: SITE_NAME };
   return {
     title: `${t.scientific_name} | Trilobites of the World`,
     description,
     alternates: { canonical: `/species/${t.slug}` },
+    openGraph: {
+      type: "article",
+      title: `${t.scientific_name} | Trilobites of the World`,
+      description,
+      url: `${SITE_URL}/species/${t.slug}`,
+      siteName: SITE_NAME,
+      locale: "en_US",
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${t.scientific_name} — Trilobite Fossil`,
+      description,
+      images: [ogImage.url],
+    },
   };
 }
 
@@ -75,6 +95,30 @@ export default function SpeciesPage({ params }: { params: { slug: string } }) {
     },
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_URL}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: t.order,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: t.scientific_name,
+        item: pageUrl,
+      },
+    ],
+  };
+
   const rows: { label: string; value: string; full?: boolean }[] = [];
   if (t.classification) rows.push({ label: "Classification", value: t.classification, full: true });
   if (t.genus) rows.push({ label: "Genus", value: t.genus });
@@ -95,6 +139,10 @@ export default function SpeciesPage({ params }: { params: { slug: string } }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <main className="page-shell tri-detail">
       <nav className="tri-breadcrumb">
@@ -129,6 +177,8 @@ export default function SpeciesPage({ params }: { params: { slug: string } }) {
               src={imgSrc(img.file)}
               alt={speciesImageAlt(t.scientific_name, t.age, t.distribution)}
               loading={i === 0 ? "eager" : "lazy"}
+              width={img.width || undefined}
+              height={img.height || undefined}
             />
             <figcaption>
               Photo {i + 1}

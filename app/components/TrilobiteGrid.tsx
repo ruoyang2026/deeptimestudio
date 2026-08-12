@@ -13,6 +13,8 @@ export type CardData = {
   distribution: string;
   cover: string;
   alt: string;
+  coverWidth?: number;
+  coverHeight?: number;
   drillable: boolean;
 };
 
@@ -84,7 +86,13 @@ function CardBody({ t, locked }: { t: CardData; locked?: boolean }) {
       <div className="card-img">
         {t.cover ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={t.cover} alt={t.alt} loading="lazy" />
+          <img
+            src={t.cover}
+            alt={t.alt}
+            loading="lazy"
+            width={t.coverWidth || 214}
+            height={t.coverHeight || 286}
+          />
         ) : null}
         {locked ? <span className="lock-badge">Locked</span> : null}
       </div>

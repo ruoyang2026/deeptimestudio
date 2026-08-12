@@ -65,7 +65,7 @@ export default function FashionGrid({ products }: { products: FashionProduct[] }
           <Link key={p.slug} href={`/fashion/${p.slug}`} className="fashion-card">
             <div className="fashion-card__img">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={p.images.tee} alt={`${p.species} ${p.name} fossil t-shirt design`} loading="lazy" />
+              <img src={p.images.tee} alt={`${p.species} ${p.name} fossil t-shirt design`} loading="lazy" width={214} height={286} />
             </div>
             <div className="fashion-card__body">
               <div className="fashion-card__name">{p.name}</div>
