@@ -128,6 +128,11 @@ record contains:
 | `captions` | specimen photo captions |
 | `images[]`, `cover` | photo file paths (`trilobites/<slug>/<n>.webp`) |
 
+Homepage card covers are auto-picked from the species' own photos: collector
+photos (captions without digits) ranked by colorfulness and complete-specimen
+wording are preferred over black-white literature scans, with `covers.json`
+overrides taking highest priority. See `docs/cover-selection-rules.md`.
+
 Photos are stored in `public/trilobites/<slug>/` (WebP, ~2500 images).
 
 ## Reproduce the database from the PDF
@@ -181,6 +186,9 @@ data/
 scripts/
   extract_trilobites.py       PDF -> database extractor
   export_database.py          standalone database bundle exporter
+  probe_images.js             write real pixel dimensions into species.json
+  probe_colorfulness.py       colorfulness score for cover selection
+  relink_captions.py          per-image captions from the source PDF
   sync_updates.js             update-log diff (npm run sync:updates)
 styles/globals.css
 ```

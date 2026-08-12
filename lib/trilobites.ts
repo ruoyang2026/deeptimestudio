@@ -8,6 +8,7 @@ export type TrilobiteImage = {
   width: number;
   height: number;
   caption?: string;
+  colorfulness?: number;
 };
 
 export type Trilobite = {
@@ -163,8 +164,45 @@ export function imgSrc(path: string | null | undefined): string {
 
 type Coverable = { slug: string; cover: string | null };
 
+const COMPLETE_SPECIMEN_RE = /complete\s+(dorsal\s+)?(shield|exoskeleton|carapace|specimen)|enrolled|pyritized|pyritised|exoskeleton/i;
+const RECONSTRUCTION_RE = /reconstruction|restoration|close-?up|reconstruction\b/i;
+
+/** Heuristic score for how "cover-worthy" an image is (higher is better). */
+function coverScore(img: TrilobiteImage): number {
+  const caption = (img.caption || "").trim();
+  if (!caption) return 0;
+  let score = 0;
+
+  // Collector photos (no digits) are preferred over black-white literature
+  // scans, which almost always carry years / specimen numbers.
+  if (!/\d/.test(caption)) score += 100;
+  // Slightly reward colorful collector photos over grayscale reconstructions.
+  score += Math.min((img.colorfulness ?? 0) / 10, 5);
+  // Reward complete / real specimens; penalize reconstruction / restoration art.
+  if (COMPLETE_SPECIMEN_RE.test(caption)) score += 10;
+  if (RECONSTRUCTION_RE.test(caption)) score -= 15;
+
+  return score;
+}
+
+/**
+ * Pick the homepage card cover for a species:
+ *   1. an explicit override in data/trilobites/covers.json wins,
+ *   2. otherwise the image whose caption is a collector photo (no digits),
+ *      ranked by colorfulness and "complete specimen" wording,
+ *   3. falling back to the first image.
+ * Returns a path like "trilobites/<slug>/NN.webp" (or null when none).
+ */
 export function getCover(t: Coverable): string | null {
   const override = (coversDb as { covers: Record<string, string> }).covers[t.slug];
   if (override) return `trilobites/${t.slug}/${override}`;
-  return t.cover;
+
+  const species = trilobites.find((s) => s.slug === t.slug);
+  if (!species || !species.images.length) return t.cover;
+
+  const scored = species.images
+    .map((img, i) => ({ img, i, score: coverScore(img) }))
+    .sort((a, b) => b.score - a.score || a.i - b.i);
+
+  return scored[0].img.file;
 }
