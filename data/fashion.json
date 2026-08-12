@@ -31,6 +31,8 @@
       ],
       "specimen": {
         "image": "/fashion/fossil-eoredlichia.webp",
+        "width": 324,
+        "height": 651,
         "paragraphs": [
           "This specimen of Eoredlichia intermedia was recovered from the Early Cambrian strata near Kunming, Yunnan — a region that preserves one of the most complete records of the Cambrian Explosion. The fossil retains the species' characteristic semicircular cephalon and fifteen thoracic segments, mineralized in dark shale for over half a billion years."
         ]
@@ -43,6 +45,47 @@
       "philosophy": [
         "The palette is sampled directly from the fossil matrix: oxidized manganese purple, pyrite replacement gold, and the deep black of Cambrian shale.",
         "The form is not reinterpreted — it is repositioned. The Eoredlichia is treated as a heraldic crest from an empire that ruled the ocean floor before vertebrates existed.",
+        "Real fossil. Reimagined."
+      ],
+      "collection": {
+        "headline": "Drop 01 · Cambrian Dawn"
+      }
+    },
+    {
+      "slug": "the-shandong-spear",
+      "name": "The Shandong Spear",
+      "species": "Dorypyge sp.",
+      "series": "Cambrian Dawn",
+      "meta": "~504.5 Million Years Old · Cambrian, Drumian · Linyi, Shandong",
+      "origin": "Linyi, Shandong",
+      "filters": ["Cambrian", "Extinct Icons"],
+      "images": {
+        "tee": "/fashion/tee-dorypyge.webp",
+        "model": "/fashion/model-dorypyge.webp",
+        "fossil": "/fashion/fossil-dorypyge.webp",
+        "detail": "/fashion/detail-dorypyge.webp"
+      },
+      "gallery": [
+        { "src": "/fashion/tee-dorypyge.webp", "label": "T-Shirt Flat" },
+        { "src": "/fashion/model-dorypyge.webp", "label": "On Model" },
+        { "src": "/fashion/fossil-dorypyge.webp", "label": "Fossil Specimen" }
+      ],
+      "specimen": {
+        "image": "/fashion/detail-dorypyge.webp",
+        "width": 400,
+        "height": 348,
+        "paragraphs": [
+          "This specimen of Dorypyge sp. was collected from the Cambrian Drumian strata near Linyi, Shandong — a region renowned for exceptionally preserved trilobite exoskeletons in light-colored limestone. The fossil displays the genus' characteristic armored architecture: a densely tuberculate cephalon, seven thoracic segments each bearing axial spines, and a semicircular pygidium armed with six pairs of marginal spines."
+        ]
+      },
+      "story": [
+        "Before vertebrates grew teeth. Before armor was invented by any living thing.",
+        "In the shallow carbonate seas of what is now Linyi, this creature carried spears on its tail and blades on its back. It crawled over microbial mats while the water above it was still too young for large predators to dive.",
+        "Buried in a storm of fine lime mud, its weapons were locked in stone. They have not dulled."
+      ],
+      "philosophy": [
+        "The palette is stripped to fossil ink and limestone white — a direct reference to the black-and-white specimen photography of 19th-century paleontological monographs.",
+        "The form is not decorated; it is weaponized. Dorypyge is framed as a primal armored vehicle, engineered by natural selection 500 million years before human metallurgy.",
         "Real fossil. Reimagined."
       ],
       "collection": {

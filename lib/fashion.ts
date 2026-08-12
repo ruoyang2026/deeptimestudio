@@ -17,6 +17,8 @@ export type FashionProduct = {
   gallery: { src: string; label: string }[];
   specimen: {
     image: string;
+    width?: number;
+    height?: number;
     paragraphs: string[];
   };
   story: string[];

@@ -132,10 +132,10 @@ export default function FashionDetailPage({ params }: { params: { slug: string }
               <img
                 className="fashion-specimen__img"
                 src={p.specimen.image}
-                alt="Eoredlichia intermedia fossil specimen from Kunming, Yunnan, Early Cambrian"
+                alt={`${p.species} fossil specimen from ${p.origin}`}
                 loading="lazy"
-                width={324}
-                height={651}
+                width={p.specimen.width || 324}
+                height={p.specimen.height || 651}
               />
             </div>
           </section>

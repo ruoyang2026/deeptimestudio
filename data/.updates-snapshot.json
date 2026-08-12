@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T10:21:28.727Z",
+  "generated_at": "2026-08-12T17:11:27.124Z",
   "species": {
     "agnostus-inexpectans": [
       "trilobites/agnostus-inexpectans/01.webp",
@@ -3535,6 +3535,11 @@
       "/fashion/model-eoredlichia.webp",
       "/fashion/fossil-eoredlichia.webp",
       "/fashion/detail-eoredlichia.webp"
+    ],
+    "the-shandong-spear": [
+      "/fashion/tee-dorypyge.webp",
+      "/fashion/model-dorypyge.webp",
+      "/fashion/fossil-dorypyge.webp"
     ]
   }
 }
