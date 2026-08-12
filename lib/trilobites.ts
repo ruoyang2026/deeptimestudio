@@ -167,15 +167,23 @@ type Coverable = { slug: string; cover: string | null };
 const COMPLETE_SPECIMEN_RE = /complete\s+(dorsal\s+)?(shield|exoskeleton|carapace|specimen)|enrolled|pyritized|pyritised|exoskeleton/i;
 const RECONSTRUCTION_RE = /reconstruction|restoration|close-?up|reconstruction\b/i;
 
+/**
+ * Literature scans (black-white) are recognized by a 4-digit year
+ * ("Öpik 1963", "Peng Shanchi 2020") or a specimen number ("NIGP123836",
+ * "USNM 8577"). Size annotations such as "3 mm" / "6 mm" are collector
+ * photos and must NOT be treated as literature.
+ */
+const LITERATURE_RE = /\b(?:18|19|20)\d{2}\b|[A-Z]{2,}\s*\d+\b/;
+
 /** Heuristic score for how "cover-worthy" an image is (higher is better). */
 function coverScore(img: TrilobiteImage): number {
   const caption = (img.caption || "").trim();
   if (!caption) return 0;
   let score = 0;
 
-  // Collector photos (no digits) are preferred over black-white literature
-  // scans, which almost always carry years / specimen numbers.
-  if (!/\d/.test(caption)) score += 100;
+  // Collector photos (no literature year / specimen number) are preferred
+  // over black-white literature scans. Size annotations (mm/cm) are fine.
+  if (!LITERATURE_RE.test(caption)) score += 100;
   // Slightly reward colorful collector photos over grayscale reconstructions.
   score += Math.min((img.colorfulness ?? 0) / 10, 5);
   // Reward complete / real specimens; penalize reconstruction / restoration art.
@@ -188,8 +196,9 @@ function coverScore(img: TrilobiteImage): number {
 /**
  * Pick the homepage card cover for a species:
  *   1. an explicit override in data/trilobites/covers.json wins,
- *   2. otherwise the image whose caption is a collector photo (no digits),
- *      ranked by colorfulness and "complete specimen" wording,
+ *   2. otherwise the image whose caption is a collector photo (no 4-digit
+ *      year / specimen number), ranked by colorfulness and "complete
+ *      specimen" wording,
  *   3. falling back to the first image.
  * Returns a path like "trilobites/<slug>/NN.webp" (or null when none).
  */

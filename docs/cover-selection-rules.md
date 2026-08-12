@@ -12,22 +12,27 @@
 
 | 图片类型 | caption 特征 | 实际色彩度均值 |
 |---|---|---|
-| 科普文献黑白图 | caption 含数字（年代/标本编号，如 `Öpik 1963`、`NIGP123836`） | **4.1**（近黑白） |
-| 收藏者实物图 | caption 无数字（如 `Complete dorsal shield (Yunnan; Amazon)`） | **33.2**（彩色） |
+| 科普文献黑白图 | caption 含**文献标记**：4 位年代（`Öpik 1963`、`Peng Shanchi 2020`）或标本编号（`NIGP123836`、`USNM 8577`） | **4.1**（近黑白） |
+| 收藏者实物图 | caption 无文献标记，可含**尺寸标注**（`3 mm`、`6 mm`）或产地/藏家 | **33.2**（彩色） |
+
+> 注意：判断文献图看的是**4 位年份或标本编号**，不是"是否含数字"。
+> 收藏者照片常带尺寸标注（如 `3 mm (Zhejiang; Baishui)`、`6 mm (Hunan; Axi)`），
+> 这类**尺寸标注不视为文献标记**，不能因此排除。
 
 ## 选择规则（优先级从高到低）
 
 1. **人工覆盖（最高）**
    - `data/trilobites/covers.json` 中 `covers[slug]` 显式指定的图片，永远优先。
-2. **无数字 caption（主规则）**
-   - 在该品种所有图片中，优先选 caption **不含任何数字** 的图片（彩色收藏实物图）。
+2. **无文献标记 caption（主规则）**
+   - 在该品种所有图片中，优先选 caption **不含 4 位年份且不含标本编号** 的图片（彩色收藏实物图）。
+   - 尺寸标注（mm/cm/µm）不影响判定。
 3. **同分排序（补充信号）**
    - 若有多张满足主规则的图片，按以下打分从高到低排序：
-     - **色彩度**：图片 RGB 均值差（`|r-g|+|g-b|+|b-r|`，120px 缩略图计算）越高越好，优先彩色收藏图，兜底"无数字但仍是黑白复原图"的情况；
+     - **色彩度**：图片 RGB 均值差（`|r-g|+|g-b|+|b-r|`，120px 缩略图计算）越高越好，优先彩色收藏图，兜底"无文献标记但仍是黑白复原图"的情况；
      - **语义**：caption 含 `Complete dorsal shield / Complete exoskeleton / Enrolled / Pyritized` 等"完整标本"描述者加分；含 `Reconstruction / Restoration / Close-up` 等复原图/局部图者减分；
      - **顺序**：同分时取原图顺序更靠前的一张。
 4. **回退**
-   - 若所有图片 caption 都含数字、或无 caption、或本页无图 → 回退到默认第一张图。
+   - 若所有图片 caption 都含文献标记、或无 caption、或本页无图 → 回退到默认第一张图。
 
 ## 打分函数（实现参考）
 
@@ -35,12 +40,16 @@
 const COMPLETE_SPECIMEN_RE = /complete\s+(dorsal\s+)?(shield|exoskeleton|carapace|specimen)|enrolled|pyritized|pyritised|exoskeleton/i;
 const RECONSTRUCTION_RE = /reconstruction|restoration|close-?up|reconstruction\b/i;
 
+// 文献图 = 4 位年份（"Öpik 1963"）或标本编号（"NIGP123836"、"USNM 8577"）。
+// 尺寸标注（"3 mm"）不属于文献标记，不会排除。
+const LITERATURE_RE = /\b(?:18|19|20)\d{2}\b|[A-Z]{2,}\s*\d+\b/;
+
 function coverScore(img: TrilobiteImage): number {
   const caption = (img.caption || "").trim();
   if (!caption) return 0;
   let score = 0;
-  if (!/\d/.test(caption)) score += 100;              // 无数字 = 收藏实物图
-  score += Math.min((img.colorfulness ?? 0) / 10, 5); // 色彩度加分（上限 5）
+  if (!LITERATURE_RE.test(caption)) score += 100;              // 收藏实物图
+  score += Math.min((img.colorfulness ?? 0) / 10, 5);          // 色彩度加分（上限 5）
   if (COMPLETE_SPECIMEN_RE.test(caption)) score += 10;
   if (RECONSTRUCTION_RE.test(caption)) score -= 15;
   return score;
@@ -60,3 +69,9 @@ function coverScore(img: TrilobiteImage): number {
 1. 若某品种封面选择不理想，直接在 `data/trilobites/covers.json` 的
    `covers` 对象中加入该品种覆盖（如 `"ammagnostus-wangcunensis": "03.webp"`）。
 2. 重新 `npm run build` 生效（首页卡片、schema image、og:image 共用该选择）。
+
+## 修订记录
+
+- 2026-08-12：文献图判定从"caption 含任意数字"改为"含 4 位年份或标本编号"，
+  尺寸标注（`3 mm`、`6 mm`、`1.8 cm`）不再被视为文献标记，
+  避免误排除带尺寸标注的彩色收藏图（如 `agnostus-inexpectans` 的 Photo 6/7）。

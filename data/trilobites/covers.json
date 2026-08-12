@@ -1,4 +1,4 @@
 {
-  "note": "Optional per-species homepage cover overrides. Each value is an image filename (e.g. '03.webp') inside public/trilobites/<slug>/. Entries here are used everywhere (homepage card, schema image, og:image) and take highest priority. When empty, the cover is auto-picked by lib/trilobites.ts getCover(): prefer captions without digits (collector photos) ranked by colorfulness and complete-specimen wording, falling back to the first image.",
+  "note": "Optional per-species homepage cover overrides. Each value is an image filename (e.g. '03.webp') inside public/trilobites/<slug>/. Entries here are used everywhere (homepage card, schema image, og:image) and take highest priority. When empty, the cover is auto-picked by lib/trilobites.ts getCover(): prefer captions without a 4-digit year or specimen number (collector photos; size annotations like '3 mm' do not disqualify), ranked by colorfulness and complete-specimen wording, falling back to the first image.",
   "covers": {}
 }

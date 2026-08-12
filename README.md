@@ -129,9 +129,11 @@ record contains:
 | `images[]`, `cover` | photo file paths (`trilobites/<slug>/<n>.webp`) |
 
 Homepage card covers are auto-picked from the species' own photos: collector
-photos (captions without digits) ranked by colorfulness and complete-specimen
-wording are preferred over black-white literature scans, with `covers.json`
-overrides taking highest priority. See `docs/cover-selection-rules.md`.
+photos (captions without a 4-digit year or specimen number) ranked by
+colorfulness and complete-specimen wording are preferred over black-white
+literature scans; size annotations such as "3 mm" do not disqualify a photo.
+`covers.json` overrides take highest priority. See
+`docs/cover-selection-rules.md`.
 
 Photos are stored in `public/trilobites/<slug>/` (WebP, ~2500 images).
 
