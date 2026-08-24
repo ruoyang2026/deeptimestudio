@@ -3166,3 +3166,246 @@ button.trilobite-card {
   font-size: 0.75rem;
   color: var(--muted);
 }
+
+/* ============================================================
+   Cambrian Abyss 主题页 (threejs 分支)
+   深海 WebGL 场景 + 浮动卡片 (复刻 threeui living-green 风格)
+   ============================================================ */
+
+/* 场景容器: 覆盖 main 区域 */
+.abyss-main {
+  position: relative;
+  min-height: calc(100vh - 40px);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #06121f;
+}
+
+.abyss-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #06121f;
+}
+
+.abyss-scene--loading {
+  background: linear-gradient(180deg, #0a2033 0%, #06121f 60%, #08242a 100%);
+}
+
+/* 浮层: 视差变量由 JS 写入 --px/--py */
+.abyss-hero {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  min-height: calc(100vh - 40px);
+  pointer-events: none;
+}
+
+/* 大标题 */
+.abyss-headline {
+  position: absolute;
+  left: 6%;
+  top: 12%;
+  max-width: 520px;
+  pointer-events: auto;
+  color: #dceef7;
+}
+
+.abyss-headline__kicker {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #6fd0c0;
+}
+
+.abyss-headline__title {
+  margin: 0;
+  font-size: clamp(56px, 9vw, 108px);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  font-weight: 300;
+}
+
+.abyss-headline__ghost {
+  display: block;
+  background: linear-gradient(180deg, #bfe9ff 0%, #2f7f9a 55%, #0c3a52 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 40px rgba(90, 200, 255, 0.18);
+}
+
+.abyss-headline__lede {
+  margin: 18px 0 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #9fc4d6;
+}
+
+/* 浮动卡片 */
+.abyss-card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 208px;
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(10, 28, 42, 0.55);
+  border: 1px solid rgba(120, 200, 230, 0.16);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  color: #dceef7;
+  text-decoration: none;
+  pointer-events: auto;
+  transform: translate3d(
+      calc(var(--px, 0) * -14px),
+      calc(var(--py, 0) * -10px),
+      0
+    )
+    translateY(var(--float-y, 0));
+  animation: abyss-float 7s ease-in-out infinite;
+  animation-delay: var(--d, 0ms);
+  will-change: transform;
+  transition: box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+.abyss-card:hover {
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), 0 0 24px rgba(110, 220, 255, 0.18);
+  border-color: rgba(130, 215, 245, 0.45);
+}
+
+/* 卡片布局位置 (桌面) */
+.abyss-card--a {
+  left: 62%;
+  top: 14%;
+  --float-y: -8px;
+}
+
+.abyss-card--b {
+  left: 46%;
+  top: 46%;
+  --float-y: 10px;
+}
+
+/* 第三四张卡片小一号, 靠边 */
+.abyss-card--a:nth-of-type(3) {
+  left: 38%;
+  top: 72%;
+  transform: scale(0.9);
+}
+.abyss-card--b:nth-of-type(4) {
+  left: 76%;
+  top: 64%;
+  transform: scale(0.86);
+}
+
+.abyss-card__media {
+  display: block;
+  width: 100%;
+  height: 130px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #12303f, #081a28);
+}
+
+.abyss-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.9) contrast(1.05);
+}
+
+.abyss-card__order {
+  margin-top: 12px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6fd0c0;
+}
+
+.abyss-card__name {
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  font-style: italic;
+}
+
+.abyss-card__age {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #7fa6bb;
+}
+
+/* 浮动动画 */
+@keyframes abyss-float {
+  0%, 100% { transform: translate3d(calc(var(--px, 0) * -14px), calc(var(--py, 0) * -10px), 0) translateY(var(--float-y, 0)); }
+  50%      { transform: translate3d(calc(var(--px, 0) * -14px), calc(var(--py, 0) * -10px), 0) translateY(calc(var(--float-y, 0) - 14px)); }
+}
+
+/* 底部滚动引导 */
+.abyss-scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.abyss-scroll__line {
+  display: block;
+  width: 1px;
+  height: 44px;
+  background: linear-gradient(180deg, rgba(150, 220, 255, 0.7), transparent);
+  animation: abyss-trickle 2.2s ease-in-out infinite;
+}
+
+.abyss-scroll__label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(160, 220, 245, 0.6);
+}
+
+@keyframes abyss-trickle {
+  0% { transform: scaleY(0); transform-origin: top; opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
+}
+
+/* 窄屏回退: 场景保留, 卡片纵向排列 */
+@media (max-width: 1100px) {
+  .abyss-card {
+    position: relative;
+    left: auto !important;
+    top: auto !important;
+    width: calc(100% - 40px);
+    margin: 12px 20px 0;
+    transform: none !important;
+    animation: none;
+  }
+  .abyss-card--a, .abyss-card--b,
+  .abyss-card--a:nth-of-type(3), .abyss-card--b:nth-of-type(4) {
+    left: auto;
+    top: auto;
+    transform: none;
+  }
+  .abyss-headline {
+    position: relative;
+    left: auto;
+    top: auto;
+    padding: 40px 24px 0;
+  }
+  .abyss-hero {
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+  .abyss-main {
+    min-height: auto;
+  }
+}
