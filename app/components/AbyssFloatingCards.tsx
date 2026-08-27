@@ -121,8 +121,8 @@ export default function AbyssFloatingCards() {
     let raf = 0;
     const tick = (now: number) => {
       const heroRect = hero.getBoundingClientRect();
-      const maxX = heroRect.width - 121 - 16;
-      const maxY = heroRect.height - 220 - 16;
+      const maxX = heroRect.width - 157 - 16;
+      const maxY = heroRect.height - 260 - 16;
       for (const s of states) {
         const driftX = Math.sin(now * 0.0008 + s.phase) * 0.08;
         const driftY = Math.cos(now * 0.0006 + s.phase) * 0.08;
@@ -151,8 +151,8 @@ export default function AbyssFloatingCards() {
 
     const onResize = () => {
       const heroRect = hero.getBoundingClientRect();
-      const maxX = heroRect.width - 121 - 16;
-      const maxY = heroRect.height - 220 - 16;
+      const maxX = heroRect.width - 157 - 16;
+      const maxY = heroRect.height - 260 - 16;
       for (const s of states) {
         if (s.x > maxX) s.x = maxX;
         if (s.y > maxY) s.y = maxY;
