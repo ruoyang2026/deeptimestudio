@@ -105,11 +105,14 @@ export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisText
       ctx.clearRect(0, 0, cropW, cropH2);
       ctx.drawImage(fullCanvas, sx, sy, cropW, cropH2, 0, 0, cropW, cropH2);
 
-      // 3) 清理: 只有极低 alpha (纯背景残留) 才清零;
-      //    保留主体边缘半透明以抗锯齿, 避免砍掉白色鳍片
+      // 3) 清理 alpha + 去白边:
+      //    背景(A<32)全清; 主体(A>=240)置为不透明;
+      //    中间段半透明像素如果 RGB 偏亮 => 判定为素材自带的白边描边, 按 alpha 压暗 RGB,
+      //    消除"白色矩形亮边", 同时保留边缘的柔和过渡。
       const cropData = ctx.getImageData(0, 0, cropW, cropH2);
       const cpx = cropData.data;
       for (let i = 0; i < cpx.length; i += 4) {
+        const r = cpx[i], g = cpx[i + 1], b = cpx[i + 2];
         const a = cpx[i + 3];
         if (a < 32) {
           cpx[i] = 0;
@@ -119,6 +122,16 @@ export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisText
         } else if (a >= 240) {
           // 接近不透明的主体像素置为完全不透明, 消除"虚"
           cpx[i + 3] = 255;
+        } else {
+          // 半透明边缘: 若偏亮 => 白边, 按 alpha 比例压暗, 否则保留
+          const lum = (r * 0.299 + g * 0.587 + b * 0.114);
+          const bright = lum > 130;
+          if (bright) {
+            const dim = Math.max(0.15, a / 255); // alpha 越低压得越狠, 最低留 0.15
+            cpx[i] = Math.round(r * dim);
+            cpx[i + 1] = Math.round(g * dim);
+            cpx[i + 2] = Math.round(b * dim);
+          }
         }
       }
       ctx.putImageData(cropData, 0, 0);
