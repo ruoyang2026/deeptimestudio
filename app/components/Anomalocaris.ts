@@ -69,24 +69,49 @@ export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisText
       );
 
       // 1) 先在"整个 cell"上清理 alpha + 去白边, 再找 bounding box.
-      //    白边判定: 半透明(a<240)且 RGB 偏亮 => 素材自带亮白描边, 直接置透明(而非压暗),
-      //    否则它们会把 bbox 撑满整个 cell, 且仍被渲染成白边。
+      //    白边两类:
+      //      a) 半透明(a<240)且 RGB 偏亮 => 白边, 直接置透明
+      //      b) 近不透明(a>=240)且高亮, 但贴 cell 外边缘(<12px) => 素材底部/边部白带, 做 alpha 渐变衰减
+      //    主体内部的亮白鳍片/高光保留。
+      const EDGE_CLEAR = 12;
       const imageData = ctx.getImageData(0, 0, cellW, cropH);
       const px = imageData.data;
       for (let i = 0; i < px.length; i += 4) {
         const r = px[i], g = px[i + 1], b = px[i + 2];
         const a = px[i + 3];
+        const lum = r * 0.299 + g * 0.587 + b * 0.114;
         if (a < 32) {
           px[i] = 0;
           px[i + 1] = 0;
           px[i + 2] = 0;
           px[i + 3] = 0;
+        } else if (a >= 240 && lum > 130) {
+          // 近不透明高亮像素: 计算到最近 cell 边缘的距离
+          const pxi = (i / 4) % cellW;
+          const pyi = Math.floor(i / 4 / cellW);
+          const dx = Math.min(pxi, cellW - 1 - pxi);
+          const dy = Math.min(pyi, cropH - 1 - pyi);
+          const dist = Math.min(dx, dy);
+          if (dist < EDGE_CLEAR) {
+            // 越靠边缘越透明, 消除白色亮带
+            const keep = dist / EDGE_CLEAR; // 0..1
+            const newA = Math.round(a * keep);
+            if (newA < 32) {
+              px[i] = 0;
+              px[i + 1] = 0;
+              px[i + 2] = 0;
+              px[i + 3] = 0;
+            } else {
+              px[i + 3] = newA;
+            }
+          } else {
+            px[i + 3] = 255;
+          }
         } else if (a >= 240) {
           // 接近不透明的主体像素置为完全不透明
           px[i + 3] = 255;
         } else {
           // 半透明边缘: 若偏亮 => 白边, 直接清除 (alpha=0)
-          const lum = r * 0.299 + g * 0.587 + b * 0.114;
           if (lum > 130) {
             px[i] = 0;
             px[i + 1] = 0;
