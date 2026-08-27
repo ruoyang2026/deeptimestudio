@@ -3248,7 +3248,7 @@ button.trilobite-card {
   position: absolute;
   display: flex;
   flex-direction: column;
-  width: 208px;
+  width: 121px;
   padding: 12px;
   border-radius: 18px;
   background: rgba(10, 30, 40, 0.6);
@@ -3315,24 +3315,24 @@ button.trilobite-card {
 }
 
 .abyss-card__order {
-  margin-top: 12px;
-  font-size: 11px;
-  letter-spacing: 0.14em;
+  margin-top: 10px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #6fd0c0;
 }
 
 .abyss-card__name {
-  margin-top: 4px;
-  font-size: 15px;
+  margin-top: 3px;
+  font-size: 12px;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.25;
   font-style: italic;
 }
 
 .abyss-card__age {
-  margin-top: 6px;
-  font-size: 12px;
+  margin-top: 5px;
+  font-size: 10px;
   color: #7fa6bb;
 }
 
