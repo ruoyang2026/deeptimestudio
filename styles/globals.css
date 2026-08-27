@@ -3310,15 +3310,16 @@ gap: 10px;
 }
 
 .abyss-headline__title {
+  display: inline;
   margin: 0;
-  font-size: clamp(32px, 5vw, 62px);
-  line-height: 1.05;
-  letter-spacing: 0.02em;
-  font-weight: 300;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  font-weight: 700;
 }
 
 .abyss-headline__ghost {
-  display: block;
+  display: inline;
   background: linear-gradient(180deg, #bfe9ff 0%, #2f7f9a 55%, #0c3a52 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -3327,7 +3328,8 @@ gap: 10px;
 }
 
 .abyss-headline__lede {
-  margin: 18px 0 0;
+  display: inline;
+  margin: 0 0 0 4px;
   font-size: 15px;
   line-height: 1.7;
   color: #9fc4d6;

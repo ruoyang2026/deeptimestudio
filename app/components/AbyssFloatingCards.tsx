@@ -175,8 +175,8 @@ export default function AbyssFloatingCards() {
           <span className="abyss-headline__ghost">The Cambrian Explosion in 3D</span>
         </h1>
         <p className="abyss-headline__lede">
-          Step into the Cambrian Explosion — 500 million years ago. Meet Anomalocaris, trilobites
-          and the first predators of the Burgess Shale in an interactive 3D prehistoric ocean.
+          — step back 500 million years: meet Anomalocaris, trilobites and the first predators
+          of the Burgess Shale in an interactive prehistoric ocean.
         </p>
       </header>
 
