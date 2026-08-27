@@ -16,9 +16,6 @@ import {
   ANOMALOCARIS_ATLAS_URL,
 } from "./Anomalocaris";
 
-// 调试模式: 在奇虾上方显示角度/贴图/速度
-const DEBUG_ANOMALOCARIS = true;
-
 const FOG_COLOR = 0x0a1f2e;
 const SAND_BASE_Y = -1.2;
 const SAND_WIDTH = 80;
@@ -591,46 +588,30 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
 
     // ---------- 奇虾 (Anomalocaris): 8方向 Sprite 伪3D 游动 ----------
     const anomalocarisList: Anomalocaris[] = [];
-    const debugEls: HTMLDivElement[] = [];
     const img = new Image();
     img.src = ANOMALOCARIS_ATLAS_URL;
     img.onload = () => {
       const atlas = loadAnomalocarisAtlas(img);
-      const count = reduced ? 1 : 3;
-      for (let i = 0; i < count; i++) {
-        const path = makeSwimLoop([
-          [-11 + i * 3, 2.5 + i * 0.4, -6 + i * 2],
-          [-4 + i * 2, 3.4 + i * 0.3, -1 + i * 2],
-          [2 + i * 2, 2.8 + i * 0.4, 4 - i * 2],
-          [7 + i * 2, 1.8 + i * 0.3, -2 - i * 2],
-          [3 + i * 2, 3.0 + i * 0.3, -8 + i * 2],
-          [-11 + i * 3, 2.5 + i * 0.4, -6 + i * 2],
-        ]);
-        const ac = new Anomalocaris({
-          scene,
-          camera,
-          textures: atlas,
-          path,
-          worldHeight: 1.6 + Math.random() * 0.6,
-          speed: 0.015 + Math.random() * 0.012,
-          phase: Math.random() * Math.PI * 2,
-          scale: 0.85 + Math.random() * 0.4,
-        });
-        anomalocarisList.push(ac);
-
-        if (DEBUG_ANOMALOCARIS) {
-          const dbg = document.createElement("div");
-          dbg.style.cssText =
-            "position:absolute;top:0;left:50%;transform:translateX(-50%);" +
-            "font:11px/1.5 ui-monospace,monospace;color:#bfe9ff;" +
-            "background:rgba(8,13,23,0.6);border:1px solid rgba(120,200,230,0.2);" +
-            "border-radius:6px;padding:4px 8px;pointer-events:none;white-space:pre;";
-          dbg.textContent = `Anomalocaris #${i}: loading…`;
-          dbg.id = `anomalocaris-debug-${i}`;
-          container.appendChild(dbg);
-          debugEls.push(dbg);
-        }
-      }
+      const path = makeSwimLoop([
+        [-14, 3.0, -12],
+        [-6, 4.2, -4],
+        [2, 3.6, 4],
+        [9, 2.6, 8],
+        [5, 3.8, -2],
+        [-4, 4.4, -10],
+        [-14, 3.0, -12],
+      ]);
+      const ac = new Anomalocaris({
+        scene,
+        camera,
+        textures: atlas,
+        path,
+        worldHeight: 2.6,
+        speed: 0.005,
+        scale: 4.0,
+        phase: Math.random() * Math.PI * 2,
+      });
+      anomalocarisList.push(ac);
     };
     img.onerror = () => {
       // 素材加载失败时静默降级, 不影响场景
@@ -788,23 +769,8 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
       trilobite.rotation.z = Math.sin(t * 0.4) * 0.06;
 
       // 奇虾 8方向伪3D 游动
-      for (let i = 0; i < anomalocarisList.length; i++) {
-        const ac = anomalocarisList[i];
+      for (const ac of anomalocarisList) {
         ac.update(t, dt);
-        if (DEBUG_ANOMALOCARIS && debugEls[i]) {
-          const info = ac.getDebugInfo();
-          const sp = ac.getSprite().position.clone().project(camera);
-          const hw = hostRef.current?.clientWidth ?? 0;
-          const hh = hostRef.current?.clientHeight ?? 0;
-          const x = (sp.x * 0.5 + 0.5) * hw;
-          const y = (-sp.y * 0.5 + 0.5) * hh;
-          debugEls[i].style.left = `${x}px`;
-          debugEls[i].style.top = `${y - 44}px`;
-          debugEls[i].style.transform = "translateX(-50%)";
-          debugEls[i].textContent =
-            `Angle: ${info.angle}°  Sprite: ${String(info.sprite).padStart(3, "0")}°\n` +
-            `Speed: ${info.speed.toFixed(3)}`;
-        }
       }
 
       composer.render();
@@ -831,7 +797,6 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
       window.removeEventListener("resize", onResize);
       ro.disconnect();
       for (const ac of anomalocarisList) ac.dispose();
-      for (const el of debugEls) el.remove();
       scene.traverse((o) => {
         if (o instanceof THREE.Mesh || o instanceof THREE.Points) {
           o.geometry?.dispose();

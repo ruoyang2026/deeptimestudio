@@ -97,6 +97,17 @@ export type AnomalocarisOptions = {
   bobSpeed?: number;
 };
 
+/** 每帧计算相机相对游动方向的水平角, 返回 0..360 */
+function computeRelativeAngle(
+  forward: THREE.Vector3,
+  toCamera: THREE.Vector3
+): number {
+  const dot = forward.dot(toCamera);
+  const cross = forward.x * toCamera.z - forward.z * toCamera.x;
+  const angle = Math.atan2(cross, dot) * (180 / Math.PI); // -180..180
+  return (angle + 360) % 360;
+}
+
 export class Anomalocaris {
   private scene: THREE.Scene;
   private camera: THREE.PerspectiveCamera;
@@ -115,12 +126,13 @@ export class Anomalocaris {
   private bobAmount: number;
   private bobSpeed: number;
 
-  private tmpV = new THREE.Vector3();
   private forward = new THREE.Vector3();
   private toCamera = new THREE.Vector3();
 
   private currentAngle = 0;
   private currentTexture = 0;
+  /** 交叉淡入淡出用: 旧/新图透明度进度 0..1 */
+  private fade = 1;
 
   constructor(opts: AnomalocarisOptions) {
     this.scene = opts.scene;
@@ -128,13 +140,13 @@ export class Anomalocaris {
     this.textures = opts.textures;
     this.path = opts.path;
 
-    this.speed = opts.speed ?? 0.02;
+    this.speed = opts.speed ?? 0.005;
     this.phase = opts.phase ?? Math.random() * Math.PI * 2;
-    this.worldHeight = opts.worldHeight ?? 2.2;
-    this.scale = opts.scale ?? 1;
+    this.worldHeight = opts.worldHeight ?? 3.2;
+    this.scale = opts.scale ?? 4.0;
     this.swimFrequency = opts.swimFrequency ?? 2.0 + Math.random() * 1.5;
-    this.bobAmount = opts.bobAmount ?? 0.15 + Math.random() * 0.15;
-    this.bobSpeed = opts.bobSpeed ?? 1.0 + Math.random() * 0.8;
+    this.bobAmount = opts.bobAmount ?? 0.3;
+    this.bobSpeed = opts.bobSpeed ?? 2.0;
 
     this.material = new THREE.SpriteMaterial({
       map: this.textures.textures.get(0) ?? null,
@@ -156,30 +168,21 @@ export class Anomalocaris {
     return this.sprite;
   }
 
-  getDebugInfo() {
-    return {
-      angle: Math.round(this.currentAngle),
-      sprite: this.currentTexture,
-      speed: this.speed,
-      pos: this.sprite.position,
-    };
-  }
-
   /** Advance along the path, update heading, sprite view, billboard, animation. */
   update(time: number, dt: number) {
-    // advance along closed curve
+    // 沿闭环曲线推进 (基于时间, 不受帧率影响)
     this.t = (this.t + dt * this.speed) % 1;
     const pos = this.path.getPointAt(this.t);
     const tangent = this.path.getTangentAt(this.t);
 
-    // natural vertical bob
+    // 上下浮动
     const bob = Math.sin(time * this.bobSpeed + this.phase) * this.bobAmount;
     this.sprite.position.set(pos.x, pos.y + bob, pos.z);
 
-    // horizontal heading from path tangent
+    // 水平游动方向 = 路径切线在 XZ 平面的投影
     this.forward.set(tangent.x, 0, tangent.z).normalize();
 
-    // camera -> creature horizontal vector
+    // 相机 -> 奇虾 水平向量
     this.toCamera.subVectors(this.camera.position, this.sprite.position);
     this.toCamera.y = 0;
     if (this.toCamera.lengthSq() < 1e-6) {
@@ -188,39 +191,51 @@ export class Anomalocaris {
       this.toCamera.normalize();
     }
 
-    // relative horizontal angle between forward and camera direction
-    const dot = this.forward.dot(this.toCamera);
-    const cross = this.forward.x * this.toCamera.z - this.forward.z * this.toCamera.x;
-    let angle = Math.atan2(cross, dot) * (180 / Math.PI); // -180..180
-    angle = (angle + 360) % 360;
-    this.currentAngle = angle;
+    // A. 每帧计算相机相对游动方向的水平角度
+    this.currentAngle = computeRelativeAngle(this.forward, this.toCamera);
 
-    // snap to nearest 45° step
-    const step = Math.round(angle / 45) % 8;
-    const spriteAngle = SPRITE_ANGLES[step];
-    if (spriteAngle !== this.currentTexture) {
-      this.currentTexture = spriteAngle;
-      const tex = this.textures.textures.get(spriteAngle) ?? null;
-      if (tex && this.material.map !== tex) {
-        this.material.map = tex;
-        this.material.needsUpdate = true;
+    // B. 目标 Sprite 索引
+    const targetIndex = Math.round(this.currentAngle / 45) % 8;
+    const targetAngle = SPRITE_ANGLES[targetIndex];
+
+    // C. 22.5° 滞后阈值: 只有新角度与当前 Sprite 角度差 >= 22.5° 才切换, 避免 45° 边界抖动
+    if (targetIndex !== this.currentTexture) {
+      const curAngle = SPRITE_ANGLES[this.currentTexture];
+      let diff = Math.abs(targetAngle - curAngle);
+      if (diff > 180) diff = 360 - diff;
+      if (diff >= 22.5) {
+        this.switchSprite(targetIndex);
       }
     }
 
-    // billboard: always face camera (Sprite does this by construction)
+    // 交叉淡入淡出: 切换后 0.15s 内透明度回升到 1, 消除跳变感
+    this.fade = Math.min(1, this.fade + dt / 0.15);
+    this.material.opacity = this.fade;
 
-    // tiny breathing / swimming scale pulse
+    // billboard: Sprite 始终面向相机 (构造保证)
+
+    // 轻微游泳呼吸缩放
     const breathe = 1 + Math.sin(time * this.swimFrequency + this.phase) * 0.015;
 
-    // size to creature bbox so swapping atlas rows keeps consistent scale
-    const aspect = this.textures.aspectRatios.get(spriteAngle) ?? 1;
+    // 按生物 bbox 比例缩放
+    const aspect = this.textures.aspectRatios.get(SPRITE_ANGLES[this.currentTexture]) ?? 1;
     const h = this.worldHeight * this.scale * breathe;
     this.sprite.scale.set(h * aspect, h, 1);
 
-    // distance-based gentle fade into fog
+    // 距离渐隐
     const dist = this.camera.position.distanceTo(this.sprite.position);
     const fade = THREE.MathUtils.clamp(1 - (dist - 26) / 26, 0.25, 1);
-    this.material.opacity = fade;
+    this.material.opacity = this.fade * fade;
+  }
+
+  private switchSprite(newIndex: number) {
+    this.currentTexture = newIndex;
+    this.fade = 0; // 从 0 开始交叉淡入
+    const tex = this.textures.textures.get(SPRITE_ANGLES[newIndex]) ?? null;
+    if (tex && this.material.map !== tex) {
+      this.material.map = tex;
+      this.material.needsUpdate = true;
+    }
   }
 
   dispose() {
