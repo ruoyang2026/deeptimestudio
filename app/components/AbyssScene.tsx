@@ -10,20 +10,20 @@ import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import { ColorCorrectionShader } from "three/examples/jsm/shaders/ColorCorrectionShader.js";
 
-const FOG_COLOR = 0x1a5a6a;
+const FOG_COLOR = 0x2a6a7a;
 const SAND_BASE_Y = -1.2;
-const SAND_SIZE = 100;
-const SAND_SEGMENTS = 128;
+const SAND_WIDTH = 80;
+const SAND_DEPTH = 50;
+const SAND_SEGMENTS = 256;
 
 /**
  * AbyssScene — 寒武纪海底 Three.js 背景
  *
- * 参考 threeui sylva/living-green 的程序化生成思路, 明亮的蓝绿透光海:
- *  - 多层 Simplex Noise 位移的起伏砂床 (PlaneGeometry 100x100, 128x128)
- *  - 顶点色: 蓝灰砂渐变 + 岩石附近生物膜褐化 + 开阔灰蓝
- *  - 程序化 bump map 砂粒质感
- *  - 光照: HemisphereLight 水下散射 + 明亮方向光(带阴影) + 环境补光
- *  - 青蓝水体散射壳层 + 圆锥体积光 + FogExp2 与背景同色
+ * sculptural terrain + 湿润砂地质感 + 动态焦散光影 (程序生成, 无外部图片):
+ *  - Domain Warping 多层噪声位移地形 (PlaneGeometry 80x50, 256x256)
+ *  - 程序 PBR 纹理: diffuse 沉积斑块 + roughness 湿砂反光 + bump
+ *  - 动态 Voronoi 焦散光斑 (ShaderMaterial, AdditiveBlending)
+ *  - 光照: HemisphereLight 散射 + 强方向光(阴影) + 补光
  *  - ACES 色调映射 + Bloom 后期
  */
 export default function AbyssScene({ className = "" }: { className?: string }) {
@@ -47,12 +47,12 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.3;
+    renderer.toneMappingExposure = 1.35;
     container.appendChild(renderer.domElement);
 
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(FOG_COLOR);
-    scene.fog = new THREE.FogExp2(FOG_COLOR, 0.025);
+    scene.fog = new THREE.FogExp2(FOG_COLOR, 0.018);
 
     const camera = new THREE.PerspectiveCamera(
       55,
@@ -72,18 +72,24 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
       for (let o = 0; o < octaves; o++) {
         v += amp * noise.noise(x * freq, y * freq);
         amp *= 0.5;
-        freq *= 2;
+        freq *= 2.1;
       }
       return v;
     }
+
+    // Domain Warping 地形高度: 用噪声扭曲采样坐标生成自然起伏
     function terrainHeightAt(x: number, z: number): number {
-      const large = fbm(x * 0.03, z * 0.03, 3) * 1.6;
-      const detail = fbm(x * 0.14, z * 0.14, 4) * 0.8;
-      return THREE.MathUtils.clamp(large + detail, 0.0, 2.0);
+      const warpX = fbm(x * 0.08, z * 0.08, 2) * 2.0;
+      const warpZ = fbm(x * 0.08 + 3.0, z * 0.08 + 3.0, 2) * 2.0;
+      let h = fbm((x + warpX) * 0.12, (z + warpZ) * 0.12, 4) * 2.5;
+      h += fbm(x * 0.4, z * 0.4, 3) * 0.4;
+      h += Math.sin(x * 0.15 + z * 0.08) * 0.3;
+      h -= z * 0.02;
+      return THREE.MathUtils.clamp(h, -0.6, 2.8);
     }
     const worldY = (h: number) => SAND_BASE_Y + h;
 
-    // ---------- 岩石散布点 (砂床颜色与岩石网格共用) ----------
+    // ---------- 岩石散布点 (与地形共用的放置点) ----------
     const rockSpots = [
       { x: -3.5, z: -3.6, size: 0.7 },
       { x: 3.9, z: -5, size: 0.9 },
@@ -98,79 +104,152 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
       { x: 12.5, z: -7, size: 1.2 },
     ];
 
-    // ---------- 程序化纹理: 砂粒 bump map ----------
-    function makeSandBumpTexture(): THREE.CanvasTexture {
-      const cv = document.createElement("canvas");
-      cv.width = 256;
-      cv.height = 256;
-      const ctx = cv.getContext("2d")!;
-      ctx.fillStyle = "#808080";
-      ctx.fillRect(0, 0, 256, 256);
-      for (let i = 0; i < 9000; i++) {
-        const v = 88 + Math.random() * 84;
-        ctx.fillStyle = `rgb(${v},${v},${v})`;
-        ctx.fillRect(Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), 1, 1);
+    // ---------- 程序 PBR 纹理: 湿润砂地质感 ----------
+    function createSeabedTextures(): { diffuseMap: THREE.CanvasTexture; roughnessMap: THREE.CanvasTexture } {
+      const size = 1024;
+      const diffuseCanvas = document.createElement("canvas");
+      const roughCanvas = document.createElement("canvas");
+      diffuseCanvas.width = roughCanvas.width = size;
+      diffuseCanvas.height = roughCanvas.height = size;
+      const dCtx = diffuseCanvas.getContext("2d")!;
+      const rCtx = roughCanvas.getContext("2d")!;
+
+      // 底色: 青灰绿 (湿润砂地)
+      dCtx.fillStyle = "#4a6a7a";
+      dCtx.fillRect(0, 0, size, size);
+      rCtx.fillStyle = "#aaaaaa";
+      rCtx.fillRect(0, 0, size, size);
+
+      for (let i = 0; i < 60000; i++) {
+        const x = Math.random() * size;
+        const y = Math.random() * size;
+        const n = noise.noise(x * 0.01, y * 0.01);
+
+        // 沉积物斑块
+        if (n > 0.3) {
+          dCtx.fillStyle = `rgba(60, 80, 65, ${0.3 + Math.random() * 0.3})`;
+          dCtx.fillRect(x, y, 3, 3);
+          rCtx.fillStyle = "rgba(200, 200, 200, 0.3)";
+          rCtx.fillRect(x, y, 3, 3);
+        } else if (n < -0.2) {
+          // 亮色砂砾/贝壳碎片 (湿润反光更光滑)
+          dCtx.fillStyle = `rgba(140, 170, 180, ${0.2 + Math.random() * 0.3})`;
+          dCtx.fillRect(x, y, 2, 2);
+          rCtx.fillStyle = "rgba(80, 80, 80, 0.4)";
+          rCtx.fillRect(x, y, 2, 2);
+        }
+
+        // 微砂粒
+        if (i % 2 === 0) {
+          dCtx.fillStyle = `rgba(90, 110, 120, ${Math.random() * 0.15})`;
+          dCtx.fillRect(x, y, 1, 1);
+        }
       }
-      const tex = new THREE.CanvasTexture(cv);
-      tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
-      tex.repeat.set(24, 24);
-      return tex;
+
+      const diffuseMap = new THREE.CanvasTexture(diffuseCanvas);
+      const roughnessMap = new THREE.CanvasTexture(roughCanvas);
+      diffuseMap.wrapS = diffuseMap.wrapT = THREE.RepeatWrapping;
+      roughnessMap.wrapS = roughnessMap.wrapT = THREE.RepeatWrapping;
+      diffuseMap.repeat.set(6, 4);
+      roughnessMap.repeat.set(6, 4);
+
+      return { diffuseMap, roughnessMap };
     }
 
-    // ---------- 海底砂床: 多层噪声位移地形 ----------
-    const sandGeo = new THREE.PlaneGeometry(SAND_SIZE, SAND_SIZE, SAND_SEGMENTS, SAND_SEGMENTS);
+    // ---------- 海底地形: Domain Warping 位移 ----------
+    const sandGeo = new THREE.PlaneGeometry(SAND_WIDTH, SAND_DEPTH, SAND_SEGMENTS, SAND_SEGMENTS);
     sandGeo.rotateX(-Math.PI / 2);
     const posAttr = sandGeo.attributes.position as THREE.BufferAttribute;
-    const heights = new Float32Array(posAttr.count);
     for (let i = 0; i < posAttr.count; i++) {
       const x = posAttr.getX(i);
       const z = posAttr.getZ(i);
-      const h = terrainHeightAt(x, z);
-      heights[i] = h;
-      posAttr.setY(i, h);
+      posAttr.setY(i, terrainHeightAt(x, z));
     }
     sandGeo.computeVertexNormals();
 
-    // 顶点色: 蓝灰砂渐变 + 岩石生物膜褐化 + 开阔灰蓝 (禁用近黑色)
-    const color = new THREE.Color();
-    const deep = new THREE.Color(0x3a5a6a);
-    const shallow = new THREE.Color(0x5a7a8a);
-    const biofilm = new THREE.Color(0x7a6a4a);
-    const openBlue = new THREE.Color(0x4a7a8a);
-    const colorArr = new Float32Array(posAttr.count * 3);
-    for (let i = 0; i < posAttr.count; i++) {
-      const x = posAttr.getX(i);
-      const z = posAttr.getZ(i);
-      color.copy(deep).lerp(shallow, THREE.MathUtils.clamp(heights[i] / 2.0, 0, 1));
-      let dMin = Infinity;
-      for (const r of rockSpots) {
-        const dx = x - r.x;
-        const dz = z - r.z;
-        const d = Math.sqrt(dx * dx + dz * dz);
-        if (d < dMin) dMin = d;
-      }
-      const brown = THREE.MathUtils.clamp(1 - dMin / 8, 0, 1);
-      color.lerp(biofilm, brown * 0.4);
-      const open = THREE.MathUtils.clamp(1 - dMin / 16, 0, 1);
-      color.lerp(openBlue, open * 0.3);
-      colorArr[i * 3] = color.r;
-      colorArr[i * 3 + 1] = color.g;
-      colorArr[i * 3 + 2] = color.b;
-    }
-    sandGeo.setAttribute("color", new THREE.BufferAttribute(colorArr, 3));
-
-    const sandMat = new THREE.MeshStandardMaterial({
-      vertexColors: true,
-      bumpMap: makeSandBumpTexture(),
-      bumpScale: 0.6,
-      roughness: 0.9,
-      metalness: 0,
-      color: 0x3a5a6a,
+    const { diffuseMap, roughnessMap } = createSeabedTextures();
+    const seabedMat = new THREE.MeshStandardMaterial({
+      map: diffuseMap,
+      roughnessMap,
+      roughness: 1.0,
+      metalness: 0.05,
+      bumpMap: diffuseMap,
+      bumpScale: 0.05,
     });
-    const sand = new THREE.Mesh(sandGeo, sandMat);
+    const sand = new THREE.Mesh(sandGeo, seabedMat);
     sand.position.set(0, worldY(0), -2);
     sand.receiveShadow = true;
     scene.add(sand);
+
+    // ---------- 动态焦散 (Voronoi, 紧贴砂床) ----------
+    const causticsMat = new THREE.ShaderMaterial({
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      side: THREE.DoubleSide,
+      uniforms: {
+        time: { value: 0 },
+        lightDir: { value: new THREE.Vector3(0.3, -1, 0.2).normalize() },
+      },
+      vertexShader: `
+        varying vec3 vWorldPos;
+        void main() {
+          vec4 wp = modelMatrix * vec4(position, 1.0);
+          vWorldPos = wp.xyz;
+          gl_Position = projectionMatrix * viewMatrix * wp;
+        }
+      `,
+      fragmentShader: `
+        uniform float time;
+        varying vec3 vWorldPos;
+
+        mat2 rot(float a) {
+          float c = cos(a), s = sin(a);
+          return mat2(c, -s, s, c);
+        }
+
+        float voronoi(vec2 p) {
+          vec2 n = floor(p);
+          vec2 f = fract(p);
+          float md = 1.0;
+          for (int j = -1; j <= 1; j++) {
+            for (int i = -1; i <= 1; i++) {
+              vec2 g = vec2(float(i), float(j));
+              vec2 o = vec2(
+                sin(dot(n + g, vec2(127.1, 311.7))),
+                cos(dot(n + g, vec2(269.5, 183.3)))
+              ) * 0.5 + 0.5;
+              md = min(md, length(g + o - f));
+            }
+          }
+          return md;
+        }
+
+        void main() {
+          vec2 pos = vWorldPos.xz * 0.3;
+          float c = 0.0;
+          for (int i = 1; i <= 3; i++) {
+            float fi = float(i);
+            vec2 p = rot(time * 0.05 * fi + fi) * pos * (1.0 + fi * 0.3);
+            float v = voronoi(p);
+            c += smoothstep(0.12, 0.0, v) * 0.35 / fi;
+          }
+          float fade = smoothstep(0.0, 15.0, abs(vWorldPos.x)) *
+                       smoothstep(0.0, 10.0, abs(vWorldPos.z));
+          c *= (1.0 - fade);
+
+          gl_FragColor = vec4(0.85, 0.95, 1.0, c * 0.5);
+        }
+      `,
+    });
+    const causticsGeo = sandGeo.clone();
+    {
+      const cp = causticsGeo.attributes.position as THREE.BufferAttribute;
+      for (let i = 0; i < cp.count; i++) cp.setY(i, cp.getY(i) + 0.15);
+    }
+    const causticsPlane = new THREE.Mesh(causticsGeo, causticsMat);
+    causticsPlane.position.set(0, worldY(0), -2);
+    scene.add(causticsPlane);
 
     // ---------- 岩石 (低多边形 + 顶点扰动倒角) ----------
     const rockMatA = new THREE.MeshStandardMaterial({ color: 0x2c3a42, roughness: 0.95, metalness: 0 });
@@ -366,54 +445,28 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
     });
     scene.add(trilobite);
 
-    // ---------- 光照: 透光海散射系统 ----------
-    // 0) HemisphereLight: 模拟水下光线散射, 暗部不再纯黑
-    const hemi = new THREE.HemisphereLight(0x87ceeb, 0x2a5a50, 0.8);
-    scene.add(hemi);
+    // ---------- 光照: 最终参数 ----------
+    // 环境散射: 青蓝, 强度高
+    const hemiLight = new THREE.HemisphereLight(0x7ec8e3, 0x3a6a5a, 1.0);
+    scene.add(hemiLight);
 
-    // 1) 明亮方向光 (主光源, 从斜上方照射, 带阴影)
-    const moon = new THREE.DirectionalLight(0xe8f8f8, 1.8);
-    moon.position.set(5, 10, 5);
-    moon.castShadow = true;
-    moon.shadow.mapSize.set(2048, 2048);
-    moon.shadow.camera.near = 0.5;
-    moon.shadow.camera.far = 40;
-    moon.shadow.camera.left = -14;
-    moon.shadow.camera.right = 14;
-    moon.shadow.camera.top = 14;
-    moon.shadow.camera.bottom = -14;
-    moon.shadow.bias = -0.0005;
-    scene.add(moon);
-    scene.add(moon.target);
+    // 阳光: 极淡青白强方向光, 开阴影
+    const sunLight = new THREE.DirectionalLight(0xd0f0f5, 2.2);
+    sunLight.position.set(10, 20, 8);
+    sunLight.castShadow = true;
+    sunLight.shadow.mapSize.set(2048, 2048);
+    sunLight.shadow.camera.left = -30;
+    sunLight.shadow.camera.right = 30;
+    sunLight.shadow.camera.top = 30;
+    sunLight.shadow.camera.bottom = -30;
+    sunLight.shadow.bias = -0.001;
+    scene.add(sunLight);
+    scene.add(sunLight.target);
 
-    // 2) 生物发光点光 (青绿点缀, 非唯一光源)
-    const bioSpots: [number, number, number][] = [
-      [-2.4, 1.6, -5],
-      [2.2, 1.2, -7.5],
-      [-0.4, 2.0, -13],
-    ];
-    for (const [x, y, z] of bioSpots) {
-      const pl = new THREE.PointLight(0x4ecdc4, 0.5, 8, 2);
-      pl.position.set(x, y, z);
-      scene.add(pl);
-    }
-
-    // 3) 环境补光
-    const amb = new THREE.AmbientLight(0x40a0b0, 0.6);
-    scene.add(amb);
-
-    // ---------- 水体散射壳层: 包裹整个场景的蓝绿水色 ----------
-    const waterShell = new THREE.Mesh(
-      new THREE.SphereGeometry(50, 32, 32),
-      new THREE.MeshBasicMaterial({
-        color: 0x3a8aaa,
-        transparent: true,
-        opacity: 0.18,
-        side: THREE.BackSide,
-        depthWrite: false,
-      })
-    );
-    scene.add(waterShell);
+    // 补光: 消除死黑
+    const fillLight = new THREE.DirectionalLight(0x5a9aaa, 0.5);
+    fillLight.position.set(-8, 5, -8);
+    scene.add(fillLight);
 
     // ---------- 体积光 (God Rays): 圆锥 + 透明材质 + 光柱尘埃 ----------
     function makeGodRay(x: number, z: number, tilt: number): THREE.Mesh {
@@ -510,6 +563,9 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
       camera.position.x = smooth.x * 1.4;
       camera.position.y = 1.4 + smooth.y * 0.8;
       camera.lookAt(0, 1, 0);
+
+      // 焦散流动
+      causticsMat.uniforms.time.value = t;
 
       // 海藻摇曳
       for (const blade of kelpBlades) {
