@@ -52,7 +52,7 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
 
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(FOG_COLOR);
-    scene.fog = new THREE.FogExp2(FOG_COLOR, 0.018);
+    scene.fog = new THREE.FogExp2(FOG_COLOR, 0.015);
 
     const camera = new THREE.PerspectiveCamera(
       55,
@@ -60,8 +60,8 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
       0.1,
       120
     );
-    camera.position.set(0, 1.4, 9);
-    camera.lookAt(0, 1, 0);
+    camera.position.set(0, 10, 16);
+    camera.lookAt(0, -0.5, 0);
 
     // ---------- 噪声 ----------
     const noise = new SimplexNoise();
@@ -695,9 +695,10 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
 
       smooth.x += (pointer.x - smooth.x) * 0.03;
       smooth.y += (pointer.y - smooth.y) * 0.03;
-      camera.position.x = smooth.x * 1.4;
-      camera.position.y = 1.4 + smooth.y * 0.8;
-      camera.lookAt(0, 1, 0);
+      camera.position.x = smooth.x * 1.8;
+      camera.position.y = 10 + smooth.y * 1.2;
+      camera.position.z = 16;
+      camera.lookAt(0, -0.5, 0);
 
       // 焦散流动
       causticsMat.uniforms.time.value = t;

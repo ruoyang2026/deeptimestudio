@@ -3262,11 +3262,8 @@ button.trilobite-card {
       calc(var(--px, 0) * -14px),
       calc(var(--py, 0) * -10px),
       0
-    )
-    translateY(var(--float-y, 0));
-  animation: abyss-float 7s ease-in-out infinite;
-  animation-delay: var(--d, 0ms);
-  will-change: transform;
+    );
+  will-change: transform, left, top;
   transition: box-shadow 0.5s ease, border-color 0.5s ease;
 }
 
@@ -3275,29 +3272,27 @@ button.trilobite-card {
   border-color: rgba(130, 215, 245, 0.45);
 }
 
-/* 卡片布局位置 (桌面) */
+/* 卡片布局位置 (桌面, JS 漂浮以此为初始点) */
 .abyss-card--a {
   left: 62%;
   top: 14%;
-  --float-y: -8px;
 }
 
 .abyss-card--b {
   left: 46%;
   top: 46%;
-  --float-y: 10px;
 }
 
 /* 第三四张卡片小一号, 靠边 */
 .abyss-card--a:nth-of-type(3) {
   left: 38%;
   top: 72%;
-  transform: scale(0.9);
+  transform: scale(0.9) translate3d(calc(var(--px, 0) * -14px), calc(var(--py, 0) * -10px), 0);
 }
 .abyss-card--b:nth-of-type(4) {
   left: 76%;
   top: 64%;
-  transform: scale(0.86);
+  transform: scale(0.86) translate3d(calc(var(--px, 0) * -14px), calc(var(--py, 0) * -10px), 0);
 }
 
 .abyss-card__media {
@@ -3336,12 +3331,6 @@ button.trilobite-card {
   margin-top: 6px;
   font-size: 12px;
   color: #7fa6bb;
-}
-
-/* 浮动动画 */
-@keyframes abyss-float {
-  0%, 100% { transform: translate3d(calc(var(--px, 0) * -14px), calc(var(--py, 0) * -10px), 0) translateY(var(--float-y, 0)); }
-  50%      { transform: translate3d(calc(var(--px, 0) * -14px), calc(var(--py, 0) * -10px), 0) translateY(calc(var(--float-y, 0) - 14px)); }
 }
 
 /* 底部滚动引导 */

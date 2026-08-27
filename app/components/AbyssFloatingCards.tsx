@@ -82,6 +82,79 @@ export default function AbyssFloatingCards() {
     };
   }, []);
 
+  // 卡片在 hero 容器内缓慢漂浮 (随机方向 + 正弦微扰 + 边界反弹)
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (!hero || cards.length === 0) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.innerWidth <= 1100) return;
+
+    const cardEls = Array.from(hero.querySelectorAll<HTMLElement>(".abyss-card"));
+    const states = cardEls.map((el) => {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 0.15 + Math.random() * 0.2;
+      const rect = el.getBoundingClientRect();
+      const heroRect = hero.getBoundingClientRect();
+      return {
+        el,
+        x: rect.left - heroRect.left,
+        y: rect.top - heroRect.top,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        phase: Math.random() * Math.PI * 2,
+        w: el.offsetWidth,
+        h: el.offsetHeight,
+      };
+    });
+
+    let raf = 0;
+    const tick = (now: number) => {
+      const heroRect = hero.getBoundingClientRect();
+      const maxX = heroRect.width - 208 - 16;
+      const maxY = heroRect.height - 160 - 16;
+      for (const s of states) {
+        const driftX = Math.sin(now * 0.0008 + s.phase) * 0.08;
+        const driftY = Math.cos(now * 0.0006 + s.phase) * 0.08;
+        s.x += s.vx + driftX;
+        s.y += s.vy + driftY;
+        if (s.x <= 16) {
+          s.x = 16;
+          s.vx = Math.abs(s.vx);
+        } else if (s.x >= maxX) {
+          s.x = maxX;
+          s.vx = -Math.abs(s.vx);
+        }
+        if (s.y <= 16) {
+          s.y = 16;
+          s.vy = Math.abs(s.vy);
+        } else if (s.y >= maxY) {
+          s.y = maxY;
+          s.vy = -Math.abs(s.vy);
+        }
+        s.el.style.left = s.x + "px";
+        s.el.style.top = s.y + "px";
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+
+    const onResize = () => {
+      const heroRect = hero.getBoundingClientRect();
+      const maxX = heroRect.width - 208 - 16;
+      const maxY = heroRect.height - 160 - 16;
+      for (const s of states) {
+        if (s.x > maxX) s.x = maxX;
+        if (s.y > maxY) s.y = maxY;
+      }
+    };
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [cards]);
+
   return (
     <div className="abyss-hero" ref={heroRef}>
       {/* 大标题浮层 */}
