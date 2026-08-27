@@ -49,14 +49,14 @@ export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisText
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {
       const angle = cellAngle[row][col];
-      const fullCanvas = document.createElement("canvas");
-      fullCanvas.width = cellW;
-      fullCanvas.height = cropH;
-      const fctx = fullCanvas.getContext("2d");
-      if (!fctx) continue;
-      fctx.clearRect(0, 0, cellW, cropH);
+      const canvas = document.createElement("canvas");
+      canvas.width = cellW;
+      canvas.height = cropH;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) continue;
+      ctx.clearRect(0, 0, cellW, cropH);
       // 跳过顶部标签区, 只截取奇虾本体
-      fctx.drawImage(
+      ctx.drawImage(
         image,
         col * cellW,
         row * cellH + cropTop,
@@ -68,10 +68,37 @@ export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisText
         cropH
       );
 
-      const imageData = fctx.getImageData(0, 0, cellW, cropH);
+      // 1) 先在"整个 cell"上清理 alpha + 去白边, 再找 bounding box.
+      //    白边判定: 半透明(a<240)且 RGB 偏亮 => 素材自带亮白描边, 直接置透明(而非压暗),
+      //    否则它们会把 bbox 撑满整个 cell, 且仍被渲染成白边。
+      const imageData = ctx.getImageData(0, 0, cellW, cropH);
       const px = imageData.data;
+      for (let i = 0; i < px.length; i += 4) {
+        const r = px[i], g = px[i + 1], b = px[i + 2];
+        const a = px[i + 3];
+        if (a < 32) {
+          px[i] = 0;
+          px[i + 1] = 0;
+          px[i + 2] = 0;
+          px[i + 3] = 0;
+        } else if (a >= 240) {
+          // 接近不透明的主体像素置为完全不透明
+          px[i + 3] = 255;
+        } else {
+          // 半透明边缘: 若偏亮 => 白边, 直接清除 (alpha=0)
+          const lum = r * 0.299 + g * 0.587 + b * 0.114;
+          if (lum > 130) {
+            px[i] = 0;
+            px[i + 1] = 0;
+            px[i + 2] = 0;
+            px[i + 3] = 0;
+          }
+          // 偏暗的半透明像素保留 (主体暗色轮廓抗锯齿)
+        }
+      }
+      ctx.putImageData(imageData, 0, 0);
 
-      // 1) 用低阈值找 alpha bounding box (只排除完全透明的背景)
+      // 2) 在清理后的 cell 上找 alpha bounding box
       let minX = cellW, minY = cropH, maxX = 0, maxY = 0;
       let found = false;
       for (let y = 0; y < cropH; y++) {
@@ -89,7 +116,7 @@ export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisText
       const bw = found ? maxX - minX + 1 : cellW;
       const bh = found ? maxY - minY + 1 : cropH;
 
-      // 2) 真正裁切到 bounding box (加 4px padding), 而不是整个 cell
+      // 3) 真正裁切到 bounding box (加 4px padding)
       const pad = 4;
       const cropW = Math.min(cellW, bw + pad * 2);
       const cropH2 = Math.min(cropH, bh + pad * 2);
@@ -97,44 +124,15 @@ export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisText
       const sy = Math.max(0, minY - pad);
       aspectRatios.set(angle, cropW / Math.max(1, cropH2));
 
-      const canvas = document.createElement("canvas");
-      canvas.width = cropW;
-      canvas.height = cropH2;
-      const ctx = canvas.getContext("2d");
-      if (!ctx) continue;
-      ctx.clearRect(0, 0, cropW, cropH2);
-      ctx.drawImage(fullCanvas, sx, sy, cropW, cropH2, 0, 0, cropW, cropH2);
+      const cropCanvas = document.createElement("canvas");
+      cropCanvas.width = cropW;
+      cropCanvas.height = cropH2;
+      const cctx = cropCanvas.getContext("2d");
+      if (!cctx) continue;
+      cctx.clearRect(0, 0, cropW, cropH2);
+      cctx.drawImage(canvas, sx, sy, cropW, cropH2, 0, 0, cropW, cropH2);
 
-      // 3) 清理 alpha + 去白边:
-      //    背景(A<32)全清; 主体(A>=240)置为不透明;
-      //    中间段半透明像素如果 RGB 偏亮 => 判定为素材自带的白边描边, 按 alpha 压暗 RGB,
-      //    消除"白色矩形亮边", 同时保留边缘的柔和过渡。
-      const cropData = ctx.getImageData(0, 0, cropW, cropH2);
-      const cpx = cropData.data;
-      for (let i = 0; i < cpx.length; i += 4) {
-        const r = cpx[i], g = cpx[i + 1], b = cpx[i + 2];
-        const a = cpx[i + 3];
-        if (a < 32) {
-          cpx[i] = 0;
-          cpx[i + 1] = 0;
-          cpx[i + 2] = 0;
-          cpx[i + 3] = 0;
-        } else if (a >= 240) {
-          // 接近不透明的主体像素置为完全不透明, 消除"虚"
-          cpx[i + 3] = 255;
-        } else {
-          // 半透明边缘: 若偏亮 => 白边, 按 alpha 比例压暗, 否则保留
-          const lum = (r * 0.299 + g * 0.587 + b * 0.114);
-          const bright = lum > 130;
-          if (bright) {
-            const dim = Math.max(0.15, a / 255); // alpha 越低压得越狠, 最低留 0.15
-            cpx[i] = Math.round(r * dim);
-            cpx[i + 1] = Math.round(g * dim);
-            cpx[i + 2] = Math.round(b * dim);
-          }
-        }
-      }
-      ctx.putImageData(cropData, 0, 0);
+      const cpx = cctx.getImageData(0, 0, cropW, cropH2).data;
 
       if (DEBUG_ANOMALOCARIS_ALPHA) {
         let n0 = 0, nMid = 0, nOpaque = 0;
@@ -150,7 +148,7 @@ export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisText
         );
       }
 
-      const tex = new THREE.CanvasTexture(canvas);
+      const tex = new THREE.CanvasTexture(cropCanvas);
       tex.colorSpace = THREE.SRGBColorSpace;
       tex.wrapS = THREE.ClampToEdgeWrapping;
       tex.wrapT = THREE.ClampToEdgeWrapping;
