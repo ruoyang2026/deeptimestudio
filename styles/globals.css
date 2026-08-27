@@ -3172,36 +3172,6 @@ button.trilobite-card {
    深海 WebGL 场景 + 浮动卡片 (复刻 threeui living-green 风格)
    ============================================================ */
 
-/* Discovery 选项卡: Cambrian / Archive */
-.discovery-tabs {
-  display: flex;
-  gap: 8px;
-  margin: 0 0 16px;
-}
-
-.discovery-tabs__tab {
-  appearance: none;
-  border: 1px solid var(--border, rgba(0, 0, 0, 0.12));
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  font-size: 0.85rem;
-  padding: 8px 18px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
-}
-
-.discovery-tabs__tab:hover {
-  border-color: rgba(90, 160, 190, 0.5);
-}
-
-.discovery-tabs__tab.is-active {
-  background: #0e3a52;
-  border-color: #0e3a52;
-  color: #dceef7;
-}
-
 /* 场景容器: 覆盖 main 区域 */
 .abyss-main {
   position: relative;

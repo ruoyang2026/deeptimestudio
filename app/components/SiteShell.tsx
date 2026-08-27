@@ -13,7 +13,8 @@ const KIND_LABEL: Record<UpdateEntry["kind"], string> = {
 
 export default function SiteShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isDiscovery = pathname === "/";
+  const isCambrian = pathname === "/";
+  const isDiscovery = pathname.startsWith("/discovery");
   const isFashion = pathname.startsWith("/fossil-fashion-design-inspiration");
   const isUpdates = pathname === "/updates";
   const latest = getLatestUpdates(3);
@@ -23,7 +24,10 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
       <aside className="sidebar-left">
         <div className="sidebar-left__top">
           <nav className="menu-nav" aria-label="Site navigation">
-            <Link href="/" className={`menu-item${isDiscovery ? " is-active" : ""}`}>
+            <Link href="/" className={`menu-item${isCambrian ? " is-active" : ""}`}>
+              Cambrian
+            </Link>
+            <Link href="/discovery" className={`menu-item${isDiscovery ? " is-active" : ""}`}>
               Discovery
             </Link>
             <Link

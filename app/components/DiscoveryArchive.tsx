@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import TrilobiteGrid, { type CardData } from "./TrilobiteGrid";
 import {
   getOrders,
@@ -17,6 +14,12 @@ import {
   SITE_NAME,
   GEOLOGIC_PERIODS,
 } from "../../lib/trilobites";
+
+type Props = {
+  q?: string;
+  order?: string;
+  age?: string;
+};
 
 function displayAge(age: string): string {
   if (!age) return "";
@@ -38,14 +41,10 @@ function chipHref(params: { q?: string; order?: string; age?: string }): string 
   if (params.order) sp.set("order", params.order);
   if (params.age) sp.set("age", params.age);
   const s = sp.toString();
-  return s ? `/?${s}` : "/";
+  return s ? `/discovery?${s}` : "/discovery";
 }
 
-export default function DiscoveryArchive() {
-  const searchParams = useSearchParams();
-  const q = searchParams.get("q") || "";
-  const order = searchParams.get("order") || "";
-  const age = searchParams.get("age") || "";
+export default function DiscoveryArchive({ q = "", order = "", age = "" }: Props) {
   const orders = getOrders();
   const ages = getAges();
   const all = searchTrilobites(q);
@@ -107,7 +106,7 @@ export default function DiscoveryArchive() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
       />
-      <form method="get" action="/" className="search-bar">
+      <form method="get" action="/discovery" className="search-bar">
         <input
           type="text"
           name="q"
