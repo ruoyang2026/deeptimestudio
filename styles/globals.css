@@ -1,14 +1,54 @@
 ﻿:root {
-  color-scheme: light;
-  --bg: #ffffff;
-  --panel: #f7f8fa;
-  --panel-2: #f2f3f5;
-  --border: #e5e6eb;
-  --text: #212121;
-  --muted: #727272;
-  --accent: #ff2442;
-  --accent-soft: rgba(255, 36, 66, 0.08);
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  color-scheme: dark;
+
+  /* ===== 背景层级（Background Stack）===== */
+  --bg-base: #080d17;           /* 页面最底层：极深蓝黑 */
+  --bg-surface: #0f172a;        /* 卡片/面板底色：深 slate */
+  --bg-elevated: #162032;       /* 悬浮层/下拉：稍亮深蓝 */
+  --bg-overlay: rgba(8, 13, 23, 0.7); /* 模态框遮罩 */
+
+  /* ===== 文字层级（Text Stack）===== */
+  --text-primary: #e2e8f0;      /* 主标题/重要文字 */
+  --text-secondary: #94a3b8;    /* 正文/描述 */
+  --text-tertiary: #64748b;     /* 辅助文字/时间戳 */
+  --text-inverse: #0f172a;      /* 浅色按钮上的文字 */
+
+  /* ===== 边框与分割线 ===== */
+  --border-subtle: rgba(148, 163, 184, 0.08);
+  --border-default: rgba(148, 163, 184, 0.15);
+  --border-strong: rgba(148, 163, 184, 0.25);
+
+  /* ===== 强调色（Accent）===== */
+  --accent-primary: #e85d75;         /* 珊瑚红：搜索按钮、CTA */
+  --accent-primary-hover: #f07088;
+  --accent-primary-active: #d14a62;
+  --accent-secondary: #4ecdc4;       /* 青绿：标签激活态、链接、图标 */
+  --accent-secondary-hover: #6dd9d1;
+  --accent-info: #5a9aaa;            /* 深海蓝：信息提示 */
+
+  /* ===== 状态色 ===== */
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --error: #f87171;
+
+  /* ===== Glassmorphism 专用 ===== */
+  --glass-bg: rgba(15, 23, 42, 0.55);
+  --glass-border: rgba(148, 163, 184, 0.12);
+  --glass-blur: 16px;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+  /* ===== 兼容旧变量名 ===== */
+  --bg: var(--bg-surface);
+  --panel: var(--bg-elevated);
+  --panel-2: var(--bg-elevated);
+  --border: var(--border-default);
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --accent: var(--accent-primary);
+  --accent-soft: rgba(232, 93, 117, 0.12);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --fg: var(--text-primary);
+  --card-bg: var(--bg-elevated);
 }
 
 * {
@@ -21,7 +61,9 @@ html {
 
 body {
   margin: 0;
-  background: #ffffff;
+  background: var(--bg-base);
+  background-image: linear-gradient(180deg, #0a1f2e 0%, var(--bg-base) 45%);
+  background-attachment: fixed;
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
@@ -1789,7 +1831,7 @@ a {
   max-width: 1440px;
   margin: 0 auto;
   padding: 20px;
-  background: #ffffff;
+  background: #0b1424;
 }
 
 /* Left fixed sidebar (Xiaohongshu PC, 240px, sticky) */
@@ -1803,6 +1845,10 @@ a {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 16px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: 16px;
 }
 
 .sidebar-left__top {
@@ -1826,11 +1872,18 @@ a {
   font-weight: 500;
   color: var(--muted);
   white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.menu-item:hover {
+  background: var(--bg-surface);
+  color: var(--text-primary);
 }
 
 .menu-item.is-active {
-  color: var(--text);
-  background: #fff0f2;
+  color: var(--accent-secondary);
+  background: rgba(78, 205, 196, 0.1);
+  border-left: 3px solid var(--accent-secondary);
   border-radius: 8px;
   font-weight: 600;
 }
@@ -1841,19 +1894,22 @@ a {
   justify-content: center;
   align-self: flex-start;
   padding: 12px 24px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent-primary), #c73e58);
   color: #ffffff;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   font-family: inherit;
-  transition: opacity 0.15s;
+  box-shadow: 0 4px 16px rgba(232, 93, 117, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.15s;
 }
 
 .red-btn:hover {
-  opacity: 0.85;
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(232, 93, 117, 0.35);
 }
 
 /* Bottom group: commercial entry + site description, pinned to the sidebar bottom */
@@ -1947,8 +2003,8 @@ a {
   display: flex;
   align-items: center;
   border-radius: 999px;
-  background: #f5f6f7;
-  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
   overflow: hidden;
 }
 
@@ -1965,25 +2021,32 @@ a {
 }
 
 .search-bar__input::placeholder {
-  color: var(--muted);
+  color: var(--text-tertiary);
+}
+
+.search-bar__input:focus {
+  box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.12);
 }
 
 .search-bar__btn {
   align-self: stretch;
   padding: 0 28px;
   border: none;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent-primary), #c73e58);
   color: #ffffff;
   font-size: 0.9rem;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
   border-radius: 0 999px 999px 0;
-  transition: opacity 0.15s;
+  box-shadow: 0 4px 16px rgba(232, 93, 117, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.15s;
 }
 
 .search-bar__btn:hover {
-  opacity: 0.88;
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(232, 93, 117, 0.35);
 }
 
 /* Quick filter rows (geological age + order), compound AND filtering */
@@ -2018,22 +2081,23 @@ a {
   gap: 6px;
   padding: 7px 16px;
   border-radius: 999px;
-  border: none;
-  background: #f5f6f7;
+  border: 1px solid var(--border-default);
+  background: var(--bg-elevated);
   font-size: 0.82rem;
   color: var(--muted);
   white-space: nowrap;
-  transition: color 0.15s, background 0.15s;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .tri-order-chip:hover {
-  color: var(--text);
-  background: #fff0f2;
+  color: var(--text-primary);
+  border-color: var(--border-strong);
 }
 
 .tri-order-chip.is-active {
-  color: var(--accent);
-  background: #fff0f2;
+  color: var(--accent-secondary);
+  background: rgba(78, 205, 196, 0.12);
+  border-color: rgba(78, 205, 196, 0.3);
   font-weight: 600;
 }
 
@@ -2042,11 +2106,12 @@ a {
   font-weight: 700;
   padding: 1px 6px;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(148, 163, 184, 0.12);
 }
 
 .tri-order-chip.is-active .tri-order-chip__count {
-  background: rgba(255, 36, 66, 0.12);
+  background: rgba(78, 205, 196, 0.18);
+  color: var(--accent-secondary);
 }
 
 /* Card grid: fixed 5 columns, card 214x377, gap 16px (Xiaohongshu PC size) */
@@ -2061,22 +2126,27 @@ a {
 .trilobite-card {
   width: 214px;
   height: 377px;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  background: #ffffff;
-  transition: 0.2s ease;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .trilobite-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+  border-color: rgba(78, 205, 196, 0.25);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(78, 205, 196, 0.1);
 }
 
 /* image area: strictly 214 x 286, cover fill */
 .trilobite-card .card-img {
   width: 100%;
   height: 286px;
-  background: #f5f6f7;
+  background: var(--bg-elevated);
   overflow: hidden;
 }
 
@@ -2099,7 +2169,7 @@ a {
 
 .card-text .order-name {
   font-size: 12px;
-  color: #ff2442;
+  color: var(--accent-secondary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2109,7 +2179,7 @@ a {
   margin: 0;
   font-style: italic;
   font-size: 14px;
-  color: #222222;
+  color: var(--text-primary);
   font-weight: 500;
   line-height: 1.2;
   white-space: nowrap;
@@ -2123,7 +2193,7 @@ a {
   flex-direction: column;
   gap: 2px;
   font-size: 12px;
-  color: #777777;
+  color: var(--text-tertiary);
   line-height: 1.2;
 }
 
@@ -2146,24 +2216,24 @@ button.trilobite-card {
 }
 
 .trilobite-card.is-locked {
-  background: #f0f1f3;
+  background: rgba(148, 163, 184, 0.06);
 }
 
 .trilobite-card.is-locked:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .trilobite-card.is-locked .order-name {
-  color: #c9c9c9;
+  color: #475569;
 }
 
 .trilobite-card.is-locked .species-name {
-  color: #9a9a9a;
+  color: var(--text-tertiary);
 }
 
 .trilobite-card.is-locked .loc-age {
-  color: #b5b5b5;
+  color: #475569;
 }
 
 .card-img {
@@ -2176,8 +2246,8 @@ button.trilobite-card {
   right: 8px;
   padding: 3px 8px;
   border-radius: 999px;
-  background: rgba(33, 33, 33, 0.62);
-  color: #ffffff;
+  background: rgba(8, 13, 23, 0.72);
+  color: #e2e8f0;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -2187,7 +2257,7 @@ button.trilobite-card {
 .lock-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: var(--bg-overlay);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2196,13 +2266,14 @@ button.trilobite-card {
 }
 
 .lock-modal {
-  background: #ffffff;
-  border-radius: 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 16px;
   padding: 28px 32px;
   max-width: 340px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
 }
 
 .lock-modal__icon {
@@ -2214,18 +2285,18 @@ button.trilobite-card {
   margin: 12px 0 6px;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #212121;
+  color: var(--text-primary);
 }
 
 .lock-modal__text {
   margin: 0 0 8px;
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #727272;
+  color: var(--text-secondary);
 }
 
 .lock-modal__link {
-  color: #ff2442;
+  color: var(--accent-secondary);
   font-weight: 600;
   text-decoration: underline;
   transition: opacity 0.15s;
@@ -2239,31 +2310,34 @@ button.trilobite-card {
   margin: 0 0 18px;
   font-size: 0.82rem;
   font-style: italic;
-  color: #9a9a9a;
+  color: var(--text-tertiary);
 }
 
 .lock-modal__btn {
   padding: 10px 28px;
   border: none;
   border-radius: 8px;
-  background: #ff2442;
+  background: linear-gradient(135deg, var(--accent-primary), #c73e58);
   color: #ffffff;
   font-size: 0.9rem;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
-  transition: opacity 0.15s;
+  box-shadow: 0 4px 16px rgba(232, 93, 117, 0.25);
+  transition: opacity 0.15s, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .lock-modal__btn:hover {
-  opacity: 0.88;
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(232, 93, 117, 0.35);
 }
 
 /* commercial modal (shop + free sample signup) */
 .commercial-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: var(--bg-overlay);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2273,12 +2347,13 @@ button.trilobite-card {
 
 .commercial-modal {
   position: relative;
-  background: #ffffff;
-  border-radius: 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 16px;
   padding: 28px 30px;
   max-width: 440px;
   width: 100%;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
   text-align: left;
 }
 
@@ -2290,8 +2365,8 @@ button.trilobite-card {
   height: 28px;
   border: none;
   border-radius: 50%;
-  background: #f2f3f5;
-  color: #727272;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
   font-size: 18px;
   line-height: 1;
   cursor: pointer;
@@ -2302,26 +2377,26 @@ button.trilobite-card {
 }
 
 .commercial-modal__close:hover {
-  background: #ffd6dd;
-  color: #ff2442;
+  background: rgba(232, 93, 117, 0.16);
+  color: var(--accent-primary);
 }
 
 .commercial-modal__title {
   margin: 0 0 10px;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #212121;
+  color: var(--text-primary);
 }
 
 .commercial-modal__shop {
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.7;
-  color: #4a4a4a;
+  color: var(--text-secondary);
 }
 
 .commercial-modal__shop a {
-  color: #ff2442;
+  color: var(--accent-secondary);
   font-weight: 600;
 }
 
@@ -2331,7 +2406,7 @@ button.trilobite-card {
 
 .commercial-modal__divider {
   height: 1px;
-  background: #eceef0;
+  background: var(--border-default);
   margin: 18px 0 16px;
 }
 
@@ -2339,7 +2414,7 @@ button.trilobite-card {
   margin: 0 0 12px;
   font-size: 0.85rem;
   line-height: 1.6;
-  color: #727272;
+  color: var(--text-secondary);
 }
 
 .commercial-modal__form {
@@ -2351,17 +2426,23 @@ button.trilobite-card {
   flex: 1;
   min-width: 0;
   padding: 11px 14px;
-  border: 1px solid #e5e6eb;
+  border: 1px solid var(--border-default);
   border-radius: 8px;
   font-size: 0.88rem;
   font-family: inherit;
-  color: #212121;
+  color: var(--text-primary);
+  background: var(--bg-elevated);
   outline: none;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.commercial-modal__form input::placeholder {
+  color: var(--text-tertiary);
 }
 
 .commercial-modal__form input:focus {
-  border-color: #ff2442;
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.1);
 }
 
 .commercial-modal__btn {
@@ -2369,18 +2450,21 @@ button.trilobite-card {
   padding: 11px 20px;
   border: none;
   border-radius: 8px;
-  background: #ff2442;
+  background: linear-gradient(135deg, var(--accent-primary), #c73e58);
   color: #ffffff;
   font-size: 0.88rem;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
   white-space: nowrap;
-  transition: opacity 0.15s;
+  box-shadow: 0 4px 16px rgba(232, 93, 117, 0.25);
+  transition: opacity 0.15s, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .commercial-modal__btn:hover {
-  opacity: 0.88;
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(232, 93, 117, 0.35);
 }
 
 .commercial-modal__btn:disabled {
@@ -2392,20 +2476,20 @@ button.trilobite-card {
   margin: 0 0 12px;
   font-size: 0.88rem;
   line-height: 1.6;
-  color: #4a4a4a;
+  color: var(--text-secondary);
 }
 
 .commercial-modal__error {
   margin: 10px 0 0;
   font-size: 0.78rem;
-  color: #ff2442;
+  color: var(--accent-primary);
 }
 
 .commercial-modal__note {
   margin: 14px 0 0;
   font-size: 0.72rem;
   line-height: 1.5;
-  color: #9a9a9a;
+  color: var(--text-tertiary);
 }
 
 .tri-empty {
@@ -2511,7 +2595,7 @@ button.trilobite-card {
 }
 
 .tri-breadcrumb a {
-  color: var(--accent);
+  color: var(--accent-secondary);
 }
 
 .tri-breadcrumb__sep {
@@ -2532,7 +2616,7 @@ button.trilobite-card {
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-secondary);
 }
 
 .tri-detail__title {
@@ -2559,10 +2643,10 @@ button.trilobite-card {
 .tri-chip {
   padding: 6px 12px;
   border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--panel-2);
+  border: 1px solid var(--border-default);
+  background: var(--bg-elevated);
   font-size: 0.76rem;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 
 /* photo gallery */
@@ -2575,8 +2659,8 @@ button.trilobite-card {
 
 .tri-gallery__item {
   margin: 0;
-  background: var(--panel-2);
-  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
   border-radius: 14px;
   overflow: hidden;
 }
@@ -2590,7 +2674,7 @@ button.trilobite-card {
 .tri-gallery__item figcaption {
   padding: 10px 14px;
   font-size: 0.72rem;
-  color: var(--muted);
+  color: var(--text-tertiary);
   line-height: 1.5;
   border-top: 1px solid var(--border);
 }
@@ -2605,7 +2689,7 @@ button.trilobite-card {
 
 .tri-field {
   padding: 18px 20px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
   border: 1px solid var(--border);
   border-radius: 16px;
 }
@@ -2619,14 +2703,14 @@ button.trilobite-card {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-secondary);
   margin-bottom: 8px;
 }
 
 .tri-field__value {
   font-size: 0.9rem;
   line-height: 1.7;
-  color: #3a3a3a;
+  color: var(--text-primary);
 }
 
 /* prev / next pager */
@@ -2641,17 +2725,17 @@ button.trilobite-card {
 .tri-pager__btn {
   padding: 10px 18px;
   border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--panel-2);
+  border: 1px solid var(--border-default);
+  background: var(--bg-elevated);
   font-size: 0.82rem;
-  color: var(--muted);
+  color: var(--text-secondary);
   font-style: italic;
   transition: color 0.15s, border-color 0.15s;
 }
 
 .tri-pager__btn:hover {
-  color: var(--accent);
-  border-color: rgba(255, 36, 66, 0.45);
+  color: var(--accent-secondary);
+  border-color: rgba(78, 205, 196, 0.45);
 }
 
 /* ── Fossil Fashion section (light theme, mirrors Discovery) ────────────── */
@@ -2691,21 +2775,26 @@ button.trilobite-card {
   flex-direction: column;
   width: 214px;
   height: 377px;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  background: #ffffff;
-  transition: 0.2s ease;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .fashion-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+  border-color: rgba(78, 205, 196, 0.25);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(78, 205, 196, 0.1);
 }
 
 .fashion-card__img {
   width: 100%;
   height: 286px;
-  background: #f5f6f7;
+  background: var(--bg-elevated);
   overflow: hidden;
 }
 
@@ -2730,7 +2819,7 @@ button.trilobite-card {
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #222222;
+  color: var(--text-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2739,7 +2828,7 @@ button.trilobite-card {
 .fashion-card__species {
   font-style: italic;
   font-size: 12px;
-  color: #4a4a4a;
+  color: var(--text-secondary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2752,7 +2841,7 @@ button.trilobite-card {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #ff2442;
+  color: var(--accent-secondary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2788,7 +2877,8 @@ button.trilobite-card {
   aspect-ratio: 4 / 5;
   border-radius: 10px;
   overflow: hidden;
-  background: #f5f6f7;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
   cursor: grab;
 }
 
@@ -2818,7 +2908,7 @@ button.trilobite-card {
   border-radius: 6px;
   overflow: hidden;
   border: 2px solid transparent;
-  background: #f5f6f7;
+  background: var(--bg-elevated);
   padding: 0;
   cursor: pointer;
   transition: border-color 0.15s;
@@ -2832,7 +2922,7 @@ button.trilobite-card {
 }
 
 .fashion-gallery__thumb.is-active {
-  border-color: #ff2442;
+  border-color: var(--accent-secondary);
 }
 
 .fashion-detail__name {
@@ -2842,18 +2932,18 @@ button.trilobite-card {
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.15;
-  color: #212121;
+  color: var(--text-primary);
 }
 
 .fashion-detail__species {
   font-style: italic;
   font-size: 1rem;
-  color: #4a4a4a;
+  color: var(--text-secondary);
 }
 
 .fashion-detail__meta {
   font-size: 0.85rem;
-  color: #727272;
+  color: var(--text-tertiary);
 }
 
 .fashion-detail__section {
@@ -2869,14 +2959,14 @@ button.trilobite-card {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #ff2442;
+  color: var(--accent-secondary);
 }
 
 .fashion-detail__text {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.8;
-  color: #4a4a4a;
+  color: var(--text-secondary);
 }
 
 .fashion-specimen__row {
@@ -2894,7 +2984,7 @@ button.trilobite-card {
   flex-shrink: 0;
   width: 118px;
   border-radius: 8px;
-  background: #f5f6f7;
+  background: var(--bg-elevated);
   object-fit: contain;
 }
 
@@ -2902,7 +2992,7 @@ button.trilobite-card {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.05rem;
   font-weight: 700;
-  color: #212121;
+  color: var(--text-primary);
 }
 
 .fashion-detail__specs {
@@ -2924,34 +3014,34 @@ button.trilobite-card {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   font-size: 12px;
   font-weight: 600;
-  color: #727272;
+  color: var(--text-tertiary);
 }
 
 .fashion-detail__spec dd {
   margin: 0;
-  color: #212121;
+  color: var(--text-primary);
 }
 
 .fashion-detail__nav {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+gap: 10px;
   padding-top: 18px;
-  border-top: 1px solid #e5e6eb;
+  border-top: 1px solid var(--border-default);
 }
 
 .fashion-detail__nav a {
   font-size: 0.85rem;
-  color: #727272;
+  color: var(--text-secondary);
   transition: color 0.15s;
 }
 
 .fashion-detail__nav a:last-child {
-  color: #ff2442;
+  color: var(--accent-secondary);
 }
 
 .fashion-detail__nav a:hover {
-  color: #ff2442;
+  color: var(--accent-secondary);
 }
 
 @media (max-width: 1300px) {
@@ -3029,9 +3119,9 @@ button.trilobite-card {
   display: flex;
   gap: 16px;
   padding: 16px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-default);
   border-radius: 12px;
-  background: #ffffff;
+  background: var(--bg-surface);
 }
 
 .upd-entry__meta {
@@ -3070,14 +3160,14 @@ button.trilobite-card {
 
 .upd-entry__list li {
   font-size: 0.78rem;
-  background: #f5f6f7;
+  background: var(--bg-elevated);
   border-radius: 999px;
   padding: 3px 10px;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 
 .upd-entry__list a {
-  color: var(--accent);
+  color: var(--accent-secondary);
   text-decoration: none;
 }
 
@@ -3098,18 +3188,18 @@ button.trilobite-card {
 }
 
 .upd-badge--species_added {
-  background: #e8f5e9;
-  color: #2e7d32;
+  background: rgba(74, 222, 128, 0.15);
+  color: var(--success);
 }
 
 .upd-badge--images_added {
-  background: #e3f2fd;
-  color: #1565c0;
+  background: rgba(90, 154, 170, 0.18);
+  color: var(--accent-info);
 }
 
 .upd-badge--fashion_added {
-  background: #fce4ec;
-  color: #ad1457;
+  background: rgba(232, 93, 117, 0.16);
+  color: var(--accent-primary);
 }
 
 /* Sidebar "Latest additions" module */
@@ -3131,7 +3221,7 @@ button.trilobite-card {
 }
 
 .latest-mod__title a:hover {
-  color: var(--accent);
+  color: var(--accent-secondary);
 }
 
 .latest-mod__list {
@@ -3151,14 +3241,14 @@ button.trilobite-card {
 }
 
 .latest-mod__date {
-  color: var(--muted);
+  color: var(--text-tertiary);
   white-space: nowrap;
 }
 
 .latest-mod__count {
   margin-left: auto;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent-secondary);
 }
 
 .latest-mod__empty {
@@ -3178,18 +3268,18 @@ button.trilobite-card {
   min-height: calc(100vh - 40px);
   border-radius: 16px;
   overflow: hidden;
-  background: #2a6a7a;
+  background: #0a1f2e;
 }
 
 .abyss-scene {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: #2a6a7a;
+  background: #0a1f2e;
 }
 
 .abyss-scene--loading {
-  background: linear-gradient(180deg, #3a8a9a 0%, #2a6a7a 60%, #3a7a82 100%);
+  background: linear-gradient(180deg, #0a1f2e 0%, #080d17 60%, #0a1f2e 100%);
 }
 
 /* 浮层: 视差变量由 JS 写入 --px/--py */
@@ -3251,11 +3341,11 @@ button.trilobite-card {
   width: 157px;
   padding: 12px;
   border-radius: 18px;
-  background: rgba(10, 30, 40, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   color: #dceef7;
   text-decoration: none;
   pointer-events: auto;

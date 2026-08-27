@@ -10,7 +10,7 @@ import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import { ColorCorrectionShader } from "three/examples/jsm/shaders/ColorCorrectionShader.js";
 
-const FOG_COLOR = 0x2a6a7a;
+const FOG_COLOR = 0x0a1f2e;
 const SAND_BASE_Y = -1.2;
 const SAND_WIDTH = 80;
 const SAND_DEPTH = 50;
