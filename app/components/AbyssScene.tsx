@@ -689,11 +689,13 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
     // ---------- 后期处理: Bloom + 青蓝色偏 ----------
     const composer = new EffectComposer(renderer);
     composer.addPass(new RenderPass(scene, camera));
+    // Bloom: 调高 threshold 避免普通亮度的 Sprite (奇虾) 触发发光,
+    // 只让水下发光植物/粒子/光束产生光晕
     const bloom = new UnrealBloomPass(
       new THREE.Vector2(host.clientWidth, host.clientHeight),
-      0.6,
-      0.5,
-      0.3
+      0.45,
+      0.4,
+      0.75
     );
     composer.addPass(bloom);
     const colorPass = new ShaderPass(ColorCorrectionShader);

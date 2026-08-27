@@ -86,25 +86,31 @@ export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisText
       const bh = found ? maxY - minY + 1 : cropH;
       aspectRatios.set(angle, bw / Math.max(1, bh));
 
-      // 预乘 alpha: 将边缘半透明像素的 RGB 按 alpha 变暗,
-      // 配合 premultiplied 混合, 消除轮廓亮边 (透明像素不再贡献亮度)
+      // 二值化 alpha + 消除亮边:
+      //  - 半透明边缘像素 (alpha < 0.5) 视为背景, 直接清零 (RGB+alpha)
+      //    -> 不再有携带亮色的半透明边缘, 从源头消除轮廓亮边
+      //  - 主体像素 (alpha >= 0.5) 保持实体不透明, 质感实
       for (let i = 0; i < px.length; i += 4) {
-        const a = px[i + 3] / 255;
-        if (a < 1) {
-          px[i] = Math.round(px[i] * a);
-          px[i + 1] = Math.round(px[i + 1] * a);
-          px[i + 2] = Math.round(px[i + 2] * a);
+        const a = px[i + 3];
+        if (a < 128) {
+          px[i] = 0;
+          px[i + 1] = 0;
+          px[i + 2] = 0;
+          px[i + 3] = 0;
+        } else {
+          px[i + 3] = 255;
         }
       }
       ctx.putImageData(imageData, 0, 0);
 
       const tex = new THREE.CanvasTexture(canvas);
       tex.colorSpace = THREE.SRGBColorSpace;
+      tex.wrapS = THREE.ClampToEdgeWrapping;
+      tex.wrapT = THREE.ClampToEdgeWrapping;
+      // 关闭 mipmap: 防止半透明边缘 RGB 在缩放采样时向透明区域扩散
+      tex.generateMipmaps = false;
       tex.minFilter = THREE.LinearFilter;
       tex.magFilter = THREE.LinearFilter;
-      tex.generateMipmaps = true;
-      // 数据已手动预乘, 标记 premultiplyAlpha=true 使上传时不反预乘
-      tex.premultiplyAlpha = true;
       textures.set(angle, tex);
     }
   }
@@ -195,15 +201,12 @@ export class Anomalocaris {
     this.material = new THREE.SpriteMaterial({
       map: this.textures.textures.get(0) ?? null,
       transparent: true,
-      alphaTest: 0.001,
+      alphaTest: 0.5,
       depthWrite: false,
       depthTest: true,
       rotation: 0,
-      // 预乘 alpha 混合: 消除透明边缘亮边
-      blending: THREE.CustomBlending,
-      blendSrc: THREE.OneFactor,
-      blendDst: THREE.OneMinusSrcAlphaFactor,
-      blendEquation: THREE.AddEquation,
+      blending: THREE.NormalBlending,
+      toneMapped: false, // 不被 tone mapping/Bloom 提亮, 保持本体实色
     });
     this.sprite = new THREE.Sprite(this.material);
     this.sprite.scale.set(3, 2.25, 1);
@@ -327,13 +330,10 @@ export class Anomalocaris {
     const h = this.worldHeight * this.scale;
     this.sprite.scale.set(h * aspect, h, 1);
 
-    // 距离渐隐: 画面外或过远时隐藏, 进入画面时淡入
+    // 距离控制: 过远时隐藏 (不再做透明度渐变, 保持主体实心不透明)
     const distCam = this.camera.position.distanceTo(this.sprite.position);
-    const visible = distCam < 20;
-    this.sprite.visible = visible;
-    if (visible) {
-      this.material.opacity = THREE.MathUtils.lerp(0.6, 1.0, 1 - distCam / 25);
-    }
+    this.sprite.visible = distCam < 20;
+    this.material.opacity = 1;
 
     // 到达终点
     if (progress >= 1) {
