@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
-import { getCover, imgSrc, trilobites, speciesImageAlt, isDrillable } from "../../lib/trilobites";
+import { getCover, imgSrc, trilobites, speciesImageAlt } from "../../lib/trilobites";
 
 type FloatCardData = {
   id: string;
@@ -30,29 +30,37 @@ export default function AbyssFloatingCards() {
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // 用现有三叶虫库构造卡片
-    const featured = trilobites.filter((t) => isDrillable(t.slug)).slice(0, 6);
-    const list: FloatCardData[] = featured.map((t, i) => {
-      const cover = getCover(t);
-      const coverImg = cover
-        ? t.images.find((im) => im.file === cover)
-        : null;
-      return {
-        id: t.id,
-        slug: t.slug,
-        scientificName: t.scientific_name,
-        age: t.age,
-        order: t.order,
-        cover: cover ? imgSrc(cover) : "",
-        alt: speciesImageAlt(t.scientific_name, t.age, t.distribution),
-        style: {
-          "--c": String(i),
-          "--c-inv": String(5 - i),
-          "--d": `${600 + i * 180}ms`,
-        } as CSSProperties,
-        className: i % 2 === 0 ? "abyss-card--a" : "abyss-card--b",
-      };
-    });
+    // 用固定 4 个物种构造浮动卡片 (按指定顺序, 打开各自详情页)
+    const slugs = [
+      "olenellus-santuccii",
+      "palaeolenus-douvillei",
+      "damesella-paronai",
+      "proasaphiscus-lui",
+    ];
+    const list: FloatCardData[] = slugs
+      .map((slug) => trilobites.find((t) => t.slug === slug))
+      .filter((t): t is NonNullable<typeof t> => Boolean(t))
+      .map((t, i) => {
+        const cover = getCover(t);
+        const coverImg = cover
+          ? t.images.find((im) => im.file === cover)
+          : null;
+        return {
+          id: t.id,
+          slug: t.slug,
+          scientificName: t.scientific_name,
+          age: t.age,
+          order: t.order,
+          cover: cover ? imgSrc(cover) : "",
+          alt: speciesImageAlt(t.scientific_name, t.age, t.distribution),
+          style: {
+            "--c": String(i),
+            "--c-inv": String(3 - i),
+            "--d": `${600 + i * 180}ms`,
+          } as CSSProperties,
+          className: i % 2 === 0 ? "abyss-card--a" : "abyss-card--b",
+        };
+      });
     setCards(list);
   }, []);
 
