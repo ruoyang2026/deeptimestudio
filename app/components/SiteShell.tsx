@@ -25,10 +25,10 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
         <div className="sidebar-left__top">
           <nav className="menu-nav" aria-label="Site navigation">
             <Link href="/" className={`menu-item${isCambrian ? " is-active" : ""}`}>
-              Cambrian
+              Discovery
             </Link>
             <Link href="/discovery" className={`menu-item${isDiscovery ? " is-active" : ""}`}>
-              Discovery
+              Archive
             </Link>
             <Link
               href="/fossil-fashion-design-inspiration"

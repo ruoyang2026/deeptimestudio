@@ -171,12 +171,9 @@ export default function AbyssFloatingCards() {
       {/* 大标题浮层 */}
       <header className="abyss-headline">
         <p className="abyss-headline__kicker">Deep Time Studio · Cambrian</p>
-        <h1 className="abyss-headline__title">
-          <span className="abyss-headline__ghost">ABYSS</span>
-        </h1>
         <p className="abyss-headline__lede">
           Step into the Cambrian sea. A living archive of the oldest life on Earth —
-          trilobites, jellyfish and the first predators, drifting in the dark.
+          trilobites, sponges and the first predators, drifting in the dark.
         </p>
       </header>
 
