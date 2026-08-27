@@ -1,16 +1,5 @@
-import dynamic from "next/dynamic";
 import SiteShell from "./components/SiteShell";
-
-// Three.js 海底场景 (客户端渲染, 禁用 SSR)
-const AbyssScene = dynamic(() => import("./components/AbyssScene"), {
-  ssr: false,
-  loading: () => <div className="abyss-scene abyss-scene--loading" />,
-});
-
-const AbyssFloatingCards = dynamic(() => import("./components/AbyssFloatingCards"), {
-  ssr: false,
-  loading: () => <div className="abyss-hero" />,
-});
+import DiscoveryHome from "./components/DiscoveryHome";
 
 export const metadata = {
   title: "Cambrian Abyss | Deep Time Studio",
@@ -21,10 +10,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <SiteShell>
-      <main className="abyss-main" aria-label="Cambrian abyss theme page">
-        <AbyssScene />
-        <AbyssFloatingCards />
-      </main>
+      <DiscoveryHome />
     </SiteShell>
   );
 }
