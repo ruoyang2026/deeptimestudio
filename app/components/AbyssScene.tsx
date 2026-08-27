@@ -3,8 +3,14 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { SimplexNoise } from "three/examples/jsm/math/SimplexNoise.js";
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
+import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
+import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
+import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
+import { ColorCorrectionShader } from "three/examples/jsm/shaders/ColorCorrectionShader.js";
 
-const FOG_COLOR = 0x0a1520;
+const FOG_COLOR = 0x1a5a6a;
 const SAND_BASE_Y = -1.2;
 const SAND_SIZE = 100;
 const SAND_SEGMENTS = 128;
@@ -12,12 +18,13 @@ const SAND_SEGMENTS = 128;
 /**
  * AbyssScene — 寒武纪海底 Three.js 背景
  *
- * 参考 threeui sylva/living-green 的程序化生成思路:
+ * 参考 threeui sylva/living-green 的程序化生成思路, 明亮的蓝绿透光海:
  *  - 多层 Simplex Noise 位移的起伏砂床 (PlaneGeometry 100x100, 128x128)
- *  - 顶点色: 深海砂渐变 + 岩石附近生物膜褐化 + 开阔处灰蓝
+ *  - 顶点色: 蓝灰砂渐变 + 岩石附近生物膜褐化 + 开阔灰蓝
  *  - 程序化 bump map 砂粒质感
- *  - 三层光照: 月光方向光(带阴影) + 生物发光点光 + 环境补光
- *  - 圆锥几何体假体积光 + 光柱尘埃
+ *  - 光照: HemisphereLight 水下散射 + 明亮方向光(带阴影) + 环境补光
+ *  - 青蓝水体散射壳层 + 圆锥体积光 + FogExp2 与背景同色
+ *  - ACES 色调映射 + Bloom 后期
  */
 export default function AbyssScene({ className = "" }: { className?: string }) {
   const hostRef = useRef<HTMLDivElement>(null);
@@ -39,10 +46,13 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
     renderer.setClearColor(FOG_COLOR, 1);
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.3;
     container.appendChild(renderer.domElement);
 
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(FOG_COLOR, 0.035);
+    scene.background = new THREE.Color(FOG_COLOR);
+    scene.fog = new THREE.FogExp2(FOG_COLOR, 0.025);
 
     const camera = new THREE.PerspectiveCamera(
       55,
@@ -121,12 +131,12 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
     }
     sandGeo.computeVertexNormals();
 
-    // 顶点色: 深海砂渐变 + 岩石生物膜褐化 + 开阔灰蓝
+    // 顶点色: 蓝灰砂渐变 + 岩石生物膜褐化 + 开阔灰蓝 (禁用近黑色)
     const color = new THREE.Color();
-    const deep = new THREE.Color(0x0f1f2e);
-    const shallow = new THREE.Color(0x1a2f3e);
-    const biofilm = new THREE.Color(0x3a2a1d);
-    const openBlue = new THREE.Color(0x24384a);
+    const deep = new THREE.Color(0x3a5a6a);
+    const shallow = new THREE.Color(0x5a7a8a);
+    const biofilm = new THREE.Color(0x7a6a4a);
+    const openBlue = new THREE.Color(0x4a7a8a);
     const colorArr = new Float32Array(posAttr.count * 3);
     for (let i = 0; i < posAttr.count; i++) {
       const x = posAttr.getX(i);
@@ -140,7 +150,7 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
         if (d < dMin) dMin = d;
       }
       const brown = THREE.MathUtils.clamp(1 - dMin / 8, 0, 1);
-      color.lerp(biofilm, brown * 0.55);
+      color.lerp(biofilm, brown * 0.4);
       const open = THREE.MathUtils.clamp(1 - dMin / 16, 0, 1);
       color.lerp(openBlue, open * 0.3);
       colorArr[i * 3] = color.r;
@@ -153,9 +163,9 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
       vertexColors: true,
       bumpMap: makeSandBumpTexture(),
       bumpScale: 0.6,
-      roughness: 1,
+      roughness: 0.9,
       metalness: 0,
-      color: 0xffffff,
+      color: 0x3a5a6a,
     });
     const sand = new THREE.Mesh(sandGeo, sandMat);
     sand.position.set(0, worldY(0), -2);
@@ -243,15 +253,19 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
     const kelpGroup = new THREE.Group();
     scene.add(kelpGroup);
     const kelpMat = new THREE.MeshStandardMaterial({
-      color: 0x1c5a3a,
-      roughness: 0.9,
+      color: 0x2d8a6a,
+      roughness: 0.7,
       metalness: 0,
       side: THREE.DoubleSide,
+      emissive: 0x0a3a2a,
+      emissiveIntensity: 0.15,
     });
     const kelpMat2 = new THREE.MeshStandardMaterial({
-      color: 0x145036,
-      roughness: 0.9,
+      color: 0x5aaa8a,
+      roughness: 0.7,
       side: THREE.DoubleSide,
+      emissive: 0x0a3a2a,
+      emissiveIntensity: 0.12,
     });
     function addKelp(x: number, z: number, h: number, phase: number, color2: boolean) {
       const geo = new THREE.CylinderGeometry(0.05, 0.09, 1, 6, 14, true);
@@ -269,9 +283,11 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
       addKelp(x, z, h, Math.random() * Math.PI * 2, Math.random() > 0.5);
     }
     const kelpBladeMat = new THREE.MeshStandardMaterial({
-      color: 0x1e6a44,
+      color: 0x3aaa8a,
       side: THREE.DoubleSide,
-      roughness: 0.9,
+      roughness: 0.7,
+      emissive: 0x0a3a2a,
+      emissiveIntensity: 0.12,
     });
     const kelpBlades: THREE.Mesh[] = [];
     for (let i = 0; i < 60; i++) {
@@ -350,10 +366,14 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
     });
     scene.add(trilobite);
 
-    // ---------- 光照: 三层系统 ----------
-    // 1) 月光/水面折射光 (主光源, 带阴影)
-    const moon = new THREE.DirectionalLight(0xa8d8ea, 0.8);
-    moon.position.set(-5, 10, 4);
+    // ---------- 光照: 透光海散射系统 ----------
+    // 0) HemisphereLight: 模拟水下光线散射, 暗部不再纯黑
+    const hemi = new THREE.HemisphereLight(0x87ceeb, 0x2a5a50, 0.8);
+    scene.add(hemi);
+
+    // 1) 明亮方向光 (主光源, 从斜上方照射, 带阴影)
+    const moon = new THREE.DirectionalLight(0xe8f8f8, 1.8);
+    moon.position.set(5, 10, 5);
     moon.castShadow = true;
     moon.shadow.mapSize.set(2048, 2048);
     moon.shadow.camera.near = 0.5;
@@ -366,14 +386,11 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
     scene.add(moon);
     scene.add(moon.target);
 
-    // 2) 生物发光点光 (海藻丛与浮游处)
+    // 2) 生物发光点光 (青绿点缀, 非唯一光源)
     const bioSpots: [number, number, number][] = [
       [-2.4, 1.6, -5],
       [2.2, 1.2, -7.5],
-      [-4.6, 1.0, -9],
-      [4.8, 1.4, -11],
       [-0.4, 2.0, -13],
-      [6.5, 0.9, -6],
     ];
     for (const [x, y, z] of bioSpots) {
       const pl = new THREE.PointLight(0x4ecdc4, 0.5, 8, 2);
@@ -382,8 +399,21 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
     }
 
     // 3) 环境补光
-    const amb = new THREE.AmbientLight(0x1a2a3a, 0.3);
+    const amb = new THREE.AmbientLight(0x40a0b0, 0.6);
     scene.add(amb);
+
+    // ---------- 水体散射壳层: 包裹整个场景的蓝绿水色 ----------
+    const waterShell = new THREE.Mesh(
+      new THREE.SphereGeometry(50, 32, 32),
+      new THREE.MeshBasicMaterial({
+        color: 0x3a8aaa,
+        transparent: true,
+        opacity: 0.18,
+        side: THREE.BackSide,
+        depthWrite: false,
+      })
+    );
+    scene.add(waterShell);
 
     // ---------- 体积光 (God Rays): 圆锥 + 透明材质 + 光柱尘埃 ----------
     function makeGodRay(x: number, z: number, tilt: number): THREE.Mesh {
@@ -442,6 +472,22 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
       scene.add(new THREE.Points(dg, dustMat));
     }
 
+    // ---------- 后期处理: Bloom + 青蓝色偏 ----------
+    const composer = new EffectComposer(renderer);
+    composer.addPass(new RenderPass(scene, camera));
+    const bloom = new UnrealBloomPass(
+      new THREE.Vector2(host.clientWidth, host.clientHeight),
+      0.6,
+      0.5,
+      0.3
+    );
+    composer.addPass(bloom);
+    const colorPass = new ShaderPass(ColorCorrectionShader);
+    colorPass.uniforms.mulRGB.value = new THREE.Vector3(1.05, 1.1, 1.22);
+    colorPass.uniforms.addRGB.value = new THREE.Vector3(0.015, 0.02, 0.03);
+    composer.addPass(colorPass);
+    composer.addPass(new OutputPass());
+
     // ---------- 相机缓动 (指针视差) ----------
     const pointer = { x: 0, y: 0 };
     const smooth = { x: 0, y: 0 };
@@ -494,7 +540,7 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
       trilobite.position.x = 2.1 + Math.sin(t * 0.15) * 0.5;
       trilobite.rotation.z = Math.sin(t * 0.4) * 0.06;
 
-      renderer.render(scene, camera);
+      composer.render();
     }
     loop();
 
@@ -504,6 +550,7 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
       const h = host.clientHeight;
       if (!w || !h) return;
       renderer.setSize(w, h);
+      composer.setSize(w, h);
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
     };
@@ -524,6 +571,8 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
           else m.dispose();
         }
       });
+      bloom.dispose();
+      composer.dispose();
       renderer.dispose();
       container.remove();
     };
