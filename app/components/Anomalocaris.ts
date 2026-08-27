@@ -86,11 +86,25 @@ export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisText
       const bh = found ? maxY - minY + 1 : cropH;
       aspectRatios.set(angle, bw / Math.max(1, bh));
 
+      // 预乘 alpha: 将边缘半透明像素的 RGB 按 alpha 变暗,
+      // 配合 premultiplied 混合, 消除轮廓亮边 (透明像素不再贡献亮度)
+      for (let i = 0; i < px.length; i += 4) {
+        const a = px[i + 3] / 255;
+        if (a < 1) {
+          px[i] = Math.round(px[i] * a);
+          px[i + 1] = Math.round(px[i + 1] * a);
+          px[i + 2] = Math.round(px[i + 2] * a);
+        }
+      }
+      ctx.putImageData(imageData, 0, 0);
+
       const tex = new THREE.CanvasTexture(canvas);
       tex.colorSpace = THREE.SRGBColorSpace;
       tex.minFilter = THREE.LinearFilter;
       tex.magFilter = THREE.LinearFilter;
       tex.generateMipmaps = true;
+      // 数据已手动预乘, 标记 premultiplyAlpha=true 使上传时不反预乘
+      tex.premultiplyAlpha = true;
       textures.set(angle, tex);
     }
   }
@@ -185,6 +199,11 @@ export class Anomalocaris {
       depthWrite: false,
       depthTest: true,
       rotation: 0,
+      // 预乘 alpha 混合: 消除透明边缘亮边
+      blending: THREE.CustomBlending,
+      blendSrc: THREE.OneFactor,
+      blendDst: THREE.OneMinusSrcAlphaFactor,
+      blendEquation: THREE.AddEquation,
     });
     this.sprite = new THREE.Sprite(this.material);
     this.sprite.scale.set(3, 2.25, 1);
