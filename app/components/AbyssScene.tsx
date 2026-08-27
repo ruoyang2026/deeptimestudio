@@ -328,56 +328,191 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
     const floorGlow = new THREE.Points(floorGlowGeo, floorGlowMat);
     scene.add(floorGlow);
 
-    // ---------- 摇曳海藻 ----------
-    const kelpGroup = new THREE.Group();
-    scene.add(kelpGroup);
-    const kelpMat = new THREE.MeshStandardMaterial({
-      color: 0x2d8a6a,
-      roughness: 0.7,
-      metalness: 0,
-      side: THREE.DoubleSide,
-      emissive: 0x0a3a2a,
-      emissiveIntensity: 0.15,
-    });
-    const kelpMat2 = new THREE.MeshStandardMaterial({
-      color: 0x5aaa8a,
-      roughness: 0.7,
-      side: THREE.DoubleSide,
-      emissive: 0x0a3a2a,
-      emissiveIntensity: 0.12,
-    });
-    function addKelp(x: number, z: number, h: number, phase: number, color2: boolean) {
-      const geo = new THREE.CylinderGeometry(0.05, 0.09, 1, 6, 14, true);
-      const kelp = new THREE.Mesh(geo, color2 ? kelpMat2 : kelpMat);
-      const base = worldY(terrainHeightAt(x, z));
-      kelp.position.set(x, base + h / 2, z);
-      kelp.scale.y = h;
-      kelp.userData = { baseX: x, baseZ: z, base, h, phase, t: 0 };
-      kelpGroup.add(kelp);
+    // ---------- 带状海藻 (Seaweed): 弯曲叶片 + 顶点着色器水流摆动 ----------
+    function createSeaweedBlade(
+      width: number,
+      height: number,
+      bendStrength: number,
+      phase: number
+    ): THREE.PlaneGeometry {
+      const geo = new THREE.PlaneGeometry(width, height, 4, 24);
+      const pos = geo.attributes.position as THREE.BufferAttribute;
+      const phaseArr = new Float32Array(pos.count);
+      const heightArr = new Float32Array(pos.count);
+      for (let i = 0; i < pos.count; i++) {
+        const x = pos.getX(i);
+        const y = pos.getY(i);
+        const t = (y + height / 2) / height;
+        const bend = Math.pow(t, 1.8) * bendStrength;
+        const wave = Math.sin(t * Math.PI * 3 + phase) * 0.15 * t;
+        const taper = 1.0 - t * 0.55;
+        pos.setX(i, x * taper + bend + wave);
+        pos.setZ(i, pos.getZ(i) + Math.sin(t * Math.PI) * 0.08);
+        phaseArr[i] = phase;
+        heightArr[i] = height;
+      }
+      geo.computeVertexNormals();
+      geo.setAttribute("aPhase", new THREE.BufferAttribute(phaseArr, 1));
+      geo.setAttribute("aHeight", new THREE.BufferAttribute(heightArr, 1));
+      return geo;
     }
-    for (let i = 0; i < 26; i++) {
-      const x = (Math.random() - 0.5) * 14;
-      const z = -1.5 - Math.random() * 8;
-      const h = 1.2 + Math.random() * 2.4;
-      addKelp(x, z, h, Math.random() * Math.PI * 2, Math.random() > 0.5);
+
+    function makeSeaweedMaterial(h: number, s: number, l: number): THREE.MeshStandardMaterial {
+      const color = new THREE.Color().setHSL(h, s, l);
+      const mat = new THREE.MeshStandardMaterial({
+        color,
+        roughness: 0.75,
+        metalness: 0.05,
+        side: THREE.DoubleSide,
+        emissive: color,
+        emissiveIntensity: 0.08,
+      });
+      mat.userData.uTime = { value: 0 };
+      mat.customProgramCacheKey = () => "seaweed-sway";
+      mat.onBeforeCompile = (shader) => {
+        shader.uniforms.uTime = mat.userData.uTime;
+        shader.vertexShader =
+          "uniform float uTime;\nattribute float aPhase;\nattribute float aHeight;\n" +
+          shader.vertexShader.replace(
+            "#include <begin_vertex>",
+            `#include <begin_vertex>
+            float sH = aHeight;
+            float tNorm = clamp((transformed.y + sH * 0.5) / sH, 0.0, 1.0);
+            float swayF = tNorm * tNorm;
+            float w1 = sin(uTime * 1.1 + aPhase + transformed.y * 0.5) * 0.26;
+            float w2 = sin(uTime * 2.3 + aPhase * 2.0 + transformed.y * 1.3 + uv.x * 2.5) * 0.06;
+            transformed.x += (w1 + w2) * swayF;
+            transformed.z += cos(uTime * 0.9 + aPhase + transformed.y * 0.35) * 0.16 * swayF;`
+          );
+      };
+      return mat;
     }
-    const kelpBladeMat = new THREE.MeshStandardMaterial({
-      color: 0x3aaa8a,
-      side: THREE.DoubleSide,
-      roughness: 0.7,
-      emissive: 0x0a3a2a,
-      emissiveIntensity: 0.12,
-    });
-    const kelpBlades: THREE.Mesh[] = [];
-    for (let i = 0; i < 60; i++) {
-      const blade = new THREE.Mesh(new THREE.PlaneGeometry(0.35, 1.1), kelpBladeMat);
-      const x = (Math.random() - 0.5) * 13;
-      const z = -1.2 - Math.random() * 7;
-      blade.position.set(x, worldY(terrainHeightAt(x, z)) + 0.4 + Math.random() * 2.6, z);
-      blade.rotation.z = (Math.random() - 0.5) * 0.7;
-      blade.userData = { phase: Math.random() * Math.PI * 2, amp: 0.1 + Math.random() * 0.15 };
-      kelpBlades.push(blade);
-      scene.add(blade);
+
+    // 共享材质: 近景正常色 / 远景剪影变暗
+    const seaweedHues = [0.36, 0.39, 0.42];
+    const nearSeaweedMats: THREE.MeshStandardMaterial[] = [];
+    const farSeaweedMats: THREE.MeshStandardMaterial[] = [];
+    for (const hue of seaweedHues) {
+      nearSeaweedMats.push(makeSeaweedMaterial(hue, 0.5, 0.28));
+      const far = makeSeaweedMaterial(hue, 0.5, 0.24);
+      far.color.multiplyScalar(0.65);
+      far.emissive.copy(far.color);
+      farSeaweedMats.push(far);
+    }
+
+    for (let i = 0; i < 24; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const r = 3 + Math.random() * 16;
+      const x = Math.cos(angle) * r;
+      const z = Math.sin(angle) * r;
+      const far = r > 12;
+      const mats = far ? farSeaweedMats : nearSeaweedMats;
+      const cluster = new THREE.Group();
+      const bladeCount = 3 + Math.floor(Math.random() * 4);
+      for (let b = 0; b < bladeCount; b++) {
+        const h = far
+          ? 2.2 + Math.random() * 2.2
+          : r < 7
+            ? 3.6 + Math.random() * 2.4
+            : 2.5 + Math.random() * 3.0;
+        const w = 0.25 + Math.random() * 0.25;
+        const bend = 0.3 + Math.random() * 1.2;
+        const phase = Math.random() * Math.PI * 2;
+        const mat = mats[Math.floor(Math.random() * mats.length)];
+        const blade = new THREE.Mesh(createSeaweedBlade(w, h, bend, phase), mat);
+        const ang = (b / bladeCount) * Math.PI * 2 + Math.random() * 0.5;
+        blade.position.set(Math.cos(ang) * 0.15, h / 2, Math.sin(ang) * 0.15);
+        blade.rotation.y = ang + Math.random() * 0.5;
+        blade.rotation.z = (Math.random() - 0.5) * 0.2;
+        cluster.add(blade);
+      }
+      cluster.position.set(x, worldY(terrainHeightAt(x, z)), z);
+      if (far) cluster.scale.setScalar(0.7 + Math.random() * 0.3);
+      scene.add(cluster);
+    }
+
+    // ---------- 杯状海绵 (Sponge): 中空 + 纵向纹理 + 边缘不规则 ----------
+    function createSpongeGeometry(
+      baseRadius: number,
+      height: number,
+      type: "cup" | "tube"
+    ): THREE.CylinderGeometry {
+      const rTop = type === "cup" ? baseRadius * 1.6 : baseRadius * 1.1;
+      const rBot = type === "cup" ? baseRadius * 0.7 : baseRadius * 0.9;
+      const geo = new THREE.CylinderGeometry(rTop, rBot, height, 16, 10, true);
+      const pos = geo.attributes.position as THREE.BufferAttribute;
+      const v = new THREE.Vector3();
+      for (let i = 0; i < pos.count; i++) {
+        v.fromBufferAttribute(pos, i);
+        const yNorm = (v.y + height / 2) / height;
+        const angle = Math.atan2(v.z, v.x);
+        const ridge = Math.sin(angle * 12 + yNorm * Math.PI * 4) * 0.025;
+        const pore = Math.sin(angle * 25 + yNorm * 8) * 0.008;
+        const deform = Math.sin(angle * 3 + yNorm * 5) * 0.04;
+        let r = Math.sqrt(v.x * v.x + v.z * v.z);
+        if (yNorm > 0.92) {
+          const edgeNoise =
+            Math.sin(angle * 7) * 0.12 +
+            Math.sin(angle * 17) * 0.05 +
+            (Math.random() - 0.5) * 0.06;
+          r += edgeNoise;
+        }
+        const newR = r + ridge + pore + deform;
+        const scale = newR / r;
+        v.x *= scale;
+        v.z *= scale;
+        pos.setXYZ(i, v.x, v.y, v.z);
+      }
+      geo.computeVertexNormals();
+      return geo;
+    }
+
+    const spongePalettes = [
+      { h: 0.08, s: 0.35, l: 0.45 },
+      { h: 0.15, s: 0.25, l: 0.4 },
+      { h: 0.25, s: 0.3, l: 0.38 },
+      { h: 0.05, s: 0.4, l: 0.5 },
+      { h: 0.2, s: 0.2, l: 0.35 },
+      { h: 0.1, s: 0.45, l: 0.55 },
+    ];
+    for (let i = 0; i < 22; i++) {
+      const type = Math.random() > 0.4 ? "cup" : "tube";
+      const baseR = 0.3 + Math.random() * 0.6;
+      const h = 1.0 + Math.random() * 2.5;
+      const geo = createSpongeGeometry(baseR, h, type);
+      const p = spongePalettes[Math.floor(Math.random() * spongePalettes.length)];
+      const color = new THREE.Color().setHSL(
+        p.h + (Math.random() - 0.5) * 0.03,
+        p.s + (Math.random() - 0.5) * 0.1,
+        p.l + (Math.random() - 0.5) * 0.08
+      );
+      const mat = new THREE.MeshStandardMaterial({
+        color,
+        roughness: 0.92,
+        metalness: 0,
+        side: THREE.DoubleSide,
+        emissive: color,
+        emissiveIntensity: 0.06,
+      });
+      const sponge = new THREE.Mesh(geo, mat);
+      let x = 0;
+      let z = 0;
+      let dist = 0;
+      do {
+        const angle = Math.random() * Math.PI * 2;
+        const radius = 2 + Math.random() * 16;
+        x = Math.cos(angle) * radius;
+        z = Math.sin(angle) * radius;
+        dist = Math.sqrt(x * x + z * z);
+      } while (dist < 4.5);
+      sponge.position.set(x, worldY(terrainHeightAt(x, z)) + h / 2 - 0.1, z);
+      sponge.rotation.z = (Math.random() - 0.5) * 0.25;
+      sponge.rotation.x = (Math.random() - 0.5) * 0.25;
+      sponge.rotation.y = Math.random() * Math.PI * 2;
+      sponge.castShadow = true;
+      sponge.receiveShadow = true;
+      if (dist > 12) sponge.scale.setScalar(0.7 + Math.random() * 0.3);
+      scene.add(sponge);
     }
 
     // ---------- 悬浮浮游粒子 ----------
@@ -567,11 +702,9 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
       // 焦散流动
       causticsMat.uniforms.time.value = t;
 
-      // 海藻摇曳
-      for (const blade of kelpBlades) {
-        const { phase, amp } = blade.userData;
-        blade.rotation.z = Math.sin(t * 1.2 + phase) * amp;
-      }
+      // 海藻水流摆动 (顶点着色器)
+      for (const m of nearSeaweedMats) m.userData.uTime.value = t;
+      for (const m of farSeaweedMats) m.userData.uTime.value = t;
 
       // 浮游粒子向上漂
       const pos = particleGeo.attributes.position as THREE.BufferAttribute;
