@@ -70,6 +70,9 @@ export default function AbyssFloatingCards() {
         smooth.y += (ny - smooth.y) * 0.06;
         hero.style.setProperty("--px", smooth.x.toFixed(4));
         hero.style.setProperty("--py", smooth.y.toFixed(4));
+        // 3D 视角倾斜: 相机随指针移动, 卡片朝相反方向轻微旋转, 增强沉浸感
+        hero.style.setProperty("--tilt-y", (smooth.x * -6).toFixed(3));
+        hero.style.setProperty("--tilt-x", (smooth.y * 5).toFixed(3));
         raf = requestAnimationFrame(tick);
       };
       cancelAnimationFrame(raf);

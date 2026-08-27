@@ -3251,18 +3251,20 @@ button.trilobite-card {
   width: 208px;
   padding: 12px;
   border-radius: 18px;
-  background: rgba(10, 28, 42, 0.55);
-  border: 1px solid rgba(120, 200, 230, 0.16);
+  background: rgba(10, 30, 40, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   color: #dceef7;
   text-decoration: none;
   pointer-events: auto;
-  transform: translate3d(
+  transform: perspective(1200px) rotateY(var(--tilt-y, 0deg)) rotateX(var(--tilt-x, 0deg)) translate3d(
       calc(var(--px, 0) * -14px),
       calc(var(--py, 0) * -10px),
       0
     );
+  transform-style: preserve-3d;
   will-change: transform, left, top;
   transition: box-shadow 0.5s ease, border-color 0.5s ease;
 }
@@ -3287,12 +3289,12 @@ button.trilobite-card {
 .abyss-card--a:nth-of-type(3) {
   left: 38%;
   top: 72%;
-  transform: scale(0.9) translate3d(calc(var(--px, 0) * -14px), calc(var(--py, 0) * -10px), 0);
+  transform: perspective(1200px) rotateY(var(--tilt-y, 0deg)) rotateX(var(--tilt-x, 0deg)) scale(0.9) translate3d(calc(var(--px, 0) * -14px), calc(var(--py, 0) * -10px), 0);
 }
 .abyss-card--b:nth-of-type(4) {
   left: 76%;
   top: 64%;
-  transform: scale(0.86) translate3d(calc(var(--px, 0) * -14px), calc(var(--py, 0) * -10px), 0);
+  transform: perspective(1200px) rotateY(var(--tilt-y, 0deg)) rotateX(var(--tilt-x, 0deg)) scale(0.86) translate3d(calc(var(--px, 0) * -14px), calc(var(--py, 0) * -10px), 0);
 }
 
 .abyss-card__media {
@@ -3309,6 +3311,7 @@ button.trilobite-card {
   height: 100%;
   object-fit: cover;
   filter: saturate(0.9) contrast(1.05);
+  box-shadow: 0 0 20px rgba(78, 205, 196, 0.2);
 }
 
 .abyss-card__order {
