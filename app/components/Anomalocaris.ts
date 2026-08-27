@@ -18,6 +18,9 @@ export const ANOMALOCARIS_ATLAS_URL = "/anomalocaris/cam.png";
 
 const SPRITE_ANGLES = [0, 45, 90, 135, 180, 225, 270, 315];
 
+/** 调试: 输出每个角度的 alpha 统计 (主体/半透明/背景 像素数) */
+const DEBUG_ANOMALOCARIS_ALPHA = true;
+
 /** 顶部标签区域占比 (如 "000° (Front)"), 裁切时跳过 */
 const LABEL_CROP_TOP = 0.15;
 
@@ -46,14 +49,14 @@ export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisText
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {
       const angle = cellAngle[row][col];
-      const canvas = document.createElement("canvas");
-      canvas.width = cellW;
-      canvas.height = cropH;
-      const ctx = canvas.getContext("2d");
-      if (!ctx) continue;
-      ctx.clearRect(0, 0, cellW, cropH);
+      const fullCanvas = document.createElement("canvas");
+      fullCanvas.width = cellW;
+      fullCanvas.height = cropH;
+      const fctx = fullCanvas.getContext("2d");
+      if (!fctx) continue;
+      fctx.clearRect(0, 0, cellW, cropH);
       // 跳过顶部标签区, 只截取奇虾本体
-      ctx.drawImage(
+      fctx.drawImage(
         image,
         col * cellW,
         row * cellH + cropTop,
@@ -65,15 +68,16 @@ export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisText
         cropH
       );
 
-      // Compute the alpha bounding box so the sprite is sized to the creature
-      const imageData = ctx.getImageData(0, 0, cellW, cropH);
+      const imageData = fctx.getImageData(0, 0, cellW, cropH);
       const px = imageData.data;
+
+      // 1) 用低阈值找 alpha bounding box (只排除完全透明的背景)
       let minX = cellW, minY = cropH, maxX = 0, maxY = 0;
       let found = false;
       for (let y = 0; y < cropH; y++) {
         for (let x = 0; x < cellW; x++) {
           const a = px[(y * cellW + x) * 4 + 3];
-          if (a > 12) {
+          if (a > 8) {
             found = true;
             if (x < minX) minX = x;
             if (x > maxX) maxX = x;
@@ -84,24 +88,54 @@ export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisText
       }
       const bw = found ? maxX - minX + 1 : cellW;
       const bh = found ? maxY - minY + 1 : cropH;
-      aspectRatios.set(angle, bw / Math.max(1, bh));
 
-      // 二值化 alpha + 消除亮边:
-      //  - 半透明边缘像素 (alpha < 0.5) 视为背景, 直接清零 (RGB+alpha)
-      //    -> 不再有携带亮色的半透明边缘, 从源头消除轮廓亮边
-      //  - 主体像素 (alpha >= 0.5) 保持实体不透明, 质感实
-      for (let i = 0; i < px.length; i += 4) {
-        const a = px[i + 3];
-        if (a < 128) {
-          px[i] = 0;
-          px[i + 1] = 0;
-          px[i + 2] = 0;
-          px[i + 3] = 0;
-        } else {
-          px[i + 3] = 255;
+      // 2) 真正裁切到 bounding box (加 4px padding), 而不是整个 cell
+      const pad = 4;
+      const cropW = Math.min(cellW, bw + pad * 2);
+      const cropH2 = Math.min(cropH, bh + pad * 2);
+      const sx = Math.max(0, minX - pad);
+      const sy = Math.max(0, minY - pad);
+      aspectRatios.set(angle, cropW / Math.max(1, cropH2));
+
+      const canvas = document.createElement("canvas");
+      canvas.width = cropW;
+      canvas.height = cropH2;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) continue;
+      ctx.clearRect(0, 0, cropW, cropH2);
+      ctx.drawImage(fullCanvas, sx, sy, cropW, cropH2, 0, 0, cropW, cropH2);
+
+      // 3) 清理: 只有极低 alpha (纯背景残留) 才清零;
+      //    保留主体边缘半透明以抗锯齿, 避免砍掉白色鳍片
+      const cropData = ctx.getImageData(0, 0, cropW, cropH2);
+      const cpx = cropData.data;
+      for (let i = 0; i < cpx.length; i += 4) {
+        const a = cpx[i + 3];
+        if (a < 32) {
+          cpx[i] = 0;
+          cpx[i + 1] = 0;
+          cpx[i + 2] = 0;
+          cpx[i + 3] = 0;
+        } else if (a >= 240) {
+          // 接近不透明的主体像素置为完全不透明, 消除"虚"
+          cpx[i + 3] = 255;
         }
       }
-      ctx.putImageData(imageData, 0, 0);
+      ctx.putImageData(cropData, 0, 0);
+
+      if (DEBUG_ANOMALOCARIS_ALPHA) {
+        let n0 = 0, nMid = 0, nOpaque = 0;
+        for (let i = 0; i < cpx.length; i += 4) {
+          const a = cpx[i + 3];
+          if (a === 0) n0++;
+          else if (a < 255) nMid++;
+          else nOpaque++;
+        }
+        console.log(
+          `[anomalocaris] angle=${angle} cell=${cellW}x${cropH} crop=${cropW}x${cropH2} ` +
+          `alpha: bg=${n0} semi=${nMid} opaque=${nOpaque}`
+        );
+      }
 
       const tex = new THREE.CanvasTexture(canvas);
       tex.colorSpace = THREE.SRGBColorSpace;
