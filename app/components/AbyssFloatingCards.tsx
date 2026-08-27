@@ -170,10 +170,13 @@ export default function AbyssFloatingCards() {
     <div className="abyss-hero" ref={heroRef}>
       {/* 大标题浮层 */}
       <header className="abyss-headline">
-        <p className="abyss-headline__kicker">Deep Time Studio · Cambrian</p>
+        <p className="abyss-headline__kicker">Deep Time Studio · Paleontology · Burgess Shale</p>
+        <h1 className="abyss-headline__title">
+          <span className="abyss-headline__ghost">The Cambrian Explosion in 3D</span>
+        </h1>
         <p className="abyss-headline__lede">
-          Step into the Cambrian sea. A living archive of the oldest life on Earth —
-          trilobites, sponges and the first predators, drifting in the dark.
+          Step into the Cambrian Explosion — 500 million years ago. Meet Anomalocaris, trilobites
+          and the first predators of the Burgess Shale in an interactive 3D prehistoric ocean.
         </p>
       </header>
 

@@ -3311,8 +3311,8 @@ gap: 10px;
 
 .abyss-headline__title {
   margin: 0;
-  font-size: clamp(56px, 9vw, 108px);
-  line-height: 0.95;
+  font-size: clamp(32px, 5vw, 62px);
+  line-height: 1.05;
   letter-spacing: 0.02em;
   font-weight: 300;
 }

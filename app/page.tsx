@@ -13,18 +13,48 @@ const AbyssFloatingCards = dynamic(() => import("./components/AbyssFloatingCards
 });
 
 export const metadata = {
-  title: "Cambrian Abyss | Deep Time Studio",
+  title: "Cambrian Explosion 3D: Anomalocaris, Trilobites & Fossils",
   description:
-    "A living three-dimensional Cambrian sea — trilobites, jellyfish and the first life on Earth drifting through the dark water, with a floating archive of fossil species.",
+    "Explore the Cambrian Explosion in 3D. Meet Anomalocaris, trilobites & Burgess Shale predators in an interactive prehistoric ocean. Browse 500+ fossil species.",
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      name: "The Cambrian Explosion in 3D",
+      description:
+        "Explore the Cambrian Explosion in 3D. Meet Anomalocaris, trilobites & Burgess Shale predators in an interactive prehistoric ocean.",
+      about: [
+        { "@type": "Thing", name: "Cambrian Explosion" },
+        { "@type": "Thing", name: "Anomalocaris" },
+        { "@type": "Thing", name: "Burgess Shale" },
+        { "@type": "Taxon", name: "Trilobita" },
+      ],
+      temporalCoverage: "Cambrian",
+    },
+    {
+      "@type": "Organization",
+      name: "Deep Time Studio",
+      description: "Paleo visual archive and interactive prehistoric experiences",
+    },
+  ],
 };
 
 export default function HomePage() {
   return (
-    <SiteShell>
-      <main className="abyss-main" aria-label="Cambrian abyss theme page">
-        <AbyssScene />
-        <AbyssFloatingCards />
-      </main>
-    </SiteShell>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SiteShell>
+        <main className="abyss-main" aria-label="Cambrian abyss theme page">
+          <AbyssScene />
+          <AbyssFloatingCards />
+        </main>
+      </SiteShell>
+    </>
   );
 }
