@@ -3178,18 +3178,18 @@ button.trilobite-card {
   min-height: calc(100vh - 40px);
   border-radius: 16px;
   overflow: hidden;
-  background: #06121f;
+  background: #0a1520;
 }
 
 .abyss-scene {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: #06121f;
+  background: #0a1520;
 }
 
 .abyss-scene--loading {
-  background: linear-gradient(180deg, #0a2033 0%, #06121f 60%, #08242a 100%);
+  background: linear-gradient(180deg, #0d1c2a 0%, #0a1520 60%, #0d1c22 100%);
 }
 
 /* 浮层: 视差变量由 JS 写入 --px/--py */
