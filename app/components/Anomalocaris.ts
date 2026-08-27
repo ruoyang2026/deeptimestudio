@@ -5,32 +5,35 @@ import * as THREE from "three";
 /**
  * Anomalocaris — 8-directional Sprite "pseudo-3D" swimmer.
  *
- * Strategy (no real 3D mesh / GLB):
- *   - A 2x4 atlas (1536x1024) is cropped at runtime into 8 angle textures:
- *     row1: 000 / 045 / 090 / 135  row2: 180 / 225 / 270 / 315
- *   - Each frame the horizontal angle between the creature's heading
- *     (path tangent) and the camera direction selects the nearest sprite.
- *   - THREE.Sprite always billboards toward the camera; heading stays
- *     independent of billboard orientation.
- *   - Natural bob + a tiny breathing scale animation + per-individual random
- *     params keep it alive. Distance-based opacity blends into the fog.
+ * Movement: a state machine (IDLE -> SWIMMING -> PAUSED) that crosses the
+ * view along fixed straight routes (no CatmullRomCurve3). Each route is a
+ * fast linear traversal with sinusoidal bob/sway. The creature stays outside
+ * the frame during IDLE/PAUSED and fades in/out based on camera distance.
+ *
+ * View: 8-direction atlas cropped at runtime; per-frame camera-relative angle
+ * selects the nearest 45° sprite with a 22.5° hysteresis threshold.
  */
 
 export const ANOMALOCARIS_ATLAS_URL = "/anomalocaris/cam.png";
 
 const SPRITE_ANGLES = [0, 45, 90, 135, 180, 225, 270, 315];
 
+/** 顶部标签区域占比 (如 "000° (Front)"), 裁切时跳过 */
+const LABEL_CROP_TOP = 0.15;
+
 export type AnomalocarisTextureSet = {
   textures: Map<number, THREE.CanvasTexture>;
   aspectRatios: Map<number, number>;
 };
 
-/** Crop the 2x4 atlas into 8 angle textures (runtime). */
+/** Crop the 2x4 atlas into 8 angle textures (runtime), skipping top labels. */
 export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisTextureSet {
   const cols = 4;
   const rows = 2;
   const cellW = Math.floor(image.width / cols);
   const cellH = Math.floor(image.height / rows);
+  const cropTop = Math.floor(cellH * LABEL_CROP_TOP);
+  const cropH = cellH - cropTop;
   const textures = new Map<number, THREE.CanvasTexture>();
   const aspectRatios = new Map<number, number>();
 
@@ -45,18 +48,29 @@ export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisText
       const angle = cellAngle[row][col];
       const canvas = document.createElement("canvas");
       canvas.width = cellW;
-      canvas.height = cellH;
+      canvas.height = cropH;
       const ctx = canvas.getContext("2d");
       if (!ctx) continue;
-      ctx.clearRect(0, 0, cellW, cellH);
-      ctx.drawImage(image, col * cellW, row * cellH, cellW, cellH, 0, 0, cellW, cellH);
+      ctx.clearRect(0, 0, cellW, cropH);
+      // 跳过顶部标签区, 只截取奇虾本体
+      ctx.drawImage(
+        image,
+        col * cellW,
+        row * cellH + cropTop,
+        cellW,
+        cropH,
+        0,
+        0,
+        cellW,
+        cropH
+      );
 
       // Compute the alpha bounding box so the sprite is sized to the creature
-      const imageData = ctx.getImageData(0, 0, cellW, cellH);
+      const imageData = ctx.getImageData(0, 0, cellW, cropH);
       const px = imageData.data;
-      let minX = cellW, minY = cellH, maxX = 0, maxY = 0;
+      let minX = cellW, minY = cropH, maxX = 0, maxY = 0;
       let found = false;
-      for (let y = 0; y < cellH; y++) {
+      for (let y = 0; y < cropH; y++) {
         for (let x = 0; x < cellW; x++) {
           const a = px[(y * cellW + x) * 4 + 3];
           if (a > 12) {
@@ -69,7 +83,7 @@ export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisText
         }
       }
       const bw = found ? maxX - minX + 1 : cellW;
-      const bh = found ? maxY - minY + 1 : cellH;
+      const bh = found ? maxY - minY + 1 : cropH;
       aspectRatios.set(angle, bw / Math.max(1, bh));
 
       const tex = new THREE.CanvasTexture(canvas);
@@ -83,18 +97,42 @@ export function loadAnomalocarisAtlas(image: HTMLImageElement): AnomalocarisText
   return { textures, aspectRatios };
 }
 
+/** 固定直线穿越路线 (基于相机俯瞰视角 (0,10,16)) */
+export type AnomalocarisRoute = {
+  id: number;
+  start: THREE.Vector3;
+  end: THREE.Vector3;
+  duration: number; // 穿越耗时 (秒)
+  pause: number;    // 到达终点后等待 (秒)
+};
+
+const ROUTE_DEFS: Omit<AnomalocarisRoute, "start" | "end">[] = [
+  { id: 0, duration: 4.5, pause: 2.0 }, // 7->2
+  { id: 1, duration: 5.0, pause: 2.0 }, // 9->3
+  { id: 2, duration: 4.5, pause: 2.0 }, // 5->11
+  { id: 3, duration: 5.5, pause: 2.0 }, // 6->12
+];
+
+const ROUTE_POINTS: { start: [number, number, number]; end: [number, number, number] }[] = [
+  { start: [-14, 3.0, 10], end: [14, 3.0, -10] },
+  { start: [-16, 2.5, 2], end: [16, 2.5, -2] },
+  { start: [14, 3.5, 10], end: [-14, 3.5, -10] },
+  { start: [4, 2.0, 14], end: [-4, 2.0, -14] },
+];
+
+const STATE = {
+  IDLE: 0,
+  SWIMMING: 1,
+  PAUSED: 2,
+};
+
 export type AnomalocarisOptions = {
   scene: THREE.Scene;
   camera: THREE.PerspectiveCamera;
   textures: AnomalocarisTextureSet;
-  path: THREE.CatmullRomCurve3;
-  worldHeight?: number;   // base world-space height of the creature
-  speed?: number;         // path param advance per second (0..1)
+  worldHeight?: number; // base world-space height of the creature
   phase?: number;
   scale?: number;
-  swimFrequency?: number;
-  bobAmount?: number;
-  bobSpeed?: number;
 };
 
 /** 每帧计算相机相对游动方向的水平角, 返回 0..360 */
@@ -112,75 +150,130 @@ export class Anomalocaris {
   private scene: THREE.Scene;
   private camera: THREE.PerspectiveCamera;
   private textures: AnomalocarisTextureSet;
-  private path: THREE.CatmullRomCurve3;
 
   private sprite: THREE.Sprite;
   private material: THREE.SpriteMaterial;
 
-  private t = 0;               // path parameter 0..1
-  private speed: number;
   private phase: number;
   private worldHeight: number;
   private scale: number;
-  private swimFrequency: number;
-  private bobAmount: number;
-  private bobSpeed: number;
 
   private forward = new THREE.Vector3();
   private toCamera = new THREE.Vector3();
+  private dir = new THREE.Vector3();       // 路线方向 (单位)
+  private elapsed = 0;                     // 当前阶段经过的时间
+  private routeIndex = 0;
+  private state = STATE.IDLE;
+  private route: AnomalocarisRoute;
 
   private currentAngle = 0;
   private currentTexture = 0;
-  /** 交叉淡入淡出用: 旧/新图透明度进度 0..1 */
-  private fade = 1;
 
   constructor(opts: AnomalocarisOptions) {
     this.scene = opts.scene;
     this.camera = opts.camera;
     this.textures = opts.textures;
-    this.path = opts.path;
 
-    this.speed = opts.speed ?? 0.005;
     this.phase = opts.phase ?? Math.random() * Math.PI * 2;
     this.worldHeight = opts.worldHeight ?? 3.2;
     this.scale = opts.scale ?? 4.0;
-    this.swimFrequency = opts.swimFrequency ?? 2.0 + Math.random() * 1.5;
-    this.bobAmount = opts.bobAmount ?? 0.3;
-    this.bobSpeed = opts.bobSpeed ?? 2.0;
 
     this.material = new THREE.SpriteMaterial({
       map: this.textures.textures.get(0) ?? null,
       transparent: true,
-      alphaTest: 0.05,
+      alphaTest: 0.001,
       depthWrite: false,
       depthTest: true,
       rotation: 0,
     });
     this.sprite = new THREE.Sprite(this.material);
     this.sprite.scale.set(3, 2.25, 1);
-    this.sprite.position.set(0, 2, -4);
+    this.sprite.visible = false;
     this.scene.add(this.sprite);
 
-    this.update(0, 0);
+    // 初始化第一条路线 (带随机偏移)
+    this.route = this.buildRoute(this.routeIndex);
+    this.startIdle();
   }
 
   getSprite() {
     return this.sprite;
   }
 
-  /** Advance along the path, update heading, sprite view, billboard, animation. */
-  update(time: number, dt: number) {
-    // 沿闭环曲线推进 (基于时间, 不受帧率影响)
-    this.t = (this.t + dt * this.speed) % 1;
-    const pos = this.path.getPointAt(this.t);
-    const tangent = this.path.getTangentAt(this.t);
+  private buildRoute(index: number): AnomalocarisRoute {
+    const pts = ROUTE_POINTS[index];
+    const def = ROUTE_DEFS[index];
+    // 随机化: start/end 的 y 偏移 ±0.5, z 偏移 ±2
+    const yOff = (Math.random() - 0.5) * 1.0;
+    const zOffS = (Math.random() - 0.5) * 4.0;
+    const zOffE = (Math.random() - 0.5) * 4.0;
+    const start = new THREE.Vector3(pts.start[0], pts.start[1] + yOff, pts.start[2] + zOffS);
+    const end = new THREE.Vector3(pts.end[0], pts.end[1] + yOff, pts.end[2] + zOffE);
+    return { id: def.id, start, end, duration: def.duration, pause: def.pause };
+  }
 
-    // 上下浮动
-    const bob = Math.sin(time * this.bobSpeed + this.phase) * this.bobAmount;
+  private startIdle() {
+    this.state = STATE.IDLE;
+    this.elapsed = 0;
+    this.sprite.visible = false;
+    // 停在起始点
+    this.sprite.position.copy(this.route.start);
+  }
+
+  private startSwimming() {
+    this.state = STATE.SWIMMING;
+    this.elapsed = 0;
+    this.sprite.visible = true;
+    this.sprite.position.copy(this.route.start);
+    this.dir.copy(this.route.end).sub(this.route.start).normalize();
+  }
+
+  private startPaused() {
+    this.state = STATE.PAUSED;
+    this.elapsed = 0;
+    // 到达终点后隐藏, 在画面外等待
+    this.sprite.visible = false;
+  }
+
+  /** Update state machine, movement, sprite view. */
+  update(time: number, dt: number) {
+    this.elapsed += dt;
+
+    if (this.state === STATE.IDLE) {
+      // 短暂待机后直接进入游动
+      if (this.elapsed >= 0.6) {
+        this.startSwimming();
+      }
+      return;
+    }
+
+    if (this.state === STATE.PAUSED) {
+      if (this.elapsed >= this.route.pause) {
+        // 切换下一条路线 (0->1->2->3->0)
+        this.routeIndex = (this.routeIndex + 1) % ROUTE_DEFS.length;
+        this.route = this.buildRoute(this.routeIndex);
+        this.startSwimming();
+      }
+      return;
+    }
+
+    // ----- SWIMMING -----
+    const progress = THREE.MathUtils.clamp(this.elapsed / this.route.duration, 0, 1);
+
+    // 沿直线匀速推进
+    const base = this.route.start.clone().lerp(this.route.end, progress);
+
+    // 正弦波上下浮动 + 轻微垂直于路径摆动 (游泳起伏)
+    const bob = Math.sin(time * 3.0 + this.phase) * 0.25;
+    const sway = Math.sin(time * 2.5 + this.phase) * 0.15;
+    // 垂直于路线的水平偏移方向 (右向量)
+    const perp = new THREE.Vector3(-this.dir.z, 0, this.dir.x);
+
+    const pos = base.addScaledVector(perp, sway);
     this.sprite.position.set(pos.x, pos.y + bob, pos.z);
 
-    // 水平游动方向 = 路径切线在 XZ 平面的投影
-    this.forward.set(tangent.x, 0, tangent.z).normalize();
+    // 游动方向 = 路线方向 (直线)
+    this.forward.copy(this.dir);
 
     // 相机 -> 奇虾 水平向量
     this.toCamera.subVectors(this.camera.position, this.sprite.position);
@@ -198,7 +291,7 @@ export class Anomalocaris {
     const targetIndex = Math.round(this.currentAngle / 45) % 8;
     const targetAngle = SPRITE_ANGLES[targetIndex];
 
-    // C. 22.5° 滞后阈值: 只有新角度与当前 Sprite 角度差 >= 22.5° 才切换, 避免 45° 边界抖动
+    // C. 22.5° 滞后阈值: 避免 45° 边界抖动
     if (targetIndex !== this.currentTexture) {
       const curAngle = SPRITE_ANGLES[this.currentTexture];
       let diff = Math.abs(targetAngle - curAngle);
@@ -208,29 +301,29 @@ export class Anomalocaris {
       }
     }
 
-    // 交叉淡入淡出: 切换后 0.15s 内透明度回升到 1, 消除跳变感
-    this.fade = Math.min(1, this.fade + dt / 0.15);
-    this.material.opacity = this.fade;
-
     // billboard: Sprite 始终面向相机 (构造保证)
-
-    // 轻微游泳呼吸缩放
-    const breathe = 1 + Math.sin(time * this.swimFrequency + this.phase) * 0.015;
 
     // 按生物 bbox 比例缩放
     const aspect = this.textures.aspectRatios.get(SPRITE_ANGLES[this.currentTexture]) ?? 1;
-    const h = this.worldHeight * this.scale * breathe;
+    const h = this.worldHeight * this.scale;
     this.sprite.scale.set(h * aspect, h, 1);
 
-    // 距离渐隐
-    const dist = this.camera.position.distanceTo(this.sprite.position);
-    const fade = THREE.MathUtils.clamp(1 - (dist - 26) / 26, 0.25, 1);
-    this.material.opacity = this.fade * fade;
+    // 距离渐隐: 画面外或过远时隐藏, 进入画面时淡入
+    const distCam = this.camera.position.distanceTo(this.sprite.position);
+    const visible = distCam < 20;
+    this.sprite.visible = visible;
+    if (visible) {
+      this.material.opacity = THREE.MathUtils.lerp(0.6, 1.0, 1 - distCam / 25);
+    }
+
+    // 到达终点
+    if (progress >= 1) {
+      this.startPaused();
+    }
   }
 
   private switchSprite(newIndex: number) {
     this.currentTexture = newIndex;
-    this.fade = 0; // 从 0 开始交叉淡入
     const tex = this.textures.textures.get(SPRITE_ANGLES[newIndex]) ?? null;
     if (tex && this.material.map !== tex) {
       this.material.map = tex;
@@ -242,10 +335,4 @@ export class Anomalocaris {
     this.scene.remove(this.sprite);
     this.material.dispose();
   }
-}
-
-/** Build a closed CatmullRomCurve3 swimming loop. */
-export function makeSwimLoop(points: [number, number, number][]): THREE.CatmullRomCurve3 {
-  const vecs = points.map(([x, y, z]) => new THREE.Vector3(x, y, z));
-  return new THREE.CatmullRomCurve3(vecs, true, "catmullrom", 0.5);
 }

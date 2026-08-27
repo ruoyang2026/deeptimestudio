@@ -12,7 +12,6 @@ import { ColorCorrectionShader } from "three/examples/jsm/shaders/ColorCorrectio
 import {
   Anomalocaris,
   loadAnomalocarisAtlas,
-  makeSwimLoop,
   ANOMALOCARIS_ATLAS_URL,
 } from "./Anomalocaris";
 
@@ -592,22 +591,11 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
     img.src = ANOMALOCARIS_ATLAS_URL;
     img.onload = () => {
       const atlas = loadAnomalocarisAtlas(img);
-      const path = makeSwimLoop([
-        [-14, 3.0, -12],
-        [-6, 4.2, -4],
-        [2, 3.6, 4],
-        [9, 2.6, 8],
-        [5, 3.8, -2],
-        [-4, 4.4, -10],
-        [-14, 3.0, -12],
-      ]);
       const ac = new Anomalocaris({
         scene,
         camera,
         textures: atlas,
-        path,
         worldHeight: 2.6,
-        speed: 0.005,
         scale: 4.0,
         phase: Math.random() * Math.PI * 2,
       });
