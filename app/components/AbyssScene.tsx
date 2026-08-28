@@ -629,21 +629,35 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
     fillLight.position.set(-8, 5, -8);
     scene.add(fillLight);
 
-    // ---------- 体积光 (God Rays): 圆锥 + 透明材质 + 光柱尘埃 ----------
+    // ---------- 体积光 (God Rays): 软边光束面片 + 透明材质 + 光柱尘埃 ----------
     function makeGodRay(x: number, z: number, tilt: number): THREE.Mesh {
-      const geo = new THREE.ConeGeometry(1.6, 24, 12, 1, true);
+      // 用平面面片 + 径向衰减纹理替代锥体: 边缘柔化, 更接近自然光束
+      const geo = new THREE.PlaneGeometry(2.6, 24, 1, 1);
       const cv = document.createElement("canvas");
-      cv.width = 64;
-      cv.height = 128;
+      cv.width = 128;
+      cv.height = 256;
       const ctx = cv.getContext("2d")!;
-      const g = ctx.createLinearGradient(0, 0, 0, 128);
-      g.addColorStop(0, "rgba(180,225,255,0.18)");
-      g.addColorStop(0.55, "rgba(180,225,255,0.06)");
-      g.addColorStop(1, "rgba(180,225,255,0)");
-      ctx.fillStyle = g;
-      ctx.fillRect(0, 0, 64, 128);
+      // 水平软边缘: 中心亮, 向左右平滑衰减到 0
+      const hg = ctx.createLinearGradient(0, 0, 128, 0);
+      hg.addColorStop(0, "rgba(255,255,255,0)");
+      hg.addColorStop(0.22, "rgba(255,255,255,0.18)");
+      hg.addColorStop(0.5, "rgba(255,255,255,0.6)");
+      hg.addColorStop(0.78, "rgba(255,255,255,0.18)");
+      hg.addColorStop(1, "rgba(255,255,255,0)");
+      ctx.fillStyle = hg;
+      ctx.fillRect(0, 0, 128, 256);
+      // 垂直衰减: 顶部较亮, 向下渐变到 0 (alpha = 水平 × 垂直)
+      const vg = ctx.createLinearGradient(0, 0, 0, 256);
+      vg.addColorStop(0, "rgba(255,255,255,0.75)");
+      vg.addColorStop(0.45, "rgba(255,255,255,0.4)");
+      vg.addColorStop(1, "rgba(255,255,255,0)");
+      ctx.globalCompositeOperation = "destination-in";
+      ctx.fillStyle = vg;
+      ctx.fillRect(0, 0, 128, 256);
+      ctx.globalCompositeOperation = "source-over";
       const mat = new THREE.MeshBasicMaterial({
         map: new THREE.CanvasTexture(cv),
+        color: 0xb4e1ff, // 淡蓝光束色
         transparent: true,
         opacity: 0.9,
         depthWrite: false,
