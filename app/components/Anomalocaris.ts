@@ -197,18 +197,19 @@ export type AnomalocarisRoute = {
 };
 
 const ROUTE_DEFS: Omit<AnomalocarisRoute, "start" | "end">[] = [
-  { id: 0, duration: 5.5, pause: 2.0 }, // 7->2
-  { id: 1, duration: 7.9, pause: 2.0 }, // 9->3
-  { id: 2, duration: 5.5, pause: 2.0 }, // 5->11
-  { id: 3, duration: 6.1, pause: 2.0 }, // 6->12
+  { id: 0, duration: 6.3, pause: 2.0 }, // 左->右, 近带
+  { id: 1, duration: 6.3, pause: 2.0 }, // 右->左, 中带
+  { id: 2, duration: 6.3, pause: 2.0 }, // 左->右, 中后带
+  { id: 3, duration: 6.3, pause: 2.0 }, // 右->左, 后带
 ];
 
-// 起点在画布内/边缘, 终点延伸到画布外, 保证奇虾游出画布边界才消失
+// 全部水平穿越: 起点/终点都在左右(x=±46)屏幕外, z 保持画面中部水平带,
+// 终点不在画布顶部区域也不在角落; 奇虾从一侧自然游入、另一侧游出。
 const ROUTE_POINTS: { start: [number, number, number]; end: [number, number, number] }[] = [
-  { start: [-14, 3.0, 14], end: [16, 3.0, -34] },
-  { start: [-34, 2.5, 3], end: [34, 2.5, -3] },
-  { start: [16, 3.5, 14], end: [-16, 3.5, -34] },
-  { start: [5, 2.0, 16], end: [-5, 2.0, -26] },
+  { start: [-46, 3.0, 8], end: [46, 3.0, 8] },
+  { start: [46, 2.5, 0], end: [-46, 2.5, 0] },
+  { start: [-46, 3.5, -6], end: [46, 3.5, -6] },
+  { start: [46, 3.0, -12], end: [-46, 3.0, -12] },
 ];
 
 const STATE = {
@@ -224,6 +225,7 @@ export type AnomalocarisOptions = {
   worldHeight?: number; // base world-space height of the creature
   phase?: number;
   scale?: number;
+  poseSwitch?: boolean; // 路线移动过程中是否切换姿势; 默认 false: 整条路线保持同一姿势
 };
 
 /** 每帧计算相机相对游动方向的水平角, 返回 0..360 */
@@ -251,6 +253,7 @@ export class Anomalocaris {
   private phase: number;
   private worldHeight: number;
   private scale: number;
+  private poseSwitch: boolean;
 
   private forward = new THREE.Vector3();
   private toCamera = new THREE.Vector3();
@@ -276,6 +279,7 @@ export class Anomalocaris {
     this.phase = opts.phase ?? Math.random() * Math.PI * 2;
     this.worldHeight = opts.worldHeight ?? 3.2;
     this.scale = opts.scale ?? 4.0;
+    this.poseSwitch = opts.poseSwitch ?? false;
 
     this.material = new THREE.SpriteMaterial({
       map: this.textures.textures.get(0) ?? null,
@@ -334,24 +338,50 @@ export class Anomalocaris {
   private startIdle() {
     this.state = STATE.IDLE;
     this.elapsed = 0;
-    this.group.visible = false;
-    // 停在起始点
+    // 不硬设 visible: 完全交给 update() 的画布边界判定, 避免状态切换瞬间闪烁
     this.group.position.copy(this.route.start);
   }
 
   private startSwimming() {
     this.state = STATE.SWIMMING;
     this.elapsed = 0;
-    this.group.visible = true;
     this.group.position.copy(this.route.start);
     this.dir.copy(this.route.end).sub(this.route.start).normalize();
+    // 姿势开关关闭时: 整条路线锁定一个与行进方向匹配的姿势
+    if (!this.poseSwitch) {
+      this.lockRoutePose();
+    }
+  }
+
+  /** 姿势开关关闭: 按路线方向计算一次姿势并锁定, 不再切换 */
+  private lockRoutePose() {
+    this.crossfade = 0;
+    this.crossfadeTimer = 0;
+    this.overlayMat.opacity = 0;
+    this.overlay.visible = false;
+    this.material.opacity = 1;
+    this.toCamera.subVectors(this.camera.position, this.group.position);
+    this.toCamera.y = 0;
+    if (this.toCamera.lengthSq() < 1e-6) {
+      this.toCamera.set(0, 0, 1);
+    } else {
+      this.toCamera.normalize();
+    }
+    const angle = computeRelativeAngle(this.dir, this.toCamera);
+    const idx = Math.round(angle / 45) % 8;
+    this.currentAngle = angle;
+    this.currentTexture = idx;
+    const tex = this.textures.textures.get(SPRITE_ANGLES[idx]) ?? null;
+    if (tex && this.material.map !== tex) {
+      this.material.map = tex;
+      this.material.needsUpdate = true;
+    }
   }
 
   private startPaused() {
     this.state = STATE.PAUSED;
     this.elapsed = 0;
-    // 到达终点后隐藏, 在画面外等待
-    this.group.visible = false;
+    // 到达终点(屏幕外), 不硬设 visible, 由边界判定保持隐藏
   }
 
   /** Update state machine, movement, sprite view. */
@@ -363,6 +393,7 @@ export class Anomalocaris {
       if (this.elapsed >= 0.6) {
         this.startSwimming();
       }
+      this.applyBoundsVisibility();
       return;
     }
 
@@ -373,6 +404,7 @@ export class Anomalocaris {
         this.route = this.buildRoute(this.routeIndex);
         this.startSwimming();
       }
+      this.applyBoundsVisibility();
       return;
     }
 
@@ -394,49 +426,52 @@ export class Anomalocaris {
     // 游动方向 = 路线方向 (直线)
     this.forward.copy(this.dir);
 
-    // 相机 -> 奇虾 水平向量
-    this.toCamera.subVectors(this.camera.position, this.group.position);
-    this.toCamera.y = 0;
-    if (this.toCamera.lengthSq() < 1e-6) {
-      this.toCamera.set(0, 0, 1);
-    } else {
-      this.toCamera.normalize();
-    }
-
-    // A. 每帧计算相机相对游动方向的水平角度
-    this.currentAngle = computeRelativeAngle(this.forward, this.toCamera);
-
-    // B. 目标 Sprite 索引
-    const targetIndex = Math.round(this.currentAngle / 45) % 8;
-    const targetAngle = SPRITE_ANGLES[targetIndex];
-
-    // C. 22.5° 滞后阈值 + 交叉淡入淡出切换
-    if (targetIndex !== this.currentTexture) {
-      const curAngle = SPRITE_ANGLES[this.currentTexture];
-      let diff = Math.abs(targetAngle - curAngle);
-      if (diff > 180) diff = 360 - diff;
-      if (diff >= 22.5) {
-        this.switchSprite(targetIndex);
+    // 姿势开关打开时才计算角度并切换 Sprite (交叉淡入淡出)
+    if (this.poseSwitch) {
+      // 相机 -> 奇虾 水平向量
+      this.toCamera.subVectors(this.camera.position, this.group.position);
+      this.toCamera.y = 0;
+      if (this.toCamera.lengthSq() < 1e-6) {
+        this.toCamera.set(0, 0, 1);
+      } else {
+        this.toCamera.normalize();
       }
-    }
 
-    // 推进交叉淡入淡出: overlay 0->1, main 1->0, 结束后 main 换图恢复实体
-    if (this.crossfade === 1) {
-      this.crossfadeTimer += dt;
-      const k = Math.min(1, this.crossfadeTimer / this.CROSSFADE_DURATION);
-      this.overlayMat.opacity = k;              // 新图淡入
-      this.material.opacity = 1 - k;            // 旧图淡出
-      if (k >= 1) {
-        // 过渡完成: 主 sprite 换新图, 恢复实体, 隐藏 overlay
-        const tex = this.textures.textures.get(SPRITE_ANGLES[this.currentTexture]) ?? null;
-        if (tex && this.material.map !== tex) {
-          this.material.map = tex;
-          this.material.needsUpdate = true;
+      // A. 每帧计算相机相对游动方向的水平角度
+      this.currentAngle = computeRelativeAngle(this.forward, this.toCamera);
+
+      // B. 目标 Sprite 索引
+      const targetIndex = Math.round(this.currentAngle / 45) % 8;
+      const targetAngle = SPRITE_ANGLES[targetIndex];
+
+      // C. 22.5° 滞后阈值 + 交叉淡入淡出切换
+      if (targetIndex !== this.currentTexture) {
+        const curAngle = SPRITE_ANGLES[this.currentTexture];
+        let diff = Math.abs(targetAngle - curAngle);
+        if (diff > 180) diff = 360 - diff;
+        if (diff >= 22.5) {
+          this.switchSprite(targetIndex);
         }
-        this.material.opacity = 1;
-        this.overlayMat.opacity = 0;
-        this.overlay.visible = false;
-        this.crossfade = 0;
+      }
+
+      // 推进交叉淡入淡出: overlay 0->1, main 1->0, 结束后 main 换图恢复实体
+      if (this.crossfade === 1) {
+        this.crossfadeTimer += dt;
+        const k = Math.min(1, this.crossfadeTimer / this.CROSSFADE_DURATION);
+        this.overlayMat.opacity = k;              // 新图淡入
+        this.material.opacity = 1 - k;            // 旧图淡出
+        if (k >= 1) {
+          // 过渡完成: 主 sprite 换新图, 恢复实体, 隐藏 overlay
+          const tex = this.textures.textures.get(SPRITE_ANGLES[this.currentTexture]) ?? null;
+          if (tex && this.material.map !== tex) {
+            this.material.map = tex;
+            this.material.needsUpdate = true;
+          }
+          this.material.opacity = 1;
+          this.overlayMat.opacity = 0;
+          this.overlay.visible = false;
+          this.crossfade = 0;
+        }
       }
     }
 
@@ -449,17 +484,22 @@ export class Anomalocaris {
     this.overlay.scale.copy(this.sprite.scale);
 
     // 画布边界 (对应海底沙地范围), 出边界才隐藏, 保证自然游出画面
+    this.applyBoundsVisibility();
+
+    // 到达终点
+    if (progress >= 1) {
+      this.startPaused();
+    }
+  }
+
+  /** 可见性完全由画布边界判定: 屏外隐藏, 屏内显示, 无状态切换闪烁 */
+  private applyBoundsVisibility() {
     const BOUND_X = 40;
     const BOUND_Z_MIN = -28;
     const BOUND_Z_MAX = 24;
     const p = this.group.position;
     this.group.visible =
       Math.abs(p.x) <= BOUND_X && p.z >= BOUND_Z_MIN && p.z <= BOUND_Z_MAX;
-
-    // 到达终点
-    if (progress >= 1) {
-      this.startPaused();
-    }
   }
 
   private switchSprite(newIndex: number) {
