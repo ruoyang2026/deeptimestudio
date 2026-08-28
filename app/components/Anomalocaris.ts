@@ -197,17 +197,18 @@ export type AnomalocarisRoute = {
 };
 
 const ROUTE_DEFS: Omit<AnomalocarisRoute, "start" | "end">[] = [
-  { id: 0, duration: 4.5, pause: 2.0 }, // 7->2
-  { id: 1, duration: 5.0, pause: 2.0 }, // 9->3
-  { id: 2, duration: 4.5, pause: 2.0 }, // 5->11
-  { id: 3, duration: 5.5, pause: 2.0 }, // 6->12
+  { id: 0, duration: 5.5, pause: 2.0 }, // 7->2
+  { id: 1, duration: 7.9, pause: 2.0 }, // 9->3
+  { id: 2, duration: 5.5, pause: 2.0 }, // 5->11
+  { id: 3, duration: 6.1, pause: 2.0 }, // 6->12
 ];
 
+// 起点在画布内/边缘, 终点延伸到画布外, 保证奇虾游出画布边界才消失
 const ROUTE_POINTS: { start: [number, number, number]; end: [number, number, number] }[] = [
-  { start: [-14, 3.0, 10], end: [14, 3.0, -10] },
-  { start: [-16, 2.5, 2], end: [16, 2.5, -2] },
-  { start: [14, 3.5, 10], end: [-14, 3.5, -10] },
-  { start: [4, 2.0, 14], end: [-4, 2.0, -14] },
+  { start: [-14, 3.0, 14], end: [16, 3.0, -34] },
+  { start: [-34, 2.5, 3], end: [34, 2.5, -3] },
+  { start: [16, 3.5, 14], end: [-16, 3.5, -34] },
+  { start: [5, 2.0, 16], end: [-5, 2.0, -26] },
 ];
 
 const STATE = {
@@ -447,9 +448,13 @@ export class Anomalocaris {
     this.sprite.scale.set(h * aspect, h, 1);
     this.overlay.scale.copy(this.sprite.scale);
 
-    // 距离控制: 过远时隐藏 (不做透明度渐变, 保持主体实心不透明)
-    const distCam = this.camera.position.distanceTo(this.group.position);
-    this.group.visible = distCam < 20;
+    // 画布边界 (对应海底沙地范围), 出边界才隐藏, 保证自然游出画面
+    const BOUND_X = 40;
+    const BOUND_Z_MIN = -28;
+    const BOUND_Z_MAX = 24;
+    const p = this.group.position;
+    this.group.visible =
+      Math.abs(p.x) <= BOUND_X && p.z >= BOUND_Z_MIN && p.z <= BOUND_Z_MAX;
 
     // 到达终点
     if (progress >= 1) {
