@@ -360,7 +360,10 @@ export class Anomalocaris {
     this.overlayMat.opacity = 0;
     this.overlay.visible = false;
     this.material.opacity = 1;
-    this.toCamera.subVectors(this.camera.position, this.group.position);
+    // 以路线中点作为参考点计算相机相对角度: 起点/终点在屏外,
+    // 若用当前位置(起点)算会偏向正脸, 用中点才能得到侧身姿势
+    const ref = this.route.start.clone().lerp(this.route.end, 0.5);
+    this.toCamera.subVectors(this.camera.position, ref);
     this.toCamera.y = 0;
     if (this.toCamera.lengthSq() < 1e-6) {
       this.toCamera.set(0, 0, 1);
