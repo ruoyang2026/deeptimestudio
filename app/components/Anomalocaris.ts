@@ -241,8 +241,11 @@ export class Anomalocaris {
   private camera: THREE.PerspectiveCamera;
   private textures: AnomalocarisTextureSet;
 
-  private sprite: THREE.Sprite;
+  private group: THREE.Group;
+  private sprite: THREE.Sprite;       // 主 sprite (静止时唯一渲染, 实体)
+  private overlay: THREE.Sprite;      // 叠加 sprite (切换过渡用)
   private material: THREE.SpriteMaterial;
+  private overlayMat: THREE.SpriteMaterial;
 
   private phase: number;
   private worldHeight: number;
@@ -258,6 +261,11 @@ export class Anomalocaris {
 
   private currentAngle = 0;
   private currentTexture = 0;
+
+  // 交叉淡入淡出过渡状态
+  private crossfade = 0;           // 0=无过渡, 1=过渡中
+  private crossfadeTimer = 0;      // 过渡经过时间
+  private readonly CROSSFADE_DURATION = 0.18; // 过渡时长 (秒)
 
   constructor(opts: AnomalocarisOptions) {
     this.scene = opts.scene;
@@ -278,10 +286,28 @@ export class Anomalocaris {
       blending: THREE.NormalBlending,
       toneMapped: false, // 不被 tone mapping/Bloom 提亮, 保持本体实色
     });
+    this.overlayMat = new THREE.SpriteMaterial({
+      map: null,
+      transparent: true,
+      alphaTest: 0.5,
+      depthWrite: false,
+      depthTest: true,
+      rotation: 0,
+      blending: THREE.NormalBlending,
+      toneMapped: false,
+      opacity: 0,
+    });
+
     this.sprite = new THREE.Sprite(this.material);
+    this.overlay = new THREE.Sprite(this.overlayMat);
     this.sprite.scale.set(3, 2.25, 1);
-    this.sprite.visible = false;
-    this.scene.add(this.sprite);
+    this.overlay.scale.copy(this.sprite.scale);
+
+    this.group = new THREE.Group();
+    this.group.add(this.sprite);
+    this.group.add(this.overlay);
+    this.group.visible = false;
+    this.scene.add(this.group);
 
     // 初始化第一条路线 (带随机偏移)
     this.route = this.buildRoute(this.routeIndex);
@@ -289,7 +315,7 @@ export class Anomalocaris {
   }
 
   getSprite() {
-    return this.sprite;
+    return this.group;
   }
 
   private buildRoute(index: number): AnomalocarisRoute {
@@ -307,16 +333,16 @@ export class Anomalocaris {
   private startIdle() {
     this.state = STATE.IDLE;
     this.elapsed = 0;
-    this.sprite.visible = false;
+    this.group.visible = false;
     // 停在起始点
-    this.sprite.position.copy(this.route.start);
+    this.group.position.copy(this.route.start);
   }
 
   private startSwimming() {
     this.state = STATE.SWIMMING;
     this.elapsed = 0;
-    this.sprite.visible = true;
-    this.sprite.position.copy(this.route.start);
+    this.group.visible = true;
+    this.group.position.copy(this.route.start);
     this.dir.copy(this.route.end).sub(this.route.start).normalize();
   }
 
@@ -324,7 +350,7 @@ export class Anomalocaris {
     this.state = STATE.PAUSED;
     this.elapsed = 0;
     // 到达终点后隐藏, 在画面外等待
-    this.sprite.visible = false;
+    this.group.visible = false;
   }
 
   /** Update state machine, movement, sprite view. */
@@ -362,13 +388,13 @@ export class Anomalocaris {
     const perp = new THREE.Vector3(-this.dir.z, 0, this.dir.x);
 
     const pos = base.addScaledVector(perp, sway);
-    this.sprite.position.set(pos.x, pos.y + bob, pos.z);
+    this.group.position.set(pos.x, pos.y + bob, pos.z);
 
     // 游动方向 = 路线方向 (直线)
     this.forward.copy(this.dir);
 
     // 相机 -> 奇虾 水平向量
-    this.toCamera.subVectors(this.camera.position, this.sprite.position);
+    this.toCamera.subVectors(this.camera.position, this.group.position);
     this.toCamera.y = 0;
     if (this.toCamera.lengthSq() < 1e-6) {
       this.toCamera.set(0, 0, 1);
@@ -383,7 +409,7 @@ export class Anomalocaris {
     const targetIndex = Math.round(this.currentAngle / 45) % 8;
     const targetAngle = SPRITE_ANGLES[targetIndex];
 
-    // C. 22.5° 滞后阈值: 避免 45° 边界抖动
+    // C. 22.5° 滞后阈值 + 交叉淡入淡出切换
     if (targetIndex !== this.currentTexture) {
       const curAngle = SPRITE_ANGLES[this.currentTexture];
       let diff = Math.abs(targetAngle - curAngle);
@@ -393,17 +419,37 @@ export class Anomalocaris {
       }
     }
 
+    // 推进交叉淡入淡出: overlay 0->1, main 1->0, 结束后 main 换图恢复实体
+    if (this.crossfade === 1) {
+      this.crossfadeTimer += dt;
+      const k = Math.min(1, this.crossfadeTimer / this.CROSSFADE_DURATION);
+      this.overlayMat.opacity = k;              // 新图淡入
+      this.material.opacity = 1 - k;            // 旧图淡出
+      if (k >= 1) {
+        // 过渡完成: 主 sprite 换新图, 恢复实体, 隐藏 overlay
+        const tex = this.textures.textures.get(SPRITE_ANGLES[this.currentTexture]) ?? null;
+        if (tex && this.material.map !== tex) {
+          this.material.map = tex;
+          this.material.needsUpdate = true;
+        }
+        this.material.opacity = 1;
+        this.overlayMat.opacity = 0;
+        this.overlay.visible = false;
+        this.crossfade = 0;
+      }
+    }
+
     // billboard: Sprite 始终面向相机 (构造保证)
 
-    // 按生物 bbox 比例缩放
+    // 按生物 bbox 比例缩放 (主 + overlay 同步)
     const aspect = this.textures.aspectRatios.get(SPRITE_ANGLES[this.currentTexture]) ?? 1;
     const h = this.worldHeight * this.scale;
     this.sprite.scale.set(h * aspect, h, 1);
+    this.overlay.scale.copy(this.sprite.scale);
 
-    // 距离控制: 过远时隐藏 (不再做透明度渐变, 保持主体实心不透明)
-    const distCam = this.camera.position.distanceTo(this.sprite.position);
-    this.sprite.visible = distCam < 20;
-    this.material.opacity = 1;
+    // 距离控制: 过远时隐藏 (不做透明度渐变, 保持主体实心不透明)
+    const distCam = this.camera.position.distanceTo(this.group.position);
+    this.group.visible = distCam < 20;
 
     // 到达终点
     if (progress >= 1) {
@@ -412,16 +458,26 @@ export class Anomalocaris {
   }
 
   private switchSprite(newIndex: number) {
-    this.currentTexture = newIndex;
+    if (this.crossfade === 1) return; // 已在过渡中, 忽略
+    this.crossfade = 1;
+    this.crossfadeTimer = 0;
+    // 当前主图是旧图; overlay 载入新图开始淡入
     const tex = this.textures.textures.get(SPRITE_ANGLES[newIndex]) ?? null;
-    if (tex && this.material.map !== tex) {
-      this.material.map = tex;
-      this.material.needsUpdate = true;
+    if (tex && this.overlayMat.map !== tex) {
+      this.overlayMat.map = tex;
+      this.overlayMat.needsUpdate = true;
     }
+    this.overlay.visible = true;
+    this.overlay.position.copy(this.sprite.position);
+    this.overlayMat.opacity = 0;
+    this.material.opacity = 1;
+    // 记录目标索引, 过渡完成时主图切到它
+    this.currentTexture = newIndex;
   }
 
   dispose() {
-    this.scene.remove(this.sprite);
+    this.scene.remove(this.group);
     this.material.dispose();
+    this.overlayMat.dispose();
   }
 }
