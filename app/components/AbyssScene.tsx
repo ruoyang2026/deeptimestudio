@@ -15,10 +15,10 @@ import {
   ANOMALOCARIS_ATLAS_URL,
 } from "./Anomalocaris";
 
-const FOG_COLOR = 0x0a1f2e;
+const FOG_COLOR = 0x1a4a5a;
 const SAND_BASE_Y = -1.2;
-const SAND_WIDTH = 80;
-const SAND_DEPTH = 50;
+const SAND_WIDTH = 120;
+const SAND_DEPTH = 120;
 const SAND_SEGMENTS = 256;
 
 /**
@@ -56,8 +56,9 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
     container.appendChild(renderer.domElement);
 
     const scene = new THREE.Scene();
+    // 背景与雾色完全一致: 远景被水体散射成均匀青蓝, 不是纯黑
     scene.background = new THREE.Color(FOG_COLOR);
-    scene.fog = new THREE.FogExp2(FOG_COLOR, 0.015);
+    scene.fog = new THREE.FogExp2(FOG_COLOR, 0.022);
 
     const camera = new THREE.PerspectiveCamera(
       55,
@@ -657,9 +658,9 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
       ctx.globalCompositeOperation = "source-over";
       const mat = new THREE.MeshBasicMaterial({
         map: new THREE.CanvasTexture(cv),
-        color: 0xb4e1ff, // 淡蓝光束色
+        color: 0x88ccdd, // 偏青白, 不要纯白
         transparent: true,
-        opacity: 0.9,
+        opacity: 0.7,
         depthWrite: false,
         side: THREE.DoubleSide,
         blending: THREE.AdditiveBlending,
@@ -699,6 +700,47 @@ export default function AbyssScene({ className = "" }: { className?: string }) {
       dg.setAttribute("position", new THREE.BufferAttribute(dp, 3));
       scene.add(new THREE.Points(dg, dustMat));
     }
+
+    // ---------- 水体散射穹顶 (Water Dome): 消除远景纯黑断层 ----------
+    // 覆盖整个场景的半透明球壳, 让"海平线"变成均匀青蓝水体而非黑色虚空
+    const DOME_RADIUS = 90; // 必须大于海底平面对角线一半, 兜住远景
+    const domeGeo = new THREE.SphereGeometry(DOME_RADIUS, 32, 32);
+    const domeMat = new THREE.MeshBasicMaterial({
+      color: 0x2a6a7a, // 青蓝绿, 比雾色稍亮
+      transparent: true,
+      opacity: 0.12,
+      side: THREE.BackSide, // 从内部看
+      depthWrite: false, // 不遮挡其他物体
+    });
+    scene.add(new THREE.Mesh(domeGeo, domeMat));
+
+    // ---------- 远景粒子层 (海洋雪): 打破远距离纯色单调 ----------
+    const farCount = 800;
+    const farGeo = new THREE.BufferGeometry();
+    const farPos = new Float32Array(farCount * 3);
+    const farColors = new Float32Array(farCount * 3);
+    for (let i = 0; i < farCount; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const radius = 15 + Math.random() * 25; // 15~40 单位远
+      farPos[i * 3] = Math.cos(angle) * radius;
+      farPos[i * 3 + 1] = 6 + Math.random() * 8; // 高度 6~14
+      farPos[i * 3 + 2] = Math.sin(angle) * radius;
+      // 青白色, 非常微弱
+      farColors[i * 3] = 0.6;
+      farColors[i * 3 + 1] = 0.8;
+      farColors[i * 3 + 2] = 0.9;
+    }
+    farGeo.setAttribute("position", new THREE.BufferAttribute(farPos, 3));
+    farGeo.setAttribute("color", new THREE.BufferAttribute(farColors, 3));
+    const farParticlesMat = new THREE.PointsMaterial({
+      size: 0.08,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.25,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    });
+    scene.add(new THREE.Points(farGeo, farParticlesMat));
 
     // ---------- 后期处理: Bloom + 青蓝色偏 ----------
     const composer = new EffectComposer(renderer);
