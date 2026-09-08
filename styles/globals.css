@@ -1849,6 +1849,14 @@ a {
   background: var(--bg-elevated);
   border: 1px solid var(--border-default);
   border-radius: 16px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.sidebar-left::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .sidebar-left__top {
