@@ -1888,6 +1888,53 @@ a {
   font-weight: 600;
 }
 
+/* Archive collapsible group + submenu */
+.menu-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.menu-item--parent {
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-caret {
+  font-size: 0.72rem;
+  opacity: 0.6;
+  transition: transform 0.2s ease;
+}
+
+.menu-caret.is-open {
+  transform: rotate(180deg);
+}
+
+.menu-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: 12px;
+  margin-left: 12px;
+  border-left: 1px solid var(--border-default);
+  animation: menu-sub-fade 0.18s ease;
+}
+
+@keyframes menu-sub-fade {
+  from { opacity: 0; transform: translateY(-2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.menu-item--sub {
+  font-size: 0.85rem;
+  padding: 8px 12px;
+}
+
+.menu-item--sub.is-active {
+  border-left: 2px solid var(--accent-secondary);
+  border-radius: 6px;
+}
+
 .red-btn {
   display: inline-flex;
   align-items: center;

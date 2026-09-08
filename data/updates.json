@@ -1,6 +1,23 @@
 {
-  "last_generated": "2026-08-28T06:36:09.821Z",
+  "last_generated": "2026-09-08T07:14:11.684Z",
   "entries": [
+    {
+      "id": "2026-09-08-0001",
+      "date": "2026-09-08",
+      "kind": "amphibians_added",
+      "count": 8,
+      "slugs": [
+        "macropelobates-linquensis",
+        "bufo-shandongensis",
+        "rana-basaltica",
+        "rana-yushensis",
+        "liaobatrachus-grabaui",
+        "liaobatrachus-beipiaoensis",
+        "liaobatrachus-macilentus",
+        "liaobatrachus-zhaoi"
+      ],
+      "detail": "New Amphibians archive: 8 fossil amphibian species with fossil photographs (precisely cropped from source PDFs)."
+    },
     {
       "id": "2026-08-12-0002",
       "date": "2026-08-12",

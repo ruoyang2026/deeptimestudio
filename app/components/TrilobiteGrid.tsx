@@ -18,7 +18,7 @@ export type CardData = {
   drillable: boolean;
 };
 
-export default function TrilobiteGrid({ species }: { species: CardData[] }) {
+export default function TrilobiteGrid({ species, detailBase = "/species" }: { species: CardData[]; detailBase?: string }) {
   const [lockedSlug, setLockedSlug] = useState<string | null>(null);
   const locked = lockedSlug ? species.find((s) => s.slug === lockedSlug) : null;
 
@@ -36,7 +36,7 @@ export default function TrilobiteGrid({ species }: { species: CardData[] }) {
       <div className="trilobite-card-grid">
         {species.map((t) =>
           t.drillable ? (
-            <Link key={t.id} href={`/species/${t.slug}`} className="trilobite-card">
+            <Link key={t.id} href={`${detailBase}/${t.slug}`} className="trilobite-card">
               <CardBody t={t} />
             </Link>
           ) : (

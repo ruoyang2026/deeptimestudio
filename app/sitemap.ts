@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { trilobites, isDrillable } from "../lib/trilobites";
+import { amphibians } from "../lib/amphibians";
 import { fashionProducts } from "../lib/fashion";
 import {
   lastModifiedForSlug,
@@ -16,8 +17,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${SITE_URL}/discovery`,
+      url: `${SITE_URL}/archive/trilobites`,
       changeFrequency: "daily",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/archive/amphibians`,
+      changeFrequency: "weekly",
       priority: 0.9,
     },
     {
@@ -40,6 +46,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
       lastModified: lastModifiedForSlug(t.slug),
+    });
+  }
+
+  for (const a of amphibians) {
+    entries.push({
+      url: `${SITE_URL}/amphibians/${a.slug}`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      lastModified: lastModifiedForSlug(a.slug),
     });
   }
 

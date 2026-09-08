@@ -1,0 +1,14 @@
+{
+ "note": "All amphibian species are unlocked (drillable).",
+ "total": 8,
+ "slugs": [
+  "macropelobates-linquensis",
+  "bufo-shandongensis",
+  "rana-basaltica",
+  "rana-yushensis",
+  "liaobatrachus-grabaui",
+  "liaobatrachus-beipiaoensis",
+  "liaobatrachus-macilentus",
+  "liaobatrachus-zhaoi"
+ ]
+}

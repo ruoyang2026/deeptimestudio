@@ -3,12 +3,13 @@ import Link from "next/link";
 import SiteShell from "../components/SiteShell";
 import { getUpdates, type UpdateEntry } from "../../lib/updates";
 import { isDrillable } from "../../lib/trilobites";
+import { getBySlug as getAmphibianBySlug } from "../../lib/amphibians";
 import { getFashionBySlug } from "../../lib/fashion";
 
 export const metadata: Metadata = {
-  title: "What's New | Deep Time Studio — Trilobite Database Updates",
+  title: "What's New | Deep Time Studio — Trilobite & Amphibian Database Updates",
   description:
-    "New trilobite species, newly added fossil photographs, and new fashion releases from Deep Time Studio — the latest additions to the 500+ species archive.",
+    "New trilobite species, newly added fossil photographs, new amphibian species and new fashion releases from Deep Time Studio — the latest additions to the archive.",
   alternates: { canonical: "/updates" },
 };
 
@@ -16,6 +17,7 @@ const KIND_LABEL: Record<UpdateEntry["kind"], string> = {
   species_added: "New species",
   images_added: "New photos",
   fashion_added: "New fashion",
+  amphibians_added: "New amphibians",
 };
 
 function SpeciesList({ slugs }: { slugs: string[] }) {
@@ -30,6 +32,22 @@ function SpeciesList({ slugs }: { slugs: string[] }) {
           <li key={slug}>{slug.replace(/-/g, " ")}</li>
         )
       )}
+    </ul>
+  );
+}
+
+function AmphibianList({ slugs }: { slugs: string[] }) {
+  return (
+    <ul className="upd-entry__list">
+      {slugs.map((slug) => {
+        const p = getAmphibianBySlug(slug);
+        const label = p ? p.scientific_name.split(" (")[0] : slug.replace(/-/g, " ");
+        return (
+          <li key={slug}>
+            <Link href={`/amphibians/${slug}`}>{label}</Link>
+          </li>
+        );
+      })}
     </ul>
   );
 }
@@ -85,6 +103,8 @@ export default function UpdatesPage() {
                   {entry.slugs && entry.slugs.length ? (
                     entry.kind === "fashion_added" ? (
                       <FashionList slugs={entry.slugs} />
+                    ) : entry.kind === "amphibians_added" ? (
+                      <AmphibianList slugs={entry.slugs} />
                     ) : (
                       <SpeciesList slugs={entry.slugs} />
                     )

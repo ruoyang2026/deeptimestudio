@@ -1,0 +1,216 @@
+{
+ "title": "Fossil Amphibians — Species Database (Ordovician companion)",
+ "version": "1.0",
+ "source": "Chinese book pages 54-79 (amphibian chapter)",
+ "total_species": 8,
+ "species": [
+  {
+   "id": "a001",
+   "slug": "macropelobates-linquensis",
+   "page": 55,
+   "order": "Pelobatidae",
+   "scientific_name": "Macropelobates linquensis (Yang, 1977)",
+   "classification": "Pelobatidae",
+   "genus": "Macropelobates",
+   "authority": "Roczek, Dong, Prikryl, Sun, Tan et Wang, 2011",
+   "original_combination": "Bufo linquensis",
+   "species": "Macropelobates linquensis (Yang, 1977)",
+   "age": "Middle Miocene Shanwang Formation",
+   "distribution": "Linqu Shanwang, Shandong, China",
+   "diagnosis": "Large pelobatoid anuran. Cranial roof wide and short; presacral vertebrae procoelous; sacral diapophysis strongly expanded; possesses typical fossorial skeletal features: robust spade-like prehallux; tibiofibula shorter than femur; calcaneus and astragalus short. Distinguished from Pelobatidae by: paired frontoparietals (triradiate in Pelobates and Eopelobates); calcaneus and astragalus not fused; sacrum-urostyle joint single-condylar.",
+   "remarks": "Originally named Bufo linquensis by Yang (1977). Gao (1986) established M. cratus based on the same material, but this is a junior synonym. Roczek et al. (2011) corrected the nomenclatural history and designated IVPP V 7700 as neotype. The species shows adaptation for fossorial habits, being the earliest known fossorial anuran.",
+   "captions": "Neotype of Macropelobates linquensis (IVPP V 7700) (from Roczek et al., 2011). A1, A2. Nearly complete skeleton on opposing rock faces; B. Pectoral girdle and forelimb bones; C. Posterior vertebral column and pelvic girdle bones",
+   "images": [
+    {
+     "file": "amphibians/macropelobates-linquensis/01.webp",
+     "width": 1219,
+     "height": 1600,
+     "caption": "Neotype of Macropelobates linquensis (IVPP V 7700) (from Roczek et al., 2011). A1, A2. Nearly complete skeleton on opposing rock faces; B. Pectoral girdle and forelimb bones; C. Posterior vertebral column and pelvic girdle bones"
+    }
+   ],
+   "cover": "amphibians/macropelobates-linquensis/01.webp"
+  },
+  {
+   "id": "a003",
+   "slug": "bufo-shandongensis",
+   "page": 60,
+   "order": "Bufonidae",
+   "scientific_name": "Bufo shandongensis Roczek, Dong, Prikryl, Sun, Tan et Wang, 2011",
+   "classification": "Bufonidae",
+   "genus": "Bufo",
+   "authority": "Roczek, Dong, Prikryl, Sun, Tan et Wang, 2011",
+   "original_combination": "Bufo shandongensis",
+   "species": "Bufo shandongensis Roczek, Dong, Prikryl, Sun, Tan et Wang, 2011",
+   "age": "Middle Miocene Shanwang Formation",
+   "distribution": "Linqu Shanwang, Shandong, China",
+   "diagnosis": "Large toad species; skull short and broadly rounded; parasphenoid cultriform process width less than half its length, lateral wings perpendicular to long axis; anterior margin of sacral diapophysis perpendicular to body axis, posterior margin slightly inclined, thus diapophysis slightly expanded; sacrum-urostyle joint bicondylar; tibiofibula shorter than femur.",
+   "remarks": "Represents the oldest preserved skeleton of a bufonid in the Northern Hemisphere. Reappeared in Eurasia after a large temporal gap between the Paleocene and early Miocene (Rage, 2003; Rage et Roczek, 2003). The holotype (SDM) JMSP H11-038 was originally designated as paratype of Bufo linquensis by Yang (1977).",
+   "captions": "Holotype of Bufo shandongensis [(SDM) JMSP H11-038] (from Roczek et al., 2011). A. Holotype specimen in upper, middle, and lower parts; B. Upper part of holotype, head (ventral view), arrow indicates anterior end of frontoparietal; C. Middle part of holotype, vertebral column and pelvic girdle bone impressions (ventral view); D. Enlarged view of lower part showing vertebral column and pelvic girdle; E, F. Enlarged vertebral column sections showing 8 presacral vertebrae; G. Hindlimb bones of holotype",
+   "images": [
+    {
+     "file": "amphibians/bufo-shandongensis/01.webp",
+     "width": 1218,
+     "height": 1599,
+     "caption": "Holotype of Bufo shandongensis [(SDM) JMSP H11-038] (from Roczek et al., 2011). A. Holotype specimen in upper, middle, and lower parts; B. Upper part of holotype, head (ventral view), arrow indicates anterior end of frontoparietal; C. Middle part of holotype, vertebral column and pelvic girdle bone impressions (ventral view); D. Enlarged view of lower part showing vertebral column and pelvic girdle; E, F. Enlarged vertebral column sections showing 8 presacral vertebrae; G. Hindlimb bones of holotype"
+    }
+   ],
+   "cover": "amphibians/bufo-shandongensis/01.webp"
+  },
+  {
+   "id": "a006",
+   "slug": "rana-basaltica",
+   "page": 63,
+   "order": "Ranidae",
+   "scientific_name": "Rana basaltica? Young, 1936",
+   "classification": "Ranidae",
+   "genus": "Rana",
+   "authority": "Young, 1936",
+   "original_combination": "Rana basaltica",
+   "species": "Rana basaltica? Young, 1936",
+   "age": "Middle Miocene Shanwang Formation",
+   "distribution": "Linqu Shanwang, Shandong, China",
+   "diagnosis": "Small Rana species (snout-vent length 29-46 mm); skull tapering anteriorly forming triangular shape; frontoparietals smooth, with markedly thickened area ventrally; posterior presacral transverse processes perpendicular to body midline; urostyle bicondylar with sacrum; ilium with prominent dorsal ridge; tibiofibula significantly longer than femur (femur:tibiofibula = 0.71-0.90), indicating strong jumping ability.",
+   "remarks": "Holotype was lost. Young (1936) did not designate a holotype or provide specimen numbers. Roczek et al. (2011) designated a neotype (IVPP V 11706) and a paratype (IVPP V 14264), but the paratype designation is invalid under ICZN rules. Sanchiz (1998) considered this a nomen dubium. Questionable species, hence '?' added to species name.",
+   "captions": "Holotype of Rana basaltica? (unnumbered), skeletal line drawing (ventral view) (from Young, 1936)",
+   "images": [
+    {
+     "file": "amphibians/rana-basaltica/01.webp",
+     "width": 1165,
+     "height": 1600,
+     "caption": "Holotype of Rana basaltica? (unnumbered), skeletal line drawing (ventral view) (from Young, 1936)"
+    }
+   ],
+   "cover": "amphibians/rana-basaltica/01.webp"
+  },
+  {
+   "id": "a008",
+   "slug": "rana-yushensis",
+   "page": 68,
+   "order": "Ranidae",
+   "scientific_name": "Rana yushensis Liu, 1961",
+   "classification": "Ranidae",
+   "genus": "Rana",
+   "authority": "Liu, 1961",
+   "original_combination": "Rana yushensis",
+   "species": "Rana yushensis Liu, 1961",
+   "age": "Upper Pliocene",
+   "distribution": "Zhangcun Xiaonangou, Wuxiang, Shanxi, China",
+   "diagnosis": "Head triangular, width slightly greater than length; maxilla straight, snout relatively pointed; frontoparietals relatively wide, trapezoidal, slightly wider posteriorly; orbit elliptical, anterior end slightly narrower than posterior; vertebrae wider than long; second presacral transverse process distally inclined anteriorly; hindlimbs slender, tibiofibula slightly longer than femur; phalangeal tips not expanded.",
+   "remarks": "Liu (1961) considered this species most similar to R. nigromaculata, distinguished by head width greater than length, wider frontoparietals, and similar transverse process dimensions. Represents the first discovery of anuran fossils in Shanxi. Abundant fish fossils found in same locality.",
+   "captions": "Holotype of Rana yushensis (IVPP V2460). A. Fossil photo (photographed by Wang Yuan); B. Skeletal line drawing (dorsal view) (from Liu Yuhai, 1961)",
+   "images": [
+    {
+     "file": "amphibians/rana-yushensis/01.webp",
+     "width": 1517,
+     "height": 1600,
+     "caption": "Holotype of Rana yushensis (IVPP V2460). A. Fossil photo (photographed by Wang Yuan); B. Skeletal line drawing (dorsal view) (from Liu Yuhai, 1961)"
+    }
+   ],
+   "cover": "amphibians/rana-yushensis/01.webp"
+  },
+  {
+   "id": "a010",
+   "slug": "liaobatrachus-grabaui",
+   "page": 72,
+   "order": "Anura incertae familiae",
+   "scientific_name": "Liaobatrachus grabaui Ji et Ji, 1998",
+   "classification": "Anura incertae familiae",
+   "genus": "Liaobatrachus",
+   "authority": "Ji et Ji, 1998",
+   "original_combination": "Liaobatrachus grabaui",
+   "species": "Liaobatrachus grabaui Ji et Ji, 1998",
+   "age": "Early Cretaceous Yixian Formation, Jianshangou Bed",
+   "distribution": "Sihetun, Beipiao, Liaoning, China",
+   "diagnosis": "Compared with other species of Liaobatrachus, L. grabaui has longer total presacral vertebral column, relatively shorter hindlimbs, femur and tibiofibula subequal in length, maxilla with distinct palatine process, prepollex with single phalanx.",
+   "remarks": "Holotype (GMC) GMV 2126 has poor preservation. The species was originally assigned to Pelobatidae but later research shows it has presacral ribs and opisthocoelous centra, excluding it from Pelobatidae. 'Callobatrachus sanyanensis' is a junior synonym based on reexamination of IVPP V 11525.",
+   "captions": "Liaobatrachus grabaui (from Dong et al., 2013). A1, A2. Holotype [(GMC) GMV 2126], dorsal view; B1, B2. Referred specimen (IVPP V 11525), dorsal view; C1-C3. Referred specimen [(NIGPAS) MV 77], dorsal view; D. Referred specimen (CYH 004), partial pelvic girdle. Scale bar = 2 cm",
+   "images": [
+    {
+     "file": "amphibians/liaobatrachus-grabaui/01.webp",
+     "width": 1600,
+     "height": 1513,
+     "caption": "Liaobatrachus grabaui (from Dong et al., 2013). A1, A2. Holotype [(GMC) GMV 2126], dorsal view; B1, B2. Referred specimen (IVPP V 11525), dorsal view; C1-C3. Referred specimen [(NIGPAS) MV 77], dorsal view; D. Referred specimen (CYH 004), partial pelvic girdle. Scale bar = 2 cm"
+    }
+   ],
+   "cover": "amphibians/liaobatrachus-grabaui/01.webp"
+  },
+  {
+   "id": "a011",
+   "slug": "liaobatrachus-beipiaoensis",
+   "page": 73,
+   "order": "Anura incertae familiae",
+   "scientific_name": "Liaobatrachus beipiaoensis (Gao et Wang, 2001)",
+   "classification": "Anura incertae familiae",
+   "genus": "Liaobatrachus",
+   "authority": "Dong, Roczek, Wang et Jones, 2013",
+   "original_combination": "Mesophryne beipiaoensis",
+   "species": "Liaobatrachus beipiaoensis (Gao et Wang, 2001)",
+   "age": "Early Cretaceous Yixian Formation, Jianshangou Bed",
+   "distribution": "Heitizigou (Heituogou), Sihetun, Huangbanjigou, Beipiao, Liaoning, China",
+   "diagnosis": "Compared with other species of Liaobatrachus, L. beipiaoensis has relatively longer hindlimbs, femur slightly longer than tibiofibula, acetabulum semicircular, prepollex with two phalanges.",
+   "remarks": "Originally named Mesophryne beipiaoensis by Gao et Wang (2001). 'Dalianbatrachus mengi' is a junior synonym. The holotype (PMOL) LPM 0030 was originally numbered IVPP V 11721, later returned to Beipiao City government and housed at Liaoning Paleontological Museum.",
+   "captions": "Liaobatrachus beipiaoensis (from Dong et al., 2013). A1, A2. Holotype [(PMOL) LPM0030], ventral view; B1, B2. Referred specimen [(DLNHM) DNM D2166], dorsal view; C1-C3. Referred specimen (IVPP V12717), ventral view. Scale bar = 2 cm",
+   "images": [
+    {
+     "file": "amphibians/liaobatrachus-beipiaoensis/01.webp",
+     "width": 1600,
+     "height": 1565,
+     "caption": "Liaobatrachus beipiaoensis (from Dong et al., 2013). A1, A2. Holotype [(PMOL) LPM0030], ventral view; B1, B2. Referred specimen [(DLNHM) DNM D2166], dorsal view; C1-C3. Referred specimen (IVPP V12717), ventral view. Scale bar = 2 cm"
+    }
+   ],
+   "cover": "amphibians/liaobatrachus-beipiaoensis/01.webp"
+  },
+  {
+   "id": "a012",
+   "slug": "liaobatrachus-macilentus",
+   "page": 75,
+   "order": "Anura incertae familiae",
+   "scientific_name": "Liaobatrachus macilentus (Gao et Chen, 2004)",
+   "classification": "Anura incertae familiae",
+   "genus": "Liaobatrachus",
+   "authority": "Dong, Roczek, Wang et Jones, 2013",
+   "original_combination": "Yizhoubatrachus macilentus",
+   "species": "Liaobatrachus macilentus (Gao et Chen, 2004)",
+   "age": "Early Cretaceous Yixian Formation, Dawangzhangzi Bed",
+   "distribution": "Hexianxin, Wangjiagou, Yixian, Liaoning, China",
+   "diagnosis": "Compared with other species of Liaobatrachus, L. macilentus has parasphenoid cultriform process suddenly narrowing from narrow and needle-like; ilium with slightly triangular acetabulum; prepollex with two phalanges, distal larger than proximal; femur slightly longer than tibiofibula.",
+   "remarks": "Originally named Yizhoubatrachus macilentus by Gao et Chen (2004). Initially considered a large frog (SVL 115mm) but reexamination showed it is a medium-sized anuran (SVL 56mm). The holotype (ZMNH M 8621) is a juvenile individual based on unfused carpals, incomplete olecranon process, unfused ischia. Additional specimens include IVPP V 12510 (adult) and IVPP V 12541 (juvenile).",
+   "captions": "Liaobatrachus macilentus (from Dong et al., 2013). A. Holotype (ZMNH M8621), ventral view; B1-B3. Referred specimen (IVPP V 12510), ventral view: B1. Specimen photo, B2. Skull bone line drawing with white arrows indicating vomerine teeth, B3. Enlarged pelvic region photo with red arrow showing urostylose transverse process and white arrow showing triangular acetabular fossa. at. atlas, cl. clavicle, cle. cleithrum, co. coracoid, fp. frontoparietal, hu. humerus, psh. parasphenoid, pt. pterygoid, sca. scapula, sph. sphenethmoid, V2-V4. 2nd-4th presacral vertebrae, vo. vomer. Scale bar = 2 cm",
+   "images": [
+    {
+     "file": "amphibians/liaobatrachus-macilentus/01.webp",
+     "width": 1600,
+     "height": 1565,
+     "caption": "Liaobatrachus macilentus (from Dong et al., 2013). A. Holotype (ZMNH M8621), ventral view; B1-B3. Referred specimen (IVPP V 12510), ventral view: B1. Specimen photo, B2. Skull bone line drawing with white arrows indicating vomerine teeth, B3. Enlarged pelvic region photo with red arrow showing urostylose transverse process and white arrow showing triangular acetabular fossa. at. atlas, cl. clavicle, cle. cleithrum, co. coracoid, fp. frontoparietal, hu. humerus, psh. parasphenoid, pt. pterygoid, sca. scapula, sph. sphenethmoid, V2-V4. 2nd-4th presacral vertebrae, vo. vomer. Scale bar = 2 cm"
+    }
+   ],
+   "cover": "amphibians/liaobatrachus-macilentus/01.webp"
+  },
+  {
+   "id": "a013",
+   "slug": "liaobatrachus-zhaoi",
+   "page": 76,
+   "order": "Anura incertae familiae",
+   "scientific_name": "Liaobatrachus zhaoi Dong, Roczek, Wang et Jones, 2013",
+   "classification": "Anura incertae familiae",
+   "genus": "Liaobatrachus",
+   "authority": "Dong, Roczek, Wang et Jones, 2013",
+   "original_combination": "Liaobatrachus zhaoi",
+   "species": "Liaobatrachus zhaoi Dong, Roczek, Wang et Jones, 2013",
+   "age": "Early Cretaceous Yixian Formation, Lujiatun Bed",
+   "distribution": "Qianyanzigou, Lujiatun, Beipiao, Liaoning, China",
+   "diagnosis": "Compared with other species of Liaobatrachus, L. zhaoi has relatively longer hindlimbs, femur and tibiofibula subequal in length, maxilla without palatine process, parasphenoid cultriform process gradually narrowing from 1/2 point anteriorly, acetabulum semicircular, pubis ossified in fully developed adults.",
+   "remarks": "Represents the lowest stratigraphic occurrence of Liaobatrachus (Lujiatun Bed of Yixian Formation). Roczek et al. (2012) conducted ontogenetic studies showing that femur/tibiofibula ratio, frontoparietal fontanelle, and presacral ribs are ontogenetically invariant features. Multiple specimens at different developmental stages are preserved together.",
+   "captions": "Type specimens of Liaobatrachus zhaoi (from Dong et al., 2013). A. Holotype (IVPP V 14979.1), ventral view; B. Paratype (IVPP V 14979.2), ventral view; C. Paratype (IVPP V 13239), dorsal view; D. Paratype (IVPP V14203), ventral view. Scale bar = 2 cm",
+   "images": [
+    {
+     "file": "amphibians/liaobatrachus-zhaoi/01.webp",
+     "width": 1166,
+     "height": 1600,
+     "caption": "Type specimens of Liaobatrachus zhaoi (from Dong et al., 2013). A. Holotype (IVPP V 14979.1), ventral view; B. Paratype (IVPP V 14979.2), ventral view; C. Paratype (IVPP V 13239), dorsal view; D. Paratype (IVPP V14203), ventral view. Scale bar = 2 cm"
+    }
+   ],
+   "cover": "amphibians/liaobatrachus-zhaoi/01.webp"
+  }
+ ]
+}

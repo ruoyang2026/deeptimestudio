@@ -3,7 +3,8 @@ import updatesDb from "../data/updates.json";
 export type UpdateKind =
   | "species_added"
   | "images_added"
-  | "fashion_added";
+  | "fashion_added"
+  | "amphibians_added";
 
 export type UpdateEntry = {
   id: string;
