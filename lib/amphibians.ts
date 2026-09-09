@@ -48,6 +48,9 @@ export function isDrillable(slug: string): boolean {
 export const DRILLABLE_TOTAL = (drillableDb as DrillableDb).total;
 
 export const AMPHIBIAN_AGES = [
+  "Permian",
+  "Triassic",
+  "Jurassic",
   "Cretaceous",
   "Paleogene",
   "Miocene",

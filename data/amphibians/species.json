@@ -1,8 +1,8 @@
 {
- "title": "Fossil Amphibians — Species Database (Ordovician companion)",
- "version": "1.0",
- "source": "Chinese book pages 54-79 (amphibian chapter)",
- "total_species": 8,
+ "title": "Fossil Amphibians — Species Database",
+ "version": "1.1",
+ "source": "Chinese book (amphibian + caudata/anthracosauria chapters)",
+ "total_species": 21,
  "species": [
   {
    "id": "a001",
@@ -211,6 +211,344 @@
     }
    ],
    "cover": "amphibians/liaobatrachus-zhaoi/01.webp"
+  },
+  {
+   "id": "b001",
+   "slug": "chunerpeton-tianyiensis",
+   "page": 85,
+   "order": "Cryptobranchidae",
+   "scientific_name": "Chunerpeton tianyiensis Gao et Shubin, 2003",
+   "classification": "Cryptobranchidae",
+   "genus": "Chunerpeton",
+   "authority": "Gao et Shubin, 2003",
+   "original_combination": "Chunerpeton tianyiensis",
+   "species": "Chunerpeton tianyiensis Gao et Shubin, 2003",
+   "age": "Middle/Late Jurassic",
+   "distribution": "Inner Mongolia, Liaoning, Hebei, China",
+   "diagnosis": "posteriorly, palatal fenestra retained between vomers; pterygoid with distinct medial process, pterygoid not contacting parasphenoid; second basibranchial ossified and anchor-shaped, distal ends of first three rib pairs spoon-shaped. Distinguished from other Chinese Mesozoic urodels by: vomerine tooth row close to and parallel to maxillary arch; first and second hypobranchials and second basibranchial ossified; three pairs of external gills and ossified gill rakers; 15-16 presacral vertebrae (15 in holotype); scapulocoracoid coracoid end slightly expanded, rhomboid; carpals and tarsals unossified; manus digital formula 2-2-3-2, pes pedal formula 2-2-3-(3/4)-3.",
+   "remarks": "Remark This species was established by Gao and Shubin (2003) based on four specimens from Daohugou, Inner Mongolia. Species name derived from the ancient name 'Tianyi' of Ningcheng County; holotype total length approximately 160 mm, plus three referred specimens. However, according to ICZN Article 72.4.5, the three other specimens published in the same paper (PKU PV 0210- 0212) should also belong to the type series, and specimens in the type series other than the holotype should be designated as paratypes. Therefore, this book changes these three specimens from referred specimens as originally designated to paratypes.",
+   "captions": "Holotype of Chunerpeton tianyiensis [(IGCAGS) CAGS-IG-02051], skeletal view",
+   "images": [
+    {
+     "file": "amphibians/chunerpeton-tianyiensis/01.webp",
+     "width": 1361,
+     "height": 1600,
+     "caption": "Holotype of Chunerpeton tianyiensis [(IGCAGS) CAGS-IG-02051], skeletal view"
+    }
+   ],
+   "cover": "amphibians/chunerpeton-tianyiensis/01.webp"
+  },
+  {
+   "id": "b002",
+   "slug": "regalerpeton-weichangensis",
+   "page": 89,
+   "order": "Cryptobranchidae",
+   "scientific_name": "Regalerpeton weichangensis Zhang, Wang, Jones et Evans, 2009",
+   "classification": "Cryptobranchidae",
+   "genus": "Regalerpeton",
+   "authority": "Zhang, Wang, Jones et Evans, 2009",
+   "original_combination": "Regalerpeton weichangensis",
+   "species": "Regalerpeton weichangensis Zhang, Wang, Jones et Evans, 2009",
+   "age": "Early Cretaceous",
+   "distribution": "Hebei, China",
+   "diagnosis": "Diagnostic features same as genus.",
+   "remarks": "Remark Phylogenetic analysis shows Regalerpeton and Chunerpeton form successive sister groups of extant Cryptobranchidae (Zhang et al., 2009), and this genus's vomerine tooth row morphology, pterygoid, and other typical features are all consistent with Cryptobranchidae, so this book assigns this genus to Cryptobranchidae. The genus name derives from its fossil locality Weichang, Hebei, once a royal hunting ground during the Qing Dynasty.\nRemark Species name from fossil locality Weichang. This species' scapulocoracoid morphology is quite special, very similar to hynobiids like Liaoxitriton, but quite different from Chunerpeton, which also belongs to Cryptobranchidae.",
+   "captions": "Holotype of Regalerpeton weichangensis (IVPP V14391) (from Zhang et al., 2009)",
+   "images": [
+    {
+     "file": "amphibians/regalerpeton-weichangensis/01.webp",
+     "width": 1077,
+     "height": 1600,
+     "caption": "Holotype of Regalerpeton weichangensis (IVPP V14391) (from Zhang et al., 2009)"
+    }
+   ],
+   "cover": "amphibians/regalerpeton-weichangensis/01.webp"
+  },
+  {
+   "id": "b003",
+   "slug": "laccotriton-subsolanus",
+   "page": 91,
+   "order": "Hynobiidae",
+   "scientific_name": "Laccotriton subsolanus Gao, Cheng et Xu, 1998",
+   "classification": "Hynobiidae",
+   "genus": "Laccotriton",
+   "authority": "Gao, Cheng et Xu, 1998",
+   "original_combination": "Laccotriton subsolanus",
+   "species": "Laccotriton subsolanus Gao, Cheng et Xu, 1998",
+   "age": "Early Cretaceous",
+   "distribution": "Hebei, China",
+   "diagnosis": "Remark This genus is China's first named Mesozoic urodelan [Yang Zhongjian (1979b) mentioned an unnamed Mesozoic urodelan from Luanping, Hebei; see below], thus having important research significance. However, Gao Keqin et al. (1998) selected relatively brief diagnostic features when establishing this genus and species. Gao and Shubin (2001) later supplemented and revised some features. Laccotriton's maxillary arch and nasal are well-developed, representing a small metamorphosed crown-group urodelan.",
+   "remarks": "Remark This genus is China's first named Mesozoic urodelan [Yang Zhongjian (1979b) mentioned an unnamed Mesozoic urodelan from Luanping, Hebei; see below], thus having important research significance. However, Gao Keqin et al. (1998) selected relatively brief diagnostic features when establishing this genus and species. Gao and Shubin (2001) later supplemented and revised some features. Laccotriton's maxillary arch and nasal are well-developed, representing a small metamorphosed crown-group urodelan.\nRemark Gao Keqin et al. (1998) named Laccotriton subsolanus based on four skeletal fossils. One specimen [(GMC) GMV 1602] was designated as holotype, with three others [(GMC) GMV 1603-1605] as referred specimens. However, according to ICZN Article 72.4.5, referred specimens published in the same paper should also belong to the type series, and specimens in the type series other than the holotype should be paratypes. Therefore, this book changes these three specimens from referred specimens as originally designated to paratypes. Additionally, according to the naming authors, the original paper due to editorial error",
+   "captions": "Holotype of Laccotriton subsolanus [(GMC) GMV 1602] (from Wang et Gao, 2003)",
+   "images": [
+    {
+     "file": "amphibians/laccotriton-subsolanus/01.webp",
+     "width": 1415,
+     "height": 1600,
+     "caption": "Holotype of Laccotriton subsolanus [(GMC) GMV 1602] (from Wang et Gao, 2003)"
+    }
+   ],
+   "cover": "amphibians/laccotriton-subsolanus/01.webp"
+  },
+  {
+   "id": "b004",
+   "slug": "liaoxitriton-zhongjiani",
+   "page": 94,
+   "order": "Hynobiidae",
+   "scientific_name": "Liaoxitriton zhongjiani Dong et Wang, 1998",
+   "classification": "Hynobiidae",
+   "genus": "Liaoxitriton",
+   "authority": "Dong et Wang, 1998",
+   "original_combination": "Liaoxitriton zhongjiani",
+   "species": "Liaoxitriton zhongjiani Dong et Wang, 1998",
+   "age": "Early Cretaceous",
+   "distribution": "Liaoning, China",
+   "diagnosis": "Diagnostic features Distinguished from L. daohugouensis by: snout tip narrower; vomerine tooth row extending posterolaterally; prearticular coronoid flange low; scapulocoracoid coracoid end smaller, scapular shaft longer; 15 presacral vertebrae; second presacral rib distal end棒状 without expansion; 2 pairs postsacral ribs; second metacarpal expanded; digital formula 2-2-3-(2/3), pedal formula variable, observed types include 2-2-4-5-(3/4), 2-2-3-4-(2/3), ?-3-4-5-3, or 2-2-3-5-4.",
+   "remarks": "Remark Liaoxitriton was established by Dong Zhiming and Wang Yuan (1998) based on 34 specimens from Huludao, Liaoning, named after its location in western Liaoning; over the following decade, hundreds more specimens were found at this locality. These specimens' locality was once mistakenly identified as 'Shajiaocheng, Huludao' (Dong Zhiming, Wang Yuan, 1998). Wang (2001) revised the locality to 'Wangbao, Huludao' (likely a misspelling of 'Wangbaoshan, Huludao'). Wang Yuan (2002), based on field surveys, finally identified the locality as 'Shuikouzi Village, Wangbaoshan Brigade, Xintaimen Town, Huludao.' Regarding the fossil horizon correlation, different opinions exist. Dong Zhiming and Wang Yuan (1998) considered it the Lower Cretaceous Jiufotang Formation; Wang Yuan (2002), based on amygdaloidal basalt exposures in the region, considered the Yixian Formation possibility cannot be excluded. Wang Sien identified conchostracan specimens collected by Wang Yuan from the same Liaoxitriton horizon as Eosestheria sp. and Eosestheria cf. middendorfii, correlating the strata to the Yixian Formation or basal Jiufotang Formation. Zhang Lijun et al. (2004) reported a second Liaoxitriton-bearing horizon in this area, with Ephemeropsis trisetalis, Eosestheria ovata, Liaoningogladus boii, Sphenaron sp., Ephedrites? sp., etc., and based on the co-occurrence of Eosestheria ovata and Liaoningogladus boii, concluded the horizon should be Yixian Formation, not Jiufotang Formation. Ephedrites? sp.) and other associated plants and animals, and based on Eosestheria ovata with Liaoningogladus boii appearing together, considered the fossiliferous horizon to be Yixian Formation rather than Jiufotang Formation. Zhang Lijun et al.'s Liaoxitriton horizon (measured section layers 4-6) is lower than that reported by Dong Zhiming and Wang Yuan (1998) (measured section layer 24); the paper treated both Liaoxitriton-bearing sedimentary interbeds in the section as shallow lacustrine deposits during ",
+   "captions": "Holotype of Liaoxitriton zhongjiani (IVPP V11582), ventral (A) and counterpart views",
+   "images": [
+    {
+     "file": "amphibians/liaoxitriton-zhongjiani/01.webp",
+     "width": 1118,
+     "height": 1600,
+     "caption": "Holotype of Liaoxitriton zhongjiani (IVPP V11582), ventral (A) and counterpart views"
+    }
+   ],
+   "cover": "amphibians/liaoxitriton-zhongjiani/01.webp"
+  },
+  {
+   "id": "b005",
+   "slug": "liaoxitriton-daohugouensis",
+   "page": 96,
+   "order": "Hynobiidae",
+   "scientific_name": "Liaoxitriton daohugouensis Wang, 2004",
+   "classification": "Hynobiidae",
+   "genus": "Liaoxitriton",
+   "authority": "Wang, 2004",
+   "original_combination": "Liaoxitriton daohugouensis",
+   "species": "Liaoxitriton daohugouensis Wang, 2004",
+   "age": "Middle/Late Jurassic",
+   "distribution": "Inner Mongolia, China",
+   "diagnosis": "Diagnostic features Distinguished from L. zhongjiani by: snout tip broader and rounded, vomerine tooth row extending anterolaterally; prearticular with higher coronoid flange; scapulocoracoid coracoid end more expanded, scapular end shorter; 16 presacral vertebrae; second presacral rib more robust, distally more expanded; 3 pairs postsacral ribs; second metacarpal not expanded.",
+   "remarks": "Locality and horizon Shuikouzi, Xintaimen, Huludao, Liaoning; Lower Cretaceous Yixian/Jiufotang Formation. Remark Dong Zhiming and Wang Yuan (1998) named L. zhongjiani based on 34 specimens; besides one designated\nRemark Wang Yuan (2004) named L. daohugouensis based on two specimens; one (IVPP V13393) designated as holotype, the other listed as referred specimen (IVPP V14062). However, according to ICZN Article 72.4.5, this referred specimen published in the same paper should also belong to the type series, and specimens other than the holotype should be paratypes. Therefore, this book changes this specimen from referred specimen to paratype. Additionally, the mandibular element originally labeled as articular in L. daohugouensis (Wang Yuan, 2004, Fig. 2) should be prearticular. This book corrects this.",
+   "captions": "Holotype of Liaoxitriton daohugouensis (IVPP V 13393), fossil photo (A)",
+   "images": [
+    {
+     "file": "amphibians/liaoxitriton-daohugouensis/01.webp",
+     "width": 1172,
+     "height": 1600,
+     "caption": "Holotype of Liaoxitriton daohugouensis (IVPP V 13393), fossil photo (A)"
+    }
+   ],
+   "cover": "amphibians/liaoxitriton-daohugouensis/01.webp"
+  },
+  {
+   "id": "b006",
+   "slug": "sinerpeton-fengshanensis",
+   "page": 97,
+   "order": "Hynobiidae",
+   "scientific_name": "Sinerpeton? fengshanensis Gao et Shubin, 2001",
+   "classification": "Hynobiidae",
+   "genus": "Sinerpeton?",
+   "authority": "Gao et Shubin, 2001",
+   "original_combination": "Sinerpeton? fengshanensis",
+   "species": "Sinerpeton? fengshanensis Gao et Shubin, 2001",
+   "age": "Early Cretaceous",
+   "distribution": "Hebei, China",
+   "diagnosis": "metacarpal greatly expanded; digital formula 1-2-3-2, pedal formula 1-2-3-4-2.\nKnown Chinese species only the type species.\nKnown Chinese species Only the type species.\nDistribution and age Hebei; Early Cretaceous.\nRemark Sinerpeton and Laccotriton come from the same locality, same horizon, and same fossil excavation pit, with many skeletal features similar. Whether this genus is a synonym of the latter is worth exploring. See remarks on the species below.\nSinerpeton? fengshanensis Gao et Shubin, 2001\nHolotype (GMC) GMV1606, an incomplete articulated skeleton. From Paozhanggou, Fengshan, Fengning, Chengde, Hebei.\nFig. 53 Sinerpeton? fengshanensis holotype [(GMC) GMV 1606] (dorsal view)\n(from Gao et Shubin, 2001)\nA. Associated skull and postcranial skeleton; B. Enlarged skull; C. Enlarged pectoral girdle and forelimb. Scale bar 2 mm",
+   "remarks": "Remark Sinerpeton and Laccotriton come from the same locality, same horizon, and same fossil excavation pit, with many skeletal features similar. Whether this genus is a synonym of the latter is worth exploring. See remarks on the species below.\nRemark All specimens of this genus and species come from the same locality and horizon as Laccotriton subsolanus, but Gao and Shubin (2001) considered Sinerpeton fengshanensis as a paedomorphic form, distinguishing it from metamorphosed Laccotriton subsolanus. However, Wang (2006) pointed out Sinerpeton's slender ceratobranchial cannot support external gills; this ceratobranchial is likely the first pair, common in metamorphosed urodels, so whether Sinerpeton is paedomorphic remains questionable. Additionally, S. fengshanensis holotype is very similar to Liaoxitriton zhongjiani juvenile skeletal features, so whether the former is a junior synonym of the latter requires further research. Accordingly, Wang et al. (2008) added a question mark '?' to Sinerpeton. This book also tentatively adopts this approach.\nRemark According to Martin and Sanchiz (2012), Salamandridae has 26 extant or fossil genera with fossil representatives, with Triturus having the greatest diversity. This family's earliest reliable fossil record appears in the Paleocene, but Salamandroidea members can be traced to Valdotriton from the Early Cretaceous of Spain (Evans and Milner, 1996). At the completion of this book, Gao and Shubin (2012) reported the earliest known Salamandroidea representative,",
+   "captions": "Holotype of Sinerpeton? fengshanensis [(GMC) GMV 1606] (dorsal view)",
+   "images": [
+    {
+     "file": "amphibians/sinerpeton-fengshanensis/01.webp",
+     "width": 1272,
+     "height": 1600,
+     "caption": "Holotype of Sinerpeton? fengshanensis [(GMC) GMV 1606] (dorsal view)"
+    }
+   ],
+   "cover": "amphibians/sinerpeton-fengshanensis/01.webp"
+  },
+  {
+   "id": "b007",
+   "slug": "procynops-miocenicus",
+   "page": 99,
+   "order": "Salamandridae",
+   "scientific_name": "Procynops? miocenicus Young, 1965",
+   "classification": "Salamandridae",
+   "genus": "Procynops?",
+   "authority": "Young, 1965",
+   "original_combination": "Procynops? miocenicus",
+   "species": "Procynops? miocenicus Young, 1965",
+   "age": "Miocene",
+   "distribution": "Shandong, China",
+   "diagnosis": "Diagnostic features Small body, slender weak limbs; tail length less than half total length; body may have uniformly fine tubercular spots, but no large dorsolateral or lateral spots. Head size and shape very similar to Cynops orientalis, but body length approximately one-quarter to one-third smaller, the smallest known Cynops species (Yang Zhongjian, 1965).\nEstes (1981) provided a completely different set of diagnostic features, but apparently more effective: distinguished from extant Cynops species by nares more dorsally positioned (if specimen not deformed), lacking sagittal tubercle, and body length smaller than extant species. Additionally, Estes (1981) noted this genus is clearly closely related to Cynops, but at higher latitude habitat (400 km north of Cynops orientalis).\nDiagnostic features same as genus.\nRemark Yang Zhongjian (1965) provided original data showing the holotype has preserved length 43.3 mm, two paratypes 47 mm and 48 mm, estimated total length 47-49 mm, thus smaller than Cynops orientalis; also described as 'skull outline a fairly clear pentagon,' 'nares with slight distance from anterior margin, not as close to anterior edge as modern species,' 'skin impressions also different... dorsal ridge structure not observed.' Because the naming author did not provide other sufficient diagnostic features, whether this genus is valid remains questionable.\nDiagnostic features Usually with distinct dorsal crest.",
+   "remarks": "Remark This genus represents China's first discovered urodelan fossil. However, its establishment basis is questionable; see remarks on the species below.\nRemark Yang Zhongjian (1965) provided original data showing the holotype has preserved length 43.3 mm, two paratypes 47 mm and 48 mm, estimated total length 47-49 mm, thus smaller than Cynops orientalis; also described as 'skull outline a fairly clear pentagon,' 'nares with slight distance from anterior margin, not as close to anterior edge as modern species,' 'skin impressions also different... dorsal ridge structure not observed.' Because the naming author did not provide other sufficient diagnostic features, whether this genus is valid remains questionable.",
+   "captions": "Holotype of Procynops? miocenicus [(BMNH PV128)]",
+   "images": [
+    {
+     "file": "amphibians/procynops-miocenicus/01.webp",
+     "width": 1081,
+     "height": 1600,
+     "caption": "Holotype of Procynops? miocenicus [(BMNH PV128)]"
+    }
+   ],
+   "cover": "amphibians/procynops-miocenicus/01.webp"
+  },
+  {
+   "id": "b009",
+   "slug": "beiyanerpeton-jianpingensis",
+   "page": 102,
+   "order": "Salamandridae (incertae familiae)",
+   "scientific_name": "Beiyanerpeton jianpingensis Gao et Shubin, 2012",
+   "classification": "Salamandridae (incertae familiae)",
+   "genus": "Beiyanerpeton",
+   "authority": "Gao et Shubin, 2012",
+   "original_combination": "Beiyanerpeton jianpingensis",
+   "species": "Beiyanerpeton jianpingensis Gao et Shubin, 2012",
+   "age": "Late Jurassic",
+   "distribution": "Liaoning, China",
+   "diagnosis": "Diagnostic features A Late Jurassic paedomorphic Salamandroidea member, with the following unique character combination: skull broader than long, with anterodorsal fenestra and anteromedial fenestra; premaxilla and maxilla outer surfaces with sensory grooves; prefrontal and lacrimal present; palatine separate and dentate; marginal teeth nonpedicellate, simple钉-shaped and significantly shorter than vomerine teeth; parasphenoid posterolateral wings with groove for internal carotid artery; operculum separate from columella; first and second hypobranchials ossified; first and second basibranchials fused; angular lost, fused with prearticular; 15 presacral vertebrae; vertebrae shortened, strongly constricted, with distinct subcentral keel; digital formula 2-2-3-2/3, pedal formula 2-2-3-4-3.",
+   "remarks": "Remark Near completion of this book, Gao Keqin and Shubin named Beiyanerpeton, a new genus assigned to Salamandroidea incertae familiae. The genus name derives from 'Beiyan,' the name of the fossil locality during China's 'Sixteen Kingdoms' period. Gao and Shubin (2012), through phylogenetic analysis, considered Beiyanerpeton the most basal member of Salamandroidea, and inferred that the divergence of the two major urodelan suborders (Cryptobranchia and Salamandroidea) predates the Late Jurassic (possibly Middle Jurassic), with divergence occurring on Eurasia.\nRemark Gao and Shubin (2012) established B. jianpingensis based on 6 numbered specimens (PKU PV 0601-0606) and several unnumbered specimens; species name from fossil locality Jianping County. One numbered specimen (PKU PV 0601) designated as holotype, others listed as referred specimens. However, according to ICZN Article 72.4.5, these referred specimens published in the same paper should also belong to the type series, and specimens other than the holotype should be paratypes. paratype. Therefore, this book changes these specimens from referred specimens to paratypes.\nRemark Yang Zhongjian (1979b), when describing a new dinosaur footprint from Luanping County, Hebei,",
+   "captions": "Holotype of Beiyanerpeton jianpingensis (PKU PV 0601) (from Gao et Shubin, 2012)",
+   "images": [
+    {
+     "file": "amphibians/beiyanerpeton-jianpingensis/01.webp",
+     "width": 1234,
+     "height": 1599,
+     "caption": "Holotype of Beiyanerpeton jianpingensis (PKU PV 0601) (from Gao et Shubin, 2012)"
+    }
+   ],
+   "cover": "amphibians/beiyanerpeton-jianpingensis/01.webp"
+  },
+  {
+   "id": "b010",
+   "slug": "jeholotriton-paradoxus",
+   "page": 106,
+   "order": "Caudata incertae familiae",
+   "scientific_name": "Jeholotriton paradoxus Wang, 2000",
+   "classification": "Caudata incertae familiae",
+   "genus": "Jeholotriton",
+   "authority": "Wang, 2000",
+   "original_combination": "Jeholotriton paradoxus",
+   "species": "Jeholotriton paradoxus Wang, 2000",
+   "age": "Middle/Late Jurassic",
+   "distribution": "Inner Mongolia, China",
+   "diagnosis": "Jeholotriton differs significantly from Chunerpeton and Liaoxitriton from the same locality in osteological features, distinguishable by pterygoid, vomerine tooth row, external gill, scapulocoracoid morphology, and ossification of carpals, tarsals, and hyoid apparatus. Jeholotriton's pterygoid directed toward skull midline, vomerine tooth row longitudinal, scapulocoracoid coracoid end nearly circular, carpals and tarsals unossified, hyoid ossification very weak. Notably, although Jeholotriton shares with Chunerpeton from the same locality three pairs of feather-like external gills, it differs from Chunerpeton in lacking ossified gill rakers, so even young individuals can be distinguished by this feature.\nDiagnostic features same as genus.",
+   "remarks": "Remark Wang Xiaolin et al. (2005) considered the strata at Wubaiding, Lingyuan, Liaoning (Pangerpeton fossil locality) equivalent to the Daohugou fossil bed, Inner Mongolia. equivalent to the Hugou fossil layer.",
+   "captions": "Holotype of Jeholotriton paradoxus (IVPP V 11944A), fossil photo (A, ventral view) and skeletal drawing",
+   "images": [
+    {
+     "file": "amphibians/jeholotriton-paradoxus/01.webp",
+     "width": 1050,
+     "height": 1600,
+     "caption": "Holotype of Jeholotriton paradoxus (IVPP V 11944A), fossil photo (A, ventral view) and skeletal drawing"
+    }
+   ],
+   "cover": "amphibians/jeholotriton-paradoxus/01.webp"
+  },
+  {
+   "id": "b011",
+   "slug": "pangerpeton-sinensis",
+   "page": 108,
+   "order": "Caudata incertae familiae",
+   "scientific_name": "Pangerpeton sinensis Wang et Evans, 2006",
+   "classification": "Caudata incertae familiae",
+   "genus": "Pangerpeton",
+   "authority": "Wang et Evans, 2006",
+   "original_combination": "Pangerpeton sinensis",
+   "species": "Pangerpeton sinensis Wang et Evans, 2006",
+   "age": "Middle/Late Jurassic",
+   "distribution": "Liaoning, China",
+   "diagnosis": "Diagnostic features same as genus.",
+   "remarks": "Remark This species has only 14 presacral vertebrae, making it one of the shortest-bodied urodels known worldwide. Wang and Evans (2006b) considered P. sinensis a metamorphosed urodelan. This book considers the two pairs of ossified ceratobranchials and longitudinal vomerine tooth row to both be typical paedomorphic features. Therefore P. sinensis should be a paedomorphic urodelan.",
+   "captions": "Holotype of Pangerpeton sinensis (IVPP V14244), fossil photo",
+   "images": [
+    {
+     "file": "amphibians/pangerpeton-sinensis/01.webp",
+     "width": 1140,
+     "height": 1600,
+     "caption": "Holotype of Pangerpeton sinensis (IVPP V14244), fossil photo"
+    }
+   ],
+   "cover": "amphibians/pangerpeton-sinensis/01.webp"
+  },
+  {
+   "id": "b012",
+   "slug": "ingentidens-corridoricus",
+   "page": 111,
+   "order": "Chroniosuchidae",
+   "scientific_name": "Ingentidens corridoricus Li et Cheng, 1999",
+   "classification": "Chroniosuchidae",
+   "genus": "Ingentidens",
+   "authority": "Li et Cheng, 1999",
+   "original_combination": "Ingentidens corridoricus",
+   "species": "Ingentidens corridoricus Li et Cheng, 1999",
+   "age": "Middle Permian",
+   "distribution": "Gansu, China",
+   "diagnosis": "Diagnostic features Medium-sized individual, skull length over 300 mm; numerous marginal teeth (approximately 45), lower jaw with multiple large caniniform teeth (12), subsequent teeth gradually decreasing anteriorly to posteriorly; lower jaw surface ornamentation honeycomb-type; dentary with dental sulcus parallel to upper margin; coronoid and precoronoid edentulous; Meckelian fenestra large.\nRemark Ingentidens named for its large mandibular teeth. The naming authors considered this genus most similar to Chroniosaurus and Chroniosuchus morphologically, but distinguished by larger Meckelian fenestra, edentulous coronoid surface, and teeth 5-16",
+   "remarks": "Remark Species name from fossil locality 'Hexi Corridor.' This species currently has only one holotype mandible, preserved length approximately 310 mm, representing a relatively large chroniosuchid.\nRemark The genus name means 'brother of chroniosuchids.' This genus is clearly smaller than Ingentidens, and its caniniform teeth fewer, teeth pleurodont, size relatively uniform, distinguishing it from Ingentidens at the same locality.\nRemark Species name indicates fossil from 'northern slope of Qilian Mountains.' Although specimen preservation is poor, the dorsal margin structure of the maxilla indicates this animal's skull had two preorbital fenestrae. Specimen preserved length approximately 115 mm (including premaxilla and maxilla),",
+   "captions": "Holotype of Ingentidens corridoricus (IGCAGS V 363)",
+   "images": [
+    {
+     "file": "amphibians/ingentidens-corridoricus/01.webp",
+     "width": 1123,
+     "height": 1600,
+     "caption": "Holotype of Ingentidens corridoricus (IGCAGS V 363)"
+    }
+   ],
+   "cover": "amphibians/ingentidens-corridoricus/01.webp"
+  },
+  {
+   "id": "b013",
+   "slug": "phratochronis-qilianensis",
+   "page": 113,
+   "order": "Chroniosuchidae",
+   "scientific_name": "Phratochronis qilianensis Li et Cheng, 1999",
+   "classification": "Chroniosuchidae",
+   "genus": "Phratochronis",
+   "authority": "Li et Cheng, 1999",
+   "original_combination": "Phratochronis qilianensis",
+   "species": "Phratochronis qilianensis Li et Cheng, 1999",
+   "age": "Middle Permian",
+   "distribution": "Gansu, China",
+   "diagnosis": "Diagnostic features same as genus.\nDiagnostic features Small chroniosuchid (maxillary tooth row approximately 115 mm, estimated skull length 170 mm). Distinguished from Russian chroniosuchids by more robust caniniform teeth; distinguished from Ingentidens by distinct pleurodont dentition, fewer caniniform teeth (three on dentary), and more consistent tooth morphology (maxillary teeth similar in shape and size).\nDiagnostic features same as genus.",
+   "remarks": "Remark Species name from fossil locality 'Hexi Corridor.' This species currently has only one holotype mandible, preserved length approximately 310 mm, representing a relatively large chroniosuchid.\nRemark The genus name means 'brother of chroniosuchids.' This genus is clearly smaller than Ingentidens, and its caniniform teeth fewer, teeth pleurodont, size relatively uniform, distinguishing it from Ingentidens at the same locality.\nRemark Species name indicates fossil from 'northern slope of Qilian Mountains.' Although specimen preservation is poor, the dorsal margin structure of the maxilla indicates this animal's skull had two preorbital fenestrae. Specimen preserved length approximately 115 mm (including premaxilla and maxilla),\nRemark Golubev (1998a,b) provided detailed discussion and summary of the two families under Chroniosuchia: Chroniosuchidae and Bystrowianidae, listing family diagnostic features and genus-level diagnostic features for Chroniosuchidae.",
+   "captions": "Holotype of Phratochronis qilianensis (IGCAGS V 364)",
+   "images": [
+    {
+     "file": "amphibians/phratochronis-qilianensis/01.webp",
+     "width": 975,
+     "height": 1600,
+     "caption": "Holotype of Phratochronis qilianensis (IGCAGS V 364)"
+    }
+   ],
+   "cover": "amphibians/phratochronis-qilianensis/01.webp"
+  },
+  {
+   "id": "b015",
+   "slug": "urumqia-liudaowanensis",
+   "page": 116,
+   "order": "Discosauriscidae",
+   "scientific_name": "Urumqia liudaowanensis Zhang, Li et Wang, 1984",
+   "classification": "Discosauriscidae",
+   "genus": "Urumqia",
+   "authority": "Zhang, Li et Wang, 1984",
+   "original_combination": "Urumqia liudaowanensis",
+   "species": "Urumqia liudaowanensis Zhang, Li et Wang, 1984",
+   "age": "Late Permian",
+   "distribution": "Xinjiang, China",
+   "diagnosis": "Diagnostic features same as genus.",
+   "remarks": "Remark The original paper mentioned approximately 30 specimens [including holotype (XGMRM) XMGM6, IVPP V7391.1- 11 and unnumbered specimens]. According to ICZN Article 72.4.5, referred specimens published in the same paper should also belong to the type series, and specimens other than the holotype should be paratypes. Therefore, this book changes these specimens from referred specimens to paratypes.",
+   "captions": "Holotype of Urumqia liudaowanensis [(XGMRM) XMGM6], skeletal drawing",
+   "images": [
+    {
+     "file": "amphibians/urumqia-liudaowanensis/01.webp",
+     "width": 1105,
+     "height": 1600,
+     "caption": "Holotype of Urumqia liudaowanensis [(XGMRM) XMGM6], skeletal drawing"
+    }
+   ],
+   "cover": "amphibians/urumqia-liudaowanensis/01.webp"
   }
  ]
 }

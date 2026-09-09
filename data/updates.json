@@ -1,6 +1,28 @@
 {
-  "last_generated": "2026-09-08T07:14:11.684Z",
+  "last_generated": "2026-09-09T04:19:50.903Z",
   "entries": [
+    {
+      "id": "2026-09-09-0001",
+      "date": "2026-09-09",
+      "kind": "amphibians_added",
+      "count": 13,
+      "slugs": [
+        "chunerpeton-tianyiensis",
+        "regalerpeton-weichangensis",
+        "laccotriton-subsolanus",
+        "liaoxitriton-zhongjiani",
+        "liaoxitriton-daohugouensis",
+        "sinerpeton-fengshanensis",
+        "procynops-miocenicus",
+        "beiyanerpeton-jianpingensis",
+        "jeholotriton-paradoxus",
+        "pangerpeton-sinensis",
+        "ingentidens-corridoricus",
+        "phratochronis-qilianensis",
+        "urumqia-liudaowanensis"
+      ],
+      "detail": "Amphibians archive expanded: 13 more fossil amphibian species (Caudata salamanders & Anthracosauria) with precisely cropped fossil photographs."
+    },
     {
       "id": "2026-09-08-0001",
       "date": "2026-09-08",

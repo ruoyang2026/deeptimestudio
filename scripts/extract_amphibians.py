@@ -1,12 +1,15 @@
 """Extract precisely-cropped species figure images from per-species PDFs.
 
-Each PDF in all_species1 has 2 pages:
+Each PDF in a batch dir has 2 pages:
   page 1: taxonomy info (not used here — data comes from species_data json)
   page 2: one embedded figure image (page was rendered to image).
 
 The embedded image contains the figure plus white margins (and sometimes a
 footer). We crop the white borders so the website shows only the figure
 ("精准切割"), then save WebP to public/amphibians/<slug>/01.webp.
+
+This script APPENDS new species to the existing data/amphibians files so the
+archive accumulates (e.g. 8 -> 21). Existing records are preserved.
 """
 
 import json
@@ -19,8 +22,9 @@ import fitz  # PyMuPDF
 import numpy as np
 from PIL import Image
 
-SRC_DIR = r"D:\fossil\三叶虫\visual-database-ordovician\all_species1"
-SPECIES_JSON = r"D:\fossil\三叶虫\chinese_book_project\species_data_pages54_79.json"
+# 新批次（追加）：
+SRC_DIR = r"D:\fossil\三叶虫\chinese_book_project\output_extract"
+SPECIES_JSON = r"D:\fossil\三叶虫\chinese_book_project\species_data_pages80_117.json"
 PUBLIC_DIR = r"C:\Users\ThinkPad\.openclaw\web-social\deeptimestudio\public\amphibians"
 DATA_DIR = r"C:\Users\ThinkPad\.openclaw\web-social\deeptimestudio\data\amphibians"
 MAX_DIM = 1600
@@ -28,11 +32,13 @@ TRIM_THRESHOLD = 245  # pixels brighter than this are treated as blank margin
 
 
 def slugify(name):
-    """Slug from binomial only (drop authority): 'Macropelobates linquensis (Yang, 1977)' -> 'macropelobates-linquensis'."""
-    m = re.match(r"^([A-Z][a-z]+)\s+([a-z]+\??)\b", name)
+    """Slug from binomial only (drop authority): 'Chunerpeton tianyiensis Gao et Shubin, 2003' -> 'chunerpeton-tianyiensis'.
+    Handles '?' after genus or epithet: 'Sinerpeton? fengshanensis ...' -> 'sinerpeton-fengshanensis'."""
+    m = re.match(r"^([A-Z][a-z]+)\??\s+([a-z]+\??)\b", name)
     if m:
+        genus = m.group(1).lower()
         epithet = m.group(2).rstrip("?")
-        return f"{m.group(1).lower()}-{epithet.lower()}"
+        return f"{genus}-{epithet.lower()}"
     s = unicodedata.normalize("NFKD", name)
     s = re.sub(r"[^a-zA-Z0-9]+", "-", s).strip("-")
     return s or "species"
@@ -69,9 +75,9 @@ def extract_species_images(species_list):
                 pdf_file = f
                 break
         if not pdf_file:
-            print(f"  [skip] id={sp_id} {sp['species']} — no pdf in all_species1")
+            print(f"  [skip] id={sp_id} {sp['species']} — no pdf in output_extract")
             continue
-        slug = slugify(sp["species"].split(" (")[0])
+        slug = slugify(sp["species"])
         doc = fitz.open(os.path.join(SRC_DIR, pdf_file))
         page = doc[1]  # page 2 = figure
         ims = page.get_images(full=True)
@@ -106,16 +112,16 @@ def extract_species_images(species_list):
 
 
 def build_species_db(species_list, images):
-    """Build data/amphibians/species.json from the species_data JSON + images."""
+    """Build new species records from species_data JSON + images."""
     records = []
     for sp in species_list:
-        slug = slugify(sp["species"].split(" (")[0])
+        slug = slugify(sp["species"])
         img = images.get(slug)
         if not img:
             continue
         photo = sp.get("photo") or {}
         records.append({
-            "id": f"a{sp['id']:03d}",
+            "id": f"b{sp['id']:03d}",  # 'b' 前缀避免与旧批次 id (a*) 冲突
             "slug": slug,
             "page": photo.get("source_pdf_page"),
             "order": sp.get("family", ""),
@@ -133,26 +139,21 @@ def build_species_db(species_list, images):
             "images": [img],
             "cover": img["file"],
         })
-    db = {
-        "title": "Fossil Amphibians — Species Database (Ordovician companion)",
-        "version": "1.0",
-        "source": "Chinese book pages 54-79 (amphibian chapter)",
-        "total_species": len(records),
-        "species": records,
-    }
-    os.makedirs(DATA_DIR, exist_ok=True)
-    with open(os.path.join(DATA_DIR, "species.json"), "w", encoding="utf-8") as f:
-        json.dump(db, f, ensure_ascii=False, indent=1)
-    # drillable: all amphibian species are unlocked
-    drillable = {"note": "All amphibian species are unlocked (drillable).", "total": len(records),
-                 "slugs": [r["slug"] for r in records]}
-    with open(os.path.join(DATA_DIR, "drillable.json"), "w", encoding="utf-8") as f:
-        json.dump(drillable, f, ensure_ascii=False, indent=1)
-    # covers: first image wins
-    covers = {"note": "Amphibian covers.", "covers": {r["slug"]: "01.webp" for r in records}}
-    with open(os.path.join(DATA_DIR, "covers.json"), "w", encoding="utf-8") as f:
-        json.dump(covers, f, ensure_ascii=False, indent=1)
-    return db
+    return records
+
+
+def _load_existing(db_path, total_key="total_species"):
+    if os.path.isfile(db_path):
+        with open(db_path, encoding="utf-8") as f:
+            data = json.load(f)
+        return data.get("species", [])
+    return []
+
+
+def _save_json(path, data):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=1)
 
 
 def main():
@@ -162,8 +163,39 @@ def main():
     print(f"Species in JSON: {len(species_list)}")
     images = extract_species_images(species_list)
     print(f"Images extracted: {len(images)}")
-    db = build_species_db(species_list, images)
-    print(f"DB total_species: {db['total_species']} -> {DATA_DIR}")
+    new_records = build_species_db(species_list, images)
+    print(f"New records built: {len(new_records)}")
+
+    # 追加合并现有数据
+    species_path = os.path.join(DATA_DIR, "species.json")
+    existing = _load_existing(species_path)
+    existing_slugs = {r["slug"] for r in existing}
+    # 避免重复：新记录若 slug 已存在则跳过
+    merged = list(existing)
+    for rec in new_records:
+        if rec["slug"] not in existing_slugs:
+            merged.append(rec)
+            existing_slugs.add(rec["slug"])
+
+    db = {
+        "title": "Fossil Amphibians — Species Database",
+        "version": "1.1",
+        "source": "Chinese book (amphibian + caudata/anthracosauria chapters)",
+        "total_species": len(merged),
+        "species": merged,
+    }
+    _save_json(species_path, db)
+    print(f"species.json total: {len(merged)} -> {species_path}")
+
+    # drillable: all amphibian species are unlocked
+    drillable = {"note": "All amphibian species are unlocked (drillable).", "total": len(merged),
+                 "slugs": [r["slug"] for r in merged]}
+    _save_json(os.path.join(DATA_DIR, "drillable.json"), drillable)
+
+    # covers: first image wins
+    covers = {"note": "Amphibian covers.", "covers": {r["slug"]: "01.webp" for r in merged}}
+    _save_json(os.path.join(DATA_DIR, "covers.json"), covers)
+    print(f"drillable + covers updated: {len(merged)} species")
 
 
 if __name__ == "__main__":

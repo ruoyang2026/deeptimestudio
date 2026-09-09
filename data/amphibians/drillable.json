@@ -1,6 +1,6 @@
 {
  "note": "All amphibian species are unlocked (drillable).",
- "total": 8,
+ "total": 21,
  "slugs": [
   "macropelobates-linquensis",
   "bufo-shandongensis",
@@ -9,6 +9,19 @@
   "liaobatrachus-grabaui",
   "liaobatrachus-beipiaoensis",
   "liaobatrachus-macilentus",
-  "liaobatrachus-zhaoi"
+  "liaobatrachus-zhaoi",
+  "chunerpeton-tianyiensis",
+  "regalerpeton-weichangensis",
+  "laccotriton-subsolanus",
+  "liaoxitriton-zhongjiani",
+  "liaoxitriton-daohugouensis",
+  "sinerpeton-fengshanensis",
+  "procynops-miocenicus",
+  "beiyanerpeton-jianpingensis",
+  "jeholotriton-paradoxus",
+  "pangerpeton-sinensis",
+  "ingentidens-corridoricus",
+  "phratochronis-qilianensis",
+  "urumqia-liudaowanensis"
  ]
 }
