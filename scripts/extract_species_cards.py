@@ -88,7 +88,11 @@ def find_pdf(pdf_dir, sp_id):
 
 
 def extract_species_images(species_list, pdf_dir, collection, public_dir, max_dim):
-    """从每个物种 PDF 提取并精准裁剪化石图，返回 slug -> image meta。"""
+    """从每个物种 PDF 提取并精准裁剪化石图，返回 slug -> image meta list。
+
+    遍历 PDF 第 2 页起的所有页，每页一张图（跳过第 1 页信息页），
+    命名为 01.webp, 02.webp, ... 全部导入。
+    """
     results = {}
     for sp in species_list:
         sp_id = sp["id"]
@@ -100,46 +104,55 @@ def extract_species_images(species_list, pdf_dir, collection, public_dir, max_di
             continue
         slug = slugify(sp["species"])
         doc = fitz.open(os.path.join(pdf_dir, pdf_file))
-        page = doc[1]  # page 2 = figure
-        ims = page.get_images(full=True)
-        if not ims:
-            print(f"  [skip] id={sp_id} {pdf_file} — no image on page 2")
-            continue
-        xref = ims[0][0]
-        pix = fitz.Pixmap(doc, xref)
-        if pix.n > 4:
-            pix = fitz.Pixmap(fitz.csRGB, pix)
-        img = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
-        img = trim_white_margins(img)
-
-        # downscale to max dim
-        w, h = img.size
-        if max(w, h) > max_dim:
-            scale = max_dim / float(max(w, h))
-            img = img.resize((int(w * scale), int(h * scale)), Image.LANCZOS)
-
+        imgs_meta = []
         out_dir = os.path.join(public_dir, collection, slug)
         os.makedirs(out_dir, exist_ok=True)
-        fname = "01.webp"
-        img.save(os.path.join(out_dir, fname), "WEBP", quality=84, method=6)
-        results[slug] = {
-            "file": f"{collection}/{slug}/{fname}",
-            "width": img.width,
-            "height": img.height,
-            "caption": caption,
-        }
-        print(f"  [ok] id={sp_id} {pdf_file} -> {collection}/{slug}/{fname} {img.size} (src {pix.width}x{pix.height})")
+        img_idx = 0
+        for pno in range(1, len(doc)):  # skip page 1 (info page)
+            page = doc[pno]
+            ims = page.get_images(full=True)
+            if not ims:
+                print(f"  [skip] {pdf_file} p{pno + 1} — no image")
+                continue
+            xref = ims[0][0]
+            pix = fitz.Pixmap(doc, xref)
+            if pix.n > 4:
+                pix = fitz.Pixmap(fitz.csRGB, pix)
+            img = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+            img = trim_white_margins(img)
+
+            # downscale to max dim
+            w, h = img.size
+            if max(w, h) > max_dim:
+                scale = max_dim / float(max(w, h))
+                img = img.resize((int(w * scale), int(h * scale)), Image.LANCZOS)
+
+            img_idx += 1
+            fname = f"{img_idx:02d}.webp"
+            img.save(os.path.join(out_dir, fname), "WEBP", quality=84, method=6)
+            imgs_meta.append({
+                "file": f"{collection}/{slug}/{fname}",
+                "width": img.width,
+                "height": img.height,
+                "caption": caption,
+            })
+            print(f"  [ok] id={sp_id} {pdf_file} p{pno + 1} -> {collection}/{slug}/{fname} {img.size} (src {pix.width}x{pix.height})")
+        if imgs_meta:
+            results[slug] = imgs_meta
     return results
 
 
 # ---------------------------------------------------------------- db build
 def build_species_db(species_list, images, id_prefix):
-    """Build species records from species_data JSON + images."""
+    """Build species records from species_data JSON + images.
+
+    images[slug] is a list of image-meta dicts (all pages); cover = first.
+    """
     records = []
     for sp in species_list:
         slug = slugify(sp["species"])
-        img = images.get(slug)
-        if not img:
+        imgs = images.get(slug)
+        if not imgs:
             continue
         photo = sp.get("photo") or {}
         records.append({
@@ -158,8 +171,8 @@ def build_species_db(species_list, images, id_prefix):
             "diagnosis": sp.get("diagnosis", ""),
             "remarks": sp.get("remark", ""),
             "captions": photo.get("caption", ""),
-            "images": [img],
-            "cover": img["file"],
+            "images": imgs,
+            "cover": imgs[0]["file"],
         })
     return records
 

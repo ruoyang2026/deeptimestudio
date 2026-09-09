@@ -1,6 +1,6 @@
 {
  "note": "All species are unlocked (drillable).",
- "total": 21,
+ "total": 26,
  "slugs": [
   "macropelobates-linquensis",
   "bufo-shandongensis",
@@ -22,6 +22,11 @@
   "pangerpeton-sinensis",
   "ingentidens-corridoricus",
   "phratochronis-qilianensis",
-  "urumqia-liudaowanensis"
+  "urumqia-liudaowanensis",
+  "gobiops-desertus",
+  "sinobrachyops-placenticephalus",
+  "anakamacops-petrolicus",
+  "yuanansuchus-laticeps",
+  "parotosuchus-turfanensis"
  ]
 }

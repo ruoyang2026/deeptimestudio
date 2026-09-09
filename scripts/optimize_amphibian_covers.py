@@ -33,7 +33,7 @@ PUBLIC = os.path.join(PROJECT, "public", "amphibians")
 DATA = os.path.join(PROJECT, "data", "amphibians")
 MAX_DIM = 1600
 
-# 每个物种: (pdf 文件名, 提取页序号[0-based], slug, 处理方式)
+# 每个物种: (pdf 文件名, 提取页序号[0-based], slug, 处理方式, 可选 pdf_dir)
 JOBS = {
     "jeholotriton-paradoxus": {
         "pdf": "species_10_Jeholotriton_paradoxus_Wang_2000.pdf",
@@ -54,6 +54,32 @@ JOBS = {
         "pdf": "species_07_Procynops_miocenicus_Young_1965.pdf",
         "page": 1,
         "mode": "body_density",
+    },
+    # output3 批次（新 5 种，temnospondyls）
+    "gobiops-desertus": {
+        "pdf": "species_01_Gobiops_desertus_Shishkin_1991.pdf",
+        "page": 1, "mode": "body_density",
+        "pdf_dir": r"D:\fossil\三叶虫\chinese_book_project\output_extract\output3",
+    },
+    "sinobrachyops-placenticephalus": {
+        "pdf": "species_02_Sinobrachyops_placenticephalus_Dong_1985.pdf",
+        "page": 2, "mode": "full",  # 第 3 页图更有内容
+        "pdf_dir": r"D:\fossil\三叶虫\chinese_book_project\output_extract\output3",
+    },
+    "anakamacops-petrolicus": {
+        "pdf": "species_03_Anakamacops_petrolicus_Li_et_Cheng_1999.pdf",
+        "page": 2, "mode": "full",  # 第 3 页图有彩
+        "pdf_dir": r"D:\fossil\三叶虫\chinese_book_project\output_extract\output3",
+    },
+    "yuanansuchus-laticeps": {
+        "pdf": "species_04_Yuanansuchus_laticeps_Liu_et_Wang_2005.pdf",
+        "page": 2, "mode": "full",  # 第 3 页图有彩
+        "pdf_dir": r"D:\fossil\三叶虫\chinese_book_project\output_extract\output3",
+    },
+    "parotosuchus-turfanensis": {
+        "pdf": "species_05_Parotosuchus_turfanensis_Young_1966_Wang_Zhang_et_Sun_2008.pdf",
+        "page": 2, "mode": "body_density",  # 图几乎空白，精准切割
+        "pdf_dir": r"D:\fossil\三叶虫\chinese_book_project\output_extract\output3",
     },
 }
 
@@ -127,8 +153,14 @@ def save_webp(img, slug, fname):
     return f"{slug}/{fname}"
 
 
+def save_cover(img, slug):
+    """封面专用图（不影响详情页 images[]）。"""
+    return save_webp(img, slug, "cover.webp")
+
+
 def process(slug, job):
-    img = extract_page_img(os.path.join(PDF_DIR, job["pdf"]), job["page"])
+    pdf_dir = job.get("pdf_dir", PDF_DIR)
+    img = extract_page_img(os.path.join(pdf_dir, job["pdf"]), job["page"])
     mode = job["mode"]
 
     if mode == "full":
@@ -152,15 +184,15 @@ def process(slug, job):
     else:
         raise ValueError(f"unknown mode {mode}")
 
-    rel = save_webp(out, slug, "02.webp")
-    print(f"  [ok] {slug}/02.webp -> {rel} {out.size}")
+    rel = save_cover(out, slug)
+    print(f"  [ok] {slug}/cover.webp -> {rel} {out.size}")
     return rel
 
 
 def main():
     ap = argparse.ArgumentParser(prog="optimize_amphibian_covers.py")
     ap.add_argument("--apply-data", action="store_true",
-                    help="更新 covers.json 与 species.json（默认只生成图片）")
+                    help="更新 covers.json（默认只生成图片）")
     args = ap.parse_args()
 
     for slug, job in JOBS.items():
@@ -170,30 +202,14 @@ def main():
             print(f"  [fail] {slug}: {e}")
 
     if args.apply_data:
-        # covers.json -> 02.webp
+        # covers.json -> cover.webp（封面专用，不影响详情页 images[]）
         covers_path = os.path.join(DATA, "covers.json")
         covers = json.load(open(covers_path, encoding="utf-8"))
         for slug in JOBS:
-            covers["covers"][slug] = "02.webp"
+            covers["covers"][slug] = "cover.webp"
         json.dump(covers, open(covers_path, "w", encoding="utf-8"),
                   ensure_ascii=False, indent=1)
-
-        # species.json: jeholotriton images 追加 02.webp
-        species_path = os.path.join(DATA, "species.json")
-        db = json.load(open(species_path, encoding="utf-8"))
-        for s in db["species"]:
-            if s["slug"] == "jeholotriton-paradoxus":
-                if not any(i["file"].endswith("02.webp") for i in s["images"]):
-                    from PIL import Image as _I
-                    img = _I.open(os.path.join(PUBLIC, "jeholotriton-paradoxus", "02.webp"))
-                    s["images"].append({
-                        "file": "amphibians/jeholotriton-paradoxus/02.webp",
-                        "width": img.width, "height": img.height,
-                        "caption": s.get("captions", ""),
-                    })
-        json.dump(db, open(species_path, "w", encoding="utf-8"),
-                  ensure_ascii=False, indent=1)
-        print("data files updated (covers.json + species.json)")
+        print("covers.json updated -> cover.webp")
 
 
 if __name__ == "__main__":

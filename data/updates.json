@@ -1,6 +1,20 @@
 {
-  "last_generated": "2026-09-09T05:51:18.685Z",
+  "last_generated": "2026-09-09T06:37:27.316Z",
   "entries": [
+    {
+      "id": "2026-09-09-0002",
+      "date": "2026-09-09",
+      "kind": "amphibians_added",
+      "count": 5,
+      "slugs": [
+        "gobiops-desertus",
+        "sinobrachyops-placenticephalus",
+        "anakamacops-petrolicus",
+        "yuanansuchus-laticeps",
+        "parotosuchus-turfanensis"
+      ],
+      "detail": "Amphibians archive expanded: 5 more fossil amphibian species (temnospondyls: Brachyopidae, Dissorophidae, Heylerosauridae, Mastodonsauridae) with all multi-page figures imported."
+    },
     {
       "id": "2026-09-09-0001",
       "date": "2026-09-09",

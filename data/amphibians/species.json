@@ -1,8 +1,8 @@
 {
- "title": "Fossil Amphibians — Species Database",
+ "title": "amphibians — Species Database",
  "version": "1.1",
- "source": "Chinese book (amphibian + caudata/anthracosauria chapters)",
- "total_species": 21,
+ "source": "",
+ "total_species": 26,
  "species": [
   {
    "id": "a001",
@@ -555,6 +555,160 @@
     }
    ],
    "cover": "amphibians/urumqia-liudaowanensis/01.webp"
+  },
+  {
+   "id": "c001",
+   "slug": "gobiops-desertus",
+   "page": 38,
+   "order": "Brachyopidae",
+   "scientific_name": "Gobiops desertus Shishkin, 1991",
+   "classification": "Brachyopidae",
+   "genus": "Gobiops",
+   "authority": "Shishkin, 1991",
+   "original_combination": "Gobiops desertus",
+   "species": "Gobiops desertus Shishkin, 1991",
+   "age": "Middle-Late Jurassic",
+   "distribution": "Mongolia, China (Xinjiang)",
+   "diagnosis": "A brachyopid temnospondyl. Distinguished by cranial roof ornamentation patterns and temporal lineae configuration. Skull relatively large with broad tabular horns.",
+   "remarks": "The genus Gobiops was established by Shishkin (1991) based on material from the Middle-Late Jurassic of Mongolia and Xinjiang, China. It represents one of the known brachyopids from East Asia.",
+   "captions": "Gobiops desertus Shishkin, 1991. Cranial roof and skeletal elements from the Middle-Late Jurassic of Mongolia and Xinjiang",
+   "images": [
+    {
+     "file": "amphibians/gobiops-desertus/01.webp",
+     "width": 1102,
+     "height": 1600,
+     "caption": "Gobiops desertus Shishkin, 1991. Cranial roof and skeletal elements from the Middle-Late Jurassic of Mongolia and Xinjiang"
+    }
+   ],
+   "cover": "amphibians/gobiops-desertus/01.webp"
+  },
+  {
+   "id": "c002",
+   "slug": "sinobrachyops-placenticephalus",
+   "page": 40,
+   "order": "Brachyopidae",
+   "scientific_name": "Sinobrachyops placenticephalus Dong, 1985",
+   "classification": "Brachyopidae",
+   "genus": "Sinobrachyops",
+   "authority": "Dong, 1985",
+   "original_combination": "Sinobrachyops placenticephalus",
+   "species": "Sinobrachyops placenticephalus Dong, 1985",
+   "age": "Middle Jurassic",
+   "distribution": "Sichuan, China",
+   "diagnosis": "A brachyopid temnospondyl with flattened skull roof. Distinguished from Gobiops by skull proportions and ornamentation pattern.",
+   "remarks": "Originally described by Dong (1985) from the Middle Jurassic of Sichuan. The species represents an important record of brachyopids in China.",
+   "captions": "Sinobrachyops placenticephalus Dong, 1985. Cranial elements from the Middle Jurassic of Sichuan",
+   "images": [
+    {
+     "file": "amphibians/sinobrachyops-placenticephalus/01.webp",
+     "width": 1072,
+     "height": 1600,
+     "caption": "Sinobrachyops placenticephalus Dong, 1985. Cranial elements from the Middle Jurassic of Sichuan"
+    },
+    {
+     "file": "amphibians/sinobrachyops-placenticephalus/02.webp",
+     "width": 1096,
+     "height": 1600,
+     "caption": "Sinobrachyops placenticephalus Dong, 1985. Cranial elements from the Middle Jurassic of Sichuan"
+    }
+   ],
+   "cover": "amphibians/sinobrachyops-placenticephalus/01.webp"
+  },
+  {
+   "id": "c003",
+   "slug": "anakamacops-petrolicus",
+   "page": 42,
+   "order": "Dissorophidae",
+   "scientific_name": "Anakamacops petrolicus Li et Cheng, 1999",
+   "classification": "Dissorophidae",
+   "genus": "Anakamacops",
+   "authority": "Li et Cheng, 1999",
+   "original_combination": "Anakamacops petrolicus",
+   "species": "Anakamacops petrolicus Li et Cheng, 1999",
+   "age": "Middle Permian",
+   "distribution": "Gansu, China",
+   "diagnosis": "A dissorophid temnospondyl. Distinguished by cranial roof ornamentation with distinctive pit-and-ridge pattern, and postcranial skeletal features including expanded tabular horns.",
+   "remarks": "The type specimen (IGCAGSV365) includes skull roof, mandible, and associated postcranial elements. Anakamacops represents one of the few known dissorophids from the Permian of China. The species was originally described from the Jiucaiyuan Formation.",
+   "captions": "Anakamacops petrolicus Li et Cheng, 1999. Holotype (IGCAGSV365) cranial roof and skeletal elements from the Middle Permian of Gansu",
+   "images": [
+    {
+     "file": "amphibians/anakamacops-petrolicus/01.webp",
+     "width": 1063,
+     "height": 1600,
+     "caption": "Anakamacops petrolicus Li et Cheng, 1999. Holotype (IGCAGSV365) cranial roof and skeletal elements from the Middle Permian of Gansu"
+    },
+    {
+     "file": "amphibians/anakamacops-petrolicus/02.webp",
+     "width": 1009,
+     "height": 1600,
+     "caption": "Anakamacops petrolicus Li et Cheng, 1999. Holotype (IGCAGSV365) cranial roof and skeletal elements from the Middle Permian of Gansu"
+    }
+   ],
+   "cover": "amphibians/anakamacops-petrolicus/01.webp"
+  },
+  {
+   "id": "c004",
+   "slug": "yuanansuchus-laticeps",
+   "page": 44,
+   "order": "Heylerosauridae",
+   "scientific_name": "Yuanansuchus laticeps Liu et Wang, 2005",
+   "classification": "Heylerosauridae",
+   "genus": "Yuanansuchus",
+   "authority": "Liu et Wang, 2005",
+   "original_combination": "Yuanansuchus laticeps",
+   "species": "Yuanansuchus laticeps Liu et Wang, 2005",
+   "age": "Middle Triassic",
+   "distribution": "Hubei, China",
+   "diagnosis": "A mastodonsauroid temnospondyl with broad skull table. Distinguished by cranial ornamentation pattern and lateral line system configuration.",
+   "remarks": "Established by Liu and Wang (2005) from the Middle Triassic of Hubei. Yuanansuchus represents an important taxon in understanding the diversification of mastodonsauroids in East Asia.",
+   "captions": "Yuanansuchus laticeps Liu et Wang, 2005. Cranial elements from the Middle Triassic of Hubei",
+   "images": [
+    {
+     "file": "amphibians/yuanansuchus-laticeps/01.webp",
+     "width": 1067,
+     "height": 1600,
+     "caption": "Yuanansuchus laticeps Liu et Wang, 2005. Cranial elements from the Middle Triassic of Hubei"
+    },
+    {
+     "file": "amphibians/yuanansuchus-laticeps/02.webp",
+     "width": 1066,
+     "height": 1600,
+     "caption": "Yuanansuchus laticeps Liu et Wang, 2005. Cranial elements from the Middle Triassic of Hubei"
+    }
+   ],
+   "cover": "amphibians/yuanansuchus-laticeps/01.webp"
+  },
+  {
+   "id": "c005",
+   "slug": "parotosuchus-turfanensis",
+   "page": 46,
+   "order": "Mastodonsauridae",
+   "scientific_name": "Parotosuchus turfanensis? (Young, 1966) Wang, Zhang et Sun, 2008",
+   "classification": "Mastodonsauridae",
+   "genus": "Parotosuchus",
+   "authority": "(Young, 1966) Wang, Zhang et Sun, 2008",
+   "original_combination": "Parotosaurus turfanensis",
+   "species": "Parotosuchus turfanensis? (Young, 1966) Wang, Zhang et Sun, 2008",
+   "age": "Middle Triassic",
+   "distribution": "Xinjiang, China",
+   "diagnosis": "A mastodonsaurid temnospondyl. Skull elongated with distinctive ornamentation pattern. Distinguished by nasal horn-like structures and lateral line system.",
+   "remarks": "Originally described as Parotosaurus turfanensis by Young (1966), later transferred to Parotosuchus by Wang et al. (2008). The species is known from fragmentary cranial material from the Middle Triassic of Xinjiang.",
+   "captions": "Parotosuchus turfanensis? (Young, 1966). Cranial fragments from the Middle Triassic of Xinjiang",
+   "images": [
+    {
+     "file": "amphibians/parotosuchus-turfanensis/01.webp",
+     "width": 1260,
+     "height": 1599,
+     "caption": "Parotosuchus turfanensis? (Young, 1966). Cranial fragments from the Middle Triassic of Xinjiang"
+    },
+    {
+     "file": "amphibians/parotosuchus-turfanensis/02.webp",
+     "width": 1016,
+     "height": 1600,
+     "caption": "Parotosuchus turfanensis? (Young, 1966). Cranial fragments from the Middle Triassic of Xinjiang"
+    }
+   ],
+   "cover": "amphibians/parotosuchus-turfanensis/01.webp"
   }
  ]
 }
