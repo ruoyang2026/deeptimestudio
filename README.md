@@ -241,6 +241,53 @@ data/amphibians/covers.json        cover overrides
    entries are generated automatically from the JSON.
 4. Commit & deploy (Vercel picks up the push).
 
+## Custom amphibian covers (optimize_amphibian_covers.py)
+
+The batch-ingest script crops each PDF's page-2 figure generically. Some
+species need a hand-tuned cover (a specific page, a local colour photo, a
+rotated landscape shot, or a precise body crop). `optimize_amphibian_covers.py`
+handles those cases as a reusable CLI:
+
+```bash
+# generate the custom 02.webp covers for the configured species
+python scripts/optimize_amphibian_covers.py
+
+# also flip data/amphibians/covers.json to 02.webp (+ add page-3 image to
+# jeholotriton-paradoxus in species.json)
+python scripts/optimize_amphibian_covers.py --apply-data
+```
+
+### Supported modes (per-species, in `JOBS`)
+
+| Mode | Effect |
+|------|--------|
+| `full` | use the whole page-2/3 figure (trimmed) as cover |
+| `color_rotate` | crop the colourful photo region and rotate 90° (landscape → portrait) |
+| `left_color` | crop only the left colour photo from a two-panel figure |
+| `body_density` | precisely crop the fossil body by ink density (drop blank margins & sparse annotations) |
+
+Each processed species gets a `public/amphibians/<slug>/02.webp`; the card
+cover is switched via `data/amphibians/covers.json` (`slug -> 02.webp`), and
+— when the new image should also appear on the detail page — it is appended
+to `species.json` `images[]`.
+
+### Customising
+
+To tune a cover for another species, add an entry to the `JOBS` dict at the
+top of the script:
+
+```python
+JOBS = {
+    "my-species": {
+        "pdf": "species_NN_...pdf",
+        "page": 1,            # 0-based page index (1 = page 2)
+        "mode": "body_density",
+    },
+}
+```
+
+Dependencies: `pip install pymupdf numpy pillow`.
+
 ## Export a standalone database bundle
 
 For distribution or independent sale of the database:
@@ -280,6 +327,7 @@ data/
 scripts/
   extract_trilobites.py       PDF -> database extractor
   extract_species_cards.py    batch PDF -> species cards/detail CLI (amphibians etc.)
+  optimize_amphibian_covers.py  custom per-species cover crops (rotate/left/body)
   export_database.py          standalone database bundle exporter
   probe_images.js             write real pixel dimensions into species.json
   probe_colorfulness.py       colorfulness score for cover selection
