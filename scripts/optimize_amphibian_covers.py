@@ -63,7 +63,7 @@ JOBS = {
     },
     "sinobrachyops-placenticephalus": {
         "pdf": "species_02_Sinobrachyops_placenticephalus_Dong_1985.pdf",
-        "page": 2, "mode": "full",  # 第 3 页图更有内容
+        "page": 2, "mode": "body_density",  # 第 3 页图主体在局部，需精准切割
         "pdf_dir": r"D:\fossil\三叶虫\chinese_book_project\output_extract\output3",
     },
     "anakamacops-petrolicus": {
