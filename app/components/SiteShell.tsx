@@ -64,9 +64,6 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
               What&apos;s New
             </Link>
           </nav>
-          <button type="button" className="red-btn">
-            Search
-          </button>
         </div>
         <div className="sidebar-bottom">
           <CommercialEntry />
