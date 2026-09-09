@@ -68,12 +68,12 @@ JOBS = {
     },
     "anakamacops-petrolicus": {
         "pdf": "species_03_Anakamacops_petrolicus_Li_et_Cheng_1999.pdf",
-        "page": 2, "mode": "full",  # 第 3 页图有彩
+        "page": 2, "mode": "body_density",  # 第 3 页图主体在上半部，需精准切割
         "pdf_dir": r"D:\fossil\三叶虫\chinese_book_project\output_extract\output3",
     },
     "yuanansuchus-laticeps": {
         "pdf": "species_04_Yuanansuchus_laticeps_Liu_et_Wang_2005.pdf",
-        "page": 2, "mode": "full",  # 第 3 页图有彩
+        "page": 2, "mode": "body_density",  # 第 3 页图主体在上半部，需精准切割
         "pdf_dir": r"D:\fossil\三叶虫\chinese_book_project\output_extract\output3",
     },
     "parotosuchus-turfanensis": {
@@ -158,12 +158,30 @@ def save_cover(img, slug):
     return save_webp(img, slug, "cover.webp")
 
 
+def smart_crop(img, ink_thresh=730, frac=0.02, pad=10, min_content=0.5):
+    """标准剪裁流程：按内容密度精准切割主体。
+
+    对稀疏线稿图（如 procynops/parotosuchus）body_density 是唯一能
+    切出主体的方式，因此始终采用 body_density；仅当切出结果异常小
+    （<64px 宽或高）时回退到整体 trim。
+    """
+    bb = body_bbox(img, ink_thresh=ink_thresh, frac=frac, pad=pad)
+    crop = img.crop(bb)
+    out = trim_white(crop)
+    if out.width < 64 or out.height < 64:
+        return trim_white(img), False
+    return out, True
+
+
 def process(slug, job):
     pdf_dir = job.get("pdf_dir", PDF_DIR)
     img = extract_page_img(os.path.join(pdf_dir, job["pdf"]), job["page"])
-    mode = job["mode"]
+    mode = job.get("mode", "smart")
 
-    if mode == "full":
+    if mode == "smart":
+        out, used = smart_crop(img)
+        print(f"  [smart] {slug}: {'body_density' if used else 'trim_fallback'}")
+    elif mode == "full":
         out = trim_white(img)
     elif mode == "color_rotate":
         bb = colorful_bbox(img)
@@ -193,10 +211,19 @@ def main():
     ap = argparse.ArgumentParser(prog="optimize_amphibian_covers.py")
     ap.add_argument("--apply-data", action="store_true",
                     help="更新 covers.json（默认只生成图片）")
+    ap.add_argument("--standard-crop", action="store_true",
+                    help="标准剪裁：所有 job 优先用 smart_crop（body_density + trim 兜底），"
+                         "除非 job 显式标注特殊模式（color_rotate/left_color）")
     args = ap.parse_args()
+
+    # 特殊模式（保持原样，不做 smart 覆盖）
+    SPECIAL_MODES = {"color_rotate", "left_color"}
 
     for slug, job in JOBS.items():
         try:
+            job = dict(job)
+            if args.standard_crop and job.get("mode", "smart") not in SPECIAL_MODES:
+                job["mode"] = "smart"
             process(slug, job)
         except Exception as e:
             print(f"  [fail] {slug}: {e}")
