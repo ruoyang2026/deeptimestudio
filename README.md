@@ -149,6 +149,98 @@ writing `data/trilobites/species.json` and photos under `public/trilobites/`.
 It is resumable (pages whose images already exist are skipped), so re-running
 after parser fixes only re-parses text fields.
 
+## Batch-ingest species cards from PDFs (extract_species_cards.py)
+
+The **Amphibians archive** (and any future per-species batch) is built with a
+generic CLI that turns a folder of per-species PDFs into website cards +
+drill-down detail pages in one step. It is data-driven: card grid
+(`app/components/AmphibiansArchive.tsx`) and detail pages
+(`app/amphibians/[slug]/page.tsx`) read `data/amphibians/*.json`, so after
+this step the new species appear on the live site with no component changes.
+
+### Input convention
+
+Each species is a 2-page PDF named `species_NN_*.pdf`:
+
+```
+output_extract/
+  species_01_Chunerpeton_tianyiensis_Gao_et_Shubin_2003.pdf
+  species_02_Regalerpeton_weichangensis_...2009.pdf
+  ...
+```
+
+- **Page 1** — taxonomy text fields (Family / Genus / Authority /
+  Original Combination / Age / Locality / Diagnosis / Remarks).
+- **Page 2** — one embedded fossil figure image.
+
+The structured text is **not parsed from the PDF**; it comes from a companion
+`species_data_*.json` (per batch), which holds one record per species with
+`species[]` entries (`id`, `species`, `family`, `genus`, `age`, `locality`,
+`diagnosis`, `remark`, `photo.caption`). The CLI matches each JSON species to
+its PDF via the `species_NN_` filename prefix.
+
+### Usage
+
+```bash
+python scripts/extract_species_cards.py \
+    --collection amphibians \
+    --pdf-dir "D:/fossil/.../output_extract" \
+    --species-json "D:/fossil/.../species_data_pages80_117.json" \
+    --id-prefix b
+```
+
+or via npm:
+
+```bash
+npm run ingest:species -- --collection amphibians \
+    --pdf-dir "..." --species-json "..." --id-prefix b
+```
+
+### Options
+
+| Option | Required | Default | Description |
+|--------|----------|---------|-------------|
+| `--collection` | yes | — | archive name → `public/<c>/` + `data/<c>/` |
+| `--pdf-dir` | yes | — | directory containing `species_NN_*.pdf` |
+| `--species-json` | yes | — | species data JSON (per batch) |
+| `--id-prefix` | no | `a` | record id prefix, avoids React key collisions across batches (use a new letter per batch) |
+| `--append` | no | on | append to existing `species.json` (default) |
+| `--replace` | no | off | rebuild `species.json` from scratch |
+| `--max-dim` | no | `1600` | longest edge (px) of saved cover WebP |
+| `--skip-images` | no | off | only update JSON, don't re-extract images |
+| `--title` / `--source` | no | — | override `species.json` metadata |
+
+### What it produces
+
+```
+public/amphibians/<slug>/01.webp   precisely-cropped fossil figure (card cover)
+data/amphibians/species.json       species records (8 -> 21 ... appended)
+data/amphibians/drillable.json     all species unlocked (drillable)
+data/amphibians/covers.json        cover overrides
+```
+
+- **Image precision**: the embedded figure on page 2 often has white margins
+  around the fossil; the script trims those borders (`trim_white_margins`)
+  so the card shows only the figure ("精准切割"), then downscales to WebP.
+- **Slug** = binomial only, dropping author & `?` (e.g.
+  `Chunerpeton tianyiensis Gao et Shubin, 2003` → `chunerpeton-tianyiensis`,
+  `Sinerpeton? fengshanensis ...` → `sinerpeton-fengshanensis`).
+- **Append mode** merges new records into the existing DB, skipping slugs
+  that already exist — the archive accumulates across batches.
+- **ids** are namespaced by `--id-prefix` so multiple batches on one page
+  don't collide in React `key`s (first batch `a…`, second `b…`, …).
+
+### After-ingest checklist
+
+1. If the new batch introduces ages outside the current filter list, add
+   them to `AMPHIBIAN_AGES` in `lib/amphibians.ts` (e.g. Jurassic/Permian
+   for the caudata batch).
+2. Add a `What's New` entry in `data/updates.json`
+   (`kind: "amphibians_added"`, count, slugs).
+3. `npm run build` — the new `/amphibians/<slug>` pages and `/sitemap.xml`
+   entries are generated automatically from the JSON.
+4. Commit & deploy (Vercel picks up the push).
+
 ## Export a standalone database bundle
 
 For distribution or independent sale of the database:
@@ -187,6 +279,7 @@ data/
   .updates-snapshot.json      diff baseline for the update log (generated)
 scripts/
   extract_trilobites.py       PDF -> database extractor
+  extract_species_cards.py    batch PDF -> species cards/detail CLI (amphibians etc.)
   export_database.py          standalone database bundle exporter
   probe_images.js             write real pixel dimensions into species.json
   probe_colorfulness.py       colorfulness score for cover selection

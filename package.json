@@ -8,7 +8,8 @@
     "prebuild": "node scripts/sync_updates.js",
     "start": "next start",
     "lint": "next lint",
-    "sync:updates": "node scripts/sync_updates.js"
+    "sync:updates": "node scripts/sync_updates.js",
+    "ingest:species": "python scripts/extract_species_cards.py"
   },
 "dependencies": {
     "next": "14.2.5",
