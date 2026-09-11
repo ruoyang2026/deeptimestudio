@@ -5,7 +5,6 @@ import {
   getBySlug,
   getPrevNext,
   getCover,
-  isDrillable,
   topPeriod,
   speciesImageAlt,
   imgSrc,
@@ -17,7 +16,8 @@ import {
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return triassicMarine.filter((t) => isDrillable(t.slug)).map((t) => ({ slug: t.slug }));
+  // Locked species keep their detail pages (only the archive entry is locked).
+  return triassicMarine.map((t) => ({ slug: t.slug }));
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
@@ -55,7 +55,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
 export default function TriassicMarinePage({ params }: { params: { slug: string } }) {
   const t = getBySlug(params.slug);
-  if (!t || !isDrillable(t.slug)) notFound();
+  // Locked species keep their detail page (the archive entry is locked, not the page).
+  if (!t) notFound();
   const { prev, next } = getPrevNext(t.slug);
   const period = topPeriod(t.age);
   const description = period

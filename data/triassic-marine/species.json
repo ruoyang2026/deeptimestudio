@@ -2,7 +2,7 @@
  "title": "Triassic Marine Reptiles of the Luoping Biota",
  "version": "1.1",
  "source": "Luoping Biota (Middle Triassic), Yunnan, China",
- "total_species": 58,
+ "total_species": 57,
  "species": [
   {
    "id": "t001",
@@ -1513,32 +1513,6 @@
     }
    ],
    "cover": "triassic-marine/coleoidea-sp/01.webp"
-  },
-  {
-   "id": "u046",
-   "slug": "porifera-spicules",
-   "page": 69,
-   "order": "",
-   "scientific_name": "Porifera spicules",
-   "classification": "",
-   "genus": "Porifera",
-   "authority": "",
-   "original_combination": "Porifera spicules",
-   "species": "Porifera spicules",
-   "age": "Middle Triassic",
-   "distribution": "Luoping, Yunnan, China",
-   "diagnosis": "",
-   "remarks": "",
-   "captions": "海绵骨针, Porifera spicules",
-   "images": [
-    {
-     "file": "triassic-marine/porifera-spicules/01.webp",
-     "width": 1600,
-     "height": 1016,
-     "caption": "海绵骨针, Porifera spicules"
-    }
-   ],
-   "cover": "triassic-marine/porifera-spicules/01.webp"
   },
   {
    "id": "u047",

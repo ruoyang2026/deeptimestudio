@@ -1,5 +1,5 @@
 {
-  "last_generated": "2026-09-11T05:18:53.616Z",
+  "last_generated": "2026-09-11T06:00:04.173Z",
   "entries": [
     {
       "id": "2026-09-11-0001",
@@ -24,7 +24,7 @@
       "id": "2026-09-11-0002",
       "date": "2026-09-11",
       "kind": "triassic_marine_added",
-      "count": 48,
+      "count": 47,
       "slugs": [
         "luopingichthys-bergi",
         "diandongperleidus-denticulatus",
@@ -69,13 +69,12 @@
         "leptochondria-paradoxica",
         "modiolus-cf",
         "coleoidea-sp",
-        "porifera-spicules",
         "voltzia-sp",
         "thalassinoides-callianassa",
         "rhizocorallium-jenense",
         "Coprolites"
       ],
-      "detail": "48 more Triassic marine species added — archive now 58 species"
+      "detail": "48 more Triassic marine species added — archive now 57 species"
     },
     {
       "id": "2026-09-09-0002",
