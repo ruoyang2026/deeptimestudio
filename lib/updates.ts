@@ -4,7 +4,8 @@ export type UpdateKind =
   | "species_added"
   | "images_added"
   | "fashion_added"
-  | "amphibians_added";
+  | "amphibians_added"
+  | "triassic_marine_added";
 
 export type UpdateEntry = {
   id: string;

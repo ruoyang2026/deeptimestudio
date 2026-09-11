@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { trilobites, isDrillable } from "../lib/trilobites";
 import { amphibians } from "../lib/amphibians";
+import { triassicMarine } from "../lib/triassic-marine";
 import { fashionProducts } from "../lib/fashion";
 import {
   lastModifiedForSlug,
@@ -23,6 +24,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE_URL}/archive/amphibians`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/archive/triassic-marine`,
       changeFrequency: "weekly",
       priority: 0.9,
     },
@@ -55,6 +61,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
       lastModified: lastModifiedForSlug(a.slug),
+    });
+  }
+
+  for (const tm of triassicMarine) {
+    entries.push({
+      url: `${SITE_URL}/triassic-marine/${tm.slug}`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      lastModified: lastModifiedForSlug(tm.slug),
     });
   }
 

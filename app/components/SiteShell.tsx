@@ -11,6 +11,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
   const isArchive = pathname.startsWith("/archive") || pathname.startsWith("/species");
   const isTrilobites = pathname.startsWith("/archive/trilobites") || pathname.startsWith("/species");
   const isAmphibians = pathname.startsWith("/archive/amphibians") || pathname.startsWith("/amphibians");
+  const isTriassicMarine = pathname.startsWith("/archive/triassic-marine") || pathname.startsWith("/triassic-marine");
   const isFashion = pathname.startsWith("/fossil-fashion-design-inspiration");
   const isUpdates = pathname === "/updates";
   const [archiveOpen, setArchiveOpen] = useState(false);
@@ -50,6 +51,12 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
                     className={`menu-item menu-item--sub${isAmphibians ? " is-active" : ""}`}
                   >
                     2. Amphibians
+                  </Link>
+                  <Link
+                    href="/archive/triassic-marine"
+                    className={`menu-item menu-item--sub${isTriassicMarine ? " is-active" : ""}`}
+                  >
+                    3. Triassic Marine
                   </Link>
                 </div>
               ) : null}

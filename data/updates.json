@@ -1,6 +1,25 @@
 {
-  "last_generated": "2026-09-09T07:02:35.448Z",
+  "last_generated": "2026-09-11T04:24:36.182Z",
   "entries": [
+    {
+      "id": "2026-09-11-0001",
+      "date": "2026-09-11",
+      "kind": "triassic_marine_added",
+      "count": 10,
+      "slugs": [
+        "mixosaurus-cf",
+        "phalarodon-atavus",
+        "dinocephalosaurus-orientalis",
+        "archosauria-indet",
+        "dianopachysaurus-dingi",
+        "diandongosaurus-acutidentatus",
+        "lariosaurus-sp",
+        "sinosaurosphargis-yunguiensis",
+        "atopodentatus-unicus",
+        "nothosaurus-zhangi"
+      ],
+      "detail": "10 Triassic marine reptile species added from the Luoping Biota"
+    },
     {
       "id": "2026-09-09-0002",
       "date": "2026-09-09",

@@ -1,0 +1,280 @@
+{
+ "title": "Triassic Marine Reptiles of the Luoping Biota",
+ "version": "1.1",
+ "source": "Luoping Biota (Middle Triassic), Yunnan, China",
+ "total_species": 10,
+ "species": [
+  {
+   "id": "t001",
+   "slug": "mixosaurus-cf",
+   "page": 13,
+   "order": "Mixosauridae",
+   "scientific_name": "Mixosaurus cf. panxianensis",
+   "classification": "Mixosauridae",
+   "genus": "Mixosaurus",
+   "authority": "",
+   "original_combination": "Mixosaurus cf. panxianensis",
+   "species": "Mixosaurus cf. panxianensis",
+   "age": "Middle Triassic",
+   "distribution": "Luoping, Yunnan, China",
+   "diagnosis": "",
+   "remarks": "",
+   "captions": "Mixosaurus cf. panxianensis. Scale bar is 5cm.",
+   "images": [
+    {
+     "file": "triassic-marine/mixosaurus-cf/01.webp",
+     "width": 1600,
+     "height": 955,
+     "caption": "Mixosaurus cf. panxianensis. Scale bar is 5cm."
+    }
+   ],
+   "cover": "triassic-marine/mixosaurus-cf/01.webp"
+  },
+  {
+   "id": "t002",
+   "slug": "phalarodon-atavus",
+   "page": 14,
+   "order": "Mixosauridae",
+   "scientific_name": "Phalarodon atavus",
+   "classification": "Mixosauridae",
+   "genus": "Phalarodon",
+   "authority": "",
+   "original_combination": "Phalarodon atavus",
+   "species": "Phalarodon atavus",
+   "age": "Middle Triassic",
+   "distribution": "Luoping, Yunnan, China",
+   "diagnosis": "",
+   "remarks": "",
+   "captions": "Phalarodon atavus. Scale bar is 10cm.",
+   "images": [
+    {
+     "file": "triassic-marine/phalarodon-atavus/01.webp",
+     "width": 1600,
+     "height": 867,
+     "caption": "Phalarodon atavus. Scale bar is 10cm."
+    }
+   ],
+   "cover": "triassic-marine/phalarodon-atavus/01.webp"
+  },
+  {
+   "id": "t003",
+   "slug": "dinocephalosaurus-orientalis",
+   "page": 15,
+   "order": "Protorosauridae",
+   "scientific_name": "Dinocephalosaurus orientalis",
+   "classification": "Protorosauridae",
+   "genus": "Dinocephalosaurus",
+   "authority": "",
+   "original_combination": "Dinocephalosaurus orientalis",
+   "species": "Dinocephalosaurus orientalis",
+   "age": "Middle Triassic",
+   "distribution": "Luoping, Yunnan, China",
+   "diagnosis": "",
+   "remarks": "",
+   "captions": "Dinocephalosaurus orientalis. Scale bar is 10cm.",
+   "images": [
+    {
+     "file": "triassic-marine/dinocephalosaurus-orientalis/01.webp",
+     "width": 1600,
+     "height": 501,
+     "caption": "Dinocephalosaurus orientalis. Scale bar is 10cm."
+    }
+   ],
+   "cover": "triassic-marine/dinocephalosaurus-orientalis/01.webp"
+  },
+  {
+   "id": "t004",
+   "slug": "archosauria-indet",
+   "page": 16,
+   "order": "",
+   "scientific_name": "Archosauria indet.",
+   "classification": "",
+   "genus": "",
+   "authority": "",
+   "original_combination": "Archosauria indet.",
+   "species": "Archosauria indet.",
+   "age": "Middle Triassic",
+   "distribution": "Luoping, Yunnan, China",
+   "diagnosis": "",
+   "remarks": "Only disarticulated teeth recovered; serrated margins characteristic of archosaurs.",
+   "captions": "A tooth of an archosaur. Scale bar is 1cm.",
+   "images": [
+    {
+     "file": "triassic-marine/archosauria-indet/01.webp",
+     "width": 1308,
+     "height": 1600,
+     "caption": "A tooth of an archosaur. Scale bar is 1cm."
+    }
+   ],
+   "cover": "triassic-marine/archosauria-indet/01.webp"
+  },
+  {
+   "id": "t005",
+   "slug": "dianopachysaurus-dingi",
+   "page": 18,
+   "order": "Plateosauridae",
+   "scientific_name": "Dianopachysaurus dingi",
+   "classification": "Plateosauridae",
+   "genus": "Dianopachysaurus",
+   "authority": "",
+   "original_combination": "Dianopachysaurus dingi",
+   "species": "Dianopachysaurus dingi",
+   "age": "Middle Triassic",
+   "distribution": "Luoping, Yunnan, China",
+   "diagnosis": "",
+   "remarks": "",
+   "captions": "Holotype of Dianopachysaurus dingi. Scale bar is 1cm.",
+   "images": [
+    {
+     "file": "triassic-marine/dianopachysaurus-dingi/01.webp",
+     "width": 1180,
+     "height": 1600,
+     "caption": "Holotype of Dianopachysaurus dingi. Scale bar is 1cm."
+    },
+    {
+     "file": "triassic-marine/dianopachysaurus-dingi/02.webp",
+     "width": 1155,
+     "height": 1600,
+     "caption": "Holotype of Dianopachysaurus dingi. Scale bar is 1cm."
+    }
+   ],
+   "cover": "triassic-marine/dianopachysaurus-dingi/01.webp"
+  },
+  {
+   "id": "t006",
+   "slug": "diandongosaurus-acutidentatus",
+   "page": 20,
+   "order": "Protorosauridae",
+   "scientific_name": "Diandongosaurus acutidentatus",
+   "classification": "Protorosauridae",
+   "genus": "Diandongosaurus",
+   "authority": "",
+   "original_combination": "Diandongosaurus acutidentatus",
+   "species": "Diandongosaurus acutidentatus",
+   "age": "Middle Triassic",
+   "distribution": "Luoping, Yunnan, China",
+   "diagnosis": "",
+   "remarks": "",
+   "captions": "Diandongosaurus acutidentatus. Coin for scale.",
+   "images": [
+    {
+     "file": "triassic-marine/diandongosaurus-acutidentatus/01.webp",
+     "width": 891,
+     "height": 1600,
+     "caption": "Diandongosaurus acutidentatus. Coin for scale."
+    }
+   ],
+   "cover": "triassic-marine/diandongosaurus-acutidentatus/01.webp"
+  },
+  {
+   "id": "t007",
+   "slug": "lariosaurus-sp",
+   "page": 21,
+   "order": "Nothosauridae",
+   "scientific_name": "Lariosaurus sp.",
+   "classification": "Nothosauridae",
+   "genus": "Lariosaurus",
+   "authority": "",
+   "original_combination": "Lariosaurus sp.",
+   "species": "Lariosaurus sp.",
+   "age": "Middle Triassic",
+   "distribution": "Luoping, Yunnan, China",
+   "diagnosis": "",
+   "remarks": "",
+   "captions": "Lariosaurus sp. Scale bar is 10cm.",
+   "images": [
+    {
+     "file": "triassic-marine/lariosaurus-sp/01.webp",
+     "width": 1009,
+     "height": 1600,
+     "caption": "Lariosaurus sp. Scale bar is 10cm."
+    }
+   ],
+   "cover": "triassic-marine/lariosaurus-sp/01.webp"
+  },
+  {
+   "id": "t008",
+   "slug": "sinosaurosphargis-yunguiensis",
+   "page": 22,
+   "order": "Saurosphargidae",
+   "scientific_name": "Sinosaurosphargis yunguiensis",
+   "classification": "Saurosphargidae",
+   "genus": "Sinosaurosphargis",
+   "authority": "",
+   "original_combination": "Sinosaurosphargis yunguiensis",
+   "species": "Sinosaurosphargis yunguiensis",
+   "age": "Middle Triassic",
+   "distribution": "Luoping, Yunnan, China",
+   "diagnosis": "",
+   "remarks": "",
+   "captions": "Sinosaurosphargis yunguiensis. Scale bar is 10cm.",
+   "images": [
+    {
+     "file": "triassic-marine/sinosaurosphargis-yunguiensis/01.webp",
+     "width": 1347,
+     "height": 1600,
+     "caption": "Sinosaurosphargis yunguiensis. Scale bar is 10cm."
+    }
+   ],
+   "cover": "triassic-marine/sinosaurosphargis-yunguiensis/01.webp"
+  },
+  {
+   "id": "t009",
+   "slug": "atopodentatus-unicus",
+   "page": 23,
+   "order": "Atopodentatidae",
+   "scientific_name": "Atopodentatus unicus",
+   "classification": "Atopodentatidae",
+   "genus": "Atopodentatus",
+   "authority": "",
+   "original_combination": "Atopodentatus unicus",
+   "species": "Atopodentatus unicus",
+   "age": "Middle Triassic",
+   "distribution": "Luoping, Yunnan, China",
+   "diagnosis": "",
+   "remarks": "Interpreted as a filter-feeder, preying on small animals such as worms and other invertebrates on the seafloor.",
+   "captions": "Atopodentatus unicus. A, Overview of the whole body; B, Enlargement of skull from underlying side. Photo courtesy of Long Cheng.",
+   "images": [
+    {
+     "file": "triassic-marine/atopodentatus-unicus/01.webp",
+     "width": 1600,
+     "height": 1194,
+     "caption": "Atopodentatus unicus. A, Overview of the whole body; B, Enlargement of skull from underlying side. Photo courtesy of Long Cheng."
+    }
+   ],
+   "cover": "triassic-marine/atopodentatus-unicus/01.webp"
+  },
+  {
+   "id": "t010",
+   "slug": "nothosaurus-zhangi",
+   "page": 24,
+   "order": "Nothosauridae",
+   "scientific_name": "Nothosaurus zhangi",
+   "classification": "Nothosauridae",
+   "genus": "Nothosaurus",
+   "authority": "",
+   "original_combination": "Nothosaurus zhangi",
+   "species": "Nothosaurus zhangi",
+   "age": "Middle Triassic",
+   "distribution": "Luoping, Yunnan, China",
+   "diagnosis": "",
+   "remarks": "The largest known Triassic sauropterygian; interpreted as a macropredator in the food web.",
+   "captions": "Nothosaurus zhangi, the largest known lower jaw among Triassic sauropterygians. Scale bar is 10cm.",
+   "images": [
+    {
+     "file": "triassic-marine/nothosaurus-zhangi/01.webp",
+     "width": 1600,
+     "height": 953,
+     "caption": "Nothosaurus zhangi, the largest known lower jaw among Triassic sauropterygians. Scale bar is 10cm."
+    },
+    {
+     "file": "triassic-marine/nothosaurus-zhangi/02.webp",
+     "width": 1600,
+     "height": 1049,
+     "caption": "Nothosaurus zhangi, the largest known lower jaw among Triassic sauropterygians. Scale bar is 10cm."
+    }
+   ],
+   "cover": "triassic-marine/nothosaurus-zhangi/01.webp"
+  }
+ ]
+}
