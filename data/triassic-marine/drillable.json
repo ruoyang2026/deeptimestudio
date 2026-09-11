@@ -1,6 +1,6 @@
 {
   "note": "About 50% of species are unlocked for drill-down; the rest are locked (entry only).",
-  "total": 29,
+  "total": 28,
   "slugs": [
     "anisaeger-brevispinus",
     "aeger-luxii",
@@ -29,7 +29,6 @@
     "crinoidea-sp",
     "bakevellia-sp",
     "thalassinoides-callianassa",
-    "Coprolites",
-    "yunnanolimulus-luopingensis"
+    "Coprolites"
   ]
 }

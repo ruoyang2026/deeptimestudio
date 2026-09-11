@@ -1,5 +1,5 @@
 {
-  "last_generated": "2026-09-11T06:00:04.173Z",
+  "last_generated": "2026-09-11T06:14:31.505Z",
   "entries": [
     {
       "id": "2026-09-11-0001",
@@ -24,7 +24,7 @@
       "id": "2026-09-11-0002",
       "date": "2026-09-11",
       "kind": "triassic_marine_added",
-      "count": 47,
+      "count": 46,
       "slugs": [
         "luopingichthys-bergi",
         "diandongperleidus-denticulatus",
@@ -32,7 +32,6 @@
         "loupingperleidus-sui",
         "fuyuanperleidus-dengi",
         "habroichthys-broughi",
-        "Habroichthys",
         "habroichthys-sp",
         "placopleurus-sp",
         "pteronisculus-nielseni",

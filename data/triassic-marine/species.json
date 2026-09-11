@@ -2,7 +2,7 @@
  "title": "Triassic Marine Reptiles of the Luoping Biota",
  "version": "1.1",
  "source": "Luoping Biota (Middle Triassic), Yunnan, China",
- "total_species": 57,
+ "total_species": 56,
  "species": [
   {
    "id": "t001",
@@ -437,32 +437,6 @@
     }
    ],
    "cover": "triassic-marine/habroichthys-broughi/01.webp"
-  },
-  {
-   "id": "u008",
-   "slug": "Habroichthys",
-   "page": null,
-   "order": "Perleididae",
-   "scientific_name": "Habroichthys",
-   "classification": "Perleididae",
-   "genus": "Habroichthys",
-   "authority": "",
-   "original_combination": "Habroichthys",
-   "species": "Habroichthys",
-   "age": "Middle Triassic",
-   "distribution": "Luoping, Yunnan, China",
-   "diagnosis": "",
-   "remarks": "",
-   "captions": "",
-   "images": [
-    {
-     "file": "triassic-marine/Habroichthys/01.webp",
-     "width": 1031,
-     "height": 536,
-     "caption": ""
-    }
-   ],
-   "cover": "triassic-marine/Habroichthys/01.webp"
   },
   {
    "id": "u009",
