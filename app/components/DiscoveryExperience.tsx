@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Three.js Cambrian seafloor scene (client only, no SSR)
 const AbyssScene = dynamic(() => import("./AbyssScene"), {
@@ -27,9 +27,17 @@ const PERIODS: { id: Period; label: string }[] = [
  *  - Cambrian   : the current procedural seafloor Three.js scene + floating cards
  *  - Cretaceous : an embedded recreation of the Sylva "living world" scene,
  *                 adapted for the Cretaceous (public/cretaceous/cretaceous-3d.html)
+ *
+ *  On first load the period is picked at random (Cambrian or Cretaceous).
  */
 export default function DiscoveryExperience() {
-  const [period, setPeriod] = useState<Period>("cambrian");
+  // Start with no period so the server render and the first client render
+  // match; the period is then chosen at random after mount.
+  const [period, setPeriod] = useState<Period | null>(null);
+
+  useEffect(() => {
+    setPeriod(Math.random() < 0.5 ? "cambrian" : "cretaceous");
+  }, []);
 
   return (
     <main className="abyss-main" aria-label="Deep time discovery canvas">
@@ -55,7 +63,7 @@ export default function DiscoveryExperience() {
           <AbyssScene />
           <AbyssFloatingCards />
         </div>
-      ) : (
+      ) : period === "cretaceous" ? (
         <iframe
           id="panel-cretaceous"
           role="tabpanel"
@@ -64,6 +72,8 @@ export default function DiscoveryExperience() {
           title="Cretaceous — Into the cretaceous world"
           src="/cretaceous/cretaceous-3d.html"
         />
+      ) : (
+        <div className="abyss-scene abyss-scene--loading" aria-hidden="true" />
       )}
     </main>
   );
