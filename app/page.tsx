@@ -1,16 +1,5 @@
-import dynamic from "next/dynamic";
 import SiteShell from "./components/SiteShell";
-
-// Three.js 海底场景 (客户端渲染, 禁用 SSR)
-const AbyssScene = dynamic(() => import("./components/AbyssScene"), {
-  ssr: false,
-  loading: () => <div className="abyss-scene abyss-scene--loading" />,
-});
-
-const AbyssFloatingCards = dynamic(() => import("./components/AbyssFloatingCards"), {
-  ssr: false,
-  loading: () => <div className="abyss-hero" />,
-});
+import DiscoveryExperience from "./components/DiscoveryExperience";
 
 export const metadata = {
   title: "Cambrian Explosion 3D: Anomalocaris, Trilobites & Fossils",
@@ -50,10 +39,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <SiteShell>
-        <main className="abyss-main" aria-label="Cambrian abyss theme page">
-          <AbyssScene />
-          <AbyssFloatingCards />
-        </main>
+        <DiscoveryExperience />
       </SiteShell>
     </>
   );
