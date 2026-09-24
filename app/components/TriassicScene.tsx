@@ -464,10 +464,13 @@ export default function TriassicScene({ className = "" }: { className?: string }
       return mesh;
     }
 
+    // The two central shafts are dialled down: the Discovery canvas is much
+    // narrower than the full-screen trisea preview, so its horizontal FOV crops
+    // straight to these two and they would otherwise fill the whole frame.
     const godRays = [
       createGodRay(-4.5, -6, 5.0, 26, -0.10, -0.03, 0.3, 0.16),
-      createGodRay(-1.5, -5, 6.0, 28, -0.05, -0.02, 1.7, 0.21),
-      createGodRay( 1.6, -6, 5.5, 28,  0.02, -0.02, 3.1, 0.24),
+      createGodRay(-1.5, -5, 6.0, 28, -0.05, -0.02, 1.7, 0.10),
+      createGodRay( 1.6, -6, 5.5, 28,  0.02, -0.02, 3.1, 0.12),
       createGodRay( 4.5, -8, 4.0, 26,  0.08, -0.03, 4.9, 0.14),
       createGodRay(-7.5, -9, 7.0, 24, -0.16, -0.05, 6.2, 0.12),
     ];
