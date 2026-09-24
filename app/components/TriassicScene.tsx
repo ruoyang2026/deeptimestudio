@@ -85,7 +85,7 @@ const AUTO_PLAY_UP = new THREE.Vector3(0, 1, 0);
 
 // God-ray tuning carried over from the trisea scene (v2): the shafts live in
 // the upper water column, with a faint floor so they do not cut off at y = 0.
-const BEAM_FLOOR = 0;
+const BEAM_FLOOR = 0.7;
 
 export default function TriassicScene({ className = "" }: { className?: string }) {
   const hostRef = useRef<HTMLDivElement>(null);
