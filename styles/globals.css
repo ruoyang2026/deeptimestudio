@@ -3341,6 +3341,47 @@ gap: 10px;
   background: linear-gradient(180deg, #0e7ca3 0%, #063a5c 60%, #0e7ca3 100%);
 }
 
+/* Title block, top-left of the canvas */
+.discovery-copy {
+  position: absolute;
+  left: 28px;
+  top: 24px;
+  z-index: 5;
+  max-width: min(62%, 34rem);
+  color: #eaf7ff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+}
+
+.discovery-copy__title {
+  margin: 0;
+  font-size: clamp(22px, 2.6vw, 34px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+
+.discovery-copy__lede {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(214, 236, 247, 0.92);
+}
+
+.discovery-copy__link {
+  pointer-events: auto;
+  color: #eaf7ff;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(234, 247, 255, 0.55);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.discovery-copy__link:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
 /* Gumroad cover card, carried over from the Cretaceous canvas */
 .discovery-card {
   position: absolute;
@@ -3398,6 +3439,12 @@ gap: 10px;
 }
 
 @media (max-width: 720px) {
+  .discovery-copy {
+    left: 18px;
+    top: 16px;
+    max-width: 78%;
+  }
+
   .discovery-card {
     width: 132px;
     right: 14px;

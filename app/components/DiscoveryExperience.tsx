@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Link from "next/link";
 
 // Triassic shallow-sea scene (client only, no SSR). The GLB creatures are
 // streamed from the guarded /api/models route, never from public/.
@@ -9,19 +10,30 @@ const TriassicScene = dynamic(() => import("./TriassicScene"), {
   loading: () => <div className="triassic-scene triassic-scene--loading" />,
 });
 
-const GUMROAD_URL = "https://chenyang84.gumroad.com/l/avfmpy";
+const GUMROAD_URL = "https://chenyang84.gumroad.com/l/zcwtre";
 
 /**
  * DiscoveryExperience — the Discovery canvas.
  *
  * The Triassic Sea scene fills the main column with a fixed, auto-playing
- * camera (no mouse control). A single cover card links through to the Gumroad
- * page, carried over from the former Cretaceous tab.
+ * camera (no mouse control). A title block links into the Triassic Marine
+ * archive, and a cover card links through to the Gumroad page.
  */
 export default function DiscoveryExperience() {
   return (
     <main className="abyss-main" aria-label="Deep time discovery canvas">
       <TriassicScene className="triassic-scene" />
+
+      <div className="discovery-copy">
+        <h1 className="discovery-copy__title">Triassic Marine</h1>
+        <p className="discovery-copy__lede">
+          <Link href="/archive/triassic-marine" className="discovery-copy__link">
+            Explore
+          </Link>{" "}
+          幻龙、鱼龙 等三叠纪海洋生物
+        </p>
+      </div>
+
       <a
         className="discovery-card"
         href={GUMROAD_URL}
