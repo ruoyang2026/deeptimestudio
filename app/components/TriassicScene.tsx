@@ -62,7 +62,7 @@ const COLORS = {
   fog: 0x0e7ca3,
   deepWater: 0x063a5c,
   surfaceSky: 0xcdeffb,
-  sand: 0xe6e2d0,
+  sand: 0xdcd5c0,
 };
 
 const WORLD = {
@@ -82,6 +82,10 @@ const CAMERA_POSITION = new THREE.Vector3(2.4, 0.3, -0.6);
 const AUTO_PLAY_DURATION = 20;
 const AUTO_PLAY_ANGLE = -Math.PI / 2;
 const AUTO_PLAY_UP = new THREE.Vector3(0, 1, 0);
+
+// God-ray tuning carried over from the trisea scene (v2): the shafts live in
+// the upper water column, with a faint floor so they do not cut off at y = 0.
+const BEAM_FLOOR = 0.73;
 
 export default function TriassicScene({ className = "" }: { className?: string }) {
   const hostRef = useRef<HTMLDivElement>(null);
@@ -298,7 +302,7 @@ export default function TriassicScene({ className = "" }: { className?: string }
           float c = filament(p, time) + filament(p * 1.8 + 2.5, time * 1.3) * 0.5;
           float dist = length(vWorldPosition.xz);
           float distFade = 1.0 - smoothstep(16.0, 60.0, dist);
-          float alpha = clamp(c, 0.0, 1.6) * distFade * 0.5;
+          float alpha = clamp(c, 0.0, 1.6) * distFade * 0.45;
           gl_FragColor = vec4(0.80, 0.97, 1.0, alpha);
         }
       `,
@@ -404,8 +408,10 @@ export default function TriassicScene({ className = "" }: { className?: string }
       },
       vertexShader: `
         varying vec2 vUv;
+        varying float vWorldY;
         void main() {
           vUv = uv;
+          vWorldY = (modelMatrix * vec4(position, 1.0)).y;
           gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
         }
       `,
@@ -414,6 +420,7 @@ export default function TriassicScene({ className = "" }: { className?: string }
         uniform float opacity;
         uniform float seed;
         varying vec2 vUv;
+        varying float vWorldY;
         float hash(vec2 p) {
           return fract(sin(dot(p, vec2(41.3, 289.1))) * 43758.5453);
         }
@@ -429,12 +436,15 @@ export default function TriassicScene({ className = "" }: { className?: string }
         }
         void main() {
           float lateral = smoothstep(0.0, 0.42, vUv.x) * smoothstep(1.0, 0.58, vUv.x);
-          float vertical = smoothstep(0.0, 0.25, vUv.y) * smoothstep(1.0, 0.55, vUv.y);
+          float vertical = smoothstep(0.0, 0.18, vUv.y) * smoothstep(1.0, 0.72, vUv.y);
+          // Keep the shafts in the upper water column, with a faint floor so
+          // they do not cut off abruptly below y = 0 (trisea v2, floor 0.73).
+          float columnFade = ${BEAM_FLOOR} + ${(1 - BEAM_FLOOR).toFixed(2)} * smoothstep(0.0, 2.0, vWorldY);
           float streaks =
             noise(vec2(vUv.x * 5.0 + seed * 7.0, vUv.y * 2.0 - time * 0.10)) * 0.6 +
             noise(vec2(vUv.x * 12.0, vUv.y * 4.0 - time * 0.22 + seed)) * 0.4;
           streaks = smoothstep(0.25, 0.9, streaks);
-          float a = lateral * vertical * streaks * opacity;
+          float a = lateral * vertical * streaks * opacity * columnFade;
           gl_FragColor = vec4(0.85, 0.97, 1.0, a);
         }
       `,
@@ -455,11 +465,11 @@ export default function TriassicScene({ className = "" }: { className?: string }
     }
 
     const godRays = [
-      createGodRay(-4.5, -6, 5.0, 26, -0.10, -0.03, 0.3, 0.20),
-      createGodRay(-1.5, -5, 6.0, 28, -0.05, -0.02, 1.7, 0.26),
-      createGodRay( 1.6, -6, 5.5, 28,  0.02, -0.02, 3.1, 0.30),
-      createGodRay( 4.5, -8, 4.0, 26,  0.08, -0.03, 4.9, 0.18),
-      createGodRay(-7.5, -9, 7.0, 24, -0.16, -0.05, 6.2, 0.15),
+      createGodRay(-4.5, -6, 5.0, 26, -0.10, -0.03, 0.3, 0.16),
+      createGodRay(-1.5, -5, 6.0, 28, -0.05, -0.02, 1.7, 0.21),
+      createGodRay( 1.6, -6, 5.5, 28,  0.02, -0.02, 3.1, 0.24),
+      createGodRay( 4.5, -8, 4.0, 26,  0.08, -0.03, 4.9, 0.14),
+      createGodRay(-7.5, -9, 7.0, 24, -0.16, -0.05, 6.2, 0.12),
     ];
     scene.add(...godRays);
 
@@ -550,7 +560,7 @@ export default function TriassicScene({ className = "" }: { className?: string }
     scene.add(sun);
     scene.add(sun.target);
 
-    const rim = new THREE.DirectionalLight(0xa9e8ff, 0.9);
+    const rim = new THREE.DirectionalLight(0xa9e8ff, 1.0);
     rim.position.set(4, 7, -14);
     rim.target.position.set(0.7, -0.6, -4.2);
     scene.add(rim);
@@ -568,9 +578,9 @@ export default function TriassicScene({ className = "" }: { className?: string }
 
     const bloom = new UnrealBloomPass(
       new THREE.Vector2(host.clientWidth, host.clientHeight),
-      0.25,
+      0.20,
       0.45,
-      0.9,
+      0.95,
     );
     composer.addPass(bloom);
 
@@ -680,7 +690,7 @@ export default function TriassicScene({ className = "" }: { className?: string }
             "#include <emissivemap_fragment>",
             "#include <emissivemap_fragment>\n" +
             "  totalEmissiveRadiance += vec3(0.42, 0.68, 0.78) * " +
-            "dappleCaustic(vDappleWorld.xz, uCausticTime) * 0.20;",
+            "dappleCaustic(vDappleWorld.xz, uCausticTime) * 0.15;",
           );
       };
       material.customProgramCacheKey = () => "caustic-dapple";
