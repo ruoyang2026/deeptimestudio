@@ -1,10 +1,42 @@
+import type { Metadata } from "next";
 import SiteShell from "./components/SiteShell";
 import DiscoveryExperience from "./components/DiscoveryExperience";
 
-export const metadata = {
-  title: "Cambrian Explosion 3D: Anomalocaris, Trilobites & Fossils",
+export const metadata: Metadata = {
+  title: "Deep Time Studio | Scientifically Accurate Paleo 3D Assets & Digital Fossils",
   description:
-    "Explore the Cambrian Explosion in 3D. Meet Anomalocaris, trilobites & Burgess Shale predators in an interactive prehistoric ocean. Browse 500+ fossil species.",
+    "Explore scientifically vetted prehistoric life in interactive Web 3D. True-to-scale paleo 3D assets, fossil specimens, and living reconstructions from the Cambrian to the Mesozoic.",
+  keywords: [
+    "paleo 3D models",
+    "digital fossils",
+    "prehistoric life reconstruction",
+    "scientifically accurate 3D",
+    "Cambrian explosion 3D",
+    "Triassic marine reptiles",
+    "fossil to life",
+    "Three.js 3D museum",
+  ],
+  openGraph: {
+    title: "Deep Time Studio | Interactive Paleo 3D & Digital Fossils",
+    description:
+      "From stone to life: Real-world scale prehistoric animals and fossil specimens in interactive Web 3D.",
+    type: "website",
+    images: [
+      {
+        url: "https://deep-time-studio.com/assets/preview/hero-nothosaurus-scale.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Deep Time Studio — scientifically accurate paleo 3D assets",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Deep Time Studio | Interactive Paleo 3D & Digital Fossils",
+    description:
+      "From stone to life: Real-world scale prehistoric animals and fossil specimens in interactive Web 3D.",
+    images: ["https://deep-time-studio.com/assets/preview/hero-nothosaurus-scale.jpg"],
+  },
 };
 
 const jsonLd = {
@@ -12,16 +44,17 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      name: "The Cambrian Explosion in 3D",
+      name: "Deep Time Studio — Interactive Paleo 3D",
       description:
-        "Explore the Cambrian Explosion in 3D. Meet Anomalocaris, trilobites & Burgess Shale predators in an interactive prehistoric ocean.",
+        "Explore scientifically vetted prehistoric life in interactive Web 3D. True-to-scale paleo 3D assets, fossil specimens and living reconstructions.",
       about: [
-        { "@type": "Thing", name: "Cambrian Explosion" },
-        { "@type": "Thing", name: "Anomalocaris" },
-        { "@type": "Thing", name: "Burgess Shale" },
-        { "@type": "Taxon", name: "Trilobita" },
+        { "@type": "Thing", name: "Paleo 3D reconstruction" },
+        { "@type": "Thing", name: "Digital fossils" },
+        { "@type": "Thing", name: "Triassic marine reptiles" },
+        { "@type": "Taxon", name: "Nothosauria" },
+        { "@type": "Taxon", name: "Ichthyosauria" },
       ],
-      temporalCoverage: "Cambrian",
+      temporalCoverage: ["Cambrian", "Mesozoic"],
     },
     {
       "@type": "Organization",

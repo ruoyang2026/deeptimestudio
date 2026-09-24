@@ -30,7 +30,8 @@ export default function DiscoveryExperience() {
           <Link href="/archive/triassic-marine" className="discovery-copy__link">
             Explore
           </Link>{" "}
-          幻龙、鱼龙 等三叠纪海洋生物
+          a sunlit Triassic sea — nothosaurs, ichthyosaurs and their lost world,
+          brought back to life in true scale.
         </p>
       </div>
 
