@@ -2971,7 +2971,7 @@ button.trilobite-card {
 /* 场景容器: 覆盖 main 区域 */
 .abyss-main {
   position: relative;
-  min-height: calc(100vh - 40px);
+  aspect-ratio: 16 / 9;
   border-radius: 16px;
   overflow: hidden;
   background: #0a1f2e;
@@ -3033,13 +3033,24 @@ button.trilobite-card {
   border-color: #ffffff;
 }
 
+.discovery-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+  background: transparent;
+  z-index: 1;
+}
+
 /* Gumroad cover card, carried over from the Cretaceous canvas */
 .discovery-card {
   position: absolute;
   right: 24px;
-  bottom: 24px;
+  top: 24px;
   z-index: 5;
-  width: 200px;
+  width: 167px;
   aspect-ratio: 2 / 3;
   border-radius: 18px;
   overflow: hidden;
@@ -3097,8 +3108,8 @@ button.trilobite-card {
   }
 
   .discovery-card {
-    width: 132px;
+    width: 110px;
     right: 14px;
-    bottom: 14px;
+    top: 14px;
   }
 }
