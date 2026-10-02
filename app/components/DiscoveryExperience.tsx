@@ -26,18 +26,6 @@ export default function DiscoveryExperience() {
 
   return (
     <main className="abyss-main" aria-label="Deep time discovery canvas">
-      {/* Blurred, cover-fit copy fills the panel so the 16:9 clip has no letterbox void. */}
-      <video
-        className="discovery-video-bg"
-        src="/discovery/triassic-loop.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        tabIndex={-1}
-        aria-hidden="true"
-      />
       <video
         ref={videoRef}
         className="discovery-video"
