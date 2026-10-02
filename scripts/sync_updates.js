@@ -8,7 +8,6 @@
  * Detected changes:
  *   species_added  - new species record (new /species/<slug> page)
  *   images_added   - new photograph(s) added to an existing species
- *   fashion_added  - new fashion product in data/fashion.json
  *
  * Usage (run from project root):
  *   node scripts/sync_updates.js
@@ -23,7 +22,6 @@ const path = require("path");
 const ROOT = path.resolve(__dirname, "..");
 const SPECIES_FILE = path.join(ROOT, "data", "trilobites", "species.json");
 const DRILLABLE_FILE = path.join(ROOT, "data", "trilobites", "drillable.json");
-const FASHION_FILE = path.join(ROOT, "data", "fashion.json");
 const UPDATES_FILE = path.join(ROOT, "data", "updates.json");
 const SNAPSHOT_FILE = path.join(ROOT, "data", ".updates-snapshot.json");
 
@@ -44,7 +42,6 @@ function fingerprint(entry) {
 }
 
 const species = readJson(SPECIES_FILE).species;
-const fashion = readJson(FASHION_FILE).products;
 
 let updates = { last_generated: "", entries: [] };
 if (fs.existsSync(UPDATES_FILE)) {
@@ -62,9 +59,6 @@ if (!snapshot) {
     species: Object.fromEntries(
       species.map((s) => [s.slug, s.images.map((i) => i.file)])
     ),
-    fashion: Object.fromEntries(
-      fashion.map((p) => [p.slug, p.gallery.map((g) => g.src)])
-    ),
   });
   updates.last_generated = new Date().toISOString();
   writeJson(UPDATES_FILE, updates);
@@ -73,7 +67,7 @@ if (!snapshot) {
 }
 
 const date = today();
-const added = { species_added: [], images_added: [], fashion_added: [] };
+const added = { species_added: [], images_added: [] };
 const addedFiles = {};
 
 for (const s of species) {
@@ -88,11 +82,6 @@ for (const s of species) {
       addedFiles[s.slug] = newFiles;
     }
   }
-}
-
-for (const p of fashion) {
-  const prev = snapshot.fashion ? snapshot.fashion[p.slug] : undefined;
-  if (prev === undefined) added.fashion_added.push(p.slug);
 }
 
 const newEntries = [];
@@ -132,7 +121,6 @@ writeJson(UPDATES_FILE, updates);
 writeJson(SNAPSHOT_FILE, {
   generated_at: new Date().toISOString(),
   species: Object.fromEntries(species.map((s) => [s.slug, s.images.map((i) => i.file)])),
-  fashion: Object.fromEntries(fashion.map((p) => [p.slug, p.gallery.map((g) => g.src)])),
 });
 
 function describe(kind, slugs, files) {
@@ -141,6 +129,5 @@ function describe(kind, slugs, files) {
     const total = Object.values(files).flat().length;
     return `${total} new photograph${total === 1 ? "" : "s"} added to ${slugs.length} species`;
   }
-  if (kind === "fashion_added") return `${slugs.length} new fashion piece${slugs.length === 1 ? "" : "s"}`;
   return "";
 }

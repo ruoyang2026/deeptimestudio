@@ -2,8 +2,8 @@
 /**
  * probe_images.js
  *
- * Reads the real pixel dimensions of every species / fashion photo and writes
- * them into data/trilobites/species.json and data/fashion.json. The rendered
+ * Reads the real pixel dimensions of every species photo and writes
+ * them into data/trilobites/species.json. The rendered
  * <img> tags can then set width/height attributes so browsers reserve the
  * space up front — eliminating CLS (Core Web Vitals).
  *
@@ -14,7 +14,6 @@ const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
 const SPECIES_FILE = path.join(ROOT, "data", "trilobites", "species.json");
-const FASHION_FILE = path.join(ROOT, "data", "fashion.json");
 const PUBLIC = path.join(ROOT, "public");
 
 function webpSize(buf) {
@@ -72,18 +71,3 @@ for (const s of species.species) {
 }
 fs.writeFileSync(SPECIES_FILE, JSON.stringify(species, null, 2) + "\n");
 console.log(`species.json: probed ${probed} images (missing ${missing})`);
-
-const fashion = JSON.parse(fs.readFileSync(FASHION_FILE, "utf8"));
-let fProbed = 0, fMissing = 0;
-const fashionFiles = [];
-for (const p of fashion.products) {
-  const candidates = [p.images.tee, p.images.model, p.images.fossil, p.images.detail, ...p.gallery.map((g) => g.src), p.specimen.image];
-  for (const file of candidates) {
-    if (!fashionFiles.includes(file)) fashionFiles.push(file);
-  }
-}
-for (const file of fashionFiles) {
-  const p = probe(file);
-  if (p) { fProbed++; } else { fMissing++; }
-}
-console.log(`fashion.json: ${fProbed} unique images found (missing ${fMissing})`);

@@ -5,19 +5,17 @@ import { getUpdates, type UpdateEntry } from "../../lib/updates";
 import { isDrillable } from "../../lib/trilobites";
 import { getBySlug as getAmphibianBySlug } from "../../lib/amphibians";
 import { getBySlug as getTriassicMarineBySlug } from "../../lib/triassic-marine";
-import { getFashionBySlug } from "../../lib/fashion";
 
 export const metadata: Metadata = {
   title: "What's New | Deep Time Studio — Trilobite & Amphibian Database Updates",
   description:
-    "New trilobite species, newly added fossil photographs, new amphibian species, Triassic marine reptiles and new fashion releases from Deep Time Studio — the latest additions to the archive.",
+    "New trilobite species, newly added fossil photographs, new amphibian species and Triassic marine reptiles from Deep Time Studio — the latest additions to the archive.",
   alternates: { canonical: "/updates" },
 };
 
 const KIND_LABEL: Record<UpdateEntry["kind"], string> = {
   species_added: "New species",
   images_added: "New photos",
-  fashion_added: "New fashion",
   amphibians_added: "New amphibians",
   triassic_marine_added: "New Triassic marine reptiles",
 };
@@ -54,22 +52,6 @@ function AmphibianList({ slugs }: { slugs: string[] }) {
   );
 }
 
-function FashionList({ slugs }: { slugs: string[] }) {
-  return (
-    <ul className="upd-entry__list">
-      {slugs.map((slug) => {
-        const p = getFashionBySlug(slug);
-        const label = p ? p.name : slug.replace(/-/g, " ");
-        return (
-          <li key={slug}>
-            <Link href={`/fashion/${slug}`}>{label}</Link>
-          </li>
-        );
-      })}
-    </ul>
-  );
-}
-
 function TriassicMarineList({ slugs }: { slugs: string[] }) {
   return (
     <ul className="upd-entry__list">
@@ -95,8 +77,8 @@ export default function UpdatesPage() {
         <header className="updates-page__head">
           <h1 className="updates-page__title">What&apos;s New</h1>
           <p className="updates-page__sub">
-            Every content change — new species, new fossil photographs, newly
-            unlocked pages and fashion releases — is recorded here automatically.
+            Every content change — new species, new fossil photographs and newly
+            unlocked pages — is recorded here automatically.
           </p>
         </header>
 
@@ -119,9 +101,7 @@ export default function UpdatesPage() {
                     {entry.detail || `${entry.count} item${entry.count === 1 ? "" : "s"} updated`}
                   </p>
                   {entry.slugs && entry.slugs.length ? (
-                    entry.kind === "fashion_added" ? (
-                      <FashionList slugs={entry.slugs} />
-                    ) : entry.kind === "amphibians_added" ? (
+                    entry.kind === "amphibians_added" ? (
                       <AmphibianList slugs={entry.slugs} />
                     ) : entry.kind === "triassic_marine_added" ? (
                       <TriassicMarineList slugs={entry.slugs} />

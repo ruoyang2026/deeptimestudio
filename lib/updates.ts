@@ -3,7 +3,6 @@ import updatesDb from "../data/updates.json";
 export type UpdateKind =
   | "species_added"
   | "images_added"
-  | "fashion_added"
   | "amphibians_added"
   | "triassic_marine_added";
 
@@ -44,8 +43,4 @@ export function lastModifiedForSlug(slug: string): string | undefined {
     }
   }
   return best;
-}
-
-export function lastModifiedForFashionSlug(slug: string): string | undefined {
-  return lastModifiedForSlug(slug);
 }
