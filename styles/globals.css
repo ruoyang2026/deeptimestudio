@@ -3033,13 +3033,26 @@ button.trilobite-card {
   border-color: #ffffff;
 }
 
+.discovery-video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(46px) saturate(1.2) brightness(0.72);
+  transform: scale(1.15);
+  z-index: 0;
+}
+
 .discovery-video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background: #0a1f2e;
+  object-position: center top;
+  background: transparent;
+  z-index: 1;
 }
 
 /* Gumroad cover card, carried over from the Cretaceous canvas */
@@ -3048,7 +3061,7 @@ button.trilobite-card {
   right: 24px;
   top: 24px;
   z-index: 5;
-  width: 200px;
+  width: 167px;
   aspect-ratio: 2 / 3;
   border-radius: 18px;
   overflow: hidden;
@@ -3106,7 +3119,7 @@ button.trilobite-card {
   }
 
   .discovery-card {
-    width: 132px;
+    width: 110px;
     right: 14px;
     top: 14px;
   }
