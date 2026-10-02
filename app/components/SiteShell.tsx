@@ -12,7 +12,6 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
   const isTrilobites = pathname.startsWith("/archive/trilobites") || pathname.startsWith("/species");
   const isAmphibians = pathname.startsWith("/archive/amphibians") || pathname.startsWith("/amphibians");
   const isTriassicMarine = pathname.startsWith("/archive/triassic-marine") || pathname.startsWith("/triassic-marine");
-  const isFashion = pathname.startsWith("/fossil-fashion-design-inspiration");
   const isUpdates = pathname === "/updates";
   const [archiveOpen, setArchiveOpen] = useState(false);
 
@@ -61,12 +60,6 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
                 </div>
               ) : null}
             </div>
-            <Link
-              href="/fossil-fashion-design-inspiration"
-              className={`menu-item${isFashion ? " is-active" : ""}`}
-            >
-              Fashion
-            </Link>
             <Link href="/updates" className={`menu-item${isUpdates ? " is-active" : ""}`}>
               What&apos;s New
             </Link>
@@ -79,8 +72,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
             <h2 className="site-desc__title">Trilobites of the World</h2>
             <p className="site-desc__sub">
               Explore 500+ extinct species through rare fossil photography, geological ages,
-              and scientific classification — from Cambrian research to paleo art and fashion
-              design inspiration.
+              and scientific classification — from Cambrian research to paleo art.
             </p>
           </div>
         </div>

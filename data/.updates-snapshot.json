@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T06:14:31.513Z",
+  "generated_at": "2026-10-02T05:16:54.900Z",
   "species": {
     "agnostus-inexpectans": [
       "trilobites/agnostus-inexpectans/01.webp",
@@ -3527,19 +3527,6 @@
       "trilobites/pengia-palsgaardia/03.webp",
       "trilobites/pengia-palsgaardia/04.webp",
       "trilobites/pengia-palsgaardia/05.webp"
-    ]
-  },
-  "fashion": {
-    "the-first-crest": [
-      "/fashion/tee-eoredlichia.webp",
-      "/fashion/model-eoredlichia.webp",
-      "/fashion/fossil-eoredlichia.webp",
-      "/fashion/detail-eoredlichia.webp"
-    ],
-    "the-shandong-spear": [
-      "/fashion/tee-dorypyge.webp",
-      "/fashion/model-dorypyge.webp",
-      "/fashion/fossil-dorypyge.webp"
     ]
   }
 }

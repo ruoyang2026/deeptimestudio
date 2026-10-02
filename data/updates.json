@@ -1,5 +1,5 @@
 {
-  "last_generated": "2026-09-11T06:14:31.505Z",
+  "last_generated": "2026-10-02T05:16:54.896Z",
   "entries": [
     {
       "id": "2026-09-11-0001",
@@ -127,26 +127,6 @@
         "liaobatrachus-zhaoi"
       ],
       "detail": "New Amphibians archive: 8 fossil amphibian species with fossil photographs (precisely cropped from source PDFs)."
-    },
-    {
-      "id": "2026-08-12-0002",
-      "date": "2026-08-12",
-      "kind": "fashion_added",
-      "count": 1,
-      "slugs": [
-        "the-shandong-spear"
-      ],
-      "detail": "1 new fashion piece"
-    },
-    {
-      "id": "2026-08-12-0001",
-      "date": "2026-08-12",
-      "kind": "fashion_added",
-      "count": 1,
-      "slugs": [
-        "the-first-crest"
-      ],
-      "detail": "The First Crest · Eoredlichia intermedia · Cambrian Dawn"
     }
   ]
 }

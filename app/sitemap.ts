@@ -2,10 +2,8 @@ import type { MetadataRoute } from "next";
 import { trilobites, isDrillable } from "../lib/trilobites";
 import { amphibians } from "../lib/amphibians";
 import { triassicMarine } from "../lib/triassic-marine";
-import { fashionProducts } from "../lib/fashion";
 import {
   lastModifiedForSlug,
-  lastModifiedForFashionSlug,
   UPDATES_LAST_GENERATED,
 } from "../lib/updates";
 import { SITE_URL } from "../lib/site";
@@ -31,11 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}/archive/triassic-marine`,
       changeFrequency: "weekly",
       priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/fossil-fashion-design-inspiration`,
-      changeFrequency: "weekly",
-      priority: 0.8,
     },
     {
       url: `${SITE_URL}/updates`,
@@ -70,15 +63,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
       lastModified: lastModifiedForSlug(tm.slug),
-    });
-  }
-
-  for (const p of fashionProducts) {
-    entries.push({
-      url: `${SITE_URL}/fashion/${p.slug}`,
-      changeFrequency: "monthly",
-      priority: 0.6,
-      lastModified: lastModifiedForFashionSlug(p.slug),
     });
   }
 
