@@ -50,7 +50,7 @@ export async function GET(
       headers: {
         "Content-Type": "model/gltf-binary",
         "Content-Length": String(info.size),
-        "Cache-Control": "private, no-store",
+        "Cache-Control": "private, max-age=31536000, immutable",
         "Content-Disposition": "inline",
         "X-Robots-Tag": "noindex, nofollow",
       },
