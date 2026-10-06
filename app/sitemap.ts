@@ -36,6 +36,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       lastModified: UPDATES_LAST_GENERATED || undefined,
     },
+    {
+      url: `${SITE_URL}/privacy`,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 
   for (const t of trilobites) {

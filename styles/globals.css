@@ -2047,6 +2047,20 @@ a {
   color: var(--muted);
 }
 
+.site-legal {
+  margin: 10px 0 0;
+  font-size: 0.75rem;
+}
+.site-legal a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.site-legal a:hover,
+.site-legal a.is-active {
+  color: var(--text);
+}
+
 /* Right scrollable main content */
 .main-content {
   flex: 1;

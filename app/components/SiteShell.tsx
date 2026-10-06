@@ -74,6 +74,11 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
               Explore 500+ extinct species through rare fossil photography, geological ages,
               and scientific classification — from Cambrian research to paleo art.
             </p>
+            <p className="site-legal">
+              <Link href="/privacy" className={pathname === "/privacy" ? " is-active" : ""}>
+                Privacy Policy
+              </Link>
+            </p>
           </div>
         </div>
       </aside>
