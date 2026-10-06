@@ -72,7 +72,9 @@ export default function DiscoveryExperience() {
       <a
         className="discovery-cta"
         href="/demo"
-        aria-label="Explore your own world — open the interactive demo"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Explore your own world — open the interactive demo in a new tab"
       >
         Explore Your Own World
       </a>
