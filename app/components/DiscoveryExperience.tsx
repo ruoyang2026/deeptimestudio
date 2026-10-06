@@ -3,38 +3,51 @@
 import { useEffect, useRef, useState } from "react";
 
 const GUMROAD_URL = "https://chenyang84.gumroad.com/l/zcwtre";
+const POSTER_HOLD_MS = 3000;
 
 /**
  * DiscoveryExperience — the Discovery canvas.
  *
- * Layered loading: poster first (LCP), the looping video streams in after
- * first paint and fades in on canplay. Reduced-motion users stay on the poster.
+ * Layered loading: poster first (LCP) with a 3s countdown, then the looping
+ * video fades in. The poster holds a minimum of 3s; if the video needs longer,
+ * the poster stays until canplay. Reduced-motion users stay on the poster.
  */
 export default function DiscoveryExperience() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [ready, setReady] = useState(false);
+  const [count, setCount] = useState(3);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    // Defer the 15MB download until after first paint, out of LCP's way.
-    const t = window.setTimeout(() => video.load(), 800);
-    return () => window.clearTimeout(t);
+    if (video && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      video.load();
+    }
+    const t = window.setInterval(() => {
+      setCount((c) => {
+        if (c <= 1) {
+          window.clearInterval(t);
+          return 0;
+        }
+        return c - 1;
+      });
+    }, 1000);
+    return () => window.clearInterval(t);
   }, []);
+
+  const show = ready && count === 0;
 
   return (
     <main className="abyss-main" aria-label="Deep time discovery canvas">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        className={`discovery-poster${ready ? " is-hidden" : ""}`}
+        className={`discovery-poster${show ? " is-hidden" : ""}`}
         src="/discovery/hero-poster.webp"
         alt=""
         aria-hidden="true"
       />
       <video
         ref={videoRef}
-        className={`discovery-video${ready ? " is-ready" : ""}`}
+        className={`discovery-video${show ? " is-ready" : ""}`}
         src="/discovery/triassic-loop.mp4"
         poster="/discovery/hero-poster.webp"
         muted
@@ -47,17 +60,14 @@ export default function DiscoveryExperience() {
           e.currentTarget.play().catch(() => {});
         }}
       />
-      {!ready ? (
+      {!show ? (
         <p className="discovery-loading">Diving into the Triassic ocean…</p>
       ) : null}
-
-      <a
-        className="discovery-cta"
-        href="#gallery"
-        aria-label="Explore the Triassic ocean world"
-      >
-        Explore the Triassic Ocean World
-      </a>
+      {count > 0 ? (
+        <div className="discovery-countdown" aria-hidden="true">
+          {count}
+        </div>
+      ) : null}
 
       <a
         className="discovery-card"
