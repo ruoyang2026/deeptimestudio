@@ -1,43 +1,56 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const GUMROAD_URL = "https://chenyang84.gumroad.com/l/zcwtre";
 
 /**
  * DiscoveryExperience — the Discovery canvas.
  *
- * The Triassic Sea is a pre-rendered, looping video (title and species cards
- * are burned into the frames). The shop card floats top-right and links to the
- * Gumroad checkout. No WebGL is loaded on this route anymore.
+ * Layered loading: poster first (LCP), the looping video streams in after
+ * first paint and fades in on canplay. Reduced-motion users stay on the poster.
  */
 export default function DiscoveryExperience() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [ready, setReady] = useState(false);
 
-  // Respect reduced-motion: hold on the poster instead of looping the clip.
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      video.pause();
-      video.currentTime = 0;
-    }
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // Defer the 15MB download until after first paint, out of LCP's way.
+    const t = window.setTimeout(() => video.load(), 800);
+    return () => window.clearTimeout(t);
   }, []);
 
   return (
     <main className="abyss-main" aria-label="Deep time discovery canvas">
       <video
         ref={videoRef}
-        className="discovery-video"
+        className={`discovery-video${ready ? " is-ready" : ""}`}
         src="/discovery/triassic-loop.mp4"
-        poster="/discovery/triassic-loop-poster.jpg"
-        autoPlay
+        poster="/discovery/hero-poster.webp"
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         aria-hidden="true"
+        onCanPlay={(e) => {
+          setReady(true);
+          e.currentTarget.play().catch(() => {});
+        }}
       />
+      {!ready ? (
+        <p className="discovery-loading">正在潜入三叠纪海洋…</p>
+      ) : null}
+
+      <a
+        className="discovery-cta"
+        href="#gallery"
+        aria-label="探索三叠纪海洋世界"
+      >
+        探索三叠纪海洋世界
+      </a>
 
       <a
         className="discovery-card"
