@@ -63,11 +63,19 @@ export default function DiscoveryExperience() {
             e.currentTarget.play().catch(() => {});
           }}
         />
-        {count > 0 ? (
-          <div className="discovery-countdown" aria-hidden="true">
-            {count}
-          </div>
-        ) : null}
+      {count > 0 ? (
+        <div className="discovery-countdown" aria-hidden="true">
+          {count}
+        </div>
+      ) : null}
+
+      <a
+        className="discovery-cta"
+        href="/demo"
+        aria-label="Explore your own world — open the interactive demo"
+      >
+        Explore Your Own World
+      </a>
 
         <div className={`hero-caption${show ? " is-hidden" : ""}`}>
           <h1 className="hero-caption__title">Dive into a 240-million-year-old ocean</h1>

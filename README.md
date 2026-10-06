@@ -109,6 +109,44 @@ npm install
 npm run dev
 ```
 
+## 大文件托管（R2 + 子域名 demo.deep-time-studio.com）
+
+视频、3D 模型等大文件**不进 `public/`、不进 git**，放 Cloudflare R2，原因：
+Vercel 每个部署都会完整打包 `public/`，73MB 视频 × 几十个历史部署 = 配额爆炸。
+
+| 项目 | 位置 |
+|---|---|
+| R2 桶 | `dts-assets`（Cloudflare 面板 → R2） |
+| 自定义域 | `demo.deep-time-studio.com`（桶 → Settings → Custom Domains） |
+| demo 站 | 桶根：`index.html / assets/* / models/* / libs/* / scene-base.json` |
+| hero 素材 | `media/discovery/triassic-loop.mp4`、`media/discovery/hero-poster.webp` |
+
+代码里大文件地址全部走环境变量（见 `lib/media.ts`、`app/demo/DemoFrame.tsx`），
+本地默认回退 `public/`，线上由 Vercel 环境变量切换：
+
+| 变量 | 值 |
+|---|---|
+| `NEXT_PUBLIC_DEMO_URL` | `https://demo.deep-time-studio.com` |
+| `NEXT_PUBLIC_MEDIA_URL` | `https://demo.deep-time-studio.com/media` |
+
+### 日常更新（3d-assets 侧打包 → 传 R2）
+
+```bash
+# demo 包（scene 静态文件夹，无 exe）
+py tools/pack_demo.py            # 含 Draco 压缩 + vite 构建，输出 releases/demo-<版本>/scene
+
+# 上传（S3 协议，需 R2 API 密钥，见 R2 → Manage R2 API Tokens）
+$env:R2_KEY = "<key>"; $env:R2_SECRET = "<secret>"
+py <temp>/r2_upload.py           # Content-Type / 缓存头已写死在脚本里
+```
+
+注意两点：
+1. R2 自定义域只认精确 key，没有 index 文档——iframe 必须请求
+   `/index.html`（代码里已写死，换地址别丢后缀）。
+2. R2 公开访问走**自定义域**即可，`r2.dev` 开发开关保持关闭；
+   域名状态 `Initializing` 时等 1–2 分钟变 Active 再验
+   （`curl https://demo.deep-time-studio.com/scene-base.json` 应回 200）。
+
 ## Database
 
 The structured database lives in `data/trilobites/species.json`. Each species
