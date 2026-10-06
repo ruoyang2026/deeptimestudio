@@ -1,5 +1,5 @@
 {
-  "name": "socialalphas",
+  "name": "deeptimestudio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,17 +11,15 @@
     "sync:updates": "node scripts/sync_updates.js",
     "ingest:species": "python scripts/extract_species_cards.py"
   },
-"dependencies": {
+  "dependencies": {
     "next": "14.2.5",
     "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "three": "0.160.0"
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@types/node": "20.14.10",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
-    "@types/three": "0.160.0",
     "typescript": "5.5.4"
   }
 }

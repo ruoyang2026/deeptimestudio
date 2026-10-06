@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { media } from "../../lib/media";
 
 const GUMROAD_URL = "https://chenyang84.gumroad.com/l/zcwtre";
+const HERO_VIDEO = media("/discovery/triassic-loop.mp4");
+const HERO_POSTER = media("/discovery/hero-poster.webp");
 
 /**
  * DiscoveryExperience — the Discovery canvas.
@@ -39,17 +42,17 @@ export default function DiscoveryExperience() {
     <>
       <main className="abyss-main" aria-label="Deep time discovery canvas">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          className={`discovery-poster${show ? " is-hidden" : ""}`}
-          src="/discovery/hero-poster.webp"
-          alt=""
-          aria-hidden="true"
-        />
-        <video
-          ref={videoRef}
-          className={`discovery-video${show ? " is-ready" : ""}`}
-          src="/discovery/triassic-loop.mp4"
-          poster="/discovery/hero-poster.webp"
+      <img
+        className={`discovery-poster${show ? " is-hidden" : ""}`}
+        src={HERO_POSTER}
+        alt=""
+        aria-hidden="true"
+      />
+      <video
+        ref={videoRef}
+        className={`discovery-video${show ? " is-ready" : ""}`}
+        src={HERO_VIDEO}
+        poster={HERO_POSTER}
           muted
           loop
           playsInline
