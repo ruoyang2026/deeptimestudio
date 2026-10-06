@@ -3121,6 +3121,12 @@ button.trilobite-card {
   width: min(90%, 46rem);
   text-align: center;
   pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.hero-caption.is-hidden {
+  opacity: 0;
 }
 
 .hero-caption__title {

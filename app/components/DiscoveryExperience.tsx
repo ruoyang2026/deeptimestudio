@@ -66,7 +66,7 @@ export default function DiscoveryExperience() {
           </div>
         ) : null}
 
-        <div className="hero-caption">
+        <div className={`hero-caption${show ? " is-hidden" : ""}`}>
           <h1 className="hero-caption__title">Dive into a 240-million-year-old ocean</h1>
           <p className="hero-caption__sub">
             Build your own Triassic seafloor — no code required.
