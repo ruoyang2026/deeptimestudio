@@ -25,6 +25,13 @@ export default function DiscoveryExperience() {
 
   return (
     <main className="abyss-main" aria-label="Deep time discovery canvas">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        className={`discovery-poster${ready ? " is-hidden" : ""}`}
+        src="/discovery/hero-poster.webp"
+        alt=""
+        aria-hidden="true"
+      />
       <video
         ref={videoRef}
         className={`discovery-video${ready ? " is-ready" : ""}`}
@@ -41,15 +48,15 @@ export default function DiscoveryExperience() {
         }}
       />
       {!ready ? (
-        <p className="discovery-loading">正在潜入三叠纪海洋…</p>
+        <p className="discovery-loading">Diving into the Triassic ocean…</p>
       ) : null}
 
       <a
         className="discovery-cta"
         href="#gallery"
-        aria-label="探索三叠纪海洋世界"
+        aria-label="Explore the Triassic ocean world"
       >
-        探索三叠纪海洋世界
+        Explore the Triassic Ocean World
       </a>
 
       <a
