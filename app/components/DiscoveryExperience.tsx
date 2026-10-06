@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 
 const GUMROAD_URL = "https://chenyang84.gumroad.com/l/zcwtre";
-const POSTER_HOLD_MS = 3000;
 
 /**
  * DiscoveryExperience — the Discovery canvas.
@@ -37,55 +36,67 @@ export default function DiscoveryExperience() {
   const show = ready && count === 0;
 
   return (
-    <main className="abyss-main" aria-label="Deep time discovery canvas">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        className={`discovery-poster${show ? " is-hidden" : ""}`}
-        src="/discovery/hero-poster.webp"
-        alt=""
-        aria-hidden="true"
-      />
-      <video
-        ref={videoRef}
-        className={`discovery-video${show ? " is-ready" : ""}`}
-        src="/discovery/triassic-loop.mp4"
-        poster="/discovery/hero-poster.webp"
-        muted
-        loop
-        playsInline
-        preload="none"
-        aria-hidden="true"
-        onCanPlay={(e) => {
-          setReady(true);
-          e.currentTarget.play().catch(() => {});
-        }}
-      />
-      {!show ? (
-        <p className="discovery-loading">Diving into the Triassic ocean…</p>
-      ) : null}
-      {count > 0 ? (
-        <div className="discovery-countdown" aria-hidden="true">
-          {count}
-        </div>
-      ) : null}
-
-      <a
-        className="discovery-card"
-        href={GUMROAD_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Shop the collection — open the Gumroad page in a new tab"
-      >
+    <>
+      <main className="abyss-main" aria-label="Deep time discovery canvas">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          className="discovery-card__cover"
-          src="/discovery/card-cretaceous.webp"
-          alt="Explore the collection cover"
-          loading="eager"
-          decoding="async"
+          className={`discovery-poster${show ? " is-hidden" : ""}`}
+          src="/discovery/hero-poster.webp"
+          alt=""
+          aria-hidden="true"
         />
-        <span className="discovery-card__explore">Explore</span>
-      </a>
-    </main>
+        <video
+          ref={videoRef}
+          className={`discovery-video${show ? " is-ready" : ""}`}
+          src="/discovery/triassic-loop.mp4"
+          poster="/discovery/hero-poster.webp"
+          muted
+          loop
+          playsInline
+          preload="none"
+          aria-hidden="true"
+          onCanPlay={(e) => {
+            setReady(true);
+            e.currentTarget.play().catch(() => {});
+          }}
+        />
+        {count > 0 ? (
+          <div className="discovery-countdown" aria-hidden="true">
+            {count}
+          </div>
+        ) : null}
+
+        <div className="hero-caption">
+          <h1 className="hero-caption__title">Dive into a 240-million-year-old ocean</h1>
+          <p className="hero-caption__sub">
+            Build your own Triassic seafloor — no code required.
+          </p>
+        </div>
+
+        {!show ? (
+          <p className="discovery-loading">Diving into the Triassic ocean…</p>
+        ) : null}
+      </main>
+
+      <section className="hero-below" aria-label="Collection">
+        <a
+          className="discovery-card"
+          href={GUMROAD_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Shop the collection — open the Gumroad page in a new tab"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className="discovery-card__cover"
+            src="/discovery/card-cretaceous.webp"
+            alt="Explore the collection cover"
+            loading="lazy"
+            decoding="async"
+          />
+          <span className="discovery-card__explore">Explore</span>
+        </a>
+      </section>
+    </>
   );
 }
