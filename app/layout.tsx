@@ -5,24 +5,24 @@ import { SITE_URL, SITE_NAME } from "../lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Trilobites of the World | 500+ Fossil Species Database & Paleo Visual Archive",
+  title: "Deep Time Studio | Interactive 3D Trilobite & Ammonite Fossils",
   description:
-    "Explore 500+ trilobite species from the Cambrian to Permian periods. High-resolution fossil photographs, classification, and geological data for research, paleo art, and design inspiration.",
+    "Explore trilobites & ammonites in interactive 3D — 1:1 scale ancient seas, right in your browser. Food webs, fossil guides & build-your-own-world for kids, classrooms & fossil lovers.",
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
     locale: "en_US",
-    title: "Trilobites of the World | 500+ Fossil Species Database & Paleo Visual Archive",
+    title: "Deep Time Studio | Interactive 3D Trilobite & Ammonite Fossils",
     description:
-      "Explore 500+ trilobite species from the Cambrian to Permian periods. High-resolution fossil photographs, classification, and geological data for research, paleo art, and design inspiration.",
+      "Explore trilobites & ammonites in interactive 3D — 1:1 scale ancient seas, right in your browser. Food webs, fossil guides & build-your-own-world for kids, classrooms & fossil lovers.",
     url: SITE_URL,
     images: [{ url: `${SITE_URL}/trilobite-shop-cover.webp`, width: 1200, height: 630, alt: SITE_NAME }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trilobites of the World | Deep Time Studio",
+    title: "Deep Time Studio | Interactive 3D Trilobite & Ammonite Fossils",
     description:
-      "Explore 500+ trilobite species with fossil photographs, geological ages and scientific classification.",
+      "Explore trilobites & ammonites in interactive 3D — 1:1 scale ancient seas, right in your browser. Food webs, fossil guides & build-your-own-world for kids, classrooms & fossil lovers.",
     images: [`${SITE_URL}/trilobite-shop-cover.webp`],
   },
 };

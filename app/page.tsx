@@ -3,9 +3,9 @@ import SiteShell from "./components/SiteShell";
 import DiscoveryExperience from "./components/DiscoveryExperience";
 
 export const metadata: Metadata = {
-  title: "Deep Time Studio | Scientifically Accurate Paleo 3D Assets & Digital Fossils",
+  title: "Deep Time Studio | Interactive 3D Trilobite & Ammonite Fossils",
   description:
-    "Explore scientifically vetted prehistoric life in interactive Web 3D. True-to-scale paleo 3D assets, fossil specimens, and living reconstructions from the Cambrian to the Mesozoic.",
+    "Explore trilobites & ammonites in interactive 3D — 1:1 scale ancient seas, right in your browser. Food webs, fossil guides & build-your-own-world for kids, classrooms & fossil lovers.",
   keywords: [
     "paleo 3D models",
     "digital fossils",
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     "Three.js 3D museum",
   ],
   openGraph: {
-    title: "Deep Time Studio | Interactive Paleo 3D & Digital Fossils",
+    title: "Deep Time Studio | Interactive 3D Trilobite & Ammonite Fossils",
     description:
-      "From stone to life: Real-world scale prehistoric animals and fossil specimens in interactive Web 3D.",
+      "Explore trilobites & ammonites in interactive 3D — 1:1 scale ancient seas, right in your browser. Food webs, fossil guides & build-your-own-world for kids, classrooms & fossil lovers.",
     type: "website",
     images: [
       {
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Deep Time Studio | Interactive Paleo 3D & Digital Fossils",
+    title: "Deep Time Studio | Interactive 3D Trilobite & Ammonite Fossils",
     description:
-      "From stone to life: Real-world scale prehistoric animals and fossil specimens in interactive Web 3D.",
+      "Explore trilobites & ammonites in interactive 3D — 1:1 scale ancient seas, right in your browser. Food webs, fossil guides & build-your-own-world for kids, classrooms & fossil lovers.",
     images: ["https://deep-time-studio.com/assets/preview/hero-nothosaurus-scale.jpg"],
   },
 };
