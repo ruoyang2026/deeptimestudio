@@ -26,9 +26,29 @@
      "width": 1600,
      "height": 955,
      "caption": "Mixosaurus cf. panxianensis. Scale bar is 5cm."
+    },
+    {
+     "file": "triassic-marine/mixosaurus-cf/scale.webp",
+     "width": 1600,
+     "height": 1579,
+     "span": "wide",
+     "caption": "Size comparison · 100 cm body length vs 175 cm scuba diver (same scale)"
+    },
+    {
+     "file": "triassic-marine/mixosaurus-cf/3d-hero.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · hero view"
+    },
+    {
+     "file": "triassic-marine/mixosaurus-cf/3d-side.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · side view"
     }
    ],
-   "cover": "triassic-marine/mixosaurus-cf/01.webp"
+   "cover": "triassic-marine/mixosaurus-cf/01.webp",
+   "model_url": "https://www.cgtrader.com/3d-models/animal/dinosaur/mixosaurus-panxianensis-triassic-ichthyosaur-pbr-3d-model"
   },
   {
    "id": "t002",
@@ -136,9 +156,29 @@
      "width": 1155,
      "height": 1600,
      "caption": "Holotype of Dianopachysaurus dingi. Scale bar is 1cm."
+    },
+    {
+     "file": "triassic-marine/dianopachysaurus-dingi/scale.webp",
+     "width": 1600,
+     "height": 2029,
+     "span": "wide",
+     "caption": "Size comparison · 180 cm body length vs 175 cm scuba diver (same scale)"
+    },
+    {
+     "file": "triassic-marine/dianopachysaurus-dingi/3d-hero.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · hero view"
+    },
+    {
+     "file": "triassic-marine/dianopachysaurus-dingi/3d-side.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · side view"
     }
    ],
-   "cover": "triassic-marine/dianopachysaurus-dingi/01.webp"
+   "cover": "triassic-marine/dianopachysaurus-dingi/01.webp",
+   "model_url": "https://www.cgtrader.com/3d-models/animal/dinosaur/nothosaurus-sp-triassic-marine-reptile-1-1-metric-pbr-3d-model"
   },
   {
    "id": "t006",
@@ -829,7 +869,7 @@
      "width": 1700,
      "height": 1484,
      "span": "wide",
-     "caption": "Size comparison · 12 cm standard length vs Adult hand 18.5 cm (same scale)"
+     "caption": "Size comparison · 18 cm standard length vs Adult hand 18.5 cm (same scale)"
     },
     {
      "file": "triassic-marine/gymnoichthys-inoponatus/3d-hero.webp",
