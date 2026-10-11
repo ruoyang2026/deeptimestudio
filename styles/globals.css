@@ -2738,6 +2738,58 @@ button.trilobite-card {
   grid-column: 1 / -1;
 }
 
+/* CTA card: sits in the gallery grid next to the 3D views */
+.tri-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+  padding: 28px 26px;
+  text-decoration: none;
+  background:
+    radial-gradient(120% 90% at 85% 10%, rgba(56, 189, 248, 0.22), transparent 60%),
+    linear-gradient(160deg, #0b2440 0%, #123a63 55%, #0a1a30 100%);
+  border: 1px solid rgba(125, 211, 252, 0.28);
+}
+
+.tri-cta__eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7dd3fc;
+}
+
+.tri-cta__title {
+  font-size: 1.45rem;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.tri-cta__sub {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: rgba(226, 232, 240, 0.75);
+}
+
+.tri-cta__btn {
+  margin-top: 6px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: #f59e0b;
+  color: #1c1005;
+  font-size: 0.85rem;
+  font-weight: 800;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tri-cta:hover .tri-cta__btn {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(245, 158, 11, 0.35);
+}
+
 .tri-gallery__item img {
   display: block;
   width: 100%;

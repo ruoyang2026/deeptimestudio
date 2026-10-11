@@ -27,6 +27,7 @@ export type TriassicMarine = {
   diagnosis: string;
   remarks: string;
   description?: string;
+  model_url?: string;
   captions: string;
   images: TriassicMarineImage[];
   cover: string | null;

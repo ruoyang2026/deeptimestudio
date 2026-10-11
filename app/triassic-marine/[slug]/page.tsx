@@ -195,6 +195,19 @@ export default function TriassicMarinePage({ params }: { params: { slug: string 
             </figcaption>
           </figure>
         ))}
+        {t.model_url ? (
+          <a
+            className="tri-gallery__item tri-cta"
+            href={t.model_url}
+            target="_blank"
+            rel="sponsored noopener"
+          >
+            <span className="tri-cta__eyebrow">3D model · 1:1 scale</span>
+            <span className="tri-cta__title">Bring it into your world</span>
+            <span className="tri-cta__sub">PBR reconstruction + scientific dossier</span>
+            <span className="tri-cta__btn">Get the model ↗</span>
+          </a>
+        ) : null}
       </section>
 
       {descriptionParas.length > 0 ? (
