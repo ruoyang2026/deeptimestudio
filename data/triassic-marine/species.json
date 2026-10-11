@@ -214,9 +214,30 @@
      "width": 1347,
      "height": 1600,
      "caption": "Sinosaurosphargis yunguiensis. Scale bar is 10cm."
+    },
+    {
+     "file": "triassic-marine/sinosaurosphargis-yunguiensis/scale.webp",
+     "width": 1600,
+     "height": 2008,
+     "span": "wide",
+     "caption": "Size comparison · 80 cm body length vs 175 cm scuba diver (same scale)"
+    },
+    {
+     "file": "triassic-marine/sinosaurosphargis-yunguiensis/3d-hero.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · hero view"
+    },
+    {
+     "file": "triassic-marine/sinosaurosphargis-yunguiensis/3d-side.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · side view"
     }
    ],
-   "cover": "triassic-marine/sinosaurosphargis-yunguiensis/01.webp"
+   "cover": "triassic-marine/sinosaurosphargis-yunguiensis/01.webp",
+   "description": "Sinosaurosphargis yunguiensis is a highly specialized marine diapsid reptile. Its upper temporal fenestra is closed while the lower one remains fully open. The body is covered by a carapace-like shield of countless dermal ossicles; unlike placodonts such as Placodus, these small bony plates cover not only the trunk but also the limbs and tail vertebrae. Its peculiar dentition and the transversely broadened, hook-shaped ribs resemble the European saurosphargids (\"dragon-turtles\"). The ribs are extremely expanded, with adjacent ribs meeting end to end, much as in turtles, though the animal differs from true turtles in other essential characters. Phylogenetic analysis places it closer to thalattosaurs and eosauropterygians (nothosaurs and relatives). The fossil was discovered in 2011 by the Institute of Vertebrate Paleontology and Paleoanthropology (Chinese Academy of Sciences) together with the Zhejiang Museum of Natural History, in Middle Triassic marine limestone of Panxian (Guizhou) and Luoping (Yunnan). The discovery shows that the Triassic marine reptile fauna of South China was closely connected with the western Tethyan fauna of Europe.",
+   "model_url": "https://www.cgtrader.com/3d-models/animal/dinosaur/sinosaurosphargis-yunguiensis-triassic-marine-reptile-pbr-3d-mod-9ae8c7d1-5109-4c1d-8a4f-61dc5fe422e5"
   },
   {
    "id": "t009",
@@ -608,9 +629,30 @@
      "width": 1600,
      "height": 1204,
      "caption": "长奇鳍中华龙鱼, Sinosaurichthys longipectoralis"
+    },
+    {
+     "file": "triassic-marine/sinosaurichthys-longipectoralis/scale.webp",
+     "width": 1700,
+     "height": 1484,
+     "span": "wide",
+     "caption": "Size comparison · 23 cm standard length vs Adult hand 18.5 cm (same scale)"
+    },
+    {
+     "file": "triassic-marine/sinosaurichthys-longipectoralis/3d-hero.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · hero view"
+    },
+    {
+     "file": "triassic-marine/sinosaurichthys-longipectoralis/3d-side.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · side view"
     }
    ],
-   "cover": "triassic-marine/sinosaurichthys-longipectoralis/01.webp"
+   "cover": "triassic-marine/sinosaurichthys-longipectoralis/01.webp",
+   "description": "Sinosaurichthys longipectoralis is a predatory ray-finned fish from the Middle Triassic (Anisian, ~244 Ma) Guanling Formation at Yangjuan Village, Panzhou, Guizhou, China. The species name combines Latin longus (long) with pectoralis (of the pectoral fin) for its strikingly elongated, triangular to sickle-shaped pectoral fins set high near the dorsum. The genus name joins Greek sino (China) with Saurichthys, the classic Triassic predatory fish. Sinosaurichthys holds three species: S. longipectoralis from the Guanling Formation of Guizhou, and S. longimedialis and S. minuta from the Gejiu Formation of Luoping, Yunnan. The long pectorals stabilised continuous fast swimming and may even have let the animal glide above the surface like a modern flying fish. Unlike the ambush-style saurichthyids, Sinosaurichthys lived near the ocean surface and hunted in large schools chasing prey. The high-aspect-ratio tail of S. longipectoralis marks it as the faster of the congeners, herding prey with its long fins rather than lurking.",
+   "model_url": "https://www.cgtrader.com/3d-models/animal/dinosaur/sinosaurichthys-longipectoralis-longfin-fish-3d-model"
   },
   {
    "id": "u015",
@@ -696,9 +738,30 @@
      "width": 1600,
      "height": 1121,
      "caption": "高背罗雄鱼, Luoxiongichthys hyperdorsalis"
+    },
+    {
+     "file": "triassic-marine/luoxiongichthys-hyperdorsalis/scale.webp",
+     "width": 1700,
+     "height": 1484,
+     "span": "wide",
+     "caption": "Size comparison · 15 cm standard length vs Adult hand 18.5 cm (same scale)"
+    },
+    {
+     "file": "triassic-marine/luoxiongichthys-hyperdorsalis/3d-hero.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · hero view"
+    },
+    {
+     "file": "triassic-marine/luoxiongichthys-hyperdorsalis/3d-side.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · side view"
     }
    ],
-   "cover": "triassic-marine/luoxiongichthys-hyperdorsalis/01.webp"
+   "cover": "triassic-marine/luoxiongichthys-hyperdorsalis/01.webp",
+   "description": "Luoxiongichthys hyperdorsalis is an early holostean ray-finned fish from the Middle Triassic (Anisian, ~245-243 Ma) Guanling Formation near Luoping, Yunnan, China, first described in 2011. About 15 cm long, it is instantly recognisable by the strange hump in front of the dorsal fin: the extraordinarily tall back makes the body triangular in frontal view, and in lateral view the gibbous structure resembles a reversed shark dorsal fin with a clearly convex anterodorsal margin. The skull carries a free maxilla, a slender near-vertical preopercular, three suborbital bones and at least eight robust branchiostegals with tubercles and comb-like ornament on the anterior margin; two postcleithra are present. The ganoid scales bear tubercles with comb-like ornament on the posterior margin and interlock through ball-and-socket joints, and the hemiheterocercal tail is weakly forked. Cladistic analyses place it among the holosteans, possibly as a basal halecomorph or a semionotiform, close to the ancestry of modern gars. The remarkable reversed-shark-fin dorsal structure is very narrow and should have caused little drag in forward swimming; the unusual back was probably used for intraspecific display and may have required constant fin adjustments to hold the fish upright. Body shape indicates a reef-dwelling animal: a slow but highly maneuverable swimmer feeding on small seabed invertebrates.",
+   "model_url": "https://www.cgtrader.com/3d-models/animal/dinosaur/luoxiongichthys-hyperdorsalis-humpback-fish-3d-model"
   },
   {
    "id": "u017",
@@ -760,9 +823,30 @@
      "width": 1087,
      "height": 505,
      "caption": "意外裸鱼, Gymnoichthys inoponatus"
+    },
+    {
+     "file": "triassic-marine/gymnoichthys-inoponatus/scale.webp",
+     "width": 1700,
+     "height": 1484,
+     "span": "wide",
+     "caption": "Size comparison · 12 cm standard length vs Adult hand 18.5 cm (same scale)"
+    },
+    {
+     "file": "triassic-marine/gymnoichthys-inoponatus/3d-hero.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · hero view"
+    },
+    {
+     "file": "triassic-marine/gymnoichthys-inoponatus/3d-side.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · side view"
     }
    ],
-   "cover": "triassic-marine/gymnoichthys-inoponatus/01.webp"
+   "cover": "triassic-marine/gymnoichthys-inoponatus/01.webp",
+   "description": "Gymnoichthys inopinatus is a small scaleless neopterygian ray-finned fish from the Middle Triassic (Anisian, ~244 Ma) Guanling Formation (Member 2) near Luoping, Qujing, Yunnan, China, first described by Tintori and colleagues in 2010. Adults are typically 10-14 cm in total length with a fusiform body, smooth scaleless skin, a head about one third of the body length and a body length about 2.7 times the body depth. Diagnostic anatomy includes incompletely ossified centra with notochordal rings persisting in the anterior trunk, a tube-like rostral, subrectangular dermopterotic, sharp-tipped first infraorbital, slender rod-like maxilla without a posterior notch, double jaw joint formed by quadrate and symplectic, small triangular interopercle, crescent-shaped preopercle, operculum distinctly larger than suboperculum, 22 or more branchiostegal rays, uniserial radials with a single ventral radial, one trapezoidal dorsal fin, a smaller triangular anal fin, and a shallowly forked hemiheterocercal tail withlanceolate-shaped hypurals in cross section. Phylogenetic analysis allies it with the halecomorph (caturid-grade) fishes rather than with the European Triassic genus originally compared: the imperfectly meeting haemal elements, flattened lateral jaw teeth tipped at 20-30 degrees, rod-like maxilla, numerous branchiostegals, widelanceolate-shaped hypurals and strongly reclined posterior haemal and neural spines point toward that affinity, while the short tubular rostral, rectangular dermopterotic, infraorbital sensory canal, untoothed posterior maxilla and truncate ribs remain autapomorphic.",
+   "model_url": "https://www.cgtrader.com/3d-models/animal/dinosaur/gymnoichthys-inopinatus-scaleless-fish-3d-model"
   },
   {
    "id": "u019",
