@@ -8,6 +8,7 @@ export type TriassicMarineImage = {
   width: number;
   height: number;
   caption?: string;
+  span?: "wide";
 };
 
 export type TriassicMarine = {
@@ -25,6 +26,7 @@ export type TriassicMarine = {
   distribution: string;
   diagnosis: string;
   remarks: string;
+  description?: string;
   captions: string;
   images: TriassicMarineImage[];
   cover: string | null;
@@ -116,6 +118,7 @@ export function searchTriassicMarine(query: string): TriassicMarine[] {
       t.age,
       t.diagnosis,
       t.remarks,
+      t.description ?? "",
     ]
       .join(" ")
       .toLowerCase();

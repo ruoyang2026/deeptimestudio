@@ -24,9 +24,11 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const t = getBySlug(params.slug);
   if (!t) return {};
   const period = topPeriod(t.age);
-  const description = period
-    ? `A ${period} marine reptile species documented with fossil photographs and geological data.`
-    : "A marine reptile species documented with fossil photographs and geological data.";
+  const description = t.description
+    ? t.description.split("\n\n")[0].slice(0, 160)
+    : period
+      ? `A ${period} marine reptile species documented with fossil photographs and geological data.`
+      : "A marine reptile species documented with fossil photographs and geological data.";
   const cover = getCover(t);
   const ogImage = cover
     ? { url: `${SITE_URL}/${cover}`, alt: t.scientific_name }
@@ -59,9 +61,15 @@ export default function TriassicMarinePage({ params }: { params: { slug: string 
   if (!t) notFound();
   const { prev, next } = getPrevNext(t.slug);
   const period = topPeriod(t.age);
-  const description = period
-    ? `A ${period} marine reptile species documented with fossil photographs and geological data.`
-    : "A marine reptile species documented with fossil photographs and geological data.";
+  const description = t.description
+    ? t.description.split("\n\n")[0].slice(0, 160)
+    : period
+      ? `A ${period} marine reptile species documented with fossil photographs and geological data.`
+      : "A marine reptile species documented with fossil photographs and geological data.";
+  const descriptionParas = (t.description ?? "")
+    .split("\n\n")
+    .map((p) => p.trim())
+    .filter(Boolean);
 
   const pageUrl = `${SITE_URL}/triassic-marine/${t.slug}`;
   const cover = getCover(t);
@@ -169,7 +177,10 @@ export default function TriassicMarinePage({ params }: { params: { slug: string 
 
       <section className="tri-gallery">
         {t.images.map((img, i) => (
-          <figure key={img.file} className="tri-gallery__item">
+          <figure
+            key={img.file}
+            className={`tri-gallery__item${img.span === "wide" ? " tri-gallery__item--wide" : ""}`}
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={imgSrc(img.file)}
@@ -185,6 +196,15 @@ export default function TriassicMarinePage({ params }: { params: { slug: string 
           </figure>
         ))}
       </section>
+
+      {descriptionParas.length > 0 ? (
+        <section className="tri-description" aria-label="Description">
+          <div className="tri-field__label">Description</div>
+          {descriptionParas.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </section>
+      ) : null}
 
       <section className="tri-fields">
         {rows.map((row) => (

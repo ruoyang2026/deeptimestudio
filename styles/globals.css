@@ -2734,6 +2734,10 @@ button.trilobite-card {
   overflow: hidden;
 }
 
+.tri-gallery__item--wide {
+  grid-column: 1 / -1;
+}
+
 .tri-gallery__item img {
   display: block;
   width: 100%;
@@ -2746,6 +2750,26 @@ button.trilobite-card {
   color: var(--text-tertiary);
   line-height: 1.5;
   border-top: 1px solid var(--border);
+}
+
+/* description prose (images above, text below) */
+.tri-description {
+  margin: 4px 0 24px;
+  padding: 22px 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.tri-description p {
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.tri-description p:last-child {
+  margin-bottom: 0;
 }
 
 /* structured fields */
