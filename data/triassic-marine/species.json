@@ -48,7 +48,8 @@
     }
    ],
    "cover": "triassic-marine/mixosaurus-cf/01.webp",
-   "model_url": "https://www.cgtrader.com/3d-models/animal/dinosaur/mixosaurus-panxianensis-triassic-ichthyosaur-pbr-3d-model"
+   "model_url": "https://www.cgtrader.com/3d-models/animal/dinosaur/mixosaurus-panxianensis-triassic-ichthyosaur-pbr-3d-model",
+   "description": "Mixosaurus panxianensis is a small ichthyosaur from the Middle Triassic (Anisian, ~246-241 Ma) Panxian-Luoping biota of Guizhou, China. It was named in 2006 by Jiang, Schmitz, Hao and Sun from Yangjuan Village, Xinmin Town, Panzhou, and is recognised as one of the most basal members of the Mixosauridae. The species is listed in the first Chinese national catalogue of protected fossil species. The skull has a large, rounded, laterally facing orbit and an elongate, tapering snout. The dentition is heterodont: the upper jaw carries 16-20 teeth and the lower jaw 18, with the posterior three to four lower crowns markedly robust and rounded while the anterior teeth are slender and sharp. The neck is very short, the neural spines are tall and narrow, and the mid-caudal vertebrae are enlarged. Heterodonty and the slender, paddle-like limbs indicate a generalist predator of molluscs, arthropods and small fish. Deep Time Studio | Mixosaurus_panxianensis Page 1 | 2026-09-27 A single specimen preserves at least eleven near-term embryos, the highest clutch count recorded for any ichthyosaur. The embryos share a similar, near-term developmental stage and their orientations are inconsistent, which supports the view that early ichthyosaurs lacked a fixed birth orientation. The find indicates that a high-fecundity reproductive strategy appeared early in ichthyosaur evolution."
   },
   {
    "id": "t002",
@@ -156,29 +157,9 @@
      "width": 1155,
      "height": 1600,
      "caption": "Holotype of Dianopachysaurus dingi. Scale bar is 1cm."
-    },
-    {
-     "file": "triassic-marine/dianopachysaurus-dingi/scale.webp",
-     "width": 1600,
-     "height": 2029,
-     "span": "wide",
-     "caption": "Size comparison · 180 cm body length vs 175 cm scuba diver (same scale)"
-    },
-    {
-     "file": "triassic-marine/dianopachysaurus-dingi/3d-hero.webp",
-     "width": 1024,
-     "height": 1090,
-     "caption": "3D reconstruction · hero view"
-    },
-    {
-     "file": "triassic-marine/dianopachysaurus-dingi/3d-side.webp",
-     "width": 1024,
-     "height": 1090,
-     "caption": "3D reconstruction · side view"
     }
    ],
-   "cover": "triassic-marine/dianopachysaurus-dingi/01.webp",
-   "model_url": "https://www.cgtrader.com/3d-models/animal/dinosaur/nothosaurus-sp-triassic-marine-reptile-1-1-metric-pbr-3d-model"
+   "cover": "triassic-marine/dianopachysaurus-dingi/01.webp"
   },
   {
    "id": "t006",
@@ -1749,6 +1730,147 @@
     }
    ],
    "cover": "triassic-marine/Coprolites/01.webp"
+  },
+  {
+   "id": "u051",
+   "page": null,
+   "slug": "nothosaurus-sp",
+   "order": "Nothosauridae",
+   "scientific_name": "Nothosaurus sp.",
+   "classification": "Nothosauridae",
+   "genus": "Nothosaurus",
+   "authority": "",
+   "original_combination": "Nothosaurus sp.",
+   "species": "Nothosaurus sp.",
+   "age": "Middle Triassic",
+   "distribution": "Europe, the Middle East and China",
+   "diagnosis": "",
+   "remarks": "",
+   "captions": "Nothosaurus sp. fossil specimen.",
+   "description": "Nothosaurs are a group of semi-aquatic reptiles that typically reached about 3 metres in body length. The skull is long, broad and dorsoventrally flattened, but appears relatively small compared with the body. The margins of the elongated jaws carry numerous long, sharp, outwardly protruding teeth that extend to the back of the cheek, indicating a diet of fish. The neck is slender and elongated, and the limbs, trunk and tail are also long. The feet are modified into paddle-like structures with elongated, webbed toes; propulsion in water was probably achieved by undulating the tail, limbs and webbed feet. Nothosaurs are inferred to have preyed on a variety of animals, including ammonites, cephalopods, fish and small reptiles, and to have led a life broadly comparable to that of modern seals - feeding in the water and returning to rocks and beaches to rest. The group first appeared in the Triassic and flourished during the Middle and Late Triassic; its fossils are found mainly in Europe, the Middle East and China. Metadata compiled by the asset provider. This document accompanies the 3D reconstruction and describes the taxon it represents; it is not a primary systematic description. Deep Time Studio | Nothosaurus_Sp Page 2 | 2026-09-29",
+   "model_url": "https://www.cgtrader.com/3d-models/animal/dinosaur/nothosaurus-sp-triassic-marine-reptile-1-1-metric-pbr-3d-model",
+   "cover": "triassic-marine/nothosaurus-sp/01.webp",
+   "images": [
+    {
+     "file": "triassic-marine/nothosaurus-sp/01.webp",
+     "width": 700,
+     "height": 465,
+     "caption": "Nothosaurus sp. fossil specimen."
+    },
+    {
+     "file": "triassic-marine/nothosaurus-sp/scale.webp",
+     "width": 1600,
+     "height": 2029,
+     "span": "wide",
+     "caption": "Size comparison · 180 cm body length vs 175 cm scuba diver (same scale)"
+    },
+    {
+     "file": "triassic-marine/nothosaurus-sp/3d-hero.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · hero view"
+    },
+    {
+     "file": "triassic-marine/nothosaurus-sp/3d-side.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · side view"
+    }
+   ]
+  },
+  {
+   "id": "u052",
+   "page": null,
+   "slug": "lashanichthys-sui",
+   "order": "Kyphosichthyiformes",
+   "scientific_name": "Lashanichthys sui",
+   "classification": "Lashanichthyidae",
+   "genus": "Lashanichthys",
+   "authority": "",
+   "original_combination": "Lashanichthys sui",
+   "species": "Lashanichthys sui",
+   "age": "Middle Triassic",
+   "distribution": "Luoping, Yunnan, China",
+   "diagnosis": "",
+   "remarks": "",
+   "captions": "Lashanichthys sui fossil specimen.",
+   "description": "Lashanichthys sui is a small fusiform neopterygian ray-finned fish from the Middle Triassic (Anisian, ~244 Ma) of Luoping, Yunnan, China. Adults are generally about 10 cm in total length with a glossy ganoid scale cover, a slightly raised back with prominent ridge scutes, a small mouth cleft, pointed teeth on the upper and lower jaws, numerous postorbital bones, an operculum distinctly larger than the subopercle, and small fins. The species was originally described as Sangiorgioichthys sui, compared with the two species of Sangiorgioichthys from the Monte San Giorgio fauna on the Swiss-Italian border. A 2019 restudy of the Anisian kyphosichthyiform Yudaiichthys eximius and early ginglymodian relationships recovered Sangiorgioichthys sui together with its congener as a separate lineage, for which the new genus Lashanichthys was erected within the new family Lashanichthyidae alongside Yudaiichthys, while Sangiorgioichthys proper was removed from the Kyphosichthyiformes. Lashanichthys sui is the most abundant neopterygian fish of the Luoping Biota and is interpreted as a gregarious, small-bodied swimmer feeding in the shallow Anisian sea.",
+   "model_url": "https://www.cgtrader.com/3d-models/animal/dinosaur/lashanichthys-sui-ganoid-fish-3d-model",
+   "cover": "triassic-marine/lashanichthys-sui/01.webp",
+   "images": [
+    {
+     "file": "triassic-marine/lashanichthys-sui/01.webp",
+     "width": 1237,
+     "height": 675,
+     "caption": "Lashanichthys sui fossil specimen."
+    },
+    {
+     "file": "triassic-marine/lashanichthys-sui/scale.webp",
+     "width": 1600,
+     "height": 1397,
+     "span": "wide",
+     "caption": "Size comparison · 10 cm standard length vs Adult hand 18.5 cm (same scale)"
+    },
+    {
+     "file": "triassic-marine/lashanichthys-sui/3d-hero.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · hero view"
+    },
+    {
+     "file": "triassic-marine/lashanichthys-sui/3d-side.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · side view"
+    }
+   ]
+  },
+  {
+   "id": "u053",
+   "page": null,
+   "slug": "yudaiichthys-eximius",
+   "order": "Ionoscopiformes",
+   "scientific_name": "Yudaiichthys eximius",
+   "classification": "Lashanichthyidae",
+   "genus": "Yudaiichthys",
+   "authority": "",
+   "original_combination": "Yudaiichthys eximius",
+   "species": "Yudaiichthys eximius",
+   "age": "Middle Triassic",
+   "distribution": "Luoping, Qujing, Yunnan, China",
+   "diagnosis": "",
+   "remarks": "",
+   "captions": "Yudaiichthys eximius fossil specimen.",
+   "description": "Yudaiichthys eximius is a small halecomorph neopterygian from the Middle Triassic (Anisian) Luoping Biota of Yunnan, China, described from four specimens from Member II of the Guanling Formation. It is one of the earliest known ionoscopiform-grade fishes and, together with the other arctoscan* forms of the Luoping Biota, documents the rapid early diversification of halecomorphs during the recovery from the end-Permian mass extinction. The genus name refers to the Yudai (jade-belt) lake below Mt. Baila near Luoping. The body is fusiform with a blunt snout; the caudal fin is slightly forked, and the dorsal-fin origin lies slightly behind that of the pelvic fin. The deepest point of the body lies between the posterior margin of the operculum and the dorsal-fin origin. The type specimen has a head length of 15 mm, a body depth of 19 mm and a standard length of 47 mm, and the largest known specimen reaches 56 mm standard length. Small tubercles ornament the anterior frontal, the anterior circumorbital bones and the lower jaw, while the rest of the skull roof is largely smooth. The nasal is hourglass-shaped and relatively wide, and the frontal is about 1.5 times the length of the parietal. There is a single supraorbital and nine infraorbitals, arranged in two vertical columns (four, sometimes three, between the lacrimal and the postero-ventral infraorbital). A membranous hyoid is present; the preoperculum and the membranous dermopterotic no longer contact each other; the operculum is twice the height of the suboperculum (excluding the anterodorsal process); the maxilla is reduced, and the gular plate is pear-shaped and half the length of the lower jaw.",
+   "model_url": "https://www.cgtrader.com/3d-models/animal/dinosaur/yudaiichthys-eximius-triassic-halecomorph-pbr-3d-model-711a11af-8a08-4e59-97e1-1404f6e7f054",
+   "cover": "triassic-marine/yudaiichthys-eximius/01.webp",
+   "images": [
+    {
+     "file": "triassic-marine/yudaiichthys-eximius/01.webp",
+     "width": 977,
+     "height": 367,
+     "caption": "Yudaiichthys eximius fossil specimen."
+    },
+    {
+     "file": "triassic-marine/yudaiichthys-eximius/scale.webp",
+     "width": 1600,
+     "height": 1397,
+     "span": "wide",
+     "caption": "Size comparison · 5 cm standard length vs Adult hand 18.5 cm (same scale)"
+    },
+    {
+     "file": "triassic-marine/yudaiichthys-eximius/3d-hero.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · hero view"
+    },
+    {
+     "file": "triassic-marine/yudaiichthys-eximius/3d-side.webp",
+     "width": 1024,
+     "height": 1090,
+     "caption": "3D reconstruction · side view"
+    }
+   ]
   }
  ]
 }

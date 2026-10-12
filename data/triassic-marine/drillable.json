@@ -1,6 +1,6 @@
 {
   "note": "All species are unlocked for drill-down.",
-  "total": 56,
+  "total": 59,
   "slugs": [
     "mixosaurus-cf",
     "phalarodon-atavus",
@@ -57,6 +57,9 @@
     "voltzia-sp",
     "thalassinoides-callianassa",
     "rhizocorallium-jenense",
-    "Coprolites"
+    "Coprolites",
+    "nothosaurus-sp",
+    "lashanichthys-sui",
+    "yudaiichthys-eximius"
   ]
 }
