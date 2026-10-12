@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { media } from "../../lib/media";
+import ExpeditionSection from "./ExpeditionSection";
 
-const GUMROAD_URL = "https://chenyang84.gumroad.com/l/zcwtre";
 const HERO_VIDEO = media("/discovery/triassic-loop.mp4");
 const HERO_POSTER = media("/discovery/hero-poster.webp");
 
@@ -91,25 +91,7 @@ export default function DiscoveryExperience() {
         ) : null}
       </main>
 
-      <section className="hero-below" aria-label="Collection">
-        <a
-          className="discovery-card"
-          href={GUMROAD_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Shop the collection — open the Gumroad page in a new tab"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            className="discovery-card__cover"
-            src="/discovery/card-cretaceous.webp"
-            alt="Explore the collection cover"
-            loading="lazy"
-            decoding="async"
-          />
-          <span className="discovery-card__explore">Explore</span>
-        </a>
-      </section>
+      <ExpeditionSection />
     </>
   );
 }
