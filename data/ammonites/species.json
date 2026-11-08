@@ -1,0 +1,695 @@
+{
+ "title": "ammonites — Species Database",
+ "version": "1.0",
+ "source": "Ammonite Visual Database (English edition), non-NIMRF species; images hotlinked from Wikimedia Commons, open-access journals and USGS",
+ "total_species": 25,
+ "species": [
+  {
+   "id": "am001",
+   "slug": "agoniatites-vanuxemi",
+   "page": null,
+   "order": "Agoniatitida",
+   "scientific_name": "Agoniatites vanuxemi",
+   "classification": "Order Agoniatitida / Family Agoniatitidae / Genus Agoniatites",
+   "genus": "Agoniatites",
+   "genus_author": "Meek, 1877",
+   "species": "vanuxemi",
+   "species_author": "(Hall, 1879)",
+   "species_etymology": "",
+   "age": "Middle Devonian, Eifelian to Givetian",
+   "distribution": "Hamilton Group Mahantango Formation, Pennsylvania and New York, USA; the figured specimen was found by Michael Tomczyk in 2013 in Devonian strata about 385 million years old near Deer Lake, Pennsylvania. The genus also occurs in Algeria, Canada, the Czech Republic, Morocco, Russia and elsewhere (genus-level distribution).",
+   "synonyms": "",
+   "diagnosis": "A primitive ammonoid with a thin discoidal shell, a retrosiphonate ventral siphuncle (septal necks pointing backwards), and a goniatitic suture. It is the only ammonoid found in the Hamilton Group.",
+   "remarks": "The order Agoniatitida (Ruzhencev, 1957) is a subjective synonym of Anarcestida (Miller & Furnish, 1954); Agoniatites also appears under the old name Anarcestes. Photo quality is average, but the species name was double-checked against the file name and the Wikipedia caption.",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/6/61/Agoniatites_vanuxemi_-_Devonian_Fossil_-_Hamilton_Group_Mahantango_Formation_-_Pennsylvania_(1a).jpg",
+     "width": 0,
+     "height": 0,
+     "caption": "Field specimen: a discoidal ammonoid embedded in rock, held in the discoverer's hand; found in Devonian strata near Deer Lake, Pennsylvania (2013). Photo quality is average. — Photo: Michael Tomczyk (Wikimedia Commons) (Commons free media (exact CC variant not shown))"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/6/61/Agoniatites_vanuxemi_-_Devonian_Fossil_-_Hamilton_Group_Mahantango_Formation_-_Pennsylvania_(1a).jpg"
+  },
+  {
+   "id": "am002",
+   "slug": "agoniatites-obliquus",
+   "page": null,
+   "order": "Agoniatitida",
+   "scientific_name": "Agoniatites obliquus",
+   "classification": "Order Agoniatitida / Family Agoniatitidae / Genus Agoniatites",
+   "genus": "Agoniatites",
+   "genus_author": "Meek, 1877",
+   "species": "obliquus",
+   "species_author": "Whidborne, 1889",
+   "species_etymology": "",
+   "age": "Middle Devonian (the genus ranges from the Eifelian to the Givetian; this species occurs at the Eifelian/Givetian boundary section in Morocco)",
+   "distribution": "Srbsko, Czech Republic (locality of the figured specimen, a museum slab in Paris-exhibition style); also recorded from the Jbel Ou Driss section, Ma'der region, Morocco.",
+   "synonyms": "",
+   "diagnosis": "Thin discoidal shell with a nearly smooth surface (genus characters: ventral siphuncle, goniatitic suture, a fast-swimming carnivorous ammonoid; species-level details not verified).",
+   "remarks": "The species-author year is inconsistent: Bultynck's 1989 paper gives Agoniatites obliquus (WHIDBORNE, 1889), while the Korn & Klug 2002 caption gives (WHIDBORNE 1890); this entry follows 1889 and records the discrepancy. The species name was checked against the Commons file name and the species-level caption in the Wikidoc/Wikiversity mirror.",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/7/75/Gasteropods_-_Ammonites_-_Agoniatites_obliquus.JPG",
+     "width": 0,
+     "height": 0,
+     "caption": "Museum slab specimen: a large, thin discoidal ammonoid from Srbsko, Czech Republic. — Photo: Hectonichus (Wikimedia Commons) (Commons free media (exact CC variant not shown))"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/7/75/Gasteropods_-_Ammonites_-_Agoniatites_obliquus.JPG"
+  },
+  {
+   "id": "am003",
+   "slug": "clymenia-laevigata",
+   "page": null,
+   "order": "Clymeniida",
+   "scientific_name": "Clymenia laevigata",
+   "classification": "Order Clymeniida / Family Clymeniidae / Genus Clymenia",
+   "genus": "Clymenia",
+   "genus_author": "Münster, 1834 (Wikipedia infobox gives Swingle, 1939; see Remarks)",
+   "species": "laevigata",
+   "species_author": "Münster, 1839",
+   "species_etymology": "",
+   "age": "Late Devonian, Famennian",
+   "distribution": "Poland (figured specimen: Góra Ostrówka, Gałęzice near Kielce, collected by J. Czarnocki); the species also occurs in Devonian strata of Australia, the United Kingdom and Morocco.",
+   "synonyms": "",
+   "diagnosis": "A closely coiled evolute shell with a smooth surface; the exceptionally rare dorsal siphuncle among all ammonoids (running along the inner side of the whorl); individuals from the L. styriacus Zone of Famennian Poland reach 15 cm in diameter.",
+   "remarks": "The naming disputes must be kept side by side: the genus authority is given as Münster, 1834 (PBDB/Mindat and the Clymeniida classification table) and as Swingle, 1939 (Wikipedia genus-page infobox); the species-author year is given as 1839 (Wikipedia species page), 1831 (Korn & Klug 2002 caption) and 1832 (Conchology); this entry follows 1839. The museum label inside the photo is legible (Clymenia laevigata (Münster), Famennian, Polish locality), making this the strongest species-level evidence in this batch.",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Clymenia_laevigata.JPG",
+     "width": 0,
+     "height": 0,
+     "caption": "Museum specimen: a coiled, smooth ammonoid; the label inside the photo is legible — Clymenia laevigata (Münster), Famennian, Góra Ostrówka, Poland (Gałęzice near Kielce), collected by J. Czarnocki. — Photo: Wikipek (Wikimedia Commons) (CC BY 3.0)"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Clymenia_laevigata.JPG"
+  },
+  {
+   "id": "am004",
+   "slug": "kosmoclymenia-bisulcata",
+   "page": null,
+   "order": "Clymeniida",
+   "scientific_name": "Kosmoclymenia bisulcata",
+   "classification": "Order Clymeniida / Family Kosmoclymeniidae / Genus Kosmoclymenia",
+   "genus": "Kosmoclymenia",
+   "genus_author": "Schindewolf, 1949",
+   "species": "bisulcata",
+   "species_author": "Münster (year not verified)",
+   "species_etymology": "",
+   "age": "Late Devonian, Famennian",
+   "distribution": "Sahara (locality of the figured Paris exhibit); the genus occurs in Devonian strata of China, Germany and Morocco.",
+   "synonyms": "",
+   "diagnosis": "Genus characters: shell reaching up to 110 mm in maximum diameter, a fast-swimming carnivore; the figure shows two specimens side by side on a green background. Species-level details not verified.",
+   "remarks": "The full form in the Wikipedia Kosmoclymenia genus-page infobox caption is Kosmoclymenia (Muessenbiaergia) bisulcata, from the Sahara, now in the Paris Gallery of Comparative Anatomy and Palaeontology; this entry uses the short form and records the subgenus information here. The species-author year is not verified and is not inferred.",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Kosmoclymeniidae_-_Kosmoclymenia_bisulcata.JPG",
+     "width": 0,
+     "height": 0,
+     "caption": "Two coiled ammonoid specimens side by side on a green background, exhibits of the Paris Gallery of Comparative Anatomy and Palaeontology, from the Sahara. Note: there are two specimens in the figure. — Photo: Author not verified (Wikimedia Commons) (Commons free media (exact CC variant not shown))"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Kosmoclymeniidae_-_Kosmoclymenia_bisulcata.JPG"
+  },
+  {
+   "id": "am005",
+   "slug": "cymaclymenia-striata",
+   "page": null,
+   "order": "Clymeniida",
+   "scientific_name": "Cymaclymenia striata",
+   "classification": "Order Clymeniida / Family Cymaclymeniidae / Genus Cymaclymenia",
+   "genus": "Cymaclymenia",
+   "genus_author": "",
+   "species": "striata",
+   "species_author": "(Münster, 1832)",
+   "species_etymology": "",
+   "age": "Late Devonian, Famennian (Famennian of Germany; also recorded from the late Famennian Effenbergia lens Zone at Dzikowiec, Poland)",
+   "distribution": "Germany (Famennian); Dzikowiec, Poland; also recorded from Dasbergian strata in the Carnic Alps.",
+   "synonyms": "",
+   "diagnosis": "Shell surface with rather coarse, bundled growth lines and weak ribs around the umbilicus; one of the commonest species of the genus. The figured specimen is heavily worn, so detail is limited.",
+   "remarks": "The species-level evidence is mainly the small handwritten label “C. striata” inside the photo; the specimen itself is worn and the photo is weak in detail, as the caption states. Family placement follows the Cyrtoclymeniaceae superfamily member list (Cymaclymeniidae is one of its member families).",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Cymaclymenia_striata.jpg",
+     "width": 0,
+     "height": 0,
+     "caption": "A worn discoidal specimen in a tray, with a small handwritten label “C. striata” inside the photo; detail is weak, and the species name rests mainly on that label and the file name. — Photo: Author not verified (Wikimedia Commons) (Commons free media (exact CC variant not shown))"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Cymaclymenia_striata.jpg"
+  },
+  {
+   "id": "am006",
+   "slug": "kosmoclymenia-undulata",
+   "page": null,
+   "order": "Clymeniida",
+   "scientific_name": "Kosmoclymenia undulata",
+   "classification": "Order Clymeniida / Family Kosmoclymeniidae / Genus Kosmoclymenia",
+   "genus": "Kosmoclymenia",
+   "genus_author": "Schindewolf, 1949",
+   "species": "undulata",
+   "species_author": "(Münster, 1832)",
+   "species_etymology": "",
+   "age": "Late Devonian, Famennian",
+   "distribution": "Upper Franconia, Germany (originally described area); also recorded from the Carnic Alps; the genus occurs in Devonian strata of China, Germany and Morocco.",
+   "synonyms": "",
+   "diagnosis": "Genus characters: shell reaching up to 110 mm in maximum diameter, a fast-swimming carnivore; the figure is a worn, large coiled specimen. Species-level details not verified.",
+   "remarks": "The original combination was Planulites undulatus Münster, 1832, later transferred to Clymenia (1834) and then to Kosmoclymenia (per the synonymy table in Korn & Price 1987). There is no label in the figure, and the species name rests on the Commons file name; the caption states this limitation. Gümbel in 1863 historically lumped many Kosmoclymenia into undulata; this broad historical usage is not listed as a synonym. Added 2026-11-05: the National Rock, Mineral and Fossil Specimen Resource Sharing Platform holds a specimen under the same name (Chengdu University of Technology Museum, specimen no. 7924000.0), its label reading Bōwén yǔzhòu hǎishénshí (“rippled cosmic sea-god stone”), matching this species name; its photograph is included as the second figure on this page (carries the platform's watermark; licence for use still to be confirmed).",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/0/08/Kosmoclymenia_undulata.jpg",
+     "width": 0,
+     "height": 0,
+     "caption": "A worn, large coiled specimen in a tray; there is no label in the figure, and the species name rests on the Commons file name — weaker evidence than a labelled specimen. — Photo: Author not verified (Wikimedia Commons) (Commons free media (exact CC variant not shown))"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/0/08/Kosmoclymenia_undulata.jpg"
+  },
+  {
+   "id": "am007",
+   "slug": "clymenia-sedgwickii",
+   "page": null,
+   "order": "Clymeniida",
+   "scientific_name": "Clymenia sedgwickii",
+   "classification": "Order Clymeniida / Family Clymeniidae / Genus Clymenia",
+   "genus": "Clymenia",
+   "genus_author": "Münster, 1834 (Wikipedia infobox gives Swingle, 1939; see Remarks)",
+   "species": "sedgwickii",
+   "species_author": "",
+   "species_etymology": "",
+   "age": "Late Devonian (the genus is restricted to the Late Devonian; the exact horizon of this species is not verified)",
+   "distribution": "Devonian strata of Europe (per Nicholson 1876: Clymenia occurs in Europe; the genus occurs in Europe and Western Australia).",
+   "synonyms": "",
+   "diagnosis": "Genus characters: discoidal shell, only weakly lobed septa, siphuncle on the inner (dorsal) margin of the septa; the figure is a historical engraving of a finely ribbed evolute shell. Species-level details not verified.",
+   "remarks": "The figure is a 19th-century historical engraving (of the same kind as the C. sedgwickii illustrations published by Dana 1863 and Figuier 1867); there is no label in the figure, and the species name rests on the Commons file name; the species author and year are both not verified and are not inferred. The Wikipedia Clymenia genus-page species list includes this species. The genus-author dispute is the same as in the Clymenia laevigata entry.",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Clymenia_sedgwickii.jpg",
+     "width": 0,
+     "height": 0,
+     "caption": "Historical engraving: a finely ribbed evolute discoidal shell; there is no label in the figure, and the species name rests on the Commons file name — weaker evidence than a labelled specimen. — Photo: Author not verified (Wikimedia Commons, 19th-century historical engraving) (Commons free media (exact CC variant not shown))"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Clymenia_sedgwickii.jpg"
+  },
+  {
+   "id": "am008",
+   "slug": "goniatites-crenistria",
+   "page": null,
+   "order": "Goniatitida",
+   "scientific_name": "Goniatites crenistria",
+   "classification": "Order Goniatitida / Superfamily Goniatitaceae / Family Goniatitidae / Subfamily Goniatitinae",
+   "genus": "Goniatites",
+   "genus_author": "De Haan, 1825",
+   "species": "crenistria",
+   "species_author": "Phillips, 1836",
+   "species_etymology": "",
+   "age": "Carboniferous, about 345.3–326.4 million years ago; the photographed specimen comes from Viséan strata (label reads “Wizen”)",
+   "distribution": "Poland (photographed specimen: Jugów, near Ząbkowice Śląskie, collected by H. Żakowa); also recorded from Culm strata of Germany (Hesse, Nassau, Westphalia, Harz), Belgium, the United Kingdom, Ireland and Moravia, per the 1870 Quarterly Journal of the Geological Society of London.",
+   "synonyms": "",
+   "diagnosis": "A fast-swimming carnivorous ammonoid (per Wikipedia, citing the Paleobiology Database). Genus characters: shell generally globular, umbilicus open but narrow, shell surface often reticulate where longitudinal ridges meet transverse striae; the ventral lobe of the suture is rather narrow with a median saddle, and the first lateral saddle is nearly to fully angular.",
+   "remarks": "The label in the photo directly gives the species name, the Viséan age and the Jugów locality, and is the direct evidence for identifying this species. The suborder is not stated in the sources read, so it is not included in the classification string.",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/7/73/Goniatites_crenistria.jpg",
+     "width": 2048,
+     "height": 1536,
+     "caption": "Two Goniatites crenistria specimens from Jugów, Poland, displayed in a museum case; the label gives the Viséan age (“Wizen”) and H. Żakowa as collector. — Photo: Not verified (Wikimedia Commons) (Not verified (Wikimedia Commons free licence, exact licence unverified))"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/7/73/Goniatites_crenistria.jpg"
+  },
+  {
+   "id": "am009",
+   "slug": "tornoceras-uniangulare",
+   "page": null,
+   "order": "Goniatitida",
+   "scientific_name": "Tornoceras uniangulare",
+   "classification": "Order Goniatitida / Suborder Tornoceratina / Superfamily Tornoceratoidea / Family Tornoceratidae / Subfamily Tornoceratinae",
+   "genus": "Tornoceras",
+   "genus_author": "Hyatt, 1884",
+   "species": "uniangulare",
+   "species_author": "(Conrad, 1842)",
+   "species_etymology": "",
+   "age": "Middle Devonian (photographed specimen: Alden Pyrite Bed, Ludlowville Formation, New York State); the genus ranges from the Middle to the Late Devonian",
+   "distribution": "Alden Pyrite Bed (Ludlowville Formation, Middle Devonian), western New York State, USA; the original combination Goniatites uniangularis Conrad, 1842 was collected in New York State.",
+   "synonyms": "Goniatites uniangularis Conrad, 1842 (original combination; note the spelling difference between uniangularis and the current uniangulare)",
+   "diagnosis": "Genus characters (Korn & Bockwinkel 2022 genus diagnosis): compressed shell, umbilicus slightly open in the juvenile stage and closed in the pre-adult stage, generally no ventral groove, biconvex growth lines without ribs; suture formula E A L I, adventitious lobe broad, rounded, asymmetrical and steep on the dorsal side. Strongly involute, near-discoidal shell, with the suture forming 6–10 lobes.",
+   "remarks": "The figured specimens are of the aldenense form, not the nominate subspecies, as the captions state. The author's own website (jsjgeology.net) labels them only as Tornoceras uniangulare, without a variety name; the aldenense determination rests on the locality and morphology information supplied for this task, and the form note in the captions should be retained when compiling. Also note the spelling variants: Korn & Bockwinkel 2022 write House's 1965 variety as aldanense, while the task source writes aldenense — both spellings coexist.",
+   "images": [
+    {
+     "file": "http://jsjgeology.net/CoolFossils/Fossil%20Preservation%20Styles/Replacement_files/image006.jpg",
+     "width": 562,
+     "height": 397,
+     "caption": "Pyritized Tornoceras uniangulare internal mould, side view, 2.7 cm in diameter — Alden Pyrite Bed specimen, aldenense form, not the nominate subspecies. — Photo: James St. John (author's personal website jsjgeology.net) (CC BY 2.0 (not directly verified on the Flickr original))"
+    },
+    {
+     "file": "http://jsjgeology.net/CoolFossils/Fossil%20Preservation%20Styles/Replacement_files/image007.jpg",
+     "width": 556,
+     "height": 323,
+     "caption": "Axial view of the same specimen, showing the serrated suture — Alden Pyrite Bed specimen, aldenense form, not the nominate subspecies. — Photo: James St. John (author's personal website jsjgeology.net) (CC BY 2.0 (not directly verified on the Flickr original))"
+    }
+   ],
+   "cover": "http://jsjgeology.net/CoolFossils/Fossil%20Preservation%20Styles/Replacement_files/image006.jpg"
+  },
+  {
+   "id": "am010",
+   "slug": "ceratites-nodosus",
+   "page": null,
+   "order": "Ceratitida",
+   "scientific_name": "Ceratites nodosus",
+   "classification": "Order Ceratitida / Family Ceratitidae / Subfamily Ceratitinae",
+   "genus": "Ceratites",
+   "genus_author": "de Haan, 1825",
+   "species": "nodosus",
+   "species_author": "Schlotheim, 1813",
+   "species_etymology": "",
+   "age": "Middle Triassic, latest upper Anisian to early Ladinian; the figured specimen is from the German Upper Muschelkalk",
+   "distribution": "Found only in the Germanic Basin, i.e. the partly isolated shallow sea stretching from eastern France, north of the future Alps, to Poland.",
+   "synonyms": "Nautilus undatus Reinecke, 1818",
+   "diagnosis": "Discoidal shell with ribbed flanks, ribs more widely spaced on the last whorl; adult venter rounded and smooth, juvenile venter grooved; ceratitic suture (smooth saddles and serrated lobes).",
+   "remarks": "Naming note: Urlichs (1991, in Case 2732 submitted to the International Commission on Zoological Nomenclature) proposed attributing the current name Ceratites nodosus to Schlotheim 1813 and designating a lectotype, to preserve the current meaning in use since 1901; Bruguière's 1789 Ammonites nodosa refers to something else under the current name (= Ceratites robustus robustus), and the material described by Schlotheim in 1813/1820 is in fact a mixture of at least 15 currently recognised species, so this entry records the species author as Schlotheim 1813 and explains the dispute here. The figure is the Toulouse Museum specimen MHNT.PAL.CEP.2001.105; an old collection label with the handwritten words Ceratites nodosus, Muschelkalk, Württemberg is visible at the lower right.",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/4/40/Ceratites_nodosus_MHNT.PAL.CEP.2001.105.jpg",
+     "width": 0,
+     "height": 0,
+     "caption": "Ceratites nodosus fossil, German Upper Muschelkalk specimen, Toulouse Museum collection (MHNT.PAL.CEP.2001.105); an old collection label is at the lower right. — Photo: Didier Descouens (Wikimedia Commons) (CC BY-SA 4.0)"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/4/40/Ceratites_nodosus_MHNT.PAL.CEP.2001.105.jpg"
+  },
+  {
+   "id": "am011",
+   "slug": "gymnotoceras-rotelliformis",
+   "page": null,
+   "order": "Ceratitida",
+   "scientific_name": "Gymnotoceras rotelliformis",
+   "classification": "Order Ceratitida / Family Ceratitidae / Subfamily Beyrichitinae",
+   "genus": "Gymnotoceras",
+   "genus_author": "",
+   "species": "rotelliformis",
+   "species_author": "(Meek, 1877)",
+   "species_etymology": "",
+   "age": "Middle Triassic, late Anisian (Fossil Hill Member; index fossil of the Gymnotoceras rotelliformis Zone)",
+   "distribution": "Fossil Hill Member of the Fossil Hill area, Humboldt Range, and Muller Canyon, Augusta Mountains, northwestern Nevada, USA; the figured specimen is held in the geological collection of the University of Bremen, Germany (GSUB).",
+   "synonyms": "",
+   "diagnosis": "Stout discoidal shell with an extremely weak keel; regular, slightly forward-inclined ribs that weaken near adulthood; rounded ventral shoulders; about 6 whorls, maximum diameter about 34.3 mm.",
+   "remarks": "This species is the index fossil of the late Anisian Gymnotoceras rotelliformis Zone. The figure is a crop of the lower row (M–P) of Fig. 4 in Bischof et al. 2021, showing side and edge views of two specimens (GSUB C11594, C11702), including a 2 cm scale bar. Note: this genus and species are traditionally difficult to distinguish from close relatives on morphology alone, and the original paper also notes that several specimens at different growth stages are needed for reliable identification; this entry follows the original paper's identification.",
+   "images": [
+    {
+     "file": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0aa8/7934684/3de491fb2026/peerj-09-10931-g004.jpg",
+     "width": 0,
+     "height": 0,
+     "caption": "Gymnotoceras rotelliformis (original paper Fig. 4 M–P): side and edge views of two specimens, 2 cm scale bar; crop of the lower row of the original figure. — Photo: Bischof et al. 2021, PeerJ (CC BY) (CC BY 4.0)"
+    }
+   ],
+   "cover": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0aa8/7934684/3de491fb2026/peerj-09-10931-g004.jpg"
+  },
+  {
+   "id": "am012",
+   "slug": "dactylioceras-commune",
+   "page": null,
+   "order": "Ammonitida",
+   "scientific_name": "Dactylioceras commune",
+   "classification": "Order Ammonitida / Family Dactylioceratidae",
+   "genus": "Dactylioceras",
+   "genus_author": "Hyatt, 1867",
+   "species": "commune",
+   "species_author": "Sowerby, 1815",
+   "species_etymology": "",
+   "age": "Early Jurassic, Toarcian",
+   "distribution": "Canada, France, Italy, Russia, Serbia and Montenegro, the United Kingdom, the United States; the figured specimen was collected from the Whitby Formation on the Yorkshire coast, England.",
+   "synonyms": "Ammonites communis Sowerby, 1815 (original combination, type species of the genus)",
+   "diagnosis": "Shell with straight or slightly convex ribs crossing the venter; ribs on the outer whorl more robust; whorl section circular. The figured specimen is about 5 cm wide.",
+   "remarks": "The figured specimen is a “snakestone”: the snake head at the top was carved by later hands, following the folk custom of the Whitby St Hilda snake-driving legend — it is not part of the ammonoid's anatomy. Note: shell-diameter figures in the genus-page sources disagree (9–11 cm versus an average of 24.1 mm), and this book does not adopt the disputed shell-diameter figures.",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Snakestone_(Dactylioceras_commune_ammonite,_Whitby_Formation,_Lower_Jurassic;_Yorkshire_coast,_England)_(15240494805).jpg",
+     "width": 0,
+     "height": 0,
+     "caption": "Snakestone: a Dactylioceras commune fossil with a snake head carved at the upper right — a man-made carving from Whitby folklore, not part of the ammonoid's anatomy. The specimen comes from the Whitby Formation on the Yorkshire coast, England, Lower Jurassic. — Photo: James St. John (Wikimedia Commons / Flickr) (CC BY 2.0)"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Snakestone_(Dactylioceras_commune_ammonite,_Whitby_Formation,_Lower_Jurassic;_Yorkshire_coast,_England)_(15240494805).jpg"
+  },
+  {
+   "id": "am013",
+   "slug": "harpoceras-falciferum",
+   "page": null,
+   "order": "Ammonitida",
+   "scientific_name": "Harpoceras falciferum",
+   "classification": "Order Ammonitida / Suborder Ammonitina / Superfamily Hildoceratoidea / Family Hildoceratidae / Subfamily Harpoceratinae",
+   "genus": "Harpoceras",
+   "genus_author": "Waagen, 1869",
+   "species": "falciferum",
+   "species_author": "Sowerby, 1820",
+   "species_etymology": "",
+   "age": "Early Jurassic, Toarcian (Falciferum Zone to Commune Subzone of the Bifrons Zone)",
+   "distribution": "Lower Jurassic of Europe, North Africa, Russia, Japan, Borneo, New Zealand, Indonesia, North America and South America.",
+   "synonyms": "Ammonites falcifer Sowerby, 1820 (original combination, type species of the genus)",
+   "diagnosis": "A relatively fast-swimming carnivore; H. serpentinum and H. falciferum are important index fossils of the Toarcian.",
+   "remarks": "The figure for this species is a life restoration illustration, not a fossil photograph, as the caption states.",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Harpoceras_NT.jpg",
+     "width": 0,
+     "height": 0,
+     "caption": "Life restoration illustration (not a fossil photograph): a Harpoceras falciferum catching a small shrimp-like animal with its tentacles, against blue seawater. — Photo: NobuTamura (Wikimedia Commons) (CC BY-SA 3.0)"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Harpoceras_NT.jpg"
+  },
+  {
+   "id": "am014",
+   "slug": "pleuroceras-spinatum",
+   "page": null,
+   "order": "Ammonitida",
+   "scientific_name": "Pleuroceras spinatum",
+   "classification": "Order Ammonitida / Family Amaltheidae",
+   "genus": "Pleuroceras",
+   "genus_author": "Hyatt, 1868",
+   "species": "spinatum",
+   "species_author": "Bruguière, 1789",
+   "species_etymology": "",
+   "age": "Early Jurassic, late Pliensbachian (upper Pliensbachian), about 189.6–183 million years ago",
+   "distribution": "France, Germany, Hungary, Italy, Serbia and Montenegro, Spain, the United Kingdom; the figured specimen was collected near Unterstürmig in northern Bavaria, Germany.",
+   "synonyms": "Ammonites costatus Schlotheim, 1820; Ammonites franconicus Schlotheim, 1813",
+   "diagnosis": "Flat discoidal (planulate) shell, whorl section nearly square, with robust radial ribs ending in nodes at the outer ventral margin; venter flat with a strongly serrated keel; shell diameter about 45–54 mm; species of this genus were fast-swimming carnivores.",
+   "remarks": "The figured specimen is the counterpart (negative mould) of a pyritized specimen, about 3.85 cm at its widest; the golden appearance comes from the shell having been replaced by pyrite (“fool's gold”).",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Pleuroceras_spinatum_%28fossil_ammonite%29_%28Lower_Jurassic%3B_Unterst%C3%BCrmig%2C_Germany%29_%2849035345463%29.jpg",
+     "width": 0,
+     "height": 0,
+     "caption": "Pyritized Pleuroceras spinatum fossil counterpart (negative mould), with a golden-silver shell bearing robust radial ribs; the specimen was collected near Unterstürmig in northern Bavaria, Germany, about 3.85 cm at its widest. — Photo: James St. John (Wikimedia Commons / Flickr) (CC BY 2.0)"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Pleuroceras_spinatum_%28fossil_ammonite%29_%28Lower_Jurassic%3B_Unterst%C3%BCrmig%2C_Germany%29_%2849035345463%29.jpg"
+  },
+  {
+   "id": "am015",
+   "slug": "stephanoceras-humphriesianum",
+   "page": null,
+   "order": "Ammonitida",
+   "scientific_name": "Stephanoceras humphriesianum",
+   "classification": "Order Ammonitida / Family Stephanoceratidae",
+   "genus": "Stephanoceras",
+   "genus_author": "Waagen, 1869",
+   "species": "humphriesianum",
+   "species_author": "J. de C. Sowerby, 1825",
+   "species_etymology": "",
+   "age": "Middle Jurassic, lower Bajocian, about 170–168 million years ago",
+   "distribution": "Canada, Mexico, Saudi Arabia, Spain; S. humphriesianum also occurs in the United Kingdom and Germany; the figured specimen was collected from the Humphriesianum Zone of the Inferior Oolite at Clatcombe, Dorset, England.",
+   "synonyms": "Ammonites humphriesianum J. de C. Sowerby, 1825 (original combination, type species of the genus)",
+   "diagnosis": "Evolute shell with well-developed, node-bearing ribs; primary ribs arise from the umbilical seam and bifurcate on the flanks (occasionally trifurcate), secondary ribs crossing the venter without interruption; nodes at the bifurcation points; shell diameter up to 27 cm, outer whorl width up to 6 cm; sexually dimorphic (macroconch and microconch).",
+   "remarks": "Spelling note: variant spellings such as humphreysianum also occur; this book uses humphriesianum. The figured specimen is 275 mm long, from the Humphriesianum Zone at Clatcombe, Dorset. This species did not use the previously planned Haeckel plate 44 route (the plate file could not be verified); the Clatcombe specimen photograph from the Wikipedia image library is used instead.",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/0/05/S._humphriesianum_-_Clatcombe_Dorset.jpg",
+     "width": 0,
+     "height": 0,
+     "caption": "Stephanoceras humphriesianum fossil displayed on a base, with fine radial ribs and the evolute shell form clearly visible; the specimen comes from the Inferior Oolite Humphriesianum Zone at Clatcombe, Dorset, England, 275 mm long. — Photo: Micktherocktapper (Wikimedia Commons) (CC BY-SA 4.0)"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/0/05/S._humphriesianum_-_Clatcombe_Dorset.jpg"
+  },
+  {
+   "id": "am016",
+   "slug": "douvilleiceras-mammillatum",
+   "page": null,
+   "order": "Ammonitida",
+   "scientific_name": "Douvilleiceras mammillatum",
+   "classification": "Order Ammonitida / Family Douvilleiceratidae",
+   "genus": "Douvilleiceras",
+   "genus_author": "Grossouvre, 1894",
+   "species": "mammillatum",
+   "species_author": "Schlotheim, 1813",
+   "species_etymology": "",
+   "age": "Early Cretaceous, lower Albian (Mammillatum Zone); the genus generally ranges from the Barremian to the Cenomanian, most typically Albian",
+   "distribution": "Angola, Brazil, Canada, Colombia, Dominican Republic, Egypt, France, Iran, Japan, Madagascar, Mexico, Peru, South Africa, Switzerland, the United Kingdom, the United States (Alaska, Texas) and elsewhere; this species is a cosmopolitan lower Albian index fossil (Mammillatum Zone).",
+   "synonyms": "",
+   "diagnosis": "The illustrated figure shows a shell with robust radial ribs bearing nodes and broad whorls; this species is the index fossil of the lower Albian Mammillatum Zone.",
+   "remarks": "The figure is a black-and-white scientific illustration (Ernst Haeckel, Kunstformen der Natur, 1904), not a fossil photograph; the illustration style is somewhat exaggerated, emphasizing ribs and nodes over realism. Classification note: the Wikipedia genus page places this family under the suborder Ancyloceratina, but another classification places it in Ammonitina; this book lists only to family level. Genus-author year: Wikipedia gives 1894, ICZN Opinion 422 gives 1893. The species spellings mammillatum/mamillare both occur in historical literature; ICZN Opinion 422 follows the neotype designated by Casey (1954).",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/9/92/Haeckel_Douvilleiceras_mammillatum.jpg",
+     "width": 0,
+     "height": 0,
+     "caption": "Black-and-white scientific illustration of Douvilleiceras mammillatum (Ernst Haeckel, Kunstformen der Natur, 1904), showing robust, node-bearing radial ribs; this is an illustration, not a fossil photograph. — Photo: Ernst Haeckel (Wikimedia Commons) (PD-old)"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/9/92/Haeckel_Douvilleiceras_mammillatum.jpg"
+  },
+  {
+   "id": "am017",
+   "slug": "cleoniceras-besairiei",
+   "page": null,
+   "order": "Ammonitida",
+   "scientific_name": "Cleoniceras besairiei",
+   "classification": "Order Ammonitida / Family Hoplitidae / Subfamily Cleoniceratinae",
+   "genus": "Cleoniceras",
+   "genus_author": "Parona & Bonnarelli, 1895",
+   "species": "besairiei",
+   "species_author": "Collignon, 1949",
+   "species_etymology": "",
+   "age": "Early Cretaceous, lower Albian to basal middle Albian (Lower to basal Middle Albian), about 113–100 million years ago",
+   "distribution": "Europe, Madagascar, the Transcaspian region; the figured specimen is a private-collection specimen from the lower Albian of Madagascar.",
+   "synonyms": "Cleoniceras besairei (spelling variant, in the genus-page species list)",
+   "diagnosis": "A rather involute, high-whorled Hoplitidae; small umbilicus; venter arched to sharp; typical falcate ribs arising in pairs from umbilical nodes and fading towards the outer whorl.",
+   "remarks": "The figured specimen shows iridescent nacre, a common preservation feature of Madagascar specimens. The genus-author year is also given as 1897 elsewhere; this book follows the Wikipedia genus page's 1895.",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Cleoniceras_besairiei_Collignon_Alb_inf_Madagascar.JPG",
+     "width": 0,
+     "height": 0,
+     "caption": "Cleoniceras besairiei fossil with iridescent nacre on the shell surface and the inner whorls clearly visible; the specimen comes from the lower Albian of Madagascar. — Photo: Antonov (Wikimedia Commons) (PD)"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Cleoniceras_besairiei_Collignon_Alb_inf_Madagascar.JPG"
+  },
+  {
+   "id": "am018",
+   "slug": "mortoniceras-inflatum",
+   "page": null,
+   "order": "Ammonitida",
+   "scientific_name": "Mortoniceras inflatum",
+   "classification": "Order Ammonitida / Superfamily Acanthoceratoidea / Family Brancoceratidae / Subfamily Mortoniceratinae",
+   "genus": "Mortoniceras",
+   "genus_author": "Meek, 1876",
+   "species": "inflatum",
+   "species_author": "Sowerby, 1818",
+   "species_etymology": "",
+   "age": "Early Cretaceous, middle to upper Albian (middle and upper Albian); the Mortoniceras inflatum Zone belongs to the lower upper Albian",
+   "distribution": "Algeria, Angola, Armenia, Belgium, Canada (British Columbia), Colombia, Ecuador, France, Germany, Iran, Japan, Madagascar, Mexico, Mozambique, Myanmar, Nigeria, South Africa, Spain, Suriname, Switzerland, Ukraine, the United Kingdom, the United States (California, New Mexico, Texas, Oregon), Venezuela; the figured specimen was collected at Ndumu, South Africa, and is now in the Natural History Museum, Berlin.",
+   "synonyms": "",
+   "diagnosis": "The figured specimen is about 20 cm in diameter, with robust radial ribs and nodes on the shell surface (see figure); specimens of this genus reach up to 30 cm in diameter.",
+   "remarks": "The figured specimen is a collection of the Natural History Museum, Berlin, collected at Ndumu, South Africa, upper Albian; this species is the zonal fossil of the upper Albian Mortoniceras inflatum Zone.",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Mortoniceras_inflatum_01.JPG",
+     "width": 0,
+     "height": 0,
+     "caption": "Mortoniceras inflatum fossil on a black background, with coarse ribs and nodes clearly visible on the shell surface; the specimen is about 20 cm in diameter, collected at Ndumu, South Africa, upper Albian, now in the Natural History Museum, Berlin. — Photo: H. Zell (Wikimedia Commons) (CC BY-SA 3.0)"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Mortoniceras_inflatum_01.JPG"
+  },
+  {
+   "id": "am019",
+   "slug": "parapuzosia-seppenradensis",
+   "page": null,
+   "order": "Ammonitida",
+   "scientific_name": "Parapuzosia seppenradensis",
+   "classification": "Order Ammonitida / Suborder Ammonitina / Superfamily Desmoceratoidea / Family Desmoceratidae / Subfamily Puzosiinae",
+   "genus": "Parapuzosia",
+   "genus_author": "Nowak, 1913",
+   "species": "seppenradensis",
+   "species_author": "Landois, 1895",
+   "species_etymology": "",
+   "age": "Late Cretaceous, Santonian to lower Campanian (Santonian–lower Campanian); the figured lectotype specimen was collected near Seppenrade, Germany, in 1894",
+   "distribution": "United Kingdom, France, Germany, North America (154 specimens studied); the largest known ammonite species.",
+   "synonyms": "Pachydiscus seppenradensis Landois, 1895",
+   "diagnosis": "Moderately involute shell with flat or slightly rounded flanks; inner whorls with distinct primary and secondary ribs; gigantic size, generally over 60 cm.",
+   "remarks": "Size wording must stay accurate: the 1895 Seppenrade specimen measured 1.74 m in diameter (some sources give 1.8 m); because part of the body chamber is missing, the complete reconstruction is about 2.05 m; never shorten this to “measured 2 m”. The figure is a photograph of the lectotype specimen, now in the LWL Natural History Museum, Münster — not the previously planned cast (Abguss) image, whose file name could not be verified in this batch, so the lectotype photograph from the PLOS open-access paper is used instead.",
+   "images": [
+    {
+     "file": "https://journals.plos.org/plosone/article/figure/image?size=medium&id=10.1371/journal.pone.0258510.g001",
+     "width": 0,
+     "height": 0,
+     "caption": "Photograph of the lectotype specimen: Parapuzosia seppenradensis collected near Seppenrade, Germany, now in the LWL Natural History Museum, Münster; scale bar at lower left is 100 mm. — Photo: C. Ifrim  et al. (PLOS ONE, 2021), photo: CI (CC BY 4.0)"
+    }
+   ],
+   "cover": "https://journals.plos.org/plosone/article/figure/image?size=medium&id=10.1371/journal.pone.0258510.g001"
+  },
+  {
+   "id": "am020",
+   "slug": "placenticeras-meeki",
+   "page": null,
+   "order": "Ammonitida",
+   "scientific_name": "Placenticeras meeki",
+   "classification": "Order Ammonitida / Superfamily Hoplitoidea / Family Placenticeratidae",
+   "genus": "Placenticeras",
+   "genus_author": "Meek, 1870",
+   "species": "meeki",
+   "species_author": "Böhm, 1898",
+   "species_etymology": "Named for American palaeontologist Fielding Bradford Meek",
+   "age": "Late Cretaceous, Campanian, about 80 million years ago",
+   "distribution": "Mainly the Western Interior Seaway of western North America; the figured specimen was collected from the Pierre Shale near Pueblo, Colorado, USA, and is now in the Smithsonian National Museum of Natural History.",
+   "synonyms": "",
+   "diagnosis": "Discoidal, involute, laterally compressed shell; shell diameter generally 20–50 cm, up to 1 m; the shell surface is often covered with opalized nacre (ammolite).",
+   "remarks": "The figured specimen bears paired bite marks on both sides, judged to have been left by a mosasaur. Note: the original image is low resolution (379×340) and should not be enlarged in print. The genus-author year is given as both 1870 and 1876; this book follows the Wikipedia genus page's 1870.",
+   "images": [
+    {
+     "file": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/thumbnails/image/CRC.JPG?itok=tA4dNVR_",
+     "width": 0,
+     "height": 0,
+     "caption": "Placenticeras meeki specimen, with paired round bite marks visible on both sides (judged to be mosasaur bite marks); the specimen comes from the Campanian Pierre Shale near Pueblo, Colorado, now in the Smithsonian National Museum of Natural History. Note: the original image is low resolution. — Photo: USGS (Public Domain)"
+    }
+   ],
+   "cover": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/thumbnails/image/CRC.JPG?itok=tA4dNVR_"
+  },
+  {
+   "id": "am021",
+   "slug": "baculites-grandis",
+   "page": null,
+   "order": "Heteromorphs",
+   "scientific_name": "Baculites grandis",
+   "classification": "Order Ammonitida / Suborder Ancyloceratina / Superfamily Turrilitaceae / Family Baculitidae",
+   "genus": "Baculites",
+   "genus_author": "Lamarck, 1799",
+   "species": "grandis",
+   "species_author": "Hall & Meek, 1856",
+   "species_etymology": "",
+   "age": "Late Cretaceous, early Maastrichtian",
+   "distribution": "Western Interior Seaway of North America: upper Pierre Shale in southwestern South Dakota, USA, upper Pierre Shale near Trinidad, Colorado; related material also occurs in the Bearpaw Formation of western Canada.",
+   "synonyms": "",
+   "diagnosis": "A straight-shelled (baculiform) ammonoid, large; compared with its close relative Baculites baculus, the shell cross-section is more oval and the individual slightly larger, up to 10.2 cm in diameter; the suture is similar to that of B. baculus; per the NMGS 2018 account, its cross-section is nearly triangular.",
+   "remarks": "One of the index fossils of the lower Maastrichtian of the Western Interior Seaway, its fossil zone lying above the B. baculus Zone; cast photographs from the North American Museum of Ancient Life are among the commonest baculite images.",
+   "images": [
+    {
+     "file": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Baculites_grandis_shell.JPG",
+     "width": 2272,
+     "height": 1704,
+     "caption": "Cast of a Baculites grandis shell exhibited at the North American Museum of Ancient Life (Lehi, Utah, USA). — Photo: Ninjatacoshell (Wikimedia Commons) (CC BY-SA 3.0)"
+    }
+   ],
+   "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Baculites_grandis_shell.JPG"
+  },
+  {
+   "id": "am022",
+   "slug": "nipponites-mirabilis",
+   "page": null,
+   "order": "Heteromorphs",
+   "scientific_name": "Nipponites mirabilis",
+   "classification": "Order Ammonitida / Suborder Ancyloceratina / Family Nostoceratidae",
+   "genus": "Nipponites",
+   "genus_author": "Yabe, 1904",
+   "species": "mirabilis",
+   "species_author": "Yabe, 1904",
+   "species_etymology": "",
+   "age": "Late Cretaceous, Coniacian (Japan); possibly extending to the Turonian of Madagascar",
+   "distribution": "Mainly the Upper Cretaceous of Japan; N. mirabilis occurs in Coniacian strata of Japan and possibly in Turonian strata of Madagascar.",
+   "synonyms": "",
+   "diagnosis": "An extremely peculiar shell form: the early part consists of several open coiled whorls, followed by a series of alternating U-shaped bends around the early whorls, forming oxbow-like curves that look tangled; ribs oblique and parallel to the position of the old aperture; suture type not verified.",
+   "remarks": "The tangled-looking shell form in fact follows regular segmented geometry; it is one of the symbolic fossils of the Palaeontological Society of Japan; hydrostatic modelling studies show it could still achieve neutral buoyancy and did not have to live on the sea floor.",
+   "images": [
+    {
+     "file": "https://journals.plos.org/plosone/article/figure/image?size=medium&id=10.1371/journal.pone.0235180.g002",
+     "width": 600,
+     "height": 578,
+     "caption": "Virtual restoration of the Nipponites mirabilis shell (CT-scanned 3D model): A. 3D model; B. restored body chamber and inner whorls; C. septa generated from the sutures; D. unified complete shell model. — Photo: Peterman et al. 2020, PLOS ONE (CC BY 4.0)"
+    },
+    {
+     "file": "https://journals.plos.org/plosone/article/figure/image?size=medium&id=10.1371/journal.pone.0235180.g004",
+     "width": 600,
+     "height": 531,
+     "caption": "Specimens used for the restoration: A. original nodule containing NMNS PM35490; B, C. shell sections; D. suture; E. 3D scan of the Mikasa City Museum specimen. — Photo: Peterman et al. 2020, PLOS ONE (CC BY 4.0)"
+    }
+   ],
+   "cover": "https://journals.plos.org/plosone/article/figure/image?size=medium&id=10.1371/journal.pone.0235180.g002"
+  },
+  {
+   "id": "am023",
+   "slug": "australiceras-jacki",
+   "page": null,
+   "order": "Heteromorphs",
+   "scientific_name": "Australiceras jacki",
+   "classification": "Order Ammonitida / Suborder Ancyloceratina / Family Ancyloceratidae",
+   "genus": "Australiceras",
+   "genus_author": "Whitehouse, 1926",
+   "species": "jacki",
+   "species_author": "(Etheridge, 1880)",
+   "species_etymology": "",
+   "age": "Early Cretaceous, Aptian",
+   "distribution": "Queensland, Australia: Rolling Downs / Hughenden district, Allaru Mudstone, Blackdown Formation, Maryborough Basin.",
+   "synonyms": "Crioceras jackii Etheridge, 1880 (original combination)",
+   "diagnosis": "(Genus characters) Evolute shell, with early-whorl ribbing alternating between smooth ribs and ribs with coarse blunt nodes; outer-whorl ribbing without nodes, entirely smooth; the suture and whorl-section details of A. jacki itself are not verified.",
+   "remarks": "The type species of the genus Australiceras and the index fossil of the lower Aptian Australiceras beds of eastern Australia; it contrasts with the Aptian Ancyloceras of Europe.",
+   "images": [
+    {
+     "file": "https://free-images.com/or/8ef0/australiceras_jackii_musee_des.jpg",
+     "width": 3628,
+     "height": 3252,
+     "caption": "Australiceras jacki fossil exhibited at the Musée des Confluences, Lyon, from Queensland, Australia. — Photo: Vassil (Wikimedia Commons) (CC0)"
+    }
+   ],
+   "cover": "https://free-images.com/or/8ef0/australiceras_jackii_musee_des.jpg"
+  },
+  {
+   "id": "am024",
+   "slug": "ancyloceras-matheronianum",
+   "page": null,
+   "order": "Heteromorphs",
+   "scientific_name": "Ancyloceras matheronianum",
+   "classification": "Order Ammonitida / Suborder Ancyloceratina / Superfamily Ancyloceratoidea / Family Ancyloceratidae / Subfamily Ancyloceratinae",
+   "genus": "Ancyloceras",
+   "genus_author": "d'Orbigny, 1842",
+   "species": "matheronianum",
+   "species_author": "d'Orbigny, 1842",
+   "species_etymology": "",
+   "age": "Early Cretaceous, lower Aptian (about 125.45–122.46 Ma)",
+   "distribution": "France (type locality, Paris Basin), middle Volga River, Russia, Morocco.",
+   "synonyms": "Ancyloceras matheroni (d'Orbigny, 1842, corrected spelling)",
+   "diagnosis": "A hook-shaped (ancylocone) heteromorph shell: composed of a spiral part, a straight part, a bent part and a recurved part; shell length up to 30–40 cm; the juvenile spiral part initially bears node-bearing ribs, with the nodes soon disappearing; the suture type of this species is not verified.",
+   "remarks": "The type species of the type genus of the family Ancyloceratidae — i.e. the name-bearer of the entire ancyloceratid group; one of the most representative ammonite genera of the Lower Cretaceous.",
+   "images": [
+    {
+     "file": "https://free-images.com/or/bb11/ancyloceras_matherenianum_ammonit_roquef.jpg",
+     "width": 3719,
+     "height": 3457,
+     "caption": "Ancyloceras matheronianum fossil exhibited at the Natural History Museum, Berlin, from Roquefort, France. — Photo: Daderot (Wikimedia Commons) (CC0)"
+    }
+   ],
+   "cover": "https://free-images.com/or/bb11/ancyloceras_matherenianum_ammonit_roquef.jpg"
+  },
+  {
+   "id": "am025",
+   "slug": "didymoceras-stevensoni",
+   "page": null,
+   "order": "Heteromorphs",
+   "scientific_name": "Didymoceras stevensoni",
+   "classification": "Order Ammonitida / Suborder Ancyloceratina / Family Nostoceratidae (position disputed; also placed in Turrilitidae or Didymoceratidae)",
+   "genus": "Didymoceras",
+   "genus_author": "Hyatt, 1894",
+   "species": "stevensoni",
+   "species_author": "(Whitfield, 1877)",
+   "species_etymology": "",
+   "age": "Late Cretaceous, late Campanian; zonal fossil of the Didymoceras stevensoni Zone",
+   "distribution": "Pierre Shale of the Western Interior Seaway, USA: South Dakota, Wyoming, near Pueblo, Colorado, Carter County, Montana.",
+   "synonyms": "Helicoceras stevensoni Whitfield, 1877 (original combination)",
+   "diagnosis": "A shell that rises in a spiral and then ends in a loosely hooked portion; the spiral part may coil to the left or to the right; 21–30 ribs per half whorl in the spiral stage; nodes small and node-like with flat tops, as if once bearing small sharp spines; the adult body chamber comprises the last half whorl of the spiral part plus the subsequent loosely recurved whorl; suture type not verified.",
+   "remarks": "A classic “corkscrew-plus-hook” Western Interior heteromorph and the zonal fossil of one of four successive late Campanian heteromorph zones; still-water modelling studies suggest this shell form was low-energy in lifestyle, able to hover in the water column and rotate about a vertical axis.",
+   "images": [
+    {
+     "file": "https://free-images.com/or/4b98/didymoceras_stevensoni_late_cretaceous.jpg",
+     "width": 2572,
+     "height": 4082,
+     "caption": "Didymoceras stevensoni shell exhibited at the Houston Museum of Natural Science, from the Pierre Shale of Weston County, Wyoming, USA. — Photo: Daderot (Wikimedia Commons) (CC0)"
+    }
+   ],
+   "cover": "https://free-images.com/or/4b98/didymoceras_stevensoni_late_cretaceous.jpg"
+  }
+ ]
+}

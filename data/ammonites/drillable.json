@@ -1,0 +1,31 @@
+{
+ "note": "All species are unlocked (drillable).",
+ "total": 25,
+ "slugs": [
+  "agoniatites-vanuxemi",
+  "agoniatites-obliquus",
+  "clymenia-laevigata",
+  "kosmoclymenia-bisulcata",
+  "cymaclymenia-striata",
+  "kosmoclymenia-undulata",
+  "clymenia-sedgwickii",
+  "goniatites-crenistria",
+  "tornoceras-uniangulare",
+  "ceratites-nodosus",
+  "gymnotoceras-rotelliformis",
+  "dactylioceras-commune",
+  "harpoceras-falciferum",
+  "pleuroceras-spinatum",
+  "stephanoceras-humphriesianum",
+  "douvilleiceras-mammillatum",
+  "cleoniceras-besairiei",
+  "mortoniceras-inflatum",
+  "parapuzosia-seppenradensis",
+  "placenticeras-meeki",
+  "baculites-grandis",
+  "nipponites-mirabilis",
+  "australiceras-jacki",
+  "ancyloceras-matheronianum",
+  "didymoceras-stevensoni"
+ ]
+}

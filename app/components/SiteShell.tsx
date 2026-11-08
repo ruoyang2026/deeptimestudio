@@ -8,9 +8,10 @@ import CommercialEntry from "./CommercialEntry";
 export default function SiteShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isCambrian = pathname === "/";
-  const isArchive = pathname.startsWith("/archive") || pathname.startsWith("/species");
+  const isArchive = pathname.startsWith("/archive") || pathname.startsWith("/species") || pathname.startsWith("/ammonites");
   const isTrilobites = pathname.startsWith("/archive/trilobites") || pathname.startsWith("/species");
   const isAmphibians = pathname.startsWith("/archive/amphibians") || pathname.startsWith("/amphibians");
+  const isAmmonites = pathname.startsWith("/archive/ammonites") || pathname.startsWith("/ammonites");
   const isTriassicMarine = pathname.startsWith("/archive/triassic-marine") || pathname.startsWith("/triassic-marine");
   const isUpdates = pathname === "/updates";
   const [archiveOpen, setArchiveOpen] = useState(false);
@@ -56,6 +57,12 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
                     className={`menu-item menu-item--sub${isTriassicMarine ? " is-active" : ""}`}
                   >
                     3. Triassic Marine
+                  </Link>
+                  <Link
+                    href="/archive/ammonites"
+                    className={`menu-item menu-item--sub${isAmmonites ? " is-active" : ""}`}
+                  >
+                    4. Ammonites
                   </Link>
                 </div>
               ) : null}

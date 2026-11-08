@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { trilobites, isDrillable } from "../lib/trilobites";
 import { amphibians } from "../lib/amphibians";
+import { ammonites } from "../lib/ammonites";
 import { triassicMarine } from "../lib/triassic-marine";
 import {
   lastModifiedForSlug,
@@ -22,6 +23,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE_URL}/archive/amphibians`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/archive/ammonites`,
       changeFrequency: "weekly",
       priority: 0.9,
     },
@@ -56,6 +62,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const a of amphibians) {
     entries.push({
       url: `${SITE_URL}/amphibians/${a.slug}`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      lastModified: lastModifiedForSlug(a.slug),
+    });
+  }
+
+  for (const a of ammonites) {
+    entries.push({
+      url: `${SITE_URL}/ammonites/${a.slug}`,
       changeFrequency: "monthly",
       priority: 0.7,
       lastModified: lastModifiedForSlug(a.slug),
