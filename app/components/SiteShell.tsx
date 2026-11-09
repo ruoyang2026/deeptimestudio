@@ -14,6 +14,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
   const isAmmonites = pathname.startsWith("/archive/ammonites") || pathname.startsWith("/ammonites");
   const isTriassicMarine = pathname.startsWith("/archive/triassic-marine") || pathname.startsWith("/triassic-marine");
   const isUpdates = pathname === "/updates";
+  const isShop = pathname === "/shop";
   const [archiveOpen, setArchiveOpen] = useState(false);
 
   // 进入 archive 相关页面时自动展开子菜单
@@ -67,6 +68,9 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
                 </div>
               ) : null}
             </div>
+            <Link href="/shop" className={`menu-item${isShop ? " is-active" : ""}`}>
+              Shop
+            </Link>
             <Link href="/updates" className={`menu-item${isUpdates ? " is-active" : ""}`}>
               What&apos;s New
             </Link>

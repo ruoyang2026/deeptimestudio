@@ -43,6 +43,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: UPDATES_LAST_GENERATED || undefined,
     },
     {
+      url: `${SITE_URL}/shop`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${SITE_URL}/privacy`,
       changeFrequency: "yearly",
       priority: 0.3,
