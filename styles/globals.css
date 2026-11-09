@@ -3566,10 +3566,10 @@ button.trilobite-card {
 .shop-card { display: block; border-radius: 12px; overflow: hidden; background: var(--glass-bg); backdrop-filter: blur(var(--glass-blur)); -webkit-backdrop-filter: blur(var(--glass-blur)); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
 .shop-card:hover { transform: translateY(-4px); border-color: rgba(78, 205, 196, 0.25); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(78, 205, 196, 0.1); }
 .shop-card__img { width: 100%; background: var(--bg-surface); overflow: hidden; }
-.shop-card__img--landscape { aspect-ratio: 16 / 10; }
+.shop-card__img--landscape { aspect-ratio: 16 / 9; }
 .shop-card__img--portrait { aspect-ratio: 3 / 4; }
 .shop-card__img img { display: block; width: 100%; height: 100%; }
-.shop-card__img--landscape img { object-fit: cover; }
+.shop-card__img--landscape img { object-fit: contain; }
 .shop-card__img--portrait img { object-fit: contain; }
 .shop-card__body { padding: 20px; }
 .shop-card__title { margin: 0 0 8px; font-size: 1.1rem; line-height: 1.35; color: var(--text-primary); }
