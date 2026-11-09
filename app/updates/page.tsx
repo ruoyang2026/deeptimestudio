@@ -4,12 +4,13 @@ import SiteShell from "../components/SiteShell";
 import { getUpdates, type UpdateEntry } from "../../lib/updates";
 import { isDrillable } from "../../lib/trilobites";
 import { getBySlug as getAmphibianBySlug } from "../../lib/amphibians";
+import { getBySlug as getAmmoniteBySlug } from "../../lib/ammonites";
 import { getBySlug as getTriassicMarineBySlug } from "../../lib/triassic-marine";
 
 export const metadata: Metadata = {
-  title: "What's New | Deep Time Studio — Trilobite & Amphibian Database Updates",
+  title: "What's New | Deep Time Studio — Ammonite, Trilobite & Amphibian Database Updates",
   description:
-    "New trilobite species, newly added fossil photographs, new amphibian species and Triassic marine reptiles from Deep Time Studio — the latest additions to the archive.",
+    "New ammonite species with fossil photographs, new trilobite species, newly added fossil photographs, new amphibian species and Triassic marine reptiles from Deep Time Studio — the latest additions to the archive.",
   alternates: { canonical: "/updates" },
 };
 
@@ -17,6 +18,7 @@ const KIND_LABEL: Record<UpdateEntry["kind"], string> = {
   species_added: "New species",
   images_added: "New photos",
   amphibians_added: "New amphibians",
+  ammonites_added: "New ammonites",
   triassic_marine_added: "New Triassic marine reptiles",
 };
 
@@ -45,6 +47,22 @@ function AmphibianList({ slugs }: { slugs: string[] }) {
         return (
           <li key={slug}>
             <Link href={`/amphibians/${slug}`}>{label}</Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+function AmmoniteList({ slugs }: { slugs: string[] }) {
+  return (
+    <ul className="upd-entry__list">
+      {slugs.map((slug) => {
+        const p = getAmmoniteBySlug(slug);
+        const label = p ? p.scientific_name.split(" (")[0] : slug.replace(/-/g, " ");
+        return (
+          <li key={slug}>
+            <Link href={`/ammonites/${slug}`}>{label}</Link>
           </li>
         );
       })}
@@ -103,6 +121,8 @@ export default function UpdatesPage() {
                   {entry.slugs && entry.slugs.length ? (
                     entry.kind === "amphibians_added" ? (
                       <AmphibianList slugs={entry.slugs} />
+                    ) : entry.kind === "ammonites_added" ? (
+                      <AmmoniteList slugs={entry.slugs} />
                     ) : entry.kind === "triassic_marine_added" ? (
                       <TriassicMarineList slugs={entry.slugs} />
                     ) : (

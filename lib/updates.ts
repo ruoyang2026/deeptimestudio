@@ -4,6 +4,7 @@ export type UpdateKind =
   | "species_added"
   | "images_added"
   | "amphibians_added"
+  | "ammonites_added"
   | "triassic_marine_added";
 
 export type UpdateEntry = {

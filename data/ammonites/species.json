@@ -1,8 +1,8 @@
 {
  "title": "ammonites — Species Database",
  "version": "1.0",
- "source": "Ammonite Visual Database (English edition), non-NIMRF species; images hotlinked from Wikimedia Commons, open-access journals and USGS",
- "total_species": 25,
+ "source": "Ammonite Visual Database (English edition), non-NIMRF species; images hotlinked from Wikimedia Commons, open-access journals, USGS and Yale Peabody Museum",
+ "total_species": 31,
  "species": [
   {
    "id": "am001",
@@ -255,6 +255,141 @@
   },
   {
    "id": "am010",
+   "slug": "gattendorfia-subinvoluta",
+   "page": null,
+   "order": "Goniatitida",
+   "scientific_name": "Gattendorfia subinvoluta",
+   "classification": "Order Goniatitida / Family Gattendorfiidae / Subfamily Gattendorfiinae",
+   "genus": "Gattendorfia",
+   "genus_author": "Schindewolf, 1920",
+   "species": "subinvoluta",
+   "species_author": "(Münster, 1839)",
+   "species_etymology": "",
+   "age": "Early Carboniferous, early Tournaisian, Gattendorfia Limestone bed 21, near the Devonian–Carboniferous boundary",
+   "distribution": "Old quarry at Gattendorf, Upper Franconia, Germany (400 m northwest of the Kirchgattendorf church, Gattendorfia Limestone bed 21, type locality).",
+   "synonyms": "Goniatites subinvolutus Münster, 1839 (original combination); Gattendorfia ventroplana Schindewolf, 1924 (plate caption dated 1923; synonymized with this species by Korn & Weyer 2023)",
+   "diagnosis": "Shell reaching 90 mm; at 80 mm thinly discoidal and subevolute (ww/dm about 0.40, uw/dm about 0.40), whorl weakly compressed (ww/wh about 1.10), low whorl expansion rate (WER about 1.70), venter broadly rounded, umbilical margin narrowly rounded; growth lines lamellar, widely spaced and convex towards growth, with short ribs at the umbilical margin; no shell constrictions and no internal shell thickening. The absence of shell constrictions is precisely what distinguishes this species from most others in the genus.",
+   "remarks": "The holotype is poorly preserved (80 mm, weathered, no shell material remaining), but it is the type of this species. Note the distinction: Oberrödinghausen material previously assigned to this species by Vöhringer (1960) and Korn (1994) has fine shell constrictions and a broader shell and has been separated as Gattendorfia rhenana Korn & Weyer, 2023 — it does not belong to this species. Superfamily and suborder are not stated for this genus alone in the sources read, so they are not included in the classification string; Korn & Weyer 2023 place Gattendorfiidae among the prionoceratid group. This species is the type species of the genus Gattendorfia.",
+   "images": [
+    {
+     "file": "https://zenodo.org/records/8177913/files/figure.png",
+     "width": 0,
+     "height": 0,
+     "caption": "Figure 25 from Korn & Weyer 2023: panel A is the holotype of Gattendorfia subinvoluta (SNSB BSPG AS VII 30, Münster Collection), side view, from Gattendorf, Germany, 80 mm shell diameter (full figure plate shown). — Photo: Korn & Weyer, 2023 (European Journal of Taxonomy 883, Fig. 25) (CC BY 4.0)"
+    }
+   ],
+   "cover": "https://zenodo.org/records/8177913/files/figure.png"
+  },
+  {
+   "id": "am011",
+   "slug": "stockumites-intermedius",
+   "page": null,
+   "order": "Goniatitida",
+   "scientific_name": "Stockumites intermedius",
+   "classification": "Order Goniatitida / Family Prionoceratidae / Subfamily Acutimitoceratinae",
+   "genus": "Stockumites",
+   "genus_author": "Becker, 1996",
+   "species": "intermedius",
+   "species_author": "(Schindewolf, 1923)",
+   "species_etymology": "",
+   "age": "Early Carboniferous, early Tournaisian, Gattendorfia Limestone bed 21",
+   "distribution": "Old quarry at Gattendorf, Upper Franconia, Germany (bed 21, type locality); also reported from the Oberrödinghausen area in the Rhineland (per the material described in that paper).",
+   "synonyms": "Imitoceras intermedium Schindewolf, 1923 (original combination); Acutimitoceras intermedium (later combination)",
+   "diagnosis": "Shell reaching 120 mm; at 5 mm thinly to thickly discoidal and subinvolute to subevolute (ww/dm about 0.70, uw/dm 0.20–0.40); at 15–30 mm thinly to thickly discoidal and involute (ww/dm about 0.65, umbilicus nearly closed), whorl weakly compressed (ww/wh 1.10–1.20), medium to high whorl expansion rate (WER 1.85–1.95), venter broadly rounded, umbilical margin extremely broadly rounded; growth lines lamellar and widely spaced, convexly arched on the flanks and forming a broad, deep ventral sinus.",
+   "remarks": "This species is an off-list addition, not a species on the original candidate list; it is included to bring this batch to 5 species because its plate licence is verified and its classification is clear — compilers who wish to restrict strictly to the original candidate list may remove it. The figure is specimen BGRB X13384 (60 mm) in Fig. 8C, side view, not the holotype/lectotype; the lectotype is SMF Mbg.3111 (Fig. 8A), which is poorly preserved and deformed in the last half whorl, so a clearer specimen of the same species was chosen. Suborder and superfamily are not stated for this genus alone in the sources read, so they are not included in the classification string.",
+   "images": [
+    {
+     "file": "https://zenodo.org/records/8177877/files/figure.png",
+     "width": 0,
+     "height": 0,
+     "caption": "Figure 8 from Korn & Weyer 2023: panel C is specimen BGRB X13384 of Stockumites intermedius (Schindewolf 1934 Collection), side view, from Gattendorf bed 21, Germany, 60 mm shell diameter (full figure plate shown). — Photo: Korn & Weyer, 2023 (European Journal of Taxonomy 883, Fig. 8) (CC BY 4.0)"
+    }
+   ],
+   "cover": "https://zenodo.org/records/8177877/files/figure.png"
+  },
+  {
+   "id": "am012",
+   "slug": "mimimitoceras-varicosum",
+   "page": null,
+   "order": "Goniatitida",
+   "scientific_name": "Mimimitoceras varicosum",
+   "classification": "Order Goniatitida / Family Prionoceratidae / Subfamily Prionoceratinae",
+   "genus": "Mimimitoceras",
+   "genus_author": "Korn, 1988",
+   "species": "varicosum",
+   "species_author": "(Schindewolf, 1923)",
+   "species_etymology": "",
+   "age": "Early Carboniferous, early Tournaisian, Gattendorfia Limestone bed 21 (Acutimitoceras ucatum Zone, inferred per Korn & Weyer 2023; zone name as in the original)",
+   "distribution": "Old quarry at Gattendorf, Upper Franconia, Germany (bed 21, type locality).",
+   "synonyms": "Postprolobites varicosus Schindewolf, 1923 (original combination)",
+   "diagnosis": "At 20–30 mm thickly discoidal and subinvolute (ww/dm 0.80–0.85), whorl section compressed, low whorl expansion rate (WER about 1.70); ornament of rather coarse, sharp, densely spaced, weakly biconvex growth lines with prominent biconvex shell constrictions. The lectotype, 19 mm, is thickly discoidal (ww/dm 0.83) with a clearly closed umbilicus, flanks and venter nearly semicircularly arched, constrictions and coarse growth lines both weakly biconvex, lateral sinus extremely shallow and ventral sinus slightly deeper and narrow.",
+   "remarks": "This species is also an off-list addition, not on the original candidate list; it is included to bring this batch to 5 species because its plate licence is verified and its classification is clear — compilers who wish to restrict strictly to the original candidate list may remove it. Note the distinction: globular Oberrödinghausen material formerly called Imitoceras varicosum / Mimimitoceras varicosum has been separated by Korn & Weyer 2023 as Mimimitoceras perditum and does not belong to this species; the “non” entries in that paper's synonymy list are all misidentifications and are not treated as synonyms. The figure is paralectotype SMF Mbg.7560 (28 mm) in Fig. 4A, side view, not the lectotype (lectotype SMF Mbg.4706 in Fig. 4B, 19 mm); the larger specimen was chosen for easier reading by children. Suborder and superfamily are not stated for this genus alone in the sources read, so they are not included in the classification string.",
+   "images": [
+    {
+     "file": "https://zenodo.org/records/8177869/files/figure.png",
+     "width": 0,
+     "height": 0,
+     "caption": "Figure 4 from Korn & Weyer 2023: panel A is paralectotype SMF Mbg.7560 of Mimimitoceras varicosum (Schindewolf 1916 Collection), side view, from Gattendorf bed 21, Germany, about 28 mm shell diameter (full figure plate shown). — Photo: Korn & Weyer, 2023 (European Journal of Taxonomy 883, Fig. 4) (CC BY 4.0)"
+    }
+   ],
+   "cover": "https://zenodo.org/records/8177869/files/figure.png"
+  },
+  {
+   "id": "am013",
+   "slug": "eocanites-nodosus",
+   "page": null,
+   "order": "Prolecanitida",
+   "scientific_name": "Eocanites nodosus",
+   "classification": "Order Prolecanitida / Family Prolecanitidae / Subfamily Prolecanitinae",
+   "genus": "Eocanites",
+   "genus_author": "Librovitch, 1957",
+   "species": "nodosus",
+   "species_author": "(Schmidt, 1925)",
+   "species_etymology": "",
+   "age": "Early Carboniferous, early Tournaisian (Mississippian), Hangenberg Limestone (Gattendorfia Limestone)",
+   "distribution": "Hangenberg Limestone of the Oberrödinghausen railway cutting, Rhenish Mountains, Germany (locality of the holotype and supplementary material).",
+   "synonyms": "Gattendorfia nodosa Schmidt, 1925 (original combination)",
+   "diagnosis": "Shell reaching 35 mm in diameter; at 12 mm shell diameter evolute (umbilical width/shell diameter about 0.50), whorl slightly depressed (width/height about 1.05), venter broadly rounded; at 30 mm still evolute, whorl slightly compressed (width/height about 0.90), venter broadly rounded. Ornament of coarse, strongly backward-bent, biconvex, crenulated growth lines with a deep ventral sinus; no ribs, no nodes. The external lobe of the suture is lanceolate, and the adventitious lobe is asymmetrical and dorsally sac-shaped.",
+   "remarks": "Holotype GZG.INV.1689, designated by Vöhringer (1960); the original figure of Schmidt (1925), plate 23, fig. 2, is reprinted as panel D in this plate. Panels A–C are Oberrödinghausen specimens (GPIT-PV-63968, GPIT-PV-63972, MB.C.31234.1), and D is a reprint of the 1925 original figure. Eocanites is one of the genera with the simplest sutures in the entire order Prolecanitida; the genus distribution (genus-level) also includes Montagne Noire in France, Thuringia, Lower Silesia, the Carnic Alps, Guizhou in China, the Anti-Atlas of Morocco, and other places.",
+   "images": [
+    {
+     "file": "https://zenodo.org/records/8177829/files/figure.png",
+     "width": 0,
+     "height": 0,
+     "caption": "Figure 119 from Korn & Weyer 2023: plate of Eocanites nodosus — A. specimen GPIT-PV-63968, bed 3d; B. specimen GPIT-PV-63972, bed 3d; C. specimen MB.C.31234.1, bed 3d1b; D. reprint of Schmidt (1925) plate 23, fig. 2. Scale unit 1 mm. — Photo: Korn & Weyer 2023, European Journal of Taxonomy 882, Fig. 119 (CC BY 4.0)"
+    }
+   ],
+   "cover": "https://zenodo.org/records/8177829/files/figure.png"
+  },
+  {
+   "id": "am014",
+   "slug": "eocanites-delicatus",
+   "page": null,
+   "order": "Prolecanitida",
+   "scientific_name": "Eocanites delicatus",
+   "classification": "Order Prolecanitida / Family Prolecanitidae / Subfamily Prolecanitinae",
+   "genus": "Eocanites",
+   "genus_author": "Librovitch, 1957",
+   "species": "delicatus",
+   "species_author": "Korn & Weyer, 2023",
+   "species_etymology": "Latin delicatus, referring to the delicate ornament",
+   "age": "Early Carboniferous, early Tournaisian (Mississippian), Hangenberg Limestone (Gattendorfia Limestone)",
+   "distribution": "Hangenberg Limestone of the Oberrödinghausen railway cutting, Rhenish Mountains, Germany (holotype bed 1, paratype beds 1–2, and loose material).",
+   "synonyms": "",
+   "diagnosis": "Shell reaching 60 mm in diameter; at 12 mm shell diameter evolute (umbilical width/shell diameter about 0.55), whorl slightly depressed (width/height about 1.10), venter broadly rounded; at 30 mm evolute (umbilical width/shell diameter about 0.50), whorl nearly circular (width/height about 1.00), venter broadly rounded. Ornament of fine, backward-bent, concavo-convex growth lines, ventral sinus of medium depth, and low, rounded folds on the flanks. The external lobe of the suture is slightly sac-shaped, and the adventitious lobe is lanceolate and slightly sac-shaped. The holotype, 42.3 mm, is extremely thinly discoidal with a wide umbilicus (width/shell diameter about 0.23–0.25, umbilical width/shell diameter about 0.50).",
+   "remarks": "This species is a new species established by Korn & Weyer (2023) from the Oberrödinghausen material; the holotype GPIT-PV-63997 was misassigned by Vöhringer (1960) to Eocanites supradevonicus, from which this species differs by its weaker ornament and slightly narrower umbilicus. Panel A is the holotype (embedded in matrix), panel B is paratype MB.C.31247.1.",
+   "images": [
+    {
+     "file": "https://zenodo.org/records/8177844/files/figure.png",
+     "width": 0,
+     "height": 0,
+     "caption": "Figure 125 from Korn & Weyer 2023: plate of Eocanites delicatus — A. holotype GPIT-PV-63997, bed 1; B. paratype MB.C.31247.1, horizon not specified. Scale unit 1 mm. — Photo: Korn & Weyer 2023, European Journal of Taxonomy 882, Fig. 125 (CC BY 4.0)"
+    }
+   ],
+   "cover": "https://zenodo.org/records/8177844/files/figure.png"
+  },
+  {
+   "id": "am015",
    "slug": "ceratites-nodosus",
    "page": null,
    "order": "Ceratitida",
@@ -281,7 +416,34 @@
    "cover": "https://upload.wikimedia.org/wikipedia/commons/4/40/Ceratites_nodosus_MHNT.PAL.CEP.2001.105.jpg"
   },
   {
-   "id": "am011",
+   "id": "am016",
+   "slug": "meekoceras-gracilitatis",
+   "page": null,
+   "order": "Ceratitida",
+   "scientific_name": "Meekoceras gracilitatis",
+   "classification": "Order Ceratitida / Family Meekoceratidae",
+   "genus": "Meekoceras",
+   "genus_author": "Hyatt, 1879",
+   "species": "gracilitatis",
+   "species_author": "White, 1879",
+   "species_etymology": "",
+   "age": "Early Triassic, Smithian (Meekoceras gracilitatis Zone)",
+   "distribution": "Early Triassic marine strata of western North America and Alaska; the figured plate specimens were collected at USGS Mesozoic locality M5027, upper Chulitna district, Alaska.",
+   "synonyms": "",
+   "diagnosis": "Compressed discoidal shell with flat flanks, narrow, flat or rounded venter, without keel or groove; surface smooth or with lateral folds, without nodes, spines or spiral ridges; umbilicus of varying size, short body chamber; ceratitic suture with smooth, rounded saddles and serrated lobes. This species is the type species of the genus Meekoceras.",
+   "remarks": "Classification dispute note: this entry treats it under Meekoceratidae (both Smith 1932 and Arkell et al. 1957 place Meekoceras in that family); however, the family placement of Meekoceras is disputed in different works, with another classification placing it in Prionitidae, and no ruling is made here. Higher-level placement is also disputed: Arkell et al. 1957 place Meekoceratidae in Noritoidea, Smith 1932 in Prolecanitoidea. The figured specimen is YPM IP 028177, Yale Peabody Museum (photo: J. Utrup, 2013).",
+   "images": [
+    {
+     "file": "https://images.collections.yale.edu/iiif/2/ypm:51baa616-2d5c-4f09-a13a-94a40203af3d/full/!1920,1920/0/default.jpg",
+     "width": 1156,
+     "height": 1920,
+     "caption": "Meekoceras gracilitatis specimen YPM IP 028177, Yale Peabody Museum (photo: J. Utrup, 2013) — lateral and ventral views. — Photo: Yale Peabody Museum, CC0 (photo: J. Utrup, 2013) (CC0)"
+    }
+   ],
+   "cover": "https://images.collections.yale.edu/iiif/2/ypm:51baa616-2d5c-4f09-a13a-94a40203af3d/full/!1920,1920/0/default.jpg"
+  },
+  {
+   "id": "am017",
    "slug": "gymnotoceras-rotelliformis",
    "page": null,
    "order": "Ceratitida",
@@ -308,7 +470,7 @@
    "cover": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0aa8/7934684/3de491fb2026/peerj-09-10931-g004.jpg"
   },
   {
-   "id": "am012",
+   "id": "am018",
    "slug": "dactylioceras-commune",
    "page": null,
    "order": "Ammonitida",
@@ -335,7 +497,7 @@
    "cover": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Snakestone_(Dactylioceras_commune_ammonite,_Whitby_Formation,_Lower_Jurassic;_Yorkshire_coast,_England)_(15240494805).jpg"
   },
   {
-   "id": "am013",
+   "id": "am019",
    "slug": "harpoceras-falciferum",
    "page": null,
    "order": "Ammonitida",
@@ -362,7 +524,7 @@
    "cover": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Harpoceras_NT.jpg"
   },
   {
-   "id": "am014",
+   "id": "am020",
    "slug": "pleuroceras-spinatum",
    "page": null,
    "order": "Ammonitida",
@@ -389,7 +551,7 @@
    "cover": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Pleuroceras_spinatum_%28fossil_ammonite%29_%28Lower_Jurassic%3B_Unterst%C3%BCrmig%2C_Germany%29_%2849035345463%29.jpg"
   },
   {
-   "id": "am015",
+   "id": "am021",
    "slug": "stephanoceras-humphriesianum",
    "page": null,
    "order": "Ammonitida",
@@ -416,7 +578,7 @@
    "cover": "https://upload.wikimedia.org/wikipedia/commons/0/05/S._humphriesianum_-_Clatcombe_Dorset.jpg"
   },
   {
-   "id": "am016",
+   "id": "am022",
    "slug": "douvilleiceras-mammillatum",
    "page": null,
    "order": "Ammonitida",
@@ -443,7 +605,7 @@
    "cover": "https://upload.wikimedia.org/wikipedia/commons/9/92/Haeckel_Douvilleiceras_mammillatum.jpg"
   },
   {
-   "id": "am017",
+   "id": "am023",
    "slug": "cleoniceras-besairiei",
    "page": null,
    "order": "Ammonitida",
@@ -470,7 +632,7 @@
    "cover": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Cleoniceras_besairiei_Collignon_Alb_inf_Madagascar.JPG"
   },
   {
-   "id": "am018",
+   "id": "am024",
    "slug": "mortoniceras-inflatum",
    "page": null,
    "order": "Ammonitida",
@@ -497,7 +659,7 @@
    "cover": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Mortoniceras_inflatum_01.JPG"
   },
   {
-   "id": "am019",
+   "id": "am025",
    "slug": "parapuzosia-seppenradensis",
    "page": null,
    "order": "Ammonitida",
@@ -524,7 +686,7 @@
    "cover": "https://journals.plos.org/plosone/article/figure/image?size=medium&id=10.1371/journal.pone.0258510.g001"
   },
   {
-   "id": "am020",
+   "id": "am026",
    "slug": "placenticeras-meeki",
    "page": null,
    "order": "Ammonitida",
@@ -551,7 +713,7 @@
    "cover": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/thumbnails/image/CRC.JPG?itok=tA4dNVR_"
   },
   {
-   "id": "am021",
+   "id": "am027",
    "slug": "baculites-grandis",
    "page": null,
    "order": "Heteromorphs",
@@ -578,7 +740,7 @@
    "cover": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Baculites_grandis_shell.JPG"
   },
   {
-   "id": "am022",
+   "id": "am028",
    "slug": "nipponites-mirabilis",
    "page": null,
    "order": "Heteromorphs",
@@ -611,7 +773,7 @@
    "cover": "https://journals.plos.org/plosone/article/figure/image?size=medium&id=10.1371/journal.pone.0235180.g002"
   },
   {
-   "id": "am023",
+   "id": "am029",
    "slug": "australiceras-jacki",
    "page": null,
    "order": "Heteromorphs",
@@ -638,7 +800,7 @@
    "cover": "https://free-images.com/or/8ef0/australiceras_jackii_musee_des.jpg"
   },
   {
-   "id": "am024",
+   "id": "am030",
    "slug": "ancyloceras-matheronianum",
    "page": null,
    "order": "Heteromorphs",
@@ -665,7 +827,7 @@
    "cover": "https://free-images.com/or/bb11/ancyloceras_matherenianum_ammonit_roquef.jpg"
   },
   {
-   "id": "am025",
+   "id": "am031",
    "slug": "didymoceras-stevensoni",
    "page": null,
    "order": "Heteromorphs",

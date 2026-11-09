@@ -74,7 +74,7 @@ export default function AmmonitesArchive({ q = "", order = "", age = "" }: Props
     url: `${SITE_URL}/archive/ammonites`,
     name: "Ammonites of the World",
     description:
-      "A visual archive of 25 ammonite species with fossil photographs, geological ages and scientific classification.",
+      "A visual archive of 31 ammonite species with fossil photographs, geological ages and scientific classification.",
     isPartOf: {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,

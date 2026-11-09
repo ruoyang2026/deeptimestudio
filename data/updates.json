@@ -1,11 +1,51 @@
 {
-  "last_generated": "2026-10-02T09:24:09.845Z",
   "entries": [
     {
-      "id": "2026-09-11-0001",
-      "date": "2026-09-11",
-      "kind": "triassic_marine_added",
+      "count": 31,
+      "date": "2026-11-09",
+      "detail": "New Ammonites archive: 31 ammonite species from the Devonian to the Cretaceous, each with fossil photographs, classification, geological age and distribution — Agoniatites, Clymenia, Goniatites, Ceratites, Dactylioceras, Harpoceras, Douvilleiceras, Parapuzosia and the heteromorph ammonites Baculites, Nipponites and Didymoceras.",
+      "id": "2026-11-09-0001",
+      "kind": "ammonites_added",
+      "slugs": [
+        "agoniatites-vanuxemi",
+        "agoniatites-obliquus",
+        "clymenia-laevigata",
+        "kosmoclymenia-bisulcata",
+        "cymaclymenia-striata",
+        "kosmoclymenia-undulata",
+        "clymenia-sedgwickii",
+        "goniatites-crenistria",
+        "tornoceras-uniangulare",
+        "gattendorfia-subinvoluta",
+        "stockumites-intermedius",
+        "mimimitoceras-varicosum",
+        "eocanites-nodosus",
+        "eocanites-delicatus",
+        "ceratites-nodosus",
+        "meekoceras-gracilitatis",
+        "gymnotoceras-rotelliformis",
+        "dactylioceras-commune",
+        "harpoceras-falciferum",
+        "pleuroceras-spinatum",
+        "stephanoceras-humphriesianum",
+        "douvilleiceras-mammillatum",
+        "cleoniceras-besairiei",
+        "mortoniceras-inflatum",
+        "parapuzosia-seppenradensis",
+        "placenticeras-meeki",
+        "baculites-grandis",
+        "nipponites-mirabilis",
+        "australiceras-jacki",
+        "ancyloceras-matheronianum",
+        "didymoceras-stevensoni"
+      ]
+    },
+    {
       "count": 10,
+      "date": "2026-09-11",
+      "detail": "10 Triassic marine reptile species added from the Luoping Biota",
+      "id": "2026-09-11-0001",
+      "kind": "triassic_marine_added",
       "slugs": [
         "mixosaurus-cf",
         "phalarodon-atavus",
@@ -17,14 +57,14 @@
         "sinosaurosphargis-yunguiensis",
         "atopodentatus-unicus",
         "nothosaurus-zhangi"
-      ],
-      "detail": "10 Triassic marine reptile species added from the Luoping Biota"
+      ]
     },
     {
-      "id": "2026-09-11-0002",
-      "date": "2026-09-11",
-      "kind": "triassic_marine_added",
       "count": 46,
+      "date": "2026-09-11",
+      "detail": "48 more Triassic marine species added — archive now 57 species",
+      "id": "2026-09-11-0002",
+      "kind": "triassic_marine_added",
       "slugs": [
         "luopingichthys-bergi",
         "diandongperleidus-denticulatus",
@@ -72,28 +112,28 @@
         "thalassinoides-callianassa",
         "rhizocorallium-jenense",
         "Coprolites"
-      ],
-      "detail": "48 more Triassic marine species added — archive now 57 species"
+      ]
     },
     {
-      "id": "2026-09-09-0002",
-      "date": "2026-09-09",
-      "kind": "amphibians_added",
       "count": 5,
+      "date": "2026-09-09",
+      "detail": "Amphibians archive expanded: 5 more fossil amphibian species (temnospondyls: Brachyopidae, Dissorophidae, Heylerosauridae, Mastodonsauridae) with all multi-page figures imported.",
+      "id": "2026-09-09-0002",
+      "kind": "amphibians_added",
       "slugs": [
         "gobiops-desertus",
         "sinobrachyops-placenticephalus",
         "anakamacops-petrolicus",
         "yuanansuchus-laticeps",
         "parotosuchus-turfanensis"
-      ],
-      "detail": "Amphibians archive expanded: 5 more fossil amphibian species (temnospondyls: Brachyopidae, Dissorophidae, Heylerosauridae, Mastodonsauridae) with all multi-page figures imported."
+      ]
     },
     {
-      "id": "2026-09-09-0001",
-      "date": "2026-09-09",
-      "kind": "amphibians_added",
       "count": 13,
+      "date": "2026-09-09",
+      "detail": "Amphibians archive expanded: 13 more fossil amphibian species (Caudata salamanders & Anthracosauria) with precisely cropped fossil photographs.",
+      "id": "2026-09-09-0001",
+      "kind": "amphibians_added",
       "slugs": [
         "chunerpeton-tianyiensis",
         "regalerpeton-weichangensis",
@@ -108,14 +148,14 @@
         "ingentidens-corridoricus",
         "phratochronis-qilianensis",
         "urumqia-liudaowanensis"
-      ],
-      "detail": "Amphibians archive expanded: 13 more fossil amphibian species (Caudata salamanders & Anthracosauria) with precisely cropped fossil photographs."
+      ]
     },
     {
-      "id": "2026-09-08-0001",
-      "date": "2026-09-08",
-      "kind": "amphibians_added",
       "count": 8,
+      "date": "2026-09-08",
+      "detail": "New Amphibians archive: 8 fossil amphibian species with fossil photographs (precisely cropped from source PDFs).",
+      "id": "2026-09-08-0001",
+      "kind": "amphibians_added",
       "slugs": [
         "macropelobates-linquensis",
         "bufo-shandongensis",
@@ -125,8 +165,8 @@
         "liaobatrachus-beipiaoensis",
         "liaobatrachus-macilentus",
         "liaobatrachus-zhaoi"
-      ],
-      "detail": "New Amphibians archive: 8 fossil amphibian species with fossil photographs (precisely cropped from source PDFs)."
+      ]
     }
-  ]
+  ],
+  "last_generated": "2026-11-09T01:40:18.000Z"
 }
