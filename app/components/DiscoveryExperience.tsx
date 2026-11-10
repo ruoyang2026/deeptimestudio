@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { media } from "../../lib/media";
 import ExpeditionSection from "./ExpeditionSection";
+import KidsColoringBanner from "./KidsColoringBanner";
 import TeacherStrip from "./TeacherStrip";
 
 const HERO_VIDEO = media("/discovery/triassic-loop.mp4");
@@ -41,6 +42,7 @@ export default function DiscoveryExperience() {
 
   return (
     <>
+      <KidsColoringBanner />
       <TeacherStrip />
       <main className="abyss-main" aria-label="Deep time discovery canvas">
         {/* eslint-disable-next-line @next/next/no-img-element */}
