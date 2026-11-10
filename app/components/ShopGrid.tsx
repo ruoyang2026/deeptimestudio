@@ -1,9 +1,11 @@
 import {
+  SHOP_AMMONITE_COLORING_URL,
   SHOP_AMMONITE_PACK_URL,
   SHOP_AMPHIBIAN_DB_URL,
   SHOP_FREE_COLORING_URL,
   SHOP_ORDOVICIAN_DB_URL,
   SHOP_TRIASSIC_MARINE_DB_URL,
+  SHOP_TRILOBITE_COLORING_URL,
   SHOP_TRILOBITE_DB_URL,
   SHOP_TRILOBITE_PACK_URL,
   SHOP_VOL1_URL,
@@ -11,13 +13,16 @@ import {
 
 /**
  * ShopGrid — the /shop product grid (2026-11-10).
- * Two categories, 4 products each. Card copy is drawn from the real Gumroad
- * product descriptions (no invented selling points); hooks are the products'
- * own opening lines. Covers are hotlinked from Gumroad's CDN, except the
- * free coloring pages — that product has no custom Gumroad cover, so its
- * card uses the site's own trilobite coloring line art (inlined base64).
- * Category A covers are 16:9 (landscape crop); category B covers are
- * portrait book covers, shown whole (contain) on the dark surface.
+ * Two categories: 6 kids/family products, 4 databases (10 total). Card copy
+ * is drawn from the real Gumroad product descriptions (no invented selling
+ * points); hooks are the products' own opening lines. Covers are hotlinked
+ * from Gumroad's CDN, except the free coloring pages — that product has no
+ * custom Gumroad cover, so its card uses the site's own trilobite coloring
+ * line art (inlined base64).
+ * Category A covers sit in a 16:9 landscape area, shown whole (contain):
+ * the two $4.99 coloring-book covers are square, so they render centered
+ * with dark side bars and no cropping. Category B covers are portrait book
+ * covers, shown whole (contain) on the dark surface.
  * Purchase links carry utm_campaign=shop so Gumroad traffic from this page
  * is attributable separately from the homepage.
  */
@@ -55,6 +60,40 @@ export const SHOP_KIDS: ShopProduct[] = [
     href: SHOP_FREE_COLORING_URL,
     img: COLORING_IMG,
     alt: "Trilobite coloring page — free printable line art",
+  },
+  {
+    id: "trilobite-coloring",
+    title: "Trilobites! A Fossil Coloring Book for Kids Ages 4-6",
+    hook: "22 cute trilobites to color — plus a Parents' Fossil Guide with a REAL fossil photo of every single one!",
+    bullets: [
+      "22 bold-and-easy coloring pages, ages 4–6 — big shapes, thick lines, a friendly face on every trilobite, dotted letters to trace",
+      "5-page Parents' Fossil Guide — a real fossil photo of every trilobite, with pronunciation, age, size, where found, a read-aloud script & a question to ask",
+      "'Meet the Trilobite' anatomy page + Junior Paleontologist certificate; PDF + ZIP of all 31 pages as PNGs",
+    ],
+    badges: "Instant download · Ages 4–6 · 31 pages",
+    price: "$4.99",
+    priceValue: "4.99",
+    cta: "Get the book",
+    href: SHOP_TRILOBITE_COLORING_URL,
+    img: "https://public-files.gumroad.com/0jitgroieat70gskupn0dicc6rab",
+    alt: "Trilobites! A Fossil Coloring Book for Kids Ages 4-6 — cute trilobite cover",
+  },
+  {
+    id: "ammonite-coloring",
+    title: "Ammonites! A Fossil Coloring Book for Kids Ages 4-6",
+    hook: "22 cute ammonites to color — plus a Parents' Fossil Guide with a REAL fossil photo of every single one!",
+    bullets: [
+      "22 bold-and-easy coloring pages, ages 4–6 — big shapes, thick lines, a friendly face on every ammonite, dotted letters to trace",
+      "5-page Parents' Fossil Guide — a real fossil photo of every ammonite, with pronunciation, age, size, where found, a read-aloud script & a question to ask",
+      "'Meet the Ammonite' anatomy page + Junior Paleontologist certificate; PDF + ZIP of all 31 pages as PNGs",
+    ],
+    badges: "Instant download · Ages 4–6 · 31 pages",
+    price: "$4.99",
+    priceValue: "4.99",
+    cta: "Get the book",
+    href: SHOP_AMMONITE_COLORING_URL,
+    img: "https://public-files.gumroad.com/oj9rek8agxq0xbd2taxfjmlone59",
+    alt: "Ammonites! A Fossil Coloring Book for Kids Ages 4-6 — cute ammonite cover",
   },
   {
     id: "trilobite-pack",
