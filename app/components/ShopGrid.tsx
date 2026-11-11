@@ -4,6 +4,7 @@ import {
   SHOP_AMPHIBIAN_DB_URL,
   SHOP_FREE_COLORING_URL,
   SHOP_ORDOVICIAN_DB_URL,
+  SHOP_SEA_MONSTERS_COLORING_URL,
   SHOP_TRIASSIC_MARINE_DB_URL,
   SHOP_TRILOBITE_COLORING_URL,
   SHOP_TRILOBITE_DB_URL,
@@ -12,8 +13,8 @@ import {
 } from "../../lib/site";
 
 /**
- * ShopGrid — the /shop product grid (2026-11-10).
- * Two categories: 6 kids/family products, 4 databases (10 total). Card copy
+ * ShopGrid — the /shop product grid (2026-11-11).
+ * Two categories: 7 kids/family products, 4 databases (11 total). Card copy
  * is drawn from the real Gumroad product descriptions (no invented selling
  * points); hooks are the products' own opening lines. Covers are hotlinked
  * from Gumroad's CDN, except the free coloring pages — that product has no
@@ -60,6 +61,23 @@ export const SHOP_KIDS: ShopProduct[] = [
     href: SHOP_FREE_COLORING_URL,
     img: COLORING_IMG,
     alt: "Trilobite coloring page — free printable line art",
+  },
+  {
+    id: "sea-monsters-coloring",
+    title: "Sea Monsters! A Fossil Coloring Book for Kids Ages 4-8",
+    hook: "Long ago, a warm sea covered Kansas — and real sea monsters swam over the farms and towns of today! 22 cute sea monsters to color — mosasaurs, giant turtles, sharks & a giant squid — plus a Parents' Fossil Guide with REAL fossil photos!",
+    bullets: [
+      "22 bold-and-easy coloring pages, ages 4–8 — Tylosaurus, Mosasaurus, Elasmosaurus, a giant squid, saber-tooth fish, shell-crushing sharks and more",
+      "Every monster really swam in the Western Interior Seaway, the Cretaceous sea that covered Kansas and the middle of North America — and every one of them left real fossils in the USA",
+      "5-page Parents' Fossil Guide — a real fossil photo of every sea monster, with pronunciation, age, size, where found, a read-aloud script & a question to ask; 'Meet a Mosasaur' anatomy page + Junior Paleontologist certificate; PDF + ZIP of all 31 pages as PNGs",
+    ],
+    badges: "Instant download · Ages 4–8 · 31 pages",
+    price: "$4.99",
+    priceValue: "4.99",
+    cta: "Get the book",
+    href: SHOP_SEA_MONSTERS_COLORING_URL,
+    img: "https://public-files.gumroad.com/ytgnrxh5oysyjszoctn8v52qap4h",
+    alt: "Sea Monsters! A Fossil Coloring Book for Kids Ages 4-8 — Cretaceous sea monsters over Kansas cover",
   },
   {
     id: "trilobite-coloring",
