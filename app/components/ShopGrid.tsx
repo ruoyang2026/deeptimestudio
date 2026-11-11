@@ -93,7 +93,7 @@ export const SHOP_KIDS: ShopProduct[] = [
     priceValue: "4.99",
     cta: "Get the book",
     href: SHOP_TRILOBITE_COLORING_URL,
-    img: "https://public-files.gumroad.com/0jitgroieat70gskupn0dicc6rab",
+    img: "https://public-files.gumroad.com/jp3qt1we2o2malqztffogbtido39",
     alt: "Trilobites! A Fossil Coloring Book for Kids Ages 4-6 — cute trilobite cover",
   },
   {
@@ -110,7 +110,7 @@ export const SHOP_KIDS: ShopProduct[] = [
     priceValue: "4.99",
     cta: "Get the book",
     href: SHOP_AMMONITE_COLORING_URL,
-    img: "https://public-files.gumroad.com/oj9rek8agxq0xbd2taxfjmlone59",
+    img: "https://public-files.gumroad.com/agcw6tcgrnh8vk3vgze85xrmfuvp",
     alt: "Ammonites! A Fossil Coloring Book for Kids Ages 4-6 — cute ammonite cover",
   },
   {
