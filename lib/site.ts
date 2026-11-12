@@ -9,6 +9,8 @@ export const GUMROAD_TRILOBITE_PACK_URL = "https://chenyang84.gumroad.com/l/sqpf
 export const GUMROAD_AMMONITE_PACK_URL = "https://chenyang84.gumroad.com/l/jvrjh?utm_source=deep-time-studio&utm_medium=website&utm_campaign=homepage";
 export const SHOP_FREE_COLORING_URL = "https://chenyang84.gumroad.com/l/ylsabi?utm_source=deep-time-studio&utm_medium=website&utm_campaign=shop";
 export const SHOP_SEA_MONSTERS_COLORING_URL = "https://chenyang84.gumroad.com/l/vnfkvg?utm_source=deep-time-studio&utm_medium=website&utm_campaign=shop";
+export const SHOP_TRUE_SIZE_COLORING_URL = "https://chenyang84.gumroad.com/l/sea-monsters-true-size-coloring-book?utm_source=deep-time-studio&utm_medium=website&utm_campaign=shop";
+export const SHOP_FOSSIL_LAKE_COLORING_URL = "https://chenyang84.gumroad.com/l/fossil-lake-coloring-book?utm_source=deep-time-studio&utm_medium=website&utm_campaign=shop";
 export const SHOP_TRILOBITE_COLORING_URL = "https://chenyang84.gumroad.com/l/trilobite-coloring-book?utm_source=deep-time-studio&utm_medium=website&utm_campaign=shop";
 export const SHOP_AMMONITE_COLORING_URL = "https://chenyang84.gumroad.com/l/ammonite-coloring-book?utm_source=deep-time-studio&utm_medium=website&utm_campaign=shop";
 export const SHOP_TRILOBITE_PACK_URL = "https://chenyang84.gumroad.com/l/sqpfsi?utm_source=deep-time-studio&utm_medium=website&utm_campaign=shop";

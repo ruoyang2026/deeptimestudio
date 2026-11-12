@@ -4,17 +4,19 @@ import {
   SHOP_AMPHIBIAN_DB_URL,
   SHOP_FREE_COLORING_URL,
   SHOP_ORDOVICIAN_DB_URL,
+  SHOP_FOSSIL_LAKE_COLORING_URL,
   SHOP_SEA_MONSTERS_COLORING_URL,
   SHOP_TRIASSIC_MARINE_DB_URL,
   SHOP_TRILOBITE_COLORING_URL,
   SHOP_TRILOBITE_DB_URL,
   SHOP_TRILOBITE_PACK_URL,
+  SHOP_TRUE_SIZE_COLORING_URL,
   SHOP_VOL1_URL,
 } from "../../lib/site";
 
 /**
- * ShopGrid — the /shop product grid (2026-11-11).
- * Two categories: 7 kids/family products, 4 databases (11 total). Card copy
+ * ShopGrid — the /shop product grid (2026-11-12).
+ * Two categories: 9 kids/family products, 4 databases (13 total). Card copy
  * is drawn from the real Gumroad product descriptions (no invented selling
  * points); hooks are the products' own opening lines. Covers are hotlinked
  * from Gumroad's CDN, except the free coloring pages — that product has no
@@ -80,6 +82,23 @@ export const SHOP_KIDS: ShopProduct[] = [
     alt: "Sea Monsters! A Fossil Coloring Book for Kids Ages 4-8 — Cretaceous sea monsters over Kansas cover",
   },
   {
+    id: "sea-monsters-true-size-coloring",
+    title: "How Big Were the Sea Monsters? A True-Size Coloring Book for Kids Ages 4-8",
+    hook: "How big was a sea monster — REALLY? Every one of the 22 sea monsters of the ancient Kansas sea is drawn AT ITS TRUE SIZE, next to Sam, a 6-year-old kid who is 1.1 m (3 ft 7 in) tall. No shrinking, no tricks!",
+    bullets: [
+      "22 bold-and-easy coloring pages — every monster at true scale, with Sam in the scene; a 'Meet Sam!' page explains how true-size works",
+      "Every page prints the monster's REAL SIZE on its size ribbon — '45 ft (14 m) long — longer than a school bus — 13 SAMS!'",
+      "Dotted letter tracing on every page; 5-page Parents' Fossil Guide with a REAL fossil photo of every animal, a read-aloud script & a question; Junior Paleontologist certificate; PDF, print at home on US Letter, one-sided pages",
+    ],
+    badges: "Instant download · Ages 4–8 · True-size companion to Sea Monsters",
+    price: "$4.99",
+    priceValue: "4.99",
+    cta: "Get the book",
+    href: SHOP_TRUE_SIZE_COLORING_URL,
+    img: "https://public-files.gumroad.com/40w56yqun44rl5vcxp86dwwm3ncj",
+    alt: "How Big Were the Sea Monsters? A True-Size Coloring Book — a mosasaur drawn at true size next to Sam cover",
+  },
+  {
     id: "trilobite-coloring",
     title: "Trilobites! A Fossil Coloring Book for Kids Ages 4-6",
     hook: "22 cute trilobites to color — plus a Parents' Fossil Guide with a REAL fossil photo of every single one!",
@@ -112,6 +131,23 @@ export const SHOP_KIDS: ShopProduct[] = [
     href: SHOP_AMMONITE_COLORING_URL,
     img: "https://public-files.gumroad.com/agcw6tcgrnh8vk3vgze85xrmfuvp",
     alt: "Ammonites! A Fossil Coloring Book for Kids Ages 4-6 — cute ammonite cover",
+  },
+  {
+    id: "fossil-lake-coloring",
+    title: "Fossil Lake! A Fossil Coloring Book for Kids Ages 4-8",
+    hook: "Fifty-two million years ago, a giant lake covered Wyoming — and its fish turned to stone so perfectly that you can still count their scales! Meet 22 animals of the Green River Formation.",
+    bullets: [
+      "22 bold-and-easy coloring pages — Knightia (the Wyoming state fossil fish!), a lake crocodile, a fox-sized horse that still had toes, two of the world's oldest bats, a fish with a paddle for a nose, a lake stingray, and the famous greedy fish fossilized still holding its dinner",
+      "A 'Meet Knightia!' page that teaches the parts of a fish; dotted letter tracing on every page",
+      "5-page Parents' Fossil Guide with a REAL fossil photo of every animal, a read-aloud script & a question; Junior Paleontologist certificate; PDF, print at home on US Letter, one-sided pages",
+    ],
+    badges: "Instant download · Ages 4–8 · Green River Formation",
+    price: "$4.99",
+    priceValue: "4.99",
+    cta: "Get the book",
+    href: SHOP_FOSSIL_LAKE_COLORING_URL,
+    img: "https://public-files.gumroad.com/janj3fki7rs142210withjb0y20h",
+    alt: "Fossil Lake! A Fossil Coloring Book — Green River Formation fossil fish cover",
   },
   {
     id: "trilobite-pack",
