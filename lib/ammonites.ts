@@ -136,11 +136,12 @@ export function getPrevNext(slug: string): {
   prev?: Ammonite;
   next?: Ammonite;
 } {
-  const idx = ammonites.findIndex((t) => t.slug === slug);
+  const drillable = ammonites.filter((t) => isDrillable(t.slug));
+  const idx = drillable.findIndex((t) => t.slug === slug);
   if (idx < 0) return {};
   return {
-    prev: idx > 0 ? ammonites[idx - 1] : undefined,
-    next: idx < ammonites.length - 1 ? ammonites[idx + 1] : undefined,
+    prev: idx > 0 ? drillable[idx - 1] : undefined,
+    next: idx < drillable.length - 1 ? drillable[idx + 1] : undefined,
   };
 }
 

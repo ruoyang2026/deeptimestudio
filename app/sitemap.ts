@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { trilobites, isDrillable } from "../lib/trilobites";
 import { amphibians } from "../lib/amphibians";
-import { ammonites } from "../lib/ammonites";
+import { ammonites, isDrillable as isAmmoniteDrillable } from "../lib/ammonites";
 import { triassicMarine } from "../lib/triassic-marine";
 import {
   lastModifiedForSlug,
@@ -74,6 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   for (const a of ammonites) {
+    if (!isAmmoniteDrillable(a.slug)) continue;
     entries.push({
       url: `${SITE_URL}/ammonites/${a.slug}`,
       changeFrequency: "monthly",
