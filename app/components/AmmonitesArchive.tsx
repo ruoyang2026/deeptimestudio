@@ -22,14 +22,14 @@ type Props = {
 };
 
 function displayAge(age: string): string {
-  if (!age) return "";
+  if (!age || /^not verified$/i.test(age.trim())) return "";
   for (const period of AMMONITE_AGES) {
     if (age.includes(period)) return period;
   }
   return age;
 }
 
-const TOP_ORDERS = 7;
+const TOP_ORDERS = 20;
 
 function chipHref(params: { q?: string; order?: string; age?: string }): string {
   const sp = new URLSearchParams();
@@ -74,7 +74,7 @@ export default function AmmonitesArchive({ q = "", order = "", age = "" }: Props
     url: `${SITE_URL}/archive/ammonites`,
     name: "Ammonites of the World",
     description:
-      "A visual archive of 31 ammonite species with fossil photographs, geological ages and scientific classification.",
+      `A visual archive of ${ammonites.length} ammonite species with fossil photographs, geological ages and scientific classification.`,
     isPartOf: {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,

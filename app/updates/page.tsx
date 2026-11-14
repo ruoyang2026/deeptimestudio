@@ -55,9 +55,10 @@ function AmphibianList({ slugs }: { slugs: string[] }) {
 }
 
 function AmmoniteList({ slugs }: { slugs: string[] }) {
+  const shown = slugs.slice(0, 80);
   return (
     <ul className="upd-entry__list">
-      {slugs.map((slug) => {
+      {shown.map((slug) => {
         const p = getAmmoniteBySlug(slug);
         const label = p ? p.scientific_name.split(" (")[0] : slug.replace(/-/g, " ");
         return (
@@ -66,6 +67,9 @@ function AmmoniteList({ slugs }: { slugs: string[] }) {
           </li>
         );
       })}
+      {slugs.length > shown.length ? (
+        <li>…and {slugs.length - shown.length} more</li>
+      ) : null}
     </ul>
   );
 }

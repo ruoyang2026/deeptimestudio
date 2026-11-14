@@ -13,9 +13,31 @@ import {
   SITE_URL,
   SITE_NAME,
   ammonites,
+  type Ammonite,
 } from "../../../lib/ammonites";
 
 export const dynamicParams = false;
+
+function truncate(text: string, max: number): string {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max);
+  const space = cut.lastIndexOf(" ");
+  return `${cut.slice(0, space > 0 ? space : max).trimEnd()}…`;
+}
+
+function describeAmmonite(t: Ammonite): string {
+  const period = topPeriod(t.age);
+  const parts = [
+    period
+      ? `A ${period} ammonite, ${t.scientific_name}`
+      : `${t.scientific_name}, an ammonite fossil`,
+  ];
+  if (t.genus) parts.push(`genus ${t.genus}`);
+  if (t.distribution) parts.push(`from ${t.distribution}`);
+  let text = `${parts.join(" ")}.`;
+  if (t.diagnosis) text += ` ${t.diagnosis}`;
+  return truncate(text, 200);
+}
 
 export function generateStaticParams() {
   return ammonites.filter((t) => isDrillable(t.slug)).map((t) => ({ slug: t.slug }));
@@ -24,10 +46,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const t = getBySlug(params.slug);
   if (!t) return {};
-  const period = topPeriod(t.age);
-  const description = period
-    ? `A ${period} ammonite species documented with fossil photographs and geological data.`
-    : "An ammonite species documented with fossil photographs and geological data.";
+  const description = describeAmmonite(t);
   const cover = getCover(t);
   const ogImage = cover
     ? { url: absImg(cover), alt: t.scientific_name }
@@ -59,9 +78,8 @@ export default function AmmonitePage({ params }: { params: { slug: string } }) {
   if (!t || !isDrillable(t.slug)) notFound();
   const { prev, next } = getPrevNext(t.slug);
   const period = topPeriod(t.age);
-  const description = period
-    ? `A ${period} ammonite species documented with fossil photographs and geological data.`
-    : "An ammonite species documented with fossil photographs and geological data.";
+  const ageText = t.age && !/^not verified$/i.test(t.age.trim()) ? t.age : "";
+  const description = describeAmmonite(t);
 
   const pageUrl = `${SITE_URL}/ammonites/${t.slug}`;
   const cover = getCover(t);
@@ -88,7 +106,7 @@ export default function AmmonitePage({ params }: { params: { slug: string } }) {
       name: t.scientific_name,
       parentTaxon: t.order,
     },
-    temporalCoverage: period,
+    temporalCoverage: ageText || period,
     isPartOf: {
       "@type": "WebSite",
       name: "Deep Time Studio",
@@ -125,10 +143,11 @@ export default function AmmonitePage({ params }: { params: { slug: string } }) {
   if (t.classification) rows.push({ label: "Classification", value: t.classification, full: true });
   if (t.genus) rows.push({ label: "Genus", value: t.genus });
   if (t.genus_author) rows.push({ label: "Genus author", value: t.genus_author });
+  if (t.genus_etymology) rows.push({ label: "Genus etymology", value: t.genus_etymology, full: true });
   if (t.species) rows.push({ label: "Species", value: t.species });
   if (t.species_author) rows.push({ label: "Species author", value: t.species_author });
   if (t.species_etymology) rows.push({ label: "Species etymology", value: t.species_etymology, full: true });
-  if (t.age) rows.push({ label: "Age", value: t.age });
+  if (ageText) rows.push({ label: "Age", value: ageText });
   if (t.distribution) rows.push({ label: "Distribution", value: t.distribution });
   if (t.synonyms) rows.push({ label: "Synonyms", value: t.synonyms, full: true });
   if (t.diagnosis) rows.push({ label: "Diagnosis", value: t.diagnosis, full: true });
@@ -163,7 +182,7 @@ export default function AmmonitePage({ params }: { params: { slug: string } }) {
             ) : null}
           </div>
           <div className="tri-detail__chips">
-            {t.age ? <span className="tri-chip">{t.age}</span> : null}
+            {ageText ? <span className="tri-chip">{ageText}</span> : null}
             {t.distribution ? <span className="tri-chip">{t.distribution}</span> : null}
           </div>
         </div>

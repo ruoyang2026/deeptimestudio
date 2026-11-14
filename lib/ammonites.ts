@@ -19,6 +19,7 @@ export type Ammonite = {
   classification: string;
   genus: string;
   genus_author: string;
+  genus_etymology?: string;
   species: string;
   species_author: string;
   species_etymology: string;
@@ -48,8 +49,10 @@ export function isDrillable(slug: string): boolean {
 export const DRILLABLE_TOTAL = (drillableDb as DrillableDb).total;
 
 export const AMMONITE_AGES = [
+  "Ordovician",
   "Devonian",
   "Carboniferous",
+  "Permian",
   "Triassic",
   "Jurassic",
   "Cretaceous",
@@ -66,7 +69,7 @@ export function topPeriod(age: string): string {
 }
 
 export function firstRegion(distribution: string): string {
-  if (!distribution) return "";
+  if (!distribution || /^not verified$/i.test(distribution.trim())) return "";
   const parts = distribution.split(/[;,]/).map((p) => p.trim()).filter(Boolean);
   return parts[0] || "";
 }
